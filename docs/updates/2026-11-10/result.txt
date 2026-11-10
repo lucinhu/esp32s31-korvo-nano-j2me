@@ -2,9 +2,10 @@ nano-j2me 更新与清理，2026-11-10
 
 远程：https://github.com/lucinhu/nano_j2me.git，main
 更新前：f835b4415262aa38dd82d7361089ded95ef74027（0.3.0）
-更新后：e910b308a014f22a7f3f43b71c6d917ee28ed593（0.5.5）
+首次更新后：e910b308a014f22a7f3f43b71c6d917ee28ed593（0.5.5）
+最终核心：a028d18641032e87c3df45a82d1d8ed74c66978c（0.5.6）。
 快进 107 个提交，更新前主分支没有独有提交。
-主仓库索引仍指向 3c3070767f235bc59a0331bb90d9374eb8923e8e（perf/m3g-rgb565），不是更新前实际运行分支。检查开始时主仓库尚无首次提交；现按用户要求准备首次提交与 main 推送。
+主仓库索引仍指向 3c3070767f235bc59a0331bb90d9374eb8923e8e（perf/m3g-rgb565），不是更新前实际运行分支。检查开始时主仓库尚无首次提交；已按用户要求提交并推送 main。
 
 原有未提交修改：6 个文件，+320/-16，已保留并自动合并到新版。
 1. include/nj2me/nj_gfx.h：增加 NJ_ROP_OPAQUE，忽略源 alpha，同时保留整体 alpha、裁剪、掩码及 XOR 规则。
@@ -53,7 +54,17 @@ nano-j2me 更新与清理，2026-11-10
 - 追加 9 款本机经典游戏，原 JAR 不变，CRC 分块上传通过；清单见 classic-games.json。仙剑完美版、帝国时代2、帝国时代III、3D滚球均完成 180 帧加载/输入/销毁检查，rc=0、scale_mismatch=0、delta=0。帝国时代2冷启动产生游戏捕获的 RMS 未建档异常。未将启动通过表述为完整通关或全部操作可玩。
 - 实机帧缓冲截图：device-menu.png、device-game-pixel.png、device-game-max.png、device-game-2x.png、device-moto-max.png、device-pal.png。这些不是屏幕实拍。
 
-本次最终固件：7919360 字节；SHA-256 5c7d1715dca6afea9986d11862be605e31195b10384f71df692fbe17bd2a8ccf。
+本次最终固件：7919712 字节；SHA-256 cae781247abfec1eb9a6eb20ff2f10a99d7025202cb239e2be5434abc5751f45。
 原游戏分区备份 SHA-256：cfb55e464ac11c683b05a1c231ba0a6c0e4a7bdc58174bcb9a161932b56ca352。
 
-Git：nano-j2me 的 main 已推送到 00318b4；临时分支已删除。主仓库 main 的首次提交为 d215052，本轮设置与缩放补充提交后继续记录 JBenchmark 实机得分。
+后续同步与跑分兼容修复：
+- 同步远程 main 到 a154302（0.5.6），保留其整数格式化溢出修复及发布记录。与本地布局修复通过 d79d497 正常合并，无强制推送。
+- b219d67：Item 布局允许合法的 0x203 等标志组合，纠正 EXPAND/VSHRINK 常量、默认值与 ImageItem 继承布局。
+- 2a633ba：Gauge 允许程序更新非交互进度条，补齐定值范围夹取、不定值状态和范围切换；M3G 根对象识别补齐 SkinnedMesh 的顶点缓冲、骨架和骨骼引用；Graphics3D 声明已有的单纹理单元能力。原版 JBenchmark JAR 不修改。
+- 上述修复的 LCDUI、M3G、容器及有界加载四项 ASan/UBSan 回归全部通过；主工程三个适配测试及 3600 帧缩放对照再次通过。
+- a028d18：修复自绘间隔和空闲计数同时达到 255 后，帧泵永远无法恢复绘制的问题。真实帧泵回归在修复前失败，修复后通过；解决长耗时 3D 测试后的结果页不刷新。
+- 四种 JBenchmark 的版本、哈希、实机得分及截图见同目录 jbenchmark-results.json 和 docs/JBENCHMARK.md。
+
+Git：nano-j2me 的 main 已推送到 a028d18；临时分支 codex/korvo-drawrgb-20261110 已从远程和本地删除。主仓库 main 的首次提交为 d215052，设置与缩放补充为 8cd018f，后续提交包含最终核心引用和跑分记录。
+
+最终跑分：JBenchmark 1=1321；JBenchmark 2=86；JBenchmark3D HQ=115 / LQ=174，18195 triangles/s、2970 KTexels/s。HD 部分完成，平滑 26498/s、纹理 25159/s，存在质量与场景兼容性失败，未作为完整通过。最终硬件回归：90 次显示测试 mismatches=0，3545 次 DMA 交换/复制，CPU 回退/超时均 0，三轮演示退出 PSRAM 均 15216240；3D摩托 180 帧、缩放与内存回收通过。设备回到菜单，FPS 恢复为用户最后开启的 on，缩放 fit，其他保存设置保留。

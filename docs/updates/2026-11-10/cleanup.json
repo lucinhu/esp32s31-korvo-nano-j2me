@@ -780,6 +780,67 @@
       "path": "build-host",
       "bytes": 1985993778,
       "reason": "Temporary sanitized regression and unpatched baseline builds, logs retained."
+    },
+    {
+      "path": "build/benchmark-host",
+      "bytes": 191981830,
+      "reason": "Completed temporary validation/preview or superseded local application snapshot; test logs and current build retained."
+    },
+    {
+      "path": "build/ui-preview",
+      "bytes": 4162878,
+      "reason": "Completed temporary validation/preview or superseded local application snapshot; test logs and current build retained."
+    },
+    {
+      "path": "build/recovery/firmware-before-ui.bin",
+      "bytes": 7870656,
+      "reason": "Completed temporary validation/preview or superseded local application snapshot; test logs and current build retained."
+    },
+    {
+      "path": "tools/__pycache__",
+      "bytes": 110539,
+      "reason": "Completed temporary validation/preview or superseded local application snapshot; test logs and current build retained."
+    },
+    {
+      "path": "build/esp32s31-korvo-nano-j2me_flashed.bin",
+      "bytes": 7870656,
+      "reason": "Outdated flash-diff cache superseded by verified full application writes."
+    },
+    {
+      "path": "build/j2me_flashed.bin",
+      "bytes": 8323072,
+      "reason": "Outdated flash-diff cache superseded by verified full application writes."
+    },
+    {
+      "path": "build/core-tests",
+      "bytes": 88419550,
+      "reason": "Completed final regression or recursive remote-fetch verification; results retained in update records."
+    },
+    {
+      "path": "build/clone-check",
+      "bytes": 41678643,
+      "reason": "Completed final regression or recursive remote-fetch verification; results retained in update records."
+    },
+    {
+      "path": "tools/__pycache__",
+      "bytes": 22162,
+      "reason": "Completed final regression or recursive remote-fetch verification; results retained in update records."
+    },
+    {
+      "path": "build/validation/final-check.py",
+      "bytes": 871,
+      "reason": "Completed final regression or recursive remote-fetch verification; results retained in update records."
+    },
+    {
+      "path": "build/validation/finish-device.py",
+      "bytes": 2186,
+      "reason": "Completed final regression or recursive remote-fetch verification; results retained in update records."
+    },
+    {
+      "path": "build/validation/jbenchmark temporary probes and captures",
+      "bytes": 25426960,
+      "files": 41,
+      "reason": "Keep the four benchmark JARs; published result PNGs, manifests and local logs are retained separately."
     }
   ]
 }

@@ -1,0 +1,134 @@
+{
+  "date": "2026-11-10",
+  "device": "ESP32-S31-Korvo-1 rev0",
+  "cpu_mhz": 320,
+  "psram_mhz": 250,
+  "core_commit": "a028d18641032e87c3df45a82d1d8ed74c66978c",
+  "firmware_bytes": 7919712,
+  "firmware_sha256": "cae781247abfec1eb9a6eb20ff2f10a99d7025202cb239e2be5434abc5751f45",
+  "conditions": {
+    "resolution": [
+      240,
+      320
+    ],
+    "display_scaling": "aspect-fit MAX SIZE, 324x432",
+    "pixel_perfect": false,
+    "fps_overlay": false,
+    "jit": "off",
+    "device_profile": "nokia6230",
+    "java_heap_kib": 10240,
+    "rms": "fresh per benchmark run",
+    "screenshots": "captured after timed tests; native VM framebuffer, not LCD photograph",
+    "rendering": "software M3G, RGB GDMA double buffering and PPA DMA dirty-copy presenter",
+    "volume": 40
+  },
+  "packages_manifest": "jbenchmark-packages.json",
+  "results": [
+    {
+      "suite": "JBenchmark 1",
+      "version": "1.1.1",
+      "status": "completed",
+      "score": 1321,
+      "subscores": {
+        "Text": 404,
+        "2D Shapes": 263,
+        "3D Shapes": 176,
+        "Fill Rate": 141,
+        "Animation": 337
+      },
+      "image": "jbenchmark1-result.png",
+      "previous_run_scores": [
+        1322,
+        1323
+      ]
+    },
+    {
+      "suite": "JBenchmark 2",
+      "version": "2.1.1",
+      "status": "completed",
+      "score": 86,
+      "subscores": {
+        "Image manipulation": 36,
+        "Text": 237,
+        "Sprites": 435,
+        "3D Transform": 6,
+        "User interface": 204
+      },
+      "image": "jbenchmark2-result.png"
+    },
+    {
+      "suite": "JBenchmark 3D",
+      "version": "3.1.0",
+      "status": "completed",
+      "scores": {
+        "HQ": 115,
+        "LQ": 174,
+        "triangles_per_second": 18195,
+        "ktexels_per_second": 2970
+      },
+      "image": "jbenchmark3d-result.png"
+    },
+    {
+      "suite": "JBenchmark HD",
+      "version": "4.0.3",
+      "status": "partial",
+      "scores": {
+        "smooth_triangles_per_second": 26498,
+        "textured_triangles_per_second": 25159
+      },
+      "quality": {
+        "bilinear": {
+          "status": "success",
+          "percent": 91
+        },
+        "trilinear": "failed/not supported",
+        "z_buffer": {
+          "status": "failure",
+          "reported_bits": 7
+        }
+      },
+      "limitations": [
+        "Mipmap and two-texture-unit tests not supported.",
+        "Gaming scene fails with NullPointerException in i.m after lookup from the last root Group.",
+        "Additional result rows cannot be reached with the current generic Form navigation; no fill-rate or gaming score is inferred."
+      ],
+      "previous_scores": {
+        "smooth_triangles_per_second": 26500,
+        "textured_triangles_per_second": 25167,
+        "bilinear_percent": 92
+      },
+      "image": "jbenchmarkhd-result.png"
+    }
+  ],
+  "hardware_validation": {
+    "display_test_frames": 90,
+    "display_mismatches": 0,
+    "submitted": 3545,
+    "completed": 3545,
+    "dma_copies": 3545,
+    "cpu_copies": 0,
+    "timeouts": 0,
+    "demo_psram_after": [
+      15216240,
+      15216240,
+      15216240
+    ],
+    "keys_and_pointer": "passed",
+    "moto_frames": 180,
+    "moto_exit": 0,
+    "moto_psram_delta": 0,
+    "moto_scale_mismatch": 0,
+    "final_settings": {
+      "resolution": [
+        240,
+        320
+      ],
+      "volume": 40,
+      "fps_overlay": true,
+      "scaling": "fit",
+      "jit": "off",
+      "memory": "mapped"
+    },
+    "final_free_flash_bytes": 360448
+  }
+}

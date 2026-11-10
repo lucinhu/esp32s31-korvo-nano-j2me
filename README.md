@@ -6,7 +6,7 @@ ESP32-S31（RISC-V）上的 J2ME 模拟器。板级配置来自 `esp32s31-korvo-
 
 未插 SD 卡时，启动日志会出现 SDMMC 超时，随后显示 `Flash FAT storage: /flash (ESP_OK)` 和 `FLASH READY`，继续使用 Flash。
 
-`third_party/nano_j2me` 是 [lucinhu/nano_j2me](https://github.com/lucinhu/nano_j2me) 的 Git 子模块。当前核心为 `e910b30`（0.5.5，2026-11-10），从 `f835b44` 快进更新 107 个提交；保留本地 `drawRGB` 借用像素、忽略源透明度及源目标重叠保护补丁和对应回归测试（`00318b4`，已合入上游 `main`）。板级适配仍放在主工程，已补齐新版 PIM、Samsung、UDP 和 x86-64 JIT 源码清单。版本对比、本地补丁、构建与实机验证记录见 [本次更新记录](docs/updates/2026-11-10/result.txt)。
+`third_party/nano_j2me` 是 [lucinhu/nano_j2me](https://github.com/lucinhu/nano_j2me) 的 Git 子模块。当前引用核心 `main` 的 `a028d18`（0.5.6，2026-11-10）。最初从 `f835b44` 更新到 `e910b30`，保留并提交本地 `drawRGB` 借用像素、忽略源透明度及源目标重叠保护补丁（`00318b4`）；随后同步远程 0.5.6，并补齐 JBenchmark 所需的 Item 布局、Gauge 和 M3G 兼容修复。所有核心修改均已合入 `main`，临时分支已删除。板级适配仍放在主工程，已补齐新版 PIM、Samsung、UDP 和 x86-64 JIT 源码清单。版本对比、本地补丁、构建与实机验证记录见 [本次更新记录](docs/updates/2026-11-10/result.txt)，跑分见 [JBenchmark 实机记录](docs/JBENCHMARK.md)。
 
 ## 获取与编译
 
@@ -101,7 +101,7 @@ MIDI 使用独立播放任务进行流式合成，无需预先展开为完整 PC
 
 官方 SDK 只处理第一轨。平台先把格式 1 的各轨按绝对 tick 合并为格式 0，保留 tempo、控制事件和每轨 running status，避免《孤岛余生2》这类第一轨只有速度信息的游戏无声。另对 `esp_midi 1.1.0` 的 Note Off 入口增加保护：已经耗尽采样或没有对应活动音符时直接忽略，避免库在循环音符池中无限查找，造成播放中断和退出卡住；正常音符仍使用 SDK 的 RELEASE 路径。
 
-实机验证同时修复了核心 `nj_lib_media.c` 的短 PCM 生命周期问题：设备在 `Player.start()` 中接受全部样本后，Player 仍需进入帧泵，才能关闭 PCM 并发出 `endOfMedia`。该通用修复位于当前子模块工作分支。JPEG 的默认 ARGB8888 输出则在主工程中适配，避免 MIDP 按 Java `int[]` 复制 RGB565 数据。
+实机验证同时修复了核心 `nj_lib_media.c` 的短 PCM 生命周期问题：设备在 `Player.start()` 中接受全部样本后，Player 仍需进入帧泵，才能关闭 PCM 并发出 `endOfMedia`。该通用修复已包含在子模块的 `main` 中。JPEG 的默认 ARGB8888 输出则在主工程中适配，避免 MIDP 按 Java `int[]` 复制 RGB565 数据。
 
 默认使用随固件生成的小型波表音源，不占用独立音色分区。每个音符先按音高展开为 22,050 Hz、最长 4 秒的采样；官方混音器要求采样率完全相同，不会自行重采样或重复单个波形周期。将自己的 SF2 放在 `/sdcard/j2me/soundfont.sf2` 或 `/flash/j2me/soundfont.sf2` 后，下次创建 MIDI Player 时优先加载，SD 优先；SF2 样本按根音和实际音高转换为相同采样率。SF2 文件上限为 32 MiB，单个音符的源样本及转换后样本各上限 512 KiB，活动样本预算合计 2 MiB；实际还受存储容量限制。未提供、损坏或缺少相应乐器时使用内置波表。内置音源不是完整的 General MIDI 采样音色库，持续音超过 4 秒会自然结束，实际音色需实机试听验证。
 

@@ -4,14 +4,24 @@
     "url": "https://files.simbiansattic.lt/downloads/JBtools/JB/JBenchmark.jar",
     "bytes": 26236,
     "sha256": "d96f92052f68afe09f48841d4c232fe1396d64da01445bf44653b9440a583f03",
-    "manifest": "Manifest-Version: 1.0\r\nAnt-Version: Apache Ant 1.6.2\r\nCreated-By: 1.5.0_01-b08 (Sun Microsystems Inc.)\r\nMIDlet-1: JBenchmark,/images/JBenchmark.png,JBenchmark.JBenchmark\r\nMIDlet-Info-URL: http://wap.jbenchmark.com\r\nMIDlet-Vendor: Kishonti LP\r\nMIDlet-Description: Graphical Benchmark for Mobile Java Devices\r\nMIDlet-Version: 1.1.1\r\nMIDlet-Name: JBenchmark\r\nMicroEdition-Configuration: CLDC-1.0\r\nMicroEdition-Profile: MIDP-1.0\r\n\r\n"
+    "manifest": "Manifest-Version: 1.0\r\nAnt-Version: Apache Ant 1.6.2\r\nCreated-By: 1.5.0_01-b08 (Sun Microsystems Inc.)\r\nMIDlet-1: JBenchmark,/images/JBenchmark.png,JBenchmark.JBenchmark\r\nMIDlet-Info-URL: http://wap.jbenchmark.com\r\nMIDlet-Vendor: Kishonti LP\r\nMIDlet-Description: Graphical Benchmark for Mobile Java Devices\r\nMIDlet-Version: 1.1.1\r\nMIDlet-Name: JBenchmark\r\nMicroEdition-Configuration: CLDC-1.0\r\nMicroEdition-Profile: MIDP-1.0\r\n\r\n",
+    "user_source": "/home/lucinhu/Documents/game-roms/jar/JBenchmark.jar",
+    "user_source_sha256": "d96f92052f68afe09f48841d4c232fe1396d64da01445bf44653b9440a583f03",
+    "user_source_differing_entries": [],
+    "user_source_byte_identical": true
   },
   {
     "name": "jbenchmark2.jar",
     "url": "https://files.simbiansattic.lt/downloads/JBtools/JB/JBenchmark2.jar",
     "bytes": 63996,
     "sha256": "43a3ee725dd15c47c10a0d62aeffb7bd96fb93075f8241708281c051f1d433d9",
-    "manifest": "Manifest-Version: 1.0\r\nAnt-Version: Apache Ant 1.6.2\r\nCreated-By: 1.5.0_01-b08 (Sun Microsystems Inc.)\r\nMIDlet-1: JBenchmark 2, , JBenchmark2.JBenchmark2\r\nMIDlet-Info-URL: http://wap.jbenchmark.com\r\nMIDlet-Vendor: Kishonti LP\r\nMIDlet-Icon: /JBenchmark2/JBenchmark.png\r\nMIDlet-Description: Graphical java benchmark for mobile devices\r\nMIDlet-Version: 2.1.1\r\nMIDlet-Name: JBenchmark 2\r\nMicroEdition-Configuration: CLDC-1.0\r\nMicroEdition-Profile: MIDP-2.0\r\n\r\n"
+    "manifest": "Manifest-Version: 1.0\r\nAnt-Version: Apache Ant 1.6.2\r\nCreated-By: 1.5.0_01-b08 (Sun Microsystems Inc.)\r\nMIDlet-1: JBenchmark 2, , JBenchmark2.JBenchmark2\r\nMIDlet-Info-URL: http://wap.jbenchmark.com\r\nMIDlet-Vendor: Kishonti LP\r\nMIDlet-Icon: /JBenchmark2/JBenchmark.png\r\nMIDlet-Description: Graphical java benchmark for mobile devices\r\nMIDlet-Version: 2.1.1\r\nMIDlet-Name: JBenchmark 2\r\nMicroEdition-Configuration: CLDC-1.0\r\nMicroEdition-Profile: MIDP-2.0\r\n\r\n",
+    "user_source": "/home/lucinhu/Documents/game-roms/jar/JBenchmark2.jar",
+    "user_source_sha256": "058b2c170586a92706a08619a303f61180c49ed13f40fd28ac038ebc914ceb4d",
+    "user_source_differing_entries": [
+      "META-INF/MANIFEST.MF"
+    ],
+    "user_source_byte_identical": false
   },
   {
     "name": "jbenchmark3d.jar",
@@ -27,6 +37,8 @@
     "url": "https://files.simbiansattic.lt/downloads/JBtools/JB/JBenchmark%20HD.jar",
     "bytes": 351431,
     "sha256": "58cd27a6fe6fc539fabb3bb0f593cd45ce236e3e242e5d64e7f01b1db07f4890",
-    "manifest": "Manifest-Version: 1.0\r\nAnt-Version: Apache Ant 1.6.2\r\nCreated-By: 1.5.0_01-b08 (Sun Microsystems Inc.)\r\nMIDlet-1: JBenchmark HD,/JBenchmarkHD/3dlogo32.png,JBenchmarkHD\r\nMIDlet-Info-URL: http://wap.jbenchmark.com\r\nMicroEdition-Configuration: CLDC-1.1\r\nMIDlet-Vendor: Kishonti Informatics\r\nMicroEdition-Profile: MIDP-2.0\r\nMIDlet-Icon: /JBenchmarkHD/3dlogo32.png\r\nMIDlet-Description: 3D Quality Benchmark for Mobile Java Devices\r\nMIDlet-Version: 4.0.3\r\nMIDlet-Name: JBenchmark HD\r\n\r\n"
+    "manifest": "Manifest-Version: 1.0\r\nAnt-Version: Apache Ant 1.6.2\r\nCreated-By: 1.5.0_01-b08 (Sun Microsystems Inc.)\r\nMIDlet-1: JBenchmark HD,/JBenchmarkHD/3dlogo32.png,JBenchmarkHD\r\nMIDlet-Info-URL: http://wap.jbenchmark.com\r\nMicroEdition-Configuration: CLDC-1.1\r\nMIDlet-Vendor: Kishonti Informatics\r\nMicroEdition-Profile: MIDP-2.0\r\nMIDlet-Icon: /JBenchmarkHD/3dlogo32.png\r\nMIDlet-Description: 3D Quality Benchmark for Mobile Java Devices\r\nMIDlet-Version: 4.0.3\r\nMIDlet-Name: JBenchmark HD\r\n\r\n",
+    "user_copy": "/home/lucinhu/Documents/game-roms/jar/JBenchmarkHD.jar",
+    "user_copy_byte_identical": true
   }
 ]
