@@ -6,16 +6,16 @@
 
 static ppa_client_handle_t client;
 static bool enabled = true, qualified;
-static unsigned fills;
+static unsigned fills, operations;
 static uint64_t pixels;
 
 void korvo_ppa_enable(bool value) { enabled = value; }
 bool korvo_ppa_enabled(void) { return enabled && qualified; }
-void korvo_ppa_reset(void) { fills = 0; pixels = 0; }
+void korvo_ppa_reset(void) { fills = operations = 0; pixels = 0; }
 void korvo_ppa_stats(void)
 {
-    printf("PPA_FILL enabled=%d available=%d fills=%u pixels=%llu\n",
-           korvo_ppa_enabled(), qualified, fills, (unsigned long long)pixels);
+    printf("PPA_FILL enabled=%d available=%d fills=%u pixels=%llu ops=%u\n",
+           korvo_ppa_enabled(), qualified, fills, (unsigned long long)pixels, operations);
 }
 
 static int fill_target(const nj_surface *surface, int x, int y, int w, int h,
@@ -56,13 +56,35 @@ static int fill_target(const nj_surface *surface, int x, int y, int w, int h,
         .mode = PPA_TRANS_MODE_BLOCKING,
     };
     if (ppa_do_fill(client, &request) != ESP_OK) return 0;
+    ++operations;
+    /* A logical row's right edge wraps into the next descriptor row's
+     * prefix. Fill that narrow strip with a second GPU window when large
+     * enough to offset another submission. Skip the first physical prefix
+     * (the object header) and leave any final unmappable row to the CPU. */
+    int tail_width = w-hardware_width;
+    int tail_height = picture_height-y-1;
+    if (tail_height > h) tail_height = h;
+    int tail_done = 0;
+    if (tail_width > 0 && tail_height > 0 &&
+        (size_t)tail_width*tail_height*bpp >= 4096) {
+        request.out.block_offset_x = 0;
+        request.out.block_offset_y = y+1;
+        request.fill_block_w = tail_width;
+        request.fill_block_h = tail_height;
+        if (ppa_do_fill(client, &request) == ESP_OK) {
+            ++operations;
+            tail_done = tail_height;
+        }
+    }
     for (int row = 0; row < h; ++row) {
+        if (row < tail_done) continue;
         int first = row < hardware_height ? hardware_width : 0;
         uint8_t *destination = (uint8_t *)surface->pixels + (y+row)*surface->stride+(x+first)*bpp;
         for (int col = first; col < w; ++col, destination += bpp)
             memcpy(destination, &packed_color, bpp);
     }
-    if (hardware_pixels) *hardware_pixels = (size_t)hardware_width*hardware_height;
+    if (hardware_pixels) *hardware_pixels = (size_t)hardware_width*hardware_height +
+                                            (size_t)tail_width*tail_done;
     return 1;
 }
 
@@ -83,15 +105,15 @@ void korvo_ppa_init(void)
     unsigned mismatches = 0;
     for (int bpp = 2; bpp <= 4; bpp += 2) {
         int stride = 40*bpp;
-        size_t size = (64+48+stride*31+127)&~(size_t)63;
+        size_t size = (64+52+stride*31+127)&~(size_t)63;
         uint8_t *output = heap_caps_aligned_alloc(64, size, MALLOC_CAP_SPIRAM|MALLOC_CAP_8BIT);
         uint8_t *reference = heap_caps_aligned_alloc(64, size, MALLOC_CAP_SPIRAM|MALLOC_CAP_8BIT);
         if (!output || !reference) { heap_caps_free(output); heap_caps_free(reference); ++mismatches; break; }
         nj_surface surface = {.pixels = output, .width = 40, .height = 31,
             .stride = stride, .bpp = bpp, .format = bpp == 2 ? NJ_PIXFMT_RGB565 : NJ_PIXFMT_ARGB8888};
         const uint32_t colors[] = {0u, 0xffffffffu, 0x70123456u, 0xffa55a13u};
-        const unsigned offsets[] = {0, 4, 16, 48};
-        for (unsigned offset = 0; offset < 4; ++offset) for (unsigned shape = 0; shape < 2; ++shape) {
+        const unsigned offsets[] = {0, 4, 16, 48, 52};
+        for (unsigned offset = 0; offset < sizeof(offsets)/sizeof(offsets[0]); ++offset) for (unsigned shape = 0; shape < 2; ++shape) {
             unsigned prefix = 64+offsets[offset];
             surface.pixels = output+prefix;
             int x = shape ? 0 : 3, y = shape ? 0 : 5;
@@ -105,7 +127,24 @@ void korvo_ppa_init(void)
             }
         }
         heap_caps_free(output); heap_caps_free(reference);
+        /* Exercise the wrapped GPU strip and the CPU's final-row tail. */
+        stride = 128*bpp;
+        size = 64+48+stride*160+80;
+        output = heap_caps_aligned_alloc(64, size, MALLOC_CAP_SPIRAM|MALLOC_CAP_8BIT);
+        reference = heap_caps_aligned_alloc(64, size, MALLOC_CAP_SPIRAM|MALLOC_CAP_8BIT);
+        if (!output || !reference) { heap_caps_free(output); heap_caps_free(reference); ++mismatches; break; }
+        surface = (nj_surface){.pixels = output+116, .width = 128, .height = 160,
+            .stride = stride, .bpp = bpp, .format = bpp == 2 ? NJ_PIXFMT_RGB565 : NJ_PIXFMT_ARGB8888};
+        for (unsigned n = 0; n < sizeof(colors)/sizeof(colors[0]); ++n) {
+            memset(output, 0xa5, size); memset(reference, 0xa5, size);
+            if (!fill_target(&surface, 5, 7, 123, 153, colors[n], NULL)) { ++mismatches; break; }
+            for (int row = 7; row < 160; ++row) for (int col = 5; col < 128; ++col)
+                memcpy(reference+116+row*stride+col*bpp, &colors[n], bpp);
+            mismatches += memcmp(output, reference, size) != 0;
+        }
+        heap_caps_free(output); heap_caps_free(reference);
     }
     qualified = mismatches == 0;
     printf("PPA_FILL_TEST available=%d mismatches=%u\n", qualified, mismatches);
+    korvo_ppa_reset();
 }

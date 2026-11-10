@@ -1,0 +1,79 @@
+{
+  "removed": [
+    {
+      "path": "build/refinement",
+      "bytes": 190998534,
+      "files": 139
+    },
+    {
+      "path": "build/adapter-tests",
+      "bytes": 669855,
+      "files": 27
+    },
+    {
+      "path": "build/validation",
+      "bytes": 532471,
+      "files": 10
+    },
+    {
+      "path": "build/log",
+      "bytes": 4164427,
+      "files": 90
+    },
+    {
+      "path": "third_party/nano_j2me/gfx_demo.ppm",
+      "bytes": 84015,
+      "files": 1
+    },
+    {
+      "path": "tools/__pycache__",
+      "bytes": 17404,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-10-refinement/fill-after.json",
+      "bytes": 2331,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-10-refinement/fill-after.log",
+      "bytes": 9222,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-10-refinement/firmware-build.log",
+      "bytes": 43334,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-10-refinement/firmware-flash.log",
+      "bytes": 706,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-10-refinement/form-board.log",
+      "bytes": 9011,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-10-refinement/form-tests.log",
+      "bytes": 643,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-10-refinement/core-build.log",
+      "bytes": 6914,
+      "files": 1
+    }
+  ],
+  "bytes": 196538867,
+  "files": 275,
+  "retained": [
+    "current ESP-IDF build and flashed .bin/.elf",
+    "build/latest-3d/jars CMake inputs",
+    "build/dualcore reproducible benchmark and Form JARs",
+    "managed_components and font assets",
+    "build/recovery/j2me-before.bin existing FAT recovery image",
+    "final raw validation logs and selected screenshots in docs/updates"
+  ]
+}

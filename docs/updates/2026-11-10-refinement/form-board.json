@@ -1,0 +1,9 @@
+{
+  "end": "I (135638) korvo-j2me: RUN_END rc=0 presents=444 input=61 psram_before=15215968 psram_after=15215968 delta=0",
+  "perf": "PERF elapsed_us=17362881 presents=444 present_us=2137435 present_max_us=32614 poll_us=18323 poll_calls=506 sleep_us=0 native_crc=ec7bf48c lcd_crc=2531d24f updated=29 unchanged=415 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=2",
+  "audio": [
+    "I (135638) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+    "I (135644) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+  ],
+  "settings": "SETTINGS res=240x320 volume=40 fps=on scale=fit jit=off memory=mapped parallel=on simd=on ppafill=on"
+}

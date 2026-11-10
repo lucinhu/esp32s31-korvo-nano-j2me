@@ -1,0 +1,82 @@
+{
+  "date": "2026-11-10",
+  "baseline": {
+    "parent": "071e3a07fd58a4573aa3dbe38fb459c2e16b2bc5",
+    "core": "6a135819c026183cf8409e9d79948c735ad54dd6"
+  },
+  "core": "8689b5b27c8c1ccace4c0d96dce9d07b403c832c",
+  "core_commits": [
+    "04ed9aaf4d5cd90144d6ab7d9ac564aff218fa14",
+    "8689b5b27c8c1ccace4c0d96dce9d07b403c832c"
+  ],
+  "firmware": {
+    "bytes": 7944496,
+    "sha256": "2eaa00b996334e08066bb526612f662f98b48f01a06298a4ae003fa68efaec2d",
+    "flashed_port": "/dev/ttyUSB1",
+    "application_only": true
+  },
+  "fill": {
+    "rounds_per_version": 2,
+    "before_mean_ms": 4048.5,
+    "after_mean_ms": 2819.5,
+    "time_reduced_percent": 30.356922316907497,
+    "throughput_increased_percent": 43.58928888100726,
+    "total_pixels_per_round": 201160080,
+    "before_cpu_pixels": 7134480,
+    "after_cpu_pixels": 9360,
+    "after_gpu_operations": 5760,
+    "crc_all_four_rounds_identical": true,
+    "checksums": {
+      "phases": [
+        [
+          "full",
+          "f4602800"
+        ],
+        [
+          "clipped",
+          "05b483ec"
+        ]
+      ],
+      "native_crc": "e430c397",
+      "lcd_crc": "9a83e5df"
+    },
+    "exits_and_memory_stable": true
+  },
+  "form": {
+    "old_core_initial_regression_exit_code": 1,
+    "old_failure": "FAIL 49: !find(s,0xffff0000u,&x,&y)",
+    "device_fixture": "ui-form-scroll.jar",
+    "last_item_activated": true,
+    "widget_gpu_fill_calls": 1776,
+    "decoded_pixel_sha256": {
+      "form-top.png": "8a1d707d301ce80ecbfd10df13aa44bd65305b930f877fa634cf3f51c5ca753c",
+      "form-bottom.png": "8d9028b9028479277e4bf84a3d7a3d49406db6a9d1da368227d78d944780a342"
+    },
+    "pixels_unchanged_after_widget_hook": true,
+    "device": "form-board.json"
+  },
+  "host_tests": {
+    "asan_ubsan_core_passed": [
+      "test_form_scroll",
+      "test_lcdui",
+      "test_gfx",
+      "test_m3g_parallel"
+    ],
+    "asan_ubsan_adapter_passed": [
+      "jit_code_pool",
+      "audio_resampler",
+      "display_buffers"
+    ],
+    "full_upstream_suite_claimed": false
+  },
+  "device": "device-final.json",
+  "jbenchmark": "benchmarks.json",
+  "jbenchmark_hd_repeat": "hd-scroll.json",
+  "cleanup": "cleanup.json",
+  "limits": [
+    "Fill throughput is not overall game FPS.",
+    "PPA SRM integer scaling remains disabled after pixel mismatch qualification.",
+    "JBenchmark HD only partially completes; unsupported capabilities and Gaming model lookup failure remain.",
+    "Only HD performance and following feature pages were captured, not every feature row."
+  ]
+}

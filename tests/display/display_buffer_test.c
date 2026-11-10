@@ -15,6 +15,7 @@ static void *callback_context;
 static int semaphores[2], semaphore_count;
 static unsigned submissions, releases, copies, fallbacks, dma_copies;
 static bool fail_ppa, fail_dma, fail_fill;
+static unsigned fill_calls, fail_fill_at;
 static async_color_convert_request_t copy_request;
 static async_color_convert_isr_cb_t copy_callback;
 static void *copy_context;
@@ -57,7 +58,8 @@ esp_err_t ppa_register_client(const ppa_client_config_t *c, ppa_client_handle_t 
 esp_err_t ppa_do_fill(ppa_client_handle_t client, const ppa_fill_oper_config_t *c)
 {
     assert(client == &copies && c->out.buffer != scanout);
-    if (fail_fill) return 7;
+    ++fill_calls;
+    if (fail_fill || fill_calls == fail_fill_at) return 7;
     int bpp = c->out.fill_cm == PPA_FILL_COLOR_MODE_RGB565 ? 2 : 4;
     uint32_t color = c->fill_color_val;
     if (bpp == 2) color = ((color>>8)&0xf800)|((color>>5)&0x7e0)|((color>>3)&31);
@@ -119,9 +121,29 @@ static void coherent(void)
     assert(memcmp(buffers[1], expected, sizeof expected) == 0);
 }
 
+static void wrapped_fill(void)
+{
+    _Alignas(64) static uint8_t output[160*160*4+256], reference[160*160*4+256];
+    const unsigned offsets[] = {0, 4, 16, 48, 52};
+    for (int bpp=2;bpp<=4;bpp+=2) for (int padding=0;padding<=16;padding+=4)
+    for (unsigned i=0;i<5;++i) for (int failure=0;failure<2;++failure) {
+        nj_surface s={.pixels=output+64+offsets[i],.width=128,.height=160,.stride=(128+padding)*bpp,
+            .format=bpp==2?NJ_PIXFMT_RGB565:NJ_PIXFMT_ARGB8888,.bpp=bpp};
+        uint32_t color=0x703456c8;
+        memset(output,0xa5,sizeof output);memset(reference,0xa5,sizeof reference);
+        fail_fill_at = failure ? fill_calls+2 : 0;
+        assert(korvo_ppa_fill(&s,0,0,128,160,color));
+        fail_fill_at = 0;
+        for(int y=0;y<160;++y) for(int x=0;x<128;++x)
+            memcpy(reference+64+offsets[i]+y*s.stride+x*bpp,&color,bpp);
+        assert(!memcmp(output,reference,sizeof output));
+    }
+}
+
 int main(void)
 {
     assert(korvo_display_init(NULL) == ESP_OK);
+    wrapped_fill();
     korvo_fill(0, 0, LCD_W, LCD_H, 0x1234); korvo_flush(); coherent();
     nj_surface surface = {.pixels = korvo_lcd(), .width = LCD_W, .height = LCD_H,
         .stride = LCD_W*2, .format = NJ_PIXFMT_RGB565, .bpp = 2};

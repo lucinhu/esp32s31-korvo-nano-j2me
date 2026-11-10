@@ -1,0 +1,72 @@
+{
+  "jbenchmark3d.jar": {
+    "end": "I (298039) korvo-j2me: RUN_END rc=0 presents=3011 input=31 psram_before=15215968 psram_after=15215968 delta=0",
+    "audio": [
+      "I (298039) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+      "I (298045) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+    ],
+    "stop": [
+      "=3010 input=30 PSRAM=3124 KiB",
+      "STOP_REQUESTED",
+      "run ended: the user asked the app to quit (exit code 0)",
+      "where: thread 1 running depth=0 (current)",
+      "stats: frames=3011 paints=2686 gfx=132097 tris=123687 m3g=7896 time=161.085s fps=18.7 bytecodes=11125547 (0.07 M/s) natives=761038 heap=2525760/635056 bytes cpcache=1034239/306 findcache=3345981/174651",
+      "teardown: calling destroyApp()",
+      "teardown: destroyApp() returned",
+      "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+      "JIT_DETAIL evictions=0 method_map_evictions=0 recompiled=0 unsupported=0 short=0 faults=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+      "released 1488 host blocks at teardown",
+      "PERF elapsed_us=161137155 presents=3011 present_us=10297640 present_max_us=35286 poll_us=3288963 poll_calls=3043 sleep_us=0 native_crc=6e91b045 lcd_crc=6c385683 updated=33 unchanged=2978 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=3",
+      "PARALLEL enabled=1 worker_core=1 jobs=10707 worker_us=26684276 wait_us=9300532 stack_free=7004",
+      "SIMD enabled=1 core=1 fills=0 blocks128=0",
+      "PPA_FILL enabled=1 available=1 fills=8800 pixels=205847626 ops=8804",
+      "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+      "JIT_POOL memory=mapped reserved=0 live=0 map_failures=0 commit_us=0 code_hash=811c9dc5 released=1",
+      "BENCH_CLEAN ok=1",
+      "I (298039) korvo-j2me: RUN_END rc=0 presents=3011 input=31 psram_before=15215968 psram_after=15215968 delta=0"
+    ],
+    "observed_scores": {
+      "hq": 141,
+      "lq": 207,
+      "triangles_per_second": 17564,
+      "ktexels_per_second": 3284
+    }
+  },
+  "jbenchmarkhd.jar": {
+    "end": "I (489255) korvo-j2me: RUN_END rc=0 presents=8529 input=29 psram_before=15215968 psram_after=15215968 delta=0",
+    "audio": [
+      "I (489255) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+      "I (489261) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+    ],
+    "stop": [
+      "orvo-j2me: RUN presents=8528 input=28 PSRAM=2763 KiB",
+      "STOP_REQUESTED",
+      "run ended: the user asked the app to quit (exit code 0)",
+      "where: thread 1 running depth=0 (current)",
+      "stats: frames=8529 paints=7233 gfx=91 tris=213470 m3g=590 time=190.518s fps=44.8 bytecodes=18636162 (0.10 M/s) natives=1342973 heap=1312784/319680 bytes cpcache=226095/591 findcache=5573525/102614",
+      "teardown: calling destroyApp()",
+      "teardown: destroyApp() returned",
+      "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+      "JIT_DETAIL evictions=0 method_map_evictions=0 recompiled=0 unsupported=0 short=0 faults=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+      "released 1961 host blocks at teardown",
+      "PERF elapsed_us=190571080 presents=8529 present_us=27259444 present_max_us=31858 poll_us=373473 poll_calls=8559 sleep_us=0 native_crc=0cc1cc36 lcd_crc=afc8e01b updated=30 unchanged=8499 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=9",
+      "PARALLEL enabled=1 worker_core=1 jobs=1 worker_us=1492 wait_us=3 stack_free=7004",
+      "SIMD enabled=1 core=1 fills=0 blocks128=0",
+      "PPA_FILL enabled=1 available=1 fills=21268 pixels=498806000 ops=26582",
+      "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+      "JIT_POOL memory=mapped reserved=0 live=0 map_failures=0 commit_us=0 code_hash=811c9dc5 released=1",
+      "BENCH_CLEAN ok=1",
+      "I (489255) korvo-j2me: RUN_END rc=0 presents=8529 input=29 psram_before=15215968 psram_after=15215968 delta=0"
+    ],
+    "observed_scores": {
+      "smooth_triangles_per_second": 23149,
+      "textured_triangles_per_second": 21937,
+      "bilinear_percent": 90,
+      "perspective_percent": 99,
+      "z_buffer_bits": 7,
+      "trilinear": "not supported",
+      "fill_rate": "failed",
+      "gaming": "failed"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "end": "I (897640) korvo-j2me: RUN_END rc=0 presents=8554 input=71 psram_before=15215968 psram_after=15215968 delta=0",
+  "perf": "PERF elapsed_us=201653684 presents=8554 present_us=27820055 present_max_us=31387 poll_us=252309 poll_calls=8626 sleep_us=0 native_crc=dbc2ce5e lcd_crc=54248a3b updated=51 unchanged=8503 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=9",
+  "observed_scores": {
+    "smooth_triangles_per_second": 23149,
+    "textured_triangles_per_second": 21935,
+    "bilinear_percent": 91,
+    "perspective_percent": 99,
+    "z_buffer_bits": 7,
+    "trilinear": "not supported",
+    "fill_rate": "failed",
+    "gaming": "failed"
+  },
+  "exceptions": [
+    "exception: java.lang.Exception: Mipmaps support required.",
+    "exception: java.lang.Exception: At least 2 texture units required.",
+    "exception: java.lang.NullPointerException"
+  ],
+  "captured_down_presses": 35,
+  "captures": "hd-results/jbenchmarkhd-result*.png",
+  "all_feature_rows_captured": false
+}

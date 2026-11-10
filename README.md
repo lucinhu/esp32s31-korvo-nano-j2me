@@ -6,7 +6,7 @@ ESP32-S31（RISC-V）上的 J2ME 模拟器。板级配置来自 `esp32s31-korvo-
 
 未插 SD 卡时，启动日志会出现 SDMMC 超时，随后显示 `Flash FAT storage: /flash (ESP_OK)` 和 `FLASH READY`，继续使用 Flash。
 
-`third_party/nano_j2me` 是 [lucinhu/nano_j2me](https://github.com/lucinhu/nano_j2me) 的 Git 子模块。当前引用核心 `main` 的 `6a13581`（0.5.6，2026-11-10）。最初从 `f835b44` 更新到 `e910b30`，保留并提交本地 `drawRGB` 借用像素、忽略源透明度及源目标重叠保护补丁（`00318b4`）；随后同步远程 0.5.6，并补齐 JBenchmark 所需的 Item 布局、Gauge 和 M3G 兼容修复。所有核心修改均已合入 `main`，临时分支已删除。板级适配仍放在主工程，已补齐新版 PIM、Samsung、UDP 和 x86-64 JIT 源码清单。版本对比、本地补丁、构建与实机验证记录见 [本次更新记录](docs/updates/2026-11-10/result.txt)，跑分见 [JBenchmark 实机记录](docs/JBENCHMARK.md)，双核、SIMD 和二维 DMA 优化见 [性能更新](docs/DUALCORE.md)。
+`third_party/nano_j2me` 是 [lucinhu/nano_j2me](https://github.com/lucinhu/nano_j2me) 的 Git 子模块。当前引用核心 `main` 的 `8689b5b`（0.5.6，2026-11-10）。最初从 `f835b44` 更新到 `e910b30`，保留并提交本地 `drawRGB` 借用像素、忽略源透明度及源目标重叠保护补丁（`00318b4`）；随后同步远程 0.5.6，并补齐 JBenchmark 所需的 Item 布局、Gauge 和 M3G 兼容修复。所有核心修改均已合入 `main`，临时分支已删除。板级适配仍放在主工程，已补齐新版 PIM、Samsung、UDP 和 x86-64 JIT 源码清单。版本对比、本地补丁、构建与实机验证记录见 [本次更新记录](docs/updates/2026-11-10/result.txt)，跑分见 [JBenchmark 实机记录](docs/JBENCHMARK.md)，双核、SIMD 和二维 DMA 优化见 [性能更新](docs/DUALCORE.md)。最新的 [继续优化记录](docs/REFINEMENT.md) 包含 Form 长列表滚动、控件硬件填充和 PPA 边缘填充优化；同一矩形填充测试较上一版耗时减少约 30%。
 
 ## 获取与编译
 
@@ -78,6 +78,8 @@ SD 卡使用 FAT 文件系统，扫描下列目录的 `.jar` 文件（不递归�
 右上角 **FPS OFF / FPS ON** 在列表和游戏中均可点击。首次启动默认关闭，开启后在游戏左上角每半秒显示实际画面更新次数/秒；重复提交但未改变画面的帧不计入。因此菜单静止时可以为 0，读数不等于 LCD 刷新率或 VM 调度帧率。关闭立即恢复被遮住的画面；选择会保存到 NVS，重启后恢复。
 
 分辨率、音量、FPS、缩放模式、JIT 执行模式及代码内存选项会自动保存到 NVS，重启恢复；未改变的设置不重复写入。串口 `settings` 查看当前值，菜单下 `reboot` 可验证恢复。首次启动为 240×320、音量 70、FPS 关闭、最大尺寸缩放、JIT 关闭及 mapped 代码内存。
+
+游戏的 Form 菜单和结果页支持焦点跟随滚动；超过一屏的单项文字可用上下键逐段查看，触摸选择使用滚动后的坐标。长文本按实际宽度换行，多行标签和图片参与高度计算，内容不会覆盖标题与软键栏。进度条不会再吞掉上下键。可用 `python3 tools/build_parallel_fixture.py --kind form` 生成长表单演示 JAR。
 
 默认设备身份为核心自带的 `nokia6230` 档案。PCM/WAV、Espressif 组件解码的音频，以及官方 MIDI 库的合成输出，经重采样转换为 48 kHz 立体声，再送入 ES8389；`playTone` 使用板级音调输出。网络、蓝牙、相机及传感器后端没有在本适配中实现。游戏兼容性取决于上游 VM 和类库，支持的 API 不等于每款游戏都可正常游玩。
 
