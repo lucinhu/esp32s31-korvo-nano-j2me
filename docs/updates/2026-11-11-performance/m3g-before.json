@@ -1,0 +1,94 @@
+[
+  {
+    "run": 0,
+    "mode": "on",
+    "phases": [
+      {
+        "phase": "flat",
+        "checksum": "90d8f7d5",
+        "elapsed_ms": 3247
+      },
+      {
+        "phase": "gouraud",
+        "checksum": "7258cc7a",
+        "elapsed_ms": 4452
+      },
+      {
+        "phase": "nearest",
+        "checksum": "b5434e2f",
+        "elapsed_ms": 5036
+      },
+      {
+        "phase": "linear-alpha",
+        "checksum": "ea2871f1",
+        "elapsed_ms": 9794
+      }
+    ],
+    "perf": {
+      "elapsed_us": "24576702",
+      "presents": "74",
+      "present_us": "275876",
+      "present_max_us": "26788",
+      "poll_us": "1908",
+      "poll_calls": "74",
+      "sleep_us": "0",
+      "native_crc": "c4e65f9a",
+      "lcd_crc": "658aacbb",
+      "updated": "2",
+      "unchanged": "72",
+      "hot_peak": "0",
+      "hot_live": "0",
+      "scale_mismatch": "0",
+      "stack_internal": "0",
+      "stack_psram": "3"
+    },
+    "parallel": "PARALLEL enabled=1 worker_core=1 jobs=576 worker_us=20957398 wait_us=9773398 stack_free=7004",
+    "end": "I (7181736) korvo-j2me: RUN_END rc=0 presents=74 input=0 psram_before=15215968 psram_after=15215968 delta=0"
+  },
+  {
+    "run": 1,
+    "mode": "on",
+    "phases": [
+      {
+        "phase": "flat",
+        "checksum": "90d8f7d5",
+        "elapsed_ms": 3247
+      },
+      {
+        "phase": "gouraud",
+        "checksum": "7258cc7a",
+        "elapsed_ms": 4442
+      },
+      {
+        "phase": "nearest",
+        "checksum": "b5434e2f",
+        "elapsed_ms": 5055
+      },
+      {
+        "phase": "linear-alpha",
+        "checksum": "ea2871f1",
+        "elapsed_ms": 9791
+      }
+    ],
+    "perf": {
+      "elapsed_us": "24576659",
+      "presents": "74",
+      "present_us": "269169",
+      "present_max_us": "26303",
+      "poll_us": "1917",
+      "poll_calls": "74",
+      "sleep_us": "0",
+      "native_crc": "c4e65f9a",
+      "lcd_crc": "658aacbb",
+      "updated": "2",
+      "unchanged": "72",
+      "hot_peak": "0",
+      "hot_live": "0",
+      "scale_mismatch": "0",
+      "stack_internal": "0",
+      "stack_psram": "3"
+    },
+    "parallel": "PARALLEL enabled=1 worker_core=1 jobs=576 worker_us=20962765 wait_us=9786341 stack_free=7004",
+    "end": "I (7206980) korvo-j2me: RUN_END rc=0 presents=74 input=0 psram_before=15215968 psram_after=15215968 delta=0"
+  }
+]

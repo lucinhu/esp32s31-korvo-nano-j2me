@@ -1,0 +1,127 @@
+{
+  "pipeline": {
+    "before": "pipeline-sync32.json",
+    "after": "pipeline-after.json",
+    "phases": [
+      {
+        "phase": 0,
+        "before_ms": 1496,
+        "after_ms": 1330,
+        "time_reduced_percent": 11.096256684491978,
+        "checksum": "1234abcd"
+      },
+      {
+        "phase": 2000,
+        "before_ms": 4554.5,
+        "after_ms": 2448,
+        "time_reduced_percent": 46.250960588429024,
+        "checksum": "5d5c986"
+      },
+      {
+        "phase": 6000,
+        "before_ms": 6833,
+        "after_ms": 4895,
+        "time_reduced_percent": 28.362359139470218,
+        "checksum": "cfb00fa2"
+      },
+      {
+        "phase": 12000,
+        "before_ms": 10273,
+        "after_ms": 9082,
+        "time_reduced_percent": 11.593497517765016,
+        "checksum": "23546799"
+      }
+    ],
+    "before_sum_ms": 23156.5,
+    "after_sum_ms": 17755,
+    "time_reduced_percent": 23.32606395612463,
+    "native_crc": "af47ddc1",
+    "lcd_crc": "6c1c0bf2",
+    "all_four_runs_identical_pixels": true,
+    "paints": 192,
+    "before_submissions": 337,
+    "after_submissions": 192
+  },
+  "m3g": {
+    "before": "m3g-before.json",
+    "after": "m3g-after.json",
+    "phases": [
+      {
+        "phase": "flat",
+        "before_ms": 3247,
+        "after_ms": 3254.5,
+        "time_reduced_percent": -0.23098244533414913,
+        "checksum": "90d8f7d5"
+      },
+      {
+        "phase": "gouraud",
+        "before_ms": 4447,
+        "after_ms": 4450,
+        "time_reduced_percent": -0.06746120980436476,
+        "checksum": "7258cc7a"
+      },
+      {
+        "phase": "nearest",
+        "before_ms": 5045.5,
+        "after_ms": 5066.5,
+        "time_reduced_percent": -0.4162124665543443,
+        "checksum": "b5434e2f"
+      },
+      {
+        "phase": "linear-alpha",
+        "before_ms": 9792.5,
+        "after_ms": 9797.5,
+        "time_reduced_percent": -0.05105948429919849,
+        "checksum": "ea2871f1"
+      }
+    ],
+    "before_sum_ms": 22532.0,
+    "after_sum_ms": 22568.5,
+    "time_reduced_percent": -0.16199183383631688,
+    "native_crc": "c4e65f9a",
+    "lcd_crc": "658aacbb",
+    "all_four_runs_identical_pixels": true
+  },
+  "kernels": {
+    "checksums": {
+      "locals": "2f66c58",
+      "constants": "839a908",
+      "fields": "4c1935ff",
+      "arrays": "452ca3",
+      "branches": "a632cf73"
+    },
+    "all_four_runs_identical_pixels": true,
+    "before_ms": [
+      [
+        146,
+        111,
+        224,
+        205,
+        206
+      ],
+      [
+        144,
+        111,
+        225,
+        207,
+        207
+      ]
+    ],
+    "after_ms": [
+      [
+        146,
+        113,
+        224,
+        205,
+        205
+      ],
+      [
+        146,
+        111,
+        225,
+        204,
+        205
+      ]
+    ]
+  }
+}

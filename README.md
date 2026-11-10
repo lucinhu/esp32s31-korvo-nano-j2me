@@ -6,7 +6,7 @@ ESP32-S31（RISC-V）上的 J2ME 模拟器。板级配置来自 `esp32s31-korvo-
 
 未插 SD 卡时，启动日志会出现 SDMMC 超时，随后显示 `Flash FAT storage: /flash (ESP_OK)` 和 `FLASH READY`，继续使用 Flash。
 
-`third_party/nano_j2me` 是 [lucinhu/nano_j2me](https://github.com/lucinhu/nano_j2me) 的 Git 子模块。当前引用核心 `main` 的 `8689b5b`（0.5.6，2026-11-10）。最初从 `f835b44` 更新到 `e910b30`，保留并提交本地 `drawRGB` 借用像素、忽略源透明度及源目标重叠保护补丁（`00318b4`）；随后同步远程 0.5.6，并补齐 JBenchmark 所需的 Item 布局、Gauge 和 M3G 兼容修复。所有核心修改均已合入 `main`，临时分支已删除。板级适配仍放在主工程，已补齐新版 PIM、Samsung、UDP 和 x86-64 JIT 源码清单。版本对比、本地补丁、构建与实机验证记录见 [本次更新记录](docs/updates/2026-11-10/result.txt)，跑分见 [JBenchmark 实机记录](docs/JBENCHMARK.md)，双核、SIMD 和二维 DMA 优化见 [性能更新](docs/DUALCORE.md)。最新的 [继续优化记录](docs/REFINEMENT.md) 包含 Form 长列表滚动、控件硬件填充和 PPA 边缘填充优化；同一矩形填充测试较上一版耗时减少约 30%。
+`third_party/nano_j2me` 是 [lucinhu/nano_j2me](https://github.com/lucinhu/nano_j2me) 的 Git 子模块。当前引用核心 `main` 的 `fca2cd8`（0.5.6，2026-11-11）。最初从 `f835b44` 更新到 `e910b30`，保留并提交本地 `drawRGB` 借用像素、忽略源透明度及源目标重叠保护补丁（`00318b4`）；随后同步远程 0.5.6，并补齐 JBenchmark 所需的 Item 布局、Gauge 和 M3G 兼容修复。所有核心修改均已合入 `main`，临时分支已删除。板级适配仍放在主工程，已补齐新版 PIM、Samsung、UDP 和 x86-64 JIT 源码清单。版本对比、本地补丁、构建与实机验证记录见 [本次更新记录](docs/updates/2026-11-10/result.txt)，跑分见 [JBenchmark 实机记录](docs/JBENCHMARK.md)，双核、SIMD 和二维 DMA 优化见 [性能更新](docs/DUALCORE.md)。最新的 [继续优化记录](docs/REFINEMENT.md) 包含 Form 长列表滚动、控件硬件填充和 PPA 边缘填充优化；同一矩形填充测试较上一版耗时减少约 30%。2026-11-11 同步 Display 回调和蒙皮加载修复，并进一步优化 LCD 等待与重复帧提交，见 [显示优化记录](docs/FRAME_PIPELINE.md)。
 
 ## 获取与编译
 
@@ -34,7 +34,7 @@ bash tools/idf.sh -p /dev/ttyUSB1 -b 115200 monitor
 
 烧录速率为 **2000000**，固件控制台为 **115200**。其他机器通过 `KORVO_IDF_PATH=/path/to/esp-idf` 指定工具链，或自行激活 IDF 后直接运行 `idf.py`。
 
-工程包含 `sdkconfig`、默认配置和 Board Manager 生成文件。LCD/SD/音频 GPIO 与参考工程一致。16 MiB Flash 的应用分区为 8 MiB；`j2me` FAT 分区从 `0x810000` 开始，大小为 `0x7f0000`（8128 KiB），使用磨损均衡。Java 堆默认分配 10 MiB，帧缓冲和大块数据使用 PSRAM；代码和静态资源保留在 Flash，避免整份固件复制占用游戏内存（解释器/JIT 热路径仍位于内部 RAM）；常用小块 VM 数据优先使用 96 KiB 内部 RAM，栈尺寸分配可使用额外 64 KiB 预算，并为驱动保留至少 96 KiB 可用空间。CPU 320 MHz，PSRAM 250 MHz，沿用参考配置。
+工程包含 `sdkconfig`、默认配置和 Board Manager 生成文件。LCD/SD/音频 GPIO 与参考工程一致。16 MiB Flash 的应用分区为 8 MiB；`j2me` FAT 分区从 `0x810000` 开始，大小为 `0x7f0000`（8128 KiB），使用磨损均衡。Java 堆默认分配 10 MiB，帧缓冲和大块数据使用 PSRAM；代码和静态资源保留在 Flash，避免整份固件复制占用游戏内存（解释器/JIT 热路径仍位于内部 RAM）；VM 小块宿主数据使用受限私有内存池：可用内部 RAM 至少 256 KiB 且连续空间足够时创建 32 KiB 池，否则使用 PSRAM。本轮双核配置中该池未启用；降低门槛的实测没有得到加速，保留原策略。CPU 320 MHz，PSRAM 250 MHz，沿用参考配置。
 
 `j2me-flash` **重写整个游戏分区及其中存档**，仅用于首次写入或主动更换测试镜像。后续更新固件使用 `flash` 或 `app-flash`，不会重写游戏分区。运行时挂载失败不会自动格式化。
 

@@ -1,0 +1,1 @@
+SETTINGS res=240x320 volume=40 fps=on scale=fit jit=off memory=mapped parallel=on simd=on ppafill=on

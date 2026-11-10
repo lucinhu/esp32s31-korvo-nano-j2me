@@ -49,8 +49,9 @@ def main():
                 if suite in args.suites and name not in packages:
                     raise RuntimeError(f"Missing {name}; install it or pass --indices")
                 args.indices.append(packages.get(name, -1))
+        # Leave headroom for long native 3D calls before capturing Results.
         for suite, index, seconds in zip(("1", "2", "3d", "hd"), args.indices,
-                                         (60, 75, 145, 170)):
+                                         (60, 75, 205, 170)):
             if suite not in args.suites:
                 continue
             print(f"Starting JBenchmark {suite}, index {index}", flush=True)

@@ -1,0 +1,10 @@
+{
+  "bytes": 7945504,
+  "sha256": "4af8d5256fa8512580e1a1e54738f30d60a3f2d7c1b8075f16af4ede04dce957",
+  "core": "fca2cd857a91d38e6cd26538871a92e00888ecb1",
+  "display_pipeline": true,
+  "duplicate_shadow_fix": true,
+  "experimental_iram_spans": false,
+  "experimental_pool32": false,
+  "application_only": true
+}

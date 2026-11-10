@@ -171,11 +171,13 @@ static void present_rect(korvo_port_state *s, int x, int y, int w, int h)
             if (s->probes_valid && probes[at]!=s->probes[at]) changed=true;
         }
     }
-    /* A changed sample PROVES that a full frame needs updating, so avoid
-     * copying a shadow on continuously changing frames. Samples never prove
-     * equality: skipping always requires a complete byte comparison. */
+    /* A changed sample proves a full update is needed, avoiding the row
+     * comparison. Keep the shadow current: invalidating it here would force
+     * a second LCD submission when the same frame is presented again. Samples
+     * never prove equality; skipping requires a complete byte comparison. */
     if (full && changed) {
-        s->previous_valid=false;
+        memcpy(s->previous_pixels,s->pixels,s->width*s->height*2);
+        s->previous_valid=true;
         first=y0; last=y1;
     } else if (!s->previous_valid) {
         first=y0; last=y1;

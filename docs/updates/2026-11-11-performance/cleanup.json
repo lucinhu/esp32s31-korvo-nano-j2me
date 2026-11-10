@@ -1,0 +1,49 @@
+{
+  "removed": [
+    {
+      "path": "build/perf-20261111",
+      "bytes": 290993967,
+      "files": 148
+    },
+    {
+      "path": "build/log",
+      "bytes": 141241,
+      "files": 10
+    },
+    {
+      "path": "third_party/nano_j2me/gfx_demo.ppm",
+      "bytes": 84015,
+      "files": 1
+    },
+    {
+      "path": "tools/__pycache__",
+      "bytes": 17404,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-11-performance/pipeline-build.log",
+      "bytes": 45179,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-11-performance/pipeline-iram-build.log",
+      "bytes": 45120,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-11-performance/pipeline-final-build.log",
+      "bytes": 4303,
+      "files": 1
+    }
+  ],
+  "bytes": 291331229,
+  "files": 163,
+  "retained": [
+    "current flashed ESP-IDF .bin/.elf and build cache",
+    "build/latest-3d/jars: active CMake inputs",
+    "build/dualcore: reproducible fixture JARs",
+    "managed components and fonts",
+    "existing build/recovery/j2me-before.bin FAT recovery image",
+    "measurements, selected screenshots and final local raw logs"
+  ]
+}

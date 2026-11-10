@@ -23,6 +23,10 @@ harness = r'''
 #define LCD_H 480
 static uint16_t actual[LCD_W*LCD_H], expected[LCD_W*LCD_H];
 static uint16_t *korvo_lcd(void) { return actual; }
+/* Exercise the production CPU fallback; DMA ownership/copies have their own
+ * delayed-completion coverage in tests/display/display_buffer_test.c. */
+#define korvo_display_blit(...) false
+#define korvo_display_scale2(...) false
 static void korvo_flush_rect(int x, int y, int w, int h) {
     assert(x>=0 && y>=0 && w>=0 && h>=0 && x+w<=LCD_W && y+h<=LCD_H);
 }
@@ -88,6 +92,11 @@ int main(void) {
                     expected[(s.view_y+dy)*LCD_W+s.view_x+dx]=s.pixels[sy*s.width+sx];
             }
             present_rect(&s,x,y,w,h);
+            if (x0==0 && y0==0 && x1==s.width && y1==s.height) {
+                unsigned updates=s.updated_frames;
+                present_rect(&s,0,0,s.width,s.height);
+                assert(s.updated_frames==updates); /* Same committed pixels. */
+            }
             if (memcmp(actual,expected,sizeof(actual))) {
                 fprintf(stderr,"scaler mismatch %dx%d frame=%d rect=%d,%d,%d,%d\n",s.width,s.height,frame,x,y,w,h);
                 return 1;

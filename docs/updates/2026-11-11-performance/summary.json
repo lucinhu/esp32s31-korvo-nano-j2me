@@ -1,0 +1,118 @@
+{
+  "date": "2026-11-11",
+  "baseline": {
+    "parent": "e3f60aa9f0b4bf498da5f9c7594af6049096c8f5",
+    "core": "8689b5b27c8c1ccace4c0d96dce9d07b403c832c"
+  },
+  "core": "fca2cd857a91d38e6cd26538871a92e00888ecb1",
+  "core_remote_commits": [
+    "1f1a6da",
+    "b184dba",
+    "fca2cd8"
+  ],
+  "firmware": {
+    "bytes": 7945504,
+    "sha256": "4af8d5256fa8512580e1a1e54738f30d60a3f2d7c1b8075f16af4ede04dce957",
+    "core": "fca2cd857a91d38e6cd26538871a92e00888ecb1",
+    "display_pipeline": true,
+    "duplicate_shadow_fix": true,
+    "experimental_iram_spans": false,
+    "experimental_pool32": false,
+    "application_only": true
+  },
+  "comparison": "comparison.json",
+  "primary_result": {
+    "painted_frames_per_run": 192,
+    "old_lcd_submissions": 337,
+    "final_lcd_submissions": 192,
+    "time_reduced_percent": [
+      11.096256684491978,
+      46.250960588429024,
+      28.362359139470218,
+      11.593497517765016
+    ],
+    "native_crc": "af47ddc1",
+    "lcd_crc": "6c1c0bf2",
+    "all_checksums_and_paint_counts_preserved": true
+  },
+  "host_tests": {
+    "asan_ubsan_core": [
+      "test_m3g_parallel",
+      "test_save_form_scroll",
+      "test_lcdui",
+      "test_form_scroll",
+      "test_display_serially",
+      "test_game",
+      "test_bluetooth_property",
+      "test_m3g_skin_refs",
+      "test_gfx"
+    ],
+    "asan_ubsan_adapter": [
+      "jit_code_pool",
+      "audio_resampler",
+      "display_buffers",
+      "display_buffers_sync"
+    ],
+    "scaler_oracle_scenarios": 3600,
+    "old_duplicate_submission_assertion_failed": true,
+    "old_failure": "Assertion s.updated_frames==updates failed",
+    "all_passed": true,
+    "full_upstream_suite_claimed": false,
+    "adapter_details": "Three original adapter tests passed, then both display modes passed after the final ownership cases were added."
+  },
+  "device": "device-final.json",
+  "experiments_not_retained": {
+    "pool32": {
+      "firmware": "pool32-firmware.json",
+      "kernels": "kernels-pool32.json",
+      "m3g": "m3g-pool32.json",
+      "reason": "No repeatable speed benefit."
+    },
+    "m3g_iram": {
+      "firmware": "pipeline-iram-firmware.json",
+      "results": "m3g-iram.json",
+      "reason": "Mixed results, including slower nearest textures and 14454 extra internal bytes."
+    }
+  },
+  "fixture": {
+    "source": "tests/midlet/FramePipelineBench.java",
+    "bytes": 2217,
+    "sha256": "ab93760e1893f1a0c3fa3c5c520df278f4c6da53a620ea42a89da00c88109f1e"
+  },
+  "jbenchmark_final": {
+    "1": {
+      "score": 1794,
+      "text": 428,
+      "2d_shapes": 407,
+      "3d_shapes": 280,
+      "fill_rate": 132,
+      "animation": 547
+    },
+    "3d": {
+      "hq": 136,
+      "lq": 197,
+      "triangles_per_second": 15155,
+      "ktexels_per_second": 3331
+    }
+  },
+  "jbenchmark_comparison": "jbenchmark-results.json",
+  "cleanup": "cleanup.json",
+  "limitations": [
+    "Fixed-work frame-pipeline results do not predict every game FPS.",
+    "Pure M3G and pure Java kernel performance remain approximately unchanged.",
+    "HD was not rerun; its previously documented unsupported capabilities remain.",
+    "Game samples cover startup, scripted keys and teardown, not complete playability."
+  ],
+  "jbenchmark_same_core_control": {
+    "1": 1368,
+    "3d_hq": 137,
+    "3d_lq": 197,
+    "3d_triangles_per_second": 15159,
+    "3d_ktexels_per_second": 3301
+  },
+  "jbenchmark1_percent": 31.14035087719298,
+  "final_restore_verified": true,
+  "cleanup_bytes": 291331229,
+  "cleanup_files": 163,
+  "device_settings": "SETTINGS res=240x320 volume=40 fps=on scale=fit jit=off memory=mapped parallel=on simd=on ppafill=on"
+}

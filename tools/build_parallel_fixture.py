@@ -11,11 +11,11 @@ import zipfile
 root = Path(__file__).resolve().parent.parent
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--output", type=Path)
-parser.add_argument("--kind", choices=["m3g", "fill", "fill565", "form"], default="m3g")
+parser.add_argument("--kind", choices=["m3g", "fill", "fill565", "form", "pipeline"], default="m3g")
 args = parser.parse_args()
-entry = {"m3g": "ParallelRenderBench", "fill": "FillBench", "fill565": "CanvasFillBench", "form": "FormScrollDemo"}[args.kind]
+entry = {"m3g": "ParallelRenderBench", "fill": "FillBench", "fill565": "CanvasFillBench", "form": "FormScrollDemo", "pipeline": "FramePipelineBench"}[args.kind]
 if args.output is None:
-    args.output = root / "build/dualcore" / {"m3g": "perf-parallel.jar", "fill": "perf-simd.jar", "fill565": "perf-fill565.jar", "form": "ui-form-scroll.jar"}[args.kind]
+    args.output = root / "build/dualcore" / {"m3g": "perf-parallel.jar", "fill": "perf-simd.jar", "fill565": "perf-fill565.jar", "form": "ui-form-scroll.jar", "pipeline": "perf-pipeline.jar"}[args.kind]
 args.output.parent.mkdir(parents=True, exist_ok=True)
 with tempfile.TemporaryDirectory() as directory:
     temp = Path(directory)

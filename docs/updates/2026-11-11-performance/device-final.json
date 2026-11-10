@@ -1,0 +1,163 @@
+{
+  "display_test": "DISPLAY_TEST frames=90 mismatches=0",
+  "display_after_test": "DISPLAY buffers=2 rgb_dma=1 burst=64 submitted=94 completed=94 dma_copies=94 cpu_copies=0 timeouts=0 dma2d_copies=94 game_blits=0 ppa_scalings=0 sync_us=28402",
+  "parallel_test": "PARALLEL_TEST rounds=300 mismatches=0 caller_core=0 worker_core=1",
+  "simd_test": "SIMD_TEST rounds=128 mismatches=0 core=1 blocks128=110720",
+  "scaling": {
+    "240x320-fit": {
+      "end": "I (10995) korvo-j2me: RUN_END rc=0 presents=60 input=0 psram_before=15215968 psram_after=15215968 delta=0",
+      "perf": "PERF elapsed_us=2246522 presents=60 present_us=382350 present_max_us=15839 poll_us=1863 poll_calls=60 sleep_us=0 native_crc=0ef9edc7 lcd_crc=a98f6c9a updated=27 unchanged=33 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=3",
+      "audio": [
+        "I (10995) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (11001) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+      ],
+      "exceptions": []
+    },
+    "240x320-pixel": {
+      "end": "I (13879) korvo-j2me: RUN_END rc=0 presents=60 input=0 psram_before=15215968 psram_after=15215968 delta=0",
+      "perf": "PERF elapsed_us=2105799 presents=60 present_us=240638 present_max_us=10406 poll_us=1787 poll_calls=60 sleep_us=0 native_crc=8890a2f4 lcd_crc=8890a2f4 updated=21 unchanged=39 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=3",
+      "audio": [
+        "I (13879) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (13885) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+      ],
+      "exceptions": []
+    },
+    "176x208-fit": {
+      "end": "I (16486) korvo-j2me: RUN_END rc=0 presents=60 input=0 psram_before=15215968 psram_after=15215968 delta=0",
+      "perf": "PERF elapsed_us=1802211 presents=60 present_us=207058 present_max_us=16947 poll_us=11650 poll_calls=60 sleep_us=0 native_crc=361abd35 lcd_crc=d7a6a1e8 updated=16 unchanged=44 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=3",
+      "audio": [
+        "I (16486) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (16492) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+      ],
+      "exceptions": []
+    },
+    "176x208-pixel": {
+      "end": "I (19032) korvo-j2me: RUN_END rc=0 presents=60 input=0 psram_before=15215968 psram_after=15215968 delta=0",
+      "perf": "PERF elapsed_us=1793349 presents=60 present_us=196895 present_max_us=17440 poll_us=11629 poll_calls=60 sleep_us=0 native_crc=361abd35 lcd_crc=df8682aa updated=16 unchanged=44 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=3",
+      "audio": [
+        "I (19032) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (19038) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+      ],
+      "exceptions": []
+    },
+    "128x160-fit": {
+      "end": "I (21435) korvo-j2me: RUN_END rc=0 presents=60 input=0 psram_before=15215968 psram_after=15215968 delta=0",
+      "perf": "PERF elapsed_us=1559838 presents=60 present_us=122323 present_max_us=12321 poll_us=11166 poll_calls=60 sleep_us=0 native_crc=23933c44 lcd_crc=bcf29c30 updated=13 unchanged=47 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=3",
+      "audio": [
+        "I (21435) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (21441) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+      ],
+      "exceptions": []
+    },
+    "128x160-pixel": {
+      "end": "I (23758) korvo-j2me: RUN_END rc=0 presents=60 input=0 psram_before=15215968 psram_after=15215968 delta=0",
+      "perf": "PERF elapsed_us=1543580 presents=60 present_us=103470 present_max_us=10459 poll_us=11309 poll_calls=60 sleep_us=0 native_crc=23933c44 lcd_crc=2337bdec updated=13 unchanged=47 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=3",
+      "audio": [
+        "I (23758) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (23764) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+      ],
+      "exceptions": []
+    },
+    "320x240-fit": {
+      "end": "I (26794) korvo-j2me: RUN_END rc=0 presents=60 input=0 psram_before=15215968 psram_after=15215968 delta=0",
+      "perf": "PERF elapsed_us=2187206 presents=60 present_us=317336 present_max_us=14918 poll_us=1821 poll_calls=60 sleep_us=0 native_crc=5d1faf48 lcd_crc=b54c5bc2 updated=23 unchanged=37 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=3",
+      "audio": [
+        "I (26794) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (26800) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+      ],
+      "exceptions": []
+    },
+    "320x240-pixel": {
+      "end": "I (29621) korvo-j2me: RUN_END rc=0 presents=60 input=0 psram_before=15215968 psram_after=15215968 delta=0",
+      "perf": "PERF elapsed_us=2094412 presents=60 present_us=236154 present_max_us=10264 poll_us=1811 poll_calls=60 sleep_us=0 native_crc=5e0e5dd3 lcd_crc=5e0e5dd3 updated=21 unchanged=39 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=3",
+      "audio": [
+        "I (29621) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (29627) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+      ],
+      "exceptions": []
+    }
+  },
+  "games": {
+    "@test-moto.jar": {
+      "end": "I (36067) korvo-j2me: RUN_END rc=0 presents=300 input=8 psram_before=15215836 psram_after=15215836 delta=0",
+      "perf": "PERF elapsed_us=5373794 presents=300 present_us=998360 present_max_us=15760 poll_us=4456 poll_calls=308 sleep_us=0 native_crc=abab2648 lcd_crc=0630bf2c updated=14 unchanged=286 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=6",
+      "audio": [
+        "I (36067) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (36073) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+      ],
+      "exceptions": [
+        "thrown: javax/microedition/rms/InvalidRecordIDException at javax/microedition/rms/RecordStore.getRecord(I[BI)I pc=0: (no message)"
+      ]
+    },
+    "合金弹头4(完美汉化版)_4053.jar": {
+      "end": "I (47792) korvo-j2me: RUN_END rc=0 presents=301 input=8 psram_before=15215836 psram_after=15215836 delta=0",
+      "perf": "PERF elapsed_us=10892490 presents=301 present_us=1380847 present_max_us=15597 poll_us=9567 poll_calls=309 sleep_us=0 native_crc=fe1c4d9c lcd_crc=6ec29065 updated=66 unchanged=235 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=29",
+      "audio": [
+        "I (47792) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (47798) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+      ],
+      "exceptions": [
+        "thrown: javax/microedition/rms/RecordStoreNotFoundException at javax/microedition/rms/RecordStore.openRecordStore(Ljava/lang/String;Z)Ljavax/microedition/rms/RecordStore; pc=0: (no message)",
+        "thrown: javax/microedition/rms/RecordStoreNotFoundException at javax/microedition/rms/RecordStore.openRecordStore(Ljava/lang/String;Z)Ljavax/microedition/rms/RecordStore; pc=0: (no message)"
+      ]
+    },
+    "鲁宾逊漂流记汉化版_702.jar": {
+      "end": "I (50937) korvo-j2me: RUN_END rc=0 presents=300 input=8 psram_before=15215836 psram_after=15215836 delta=0",
+      "perf": "PERF elapsed_us=2524926 presents=300 present_us=1119870 present_max_us=15800 poll_us=25353 poll_calls=308 sleep_us=0 native_crc=a53429a3 lcd_crc=cf553cc7 updated=19 unchanged=281 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=19",
+      "audio": [
+        "I (50937) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (50943) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+      ],
+      "exceptions": [
+        "thrown: javax/microedition/rms/RecordStoreNotFoundException at javax/microedition/rms/RecordStore.openRecordStore(Ljava/lang/String;Z)Ljavax/microedition/rms/RecordStore; pc=0: (no message)",
+        "thrown: javax/microedition/rms/RecordStoreNotFoundException at javax/microedition/rms/RecordStore.openRecordStore(Ljava/lang/String;Z)Ljavax/microedition/rms/RecordStore; pc=0: (no message)"
+      ]
+    }
+  },
+  "smoke": "SMOKE_PASS: three stable demo cycles; FIRE, numeric 5, pointer",
+  "display": "DISPLAY buffers=2 rgb_dma=1 burst=64 submitted=559 completed=559 dma_copies=559 cpu_copies=0 timeouts=0 dma2d_copies=559 game_blits=42 ppa_scalings=0 sync_us=1015218",
+  "settings": "SETTINGS res=240x320 volume=40 fps=on scale=fit jit=off memory=mapped parallel=on simd=on ppafill=on",
+  "boot_qualification": "PPA_FILL_TEST available=1 mismatches=0",
+  "settings_after_reboot": "SETTINGS res=240x320 volume=40 fps=on scale=fit jit=off memory=mapped parallel=on simd=on ppafill=on",
+  "storage": "STORAGE root=/flash total=8220672 free=630784 reserve=262144",
+  "status": [
+    "STATUS running=0 res=240x320 presents=0 input=0 psram=15216500 internal=255743",
+    "I (2393) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+    "I (2395) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+  ],
+  "installed": [
+    "I (2433) korvo-j2me: GAMES count=30 (0 is built-in demo)",
+    "GAMES_BEGIN 30",
+    "0 BUILT-IN DEMO",
+    "1 /flash/j2me/仙剑奇侠传完美版_11857.jar  bytes=368680",
+    "2 /flash/j2me/帝国时代2汉化版_7864.jar  bytes=63761",
+    "3 /flash/j2me/远古帝国2汉化版_10357.jar  bytes=172168",
+    "4 /flash/j2me/帝国时代Ⅲ汉化版_10379.jar  bytes=436383",
+    "5 /flash/j2me/波斯王子之时之沙中文版_11315.jar  bytes=61575",
+    "6 /flash/j2me/俄罗斯方块中文版_2832.jar  bytes=124753",
+    "7 /flash/j2me/贪吃蛇经典版_4515.jar  bytes=127139",
+    "8 /flash/j2me/魂斗罗4中文版_2226.jar  bytes=543415",
+    "9 /flash/j2me/3D滚球_11586.jar  bytes=71064",
+    "10 /flash/j2me/jbenchmark1.jar  bytes=26236",
+    "11 /flash/j2me/jbenchmark2.jar  bytes=63996",
+    "12 /flash/j2me/jbenchmark3d.jar  bytes=82637",
+    "13 /flash/j2me/jbenchmarkhd.jar  bytes=351431",
+    "14 /flash/j2me/perf-parallel.jar  bytes=3457",
+    "15 /flash/j2me/3D版田园物语_6744.jar  bytes=992288",
+    "16 /flash/j2me/模拟人生3_7562.jar  bytes=572830",
+    "17 /flash/j2me/合金弹头4(完美汉化版)_4053.jar  bytes=817704",
+    "18 /flash/j2me/帝国时代3-亚洲王朝_6288.jar  bytes=609880",
+    "19 /flash/j2me/孢子生命起源_6515.jar  bytes=674654",
+    "20 /flash/j2me/仙剑奇侠传(2008)_12406.jar  bytes=711995",
+    "21 /flash/j2me/鲁宾逊漂流记汉化版_702.jar  bytes=376293",
+    "22 /flash/j2me/perf-simd.jar  bytes=2096",
+    "23 /flash/j2me/perf-fill565.jar  bytes=1782",
+    "24 /flash/j2me/ui-form-scroll.jar  bytes=1259",
+    "25 /flash/j2me/perf-pipeline.jar  bytes=2217",
+    "26 @test-dmc.jar 鬼泣3D中文版 [APP] bytes=0",
+    "27 @test-gof.jar 浴火银河 [APP] bytes=0",
+    "28 @test-moto.jar 3D摩托赛车 [APP] bytes=0",
+    "29 @test-kernels.jar JIT FIXED KERNELS [APP] bytes=0",
+    "GAMES_END"
+  ]
+}

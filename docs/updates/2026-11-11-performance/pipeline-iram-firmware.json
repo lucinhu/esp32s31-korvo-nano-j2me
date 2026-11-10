@@ -1,0 +1,10 @@
+{
+  "bytes": 7945584,
+  "sha256": "4888e7f679c9893db5157ed494e9b83153ab7882d21ec610064f8ac08ebea660",
+  "core": "fca2cd857a91d38e6cd26538871a92e00888ecb1",
+  "hot_pool": "original reserve policy; inactive",
+  "display_pipeline": true,
+  "duplicate_shadow_fix": true,
+  "experimental_iram_spans": true,
+  "internal_free": 241103
+}

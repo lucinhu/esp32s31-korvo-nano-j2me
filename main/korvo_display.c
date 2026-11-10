@@ -29,6 +29,8 @@ static unsigned direct_copies, scaled_copies;
 static unsigned ppa_scalings;
 static uint64_t sync_us;
 static bool exact_scale2;
+static bool pending_frame;
+static void finish_pending(void);
 
 static bool IRAM_ATTR copy_complete(async_color_convert_handle_t client,
                                     async_color_convert_event_data_t *event, void *context)
@@ -64,7 +66,11 @@ static bool copy_rectangle(uint16_t *destination, const uint16_t *source,
     return true;
 }
 
-uint16_t *korvo_lcd(void) { return draw; }
+uint16_t *korvo_lcd(void)
+{
+    finish_pending();
+    return draw;
+}
 
 static bool IRAM_ATTR frame_complete(esp_lcd_panel_handle_t lcd,
                                     const esp_lcd_rgb_panel_event_data_t *event, void *context)
@@ -75,15 +81,13 @@ static bool IRAM_ATTR frame_complete(esp_lcd_panel_handle_t lcd,
     return wake == pdTRUE;
 }
 
-static void present(void)
+/* A queued frame owns both scanout buffers until the release callback. Wait
+ * when a caller next needs the drawing buffer, so Java computation can run
+ * while the LCD switches frames. No borrowed VM surface survives present. */
+static void finish_pending(void)
 {
-    if (!dirty || batch) return;
+    if (!pending_frame) return;
     uint16_t *ready = draw;
-    (void)xSemaphoreTake(frame_done, 0);
-    /* Driver-owned buffers queue a GDMA link switch without copying into
-     * the live scanout buffer. The RGB driver writes back the CPU cache. */
-    ESP_ERROR_CHECK(esp_lcd_panel_draw_bitmap(panel, 0, 0, LCD_W, LCD_H, ready));
-    ++submitted;
     if (xSemaphoreTake(frame_done, pdMS_TO_TICKS(250)) != pdTRUE) {
         ++timeouts;
         /* Reusing a queued/scanning buffer would tear: fail instead. */
@@ -121,8 +125,22 @@ static void present(void)
         for (int row = y0; row < y1; ++row)
             memcpy(draw + row * LCD_W + x0, ready + row * LCD_W + x0, w * 2);
     }
-    dirty = false;
+    pending_frame = false;
     sync_us += esp_timer_get_time() - sync_start;
+}
+
+static void present(void)
+{
+    if (!dirty || batch) return;
+    configASSERT(!pending_frame);
+    (void)xSemaphoreTake(frame_done, 0);
+    ESP_ERROR_CHECK(esp_lcd_panel_draw_bitmap(panel, 0, 0, LCD_W, LCD_H, draw));
+    ++submitted;
+    pending_frame = true;
+    dirty = false;
+#if !KORVO_DISPLAY_PIPELINE
+    finish_pending();
+#endif
 }
 
 void korvo_display_begin(void) { ++batch; }
@@ -138,6 +156,7 @@ void korvo_flush_rect(int x, int y, int w, int h)
     int right = x + w > LCD_W ? LCD_W : x + w;
     int bottom = y + h > LCD_H ? LCD_H : y + h;
     if (w <= 0 || h <= 0 || left >= right || top >= bottom) return;
+    finish_pending();
     if (!dirty) { x0 = left; y0 = top; x1 = right; y1 = bottom; }
     else {
         if (left < x0) x0 = left;
@@ -154,7 +173,7 @@ void korvo_flush(void) { korvo_flush_rect(0, 0, LCD_W, LCD_H); }
 bool korvo_display_blit(const uint16_t *source, int width, int height,
                         int sx, int sy, int w, int h, int dx, int dy)
 {
-    bool copied = copy_rectangle(draw, source, width, height, sx, sy,
+    bool copied = copy_rectangle(korvo_lcd(), source, width, height, sx, sy,
                                   LCD_W, LCD_H, dx, dy, w, h);
     if (copied) ++scaled_copies;
     return copied;
@@ -181,7 +200,7 @@ static bool srm_rectangle(uint16_t *destination, int destination_width, int dest
 bool korvo_display_scale2(const uint16_t *source, int width, int height,
                           int sx, int sy, int w, int h, int dx, int dy)
 {
-    if (!exact_scale2 || !srm_rectangle(draw, LCD_W, LCD_H, source, width, height,
+    if (!exact_scale2 || !srm_rectangle(korvo_lcd(), LCD_W, LCD_H, source, width, height,
                                         sx, sy, w, h, dx, dy, 2)) return false;
     ++ppa_scalings;
     return true;
@@ -251,6 +270,7 @@ void korvo_display_accel_test(void)
 
 void korvo_display_stats(void)
 {
+    finish_pending();
     printf("DISPLAY buffers=2 rgb_dma=1 burst=64 submitted=%u completed=%u dma_copies=%u cpu_copies=%u timeouts=%u dma2d_copies=%u game_blits=%u ppa_scalings=%u sync_us=%llu\n",
            submitted, completed, dma_copies, cpu_copies, timeouts, direct_copies, scaled_copies,
            ppa_scalings, (unsigned long long)sync_us);
@@ -263,6 +283,7 @@ void korvo_display_test(unsigned count)
         int x = (n * 37) % (LCD_W - 64), y = (n * 19) % (LCD_H - 32);
         korvo_fill(x, y, 64, 32, (uint16_t)(n * 1237));
         korvo_flush_rect(x, y, 64, 32);
+        finish_pending();
         /* Check the whole frame: a partial PPA copy must preserve every prior
          * rectangle as well as untouched UI/background pixels. */
         mismatches += memcmp(frames[0], frames[1], LCD_W * LCD_H * 2) != 0;

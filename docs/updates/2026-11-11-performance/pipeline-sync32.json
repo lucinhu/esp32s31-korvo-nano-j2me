@@ -1,0 +1,114 @@
+[
+  {
+    "run": 0,
+    "phases": [
+      {
+        "work": 0,
+        "frames": 48,
+        "paints": 48,
+        "checksum": "1234abcd",
+        "elapsed_ms": 1508
+      },
+      {
+        "work": 2000,
+        "frames": 48,
+        "paints": 48,
+        "checksum": "5d5c986",
+        "elapsed_ms": 4555
+      },
+      {
+        "work": 6000,
+        "frames": 48,
+        "paints": 48,
+        "checksum": "cfb00fa2",
+        "elapsed_ms": 6833
+      },
+      {
+        "work": 12000,
+        "frames": 48,
+        "paints": 48,
+        "checksum": "23546799",
+        "elapsed_ms": 10273
+      }
+    ],
+    "perf": {
+      "elapsed_us": "23414490",
+      "presents": "721",
+      "present_us": "9411839",
+      "present_max_us": "33026",
+      "poll_us": "11654",
+      "poll_calls": "721",
+      "sleep_us": "0",
+      "native_crc": "af47ddc1",
+      "lcd_crc": "6c1c0bf2",
+      "updated": "337",
+      "unchanged": "384",
+      "hot_peak": "30064",
+      "hot_live": "0",
+      "scale_mismatch": "0",
+      "stack_internal": "0",
+      "stack_psram": "3"
+    },
+    "end": "I (495555) korvo-j2me: RUN_END rc=0 presents=721 input=0 psram_before=15215968 psram_after=15215968 delta=0",
+    "hot_pool": [
+      "HOT_POOL_INIT bytes=32768 reserve=196608 free=255567 largest=126976 available=1",
+      "HOT_POOL live=0 intact=1"
+    ]
+  },
+  {
+    "run": 1,
+    "phases": [
+      {
+        "work": 0,
+        "frames": 48,
+        "paints": 48,
+        "checksum": "1234abcd",
+        "elapsed_ms": 1484
+      },
+      {
+        "work": 2000,
+        "frames": 48,
+        "paints": 48,
+        "checksum": "5d5c986",
+        "elapsed_ms": 4554
+      },
+      {
+        "work": 6000,
+        "frames": 48,
+        "paints": 48,
+        "checksum": "cfb00fa2",
+        "elapsed_ms": 6833
+      },
+      {
+        "work": 12000,
+        "frames": 48,
+        "paints": 48,
+        "checksum": "23546799",
+        "elapsed_ms": 10273
+      }
+    ],
+    "perf": {
+      "elapsed_us": "23390768",
+      "presents": "721",
+      "present_us": "9388339",
+      "present_max_us": "32982",
+      "poll_us": "11515",
+      "poll_calls": "721",
+      "sleep_us": "0",
+      "native_crc": "af47ddc1",
+      "lcd_crc": "6c1c0bf2",
+      "updated": "337",
+      "unchanged": "384",
+      "hot_peak": "30064",
+      "hot_live": "0",
+      "scale_mismatch": "0",
+      "stack_internal": "0",
+      "stack_psram": "3"
+    },
+    "end": "I (519583) korvo-j2me: RUN_END rc=0 presents=721 input=0 psram_before=15215968 psram_after=15215968 delta=0",
+    "hot_pool": [
+      "HOT_POOL_INIT bytes=32768 reserve=196608 free=255567 largest=126976 available=1",
+      "HOT_POOL live=0 intact=1"
+    ]
+  }
+]

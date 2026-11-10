@@ -26,7 +26,7 @@ BaseType_t xSemaphoreGiveFromISR(SemaphoreHandle_t sem, BaseType_t *wake)
 BaseType_t xSemaphoreTake(SemaphoreHandle_t sem, unsigned ticks)
 {
     assert(sem == &semaphores[0] || sem == &semaphores[1]);
-    if (ticks && sem == &semaphores[1]) {
+    if (ticks && !*(int *)sem && sem == &semaphores[1]) {
         assert(copy_callback && !pending && copy_request.dst_buffer != scanout);
         for (unsigned row = 0; row < copy_request.copy_height; ++row)
             memcpy((uint16_t *)copy_request.dst_buffer + (copy_request.dst_y+row)*copy_request.dst_stride + copy_request.dst_x,
@@ -34,7 +34,7 @@ BaseType_t xSemaphoreTake(SemaphoreHandle_t sem, unsigned ticks)
                    copy_request.copy_width*2);
         copy_callback(NULL, NULL, copy_context); copy_callback = NULL;
         if (copy_request.src_buffer == scanout) ++dma_copies;
-    } else if (ticks) {
+    } else if (ticks && !*(int *)sem) {
         assert(pending && pending != scanout);
         /* The release event occurs only after hardware stops reading the old
          * front buffer. CPU/PPA writes before here would fail below. */
@@ -115,8 +115,8 @@ void korvo_fill(int x, int y, int w, int h, uint16_t color)
 
 static void coherent(void)
 {
-    assert(!pending && submissions == releases);
     assert(korvo_lcd() != scanout);
+    assert(!pending && submissions == releases);
     assert(memcmp(buffers[0], expected, sizeof expected) == 0);
     assert(memcmp(buffers[1], expected, sizeof expected) == 0);
 }
@@ -144,7 +144,16 @@ int main(void)
 {
     assert(korvo_display_init(NULL) == ESP_OK);
     wrapped_fill();
-    korvo_fill(0, 0, LCD_W, LCD_H, 0x1234); korvo_flush(); coherent();
+    korvo_fill(0, 0, LCD_W, LCD_H, 0x1234); korvo_flush();
+#if KORVO_DISPLAY_PIPELINE
+    assert(pending && submissions == releases+1);
+    /* Java/native-image work may continue here, before any LCD access. */
+    assert(scanout[0] == 0 && pending[0] == 0x1234);
+    /* Also handle a hardware release that arrives before the next acquire. */
+    scanout = pending; pending = NULL; ++releases;
+    callbacks.on_frame_buf_complete(NULL, NULL, callback_context);
+#endif
+    coherent();
     nj_surface surface = {.pixels = korvo_lcd(), .width = LCD_W, .height = LCD_H,
         .stride = LCD_W*2, .format = NJ_PIXFMT_RGB565, .bpp = 2};
     assert(korvo_ppa_fill(&surface, 7, 9, 79, 61, 0x1357));
@@ -159,7 +168,11 @@ int main(void)
     assert(korvo_display_blit(source, 64, 32, 3, 5, 17, 13, 11, 9));
     for (int y = 0; y < 13; ++y) for (int x = 0; x < 17; ++x)
         expected[(y+9)*LCD_W+x+11] = source[(y+5)*64+x+3];
-    korvo_flush_rect(11, 9, 17, 13); coherent();
+    korvo_flush_rect(11, 9, 17, 13);
+    assert(!KORVO_DISPLAY_PIPELINE || pending);
+    memset(source, 0x5a, sizeof source);
+    coherent();
+    for (unsigned i = 0; i < 64*32; ++i) source[i] = (uint16_t)(i*37);
     assert(korvo_display_scale2(source, 64, 32, 3, 5, 31, 17, 13, 11));
     for (int y = 0; y < 34; ++y) for (int x = 0; x < 62; ++x)
         expected[(y+11)*LCD_W+x+13] = source[(y/2+5)*64+x/2+3];
@@ -177,7 +190,9 @@ int main(void)
         korvo_display_end(); assert(submissions == before);
         fail_ppa = i % 17 == 0;
         fail_dma = i % 11 == 0 || fail_ppa;
-        korvo_display_end(); coherent();
+        korvo_display_end();
+        if (!KORVO_DISPLAY_PIPELINE || i%7) coherent();
+        else assert(pending); /* The next frame's first write must acquire. */
     }
     fail_ppa = fail_dma = false;
     korvo_display_test(90); coherent();

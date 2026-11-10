@@ -12,6 +12,7 @@ esp_err_t korvo_board_init(void);
 bool korvo_sd_ready(void);
 const char *korvo_storage_root(void);
 esp_err_t korvo_storage_info(uint64_t *total_bytes, uint64_t *free_bytes);
+/* Acquire the writable framebuffer; finishes any earlier queued LCD switch. */
 uint16_t *korvo_lcd(void);
 void korvo_flush(void);
 void korvo_display_begin(void);

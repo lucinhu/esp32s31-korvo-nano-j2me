@@ -1,0 +1,66 @@
+{
+  "optimized": {
+    "1": {
+      "score": 1794,
+      "text": 428,
+      "2d_shapes": 407,
+      "3d_shapes": 280,
+      "fill_rate": 132,
+      "animation": 547,
+      "end": "I (205172) korvo-j2me: RUN_END rc=0 presents=2441 input=15 psram_before=15215968 psram_after=15215968 delta=0",
+      "perf": "PERF elapsed_us=70876835 presents=2441 present_us=18790037 present_max_us=21506 poll_us=63608 poll_calls=2457 sleep_us=0 native_crc=f7d8d99d lcd_crc=1271ce72 updated=1516 unchanged=925 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=4",
+      "image": "jbenchmark/jbenchmark1-result.png",
+      "observation": "single final Results screen, manually inspected"
+    },
+    "3d": {
+      "hq": 136,
+      "lq": 197,
+      "triangles_per_second": 15155,
+      "ktexels_per_second": 3331,
+      "end": "I (361602) korvo-j2me: RUN_END rc=0 presents=2808 input=17 psram_before=15215968 psram_after=15215968 delta=0",
+      "perf": "PERF elapsed_us=155845852 presents=2808 present_us=9096518 present_max_us=15674 poll_us=36214 poll_calls=2826 sleep_us=0 native_crc=5c001ddd lcd_crc=29ad7129 updated=21 unchanged=2787 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=3",
+      "image": "jbenchmark/jbenchmark3d-result.png",
+      "observation": "single final Results screen, manually inspected"
+    }
+  },
+  "synchronous_control": {
+    "1": {
+      "score": 1368,
+      "text": 414,
+      "2d_shapes": 296,
+      "3d_shapes": 212,
+      "fill_rate": 106,
+      "animation": 340,
+      "end": "I (77251) korvo-j2me: RUN_END rc=0 presents=1998 input=15 psram_before=15215968 psram_after=15215968 delta=0",
+      "perf": "PERF elapsed_us=70146366 presents=1998 present_us=26464361 present_max_us=36055 poll_us=73241 poll_calls=2014 sleep_us=0 native_crc=f620c226 lcd_crc=11e39676 updated=1349 unchanged=649 hot_peak=30928 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=4",
+      "image": "jbenchmark-control/jbenchmark1-result.png",
+      "observation": "single final Results screen, manually inspected"
+    },
+    "3d": {
+      "hq": 137,
+      "lq": 197,
+      "triangles_per_second": 15159,
+      "ktexels_per_second": 3301,
+      "end": "I (292940) korvo-j2me: RUN_END rc=0 presents=5811 input=17 psram_before=15215968 psram_after=15215968 delta=0",
+      "perf": "PERF elapsed_us=215085880 presents=5811 present_us=18857256 present_max_us=32824 poll_us=108299 poll_calls=5829 sleep_us=0 native_crc=af12c149 lcd_crc=7e04b0b1 updated=23 unchanged=5788 hot_peak=29552 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=3",
+      "image": "jbenchmark-control/jbenchmark3d-result.png",
+      "observation": "single final Results screen, manually inspected"
+    }
+  },
+  "core": "fca2cd857a91d38e6cd26538871a92e00888ecb1",
+  "conditions": "240x320 MAX SIZE, FPS off, JIT off, fresh benchmark RMS, parallel/SIMD/PPA on",
+  "baseline_pool32": true,
+  "optimized_pool32": false,
+  "jbenchmark1_percent": 31.14035087719298,
+  "pre_capture_wait_seconds": {
+    "optimized": {
+      "1": 60,
+      "3d": 145
+    },
+    "synchronous_control": {
+      "1": 60,
+      "3d": 205
+    }
+  },
+  "interpretation": "JBenchmark 1 improves in this single same-core comparison; JBenchmark 3D is approximately unchanged. The baseline includes the otherwise rejected 32 KiB pool trial. Historical 8689b5b results are a different core cohort."
+}

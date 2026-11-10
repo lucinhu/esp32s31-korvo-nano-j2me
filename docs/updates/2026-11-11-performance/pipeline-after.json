@@ -1,0 +1,108 @@
+[
+  {
+    "run": 0,
+    "phases": [
+      {
+        "work": 0,
+        "frames": 48,
+        "paints": 48,
+        "checksum": "1234abcd",
+        "elapsed_ms": 1329
+      },
+      {
+        "work": 2000,
+        "frames": 48,
+        "paints": 48,
+        "checksum": "5d5c986",
+        "elapsed_ms": 2448
+      },
+      {
+        "work": 6000,
+        "frames": 48,
+        "paints": 48,
+        "checksum": "cfb00fa2",
+        "elapsed_ms": 4897
+      },
+      {
+        "work": 12000,
+        "frames": 48,
+        "paints": 48,
+        "checksum": "23546799",
+        "elapsed_ms": 9084
+      }
+    ],
+    "perf": {
+      "elapsed_us": "17994402",
+      "presents": "721",
+      "present_us": "4001175",
+      "present_max_us": "17905",
+      "poll_us": "10364",
+      "poll_calls": "721",
+      "sleep_us": "0",
+      "native_crc": "af47ddc1",
+      "lcd_crc": "6c1c0bf2",
+      "updated": "192",
+      "unchanged": "529",
+      "hot_peak": "0",
+      "hot_live": "0",
+      "scale_mismatch": "0",
+      "stack_internal": "0",
+      "stack_psram": "3"
+    },
+    "end": "I (26165) korvo-j2me: RUN_END rc=0 presents=721 input=0 psram_before=15215968 psram_after=15215968 delta=0",
+    "hot_pool": []
+  },
+  {
+    "run": 1,
+    "phases": [
+      {
+        "work": 0,
+        "frames": 48,
+        "paints": 48,
+        "checksum": "1234abcd",
+        "elapsed_ms": 1331
+      },
+      {
+        "work": 2000,
+        "frames": 48,
+        "paints": 48,
+        "checksum": "5d5c986",
+        "elapsed_ms": 2448
+      },
+      {
+        "work": 6000,
+        "frames": 48,
+        "paints": 48,
+        "checksum": "cfb00fa2",
+        "elapsed_ms": 4893
+      },
+      {
+        "work": 12000,
+        "frames": 48,
+        "paints": 48,
+        "checksum": "23546799",
+        "elapsed_ms": 9080
+      }
+    ],
+    "perf": {
+      "elapsed_us": "17988307",
+      "presents": "721",
+      "present_us": "4003230",
+      "present_max_us": "18772",
+      "poll_us": "10630",
+      "poll_calls": "721",
+      "sleep_us": "0",
+      "native_crc": "af47ddc1",
+      "lcd_crc": "6c1c0bf2",
+      "updated": "192",
+      "unchanged": "529",
+      "hot_peak": "0",
+      "hot_live": "0",
+      "scale_mismatch": "0",
+      "stack_internal": "0",
+      "stack_psram": "3"
+    },
+    "end": "I (44729) korvo-j2me: RUN_END rc=0 presents=721 input=0 psram_before=15215968 psram_after=15215968 delta=0",
+    "hot_pool": []
+  }
+]
