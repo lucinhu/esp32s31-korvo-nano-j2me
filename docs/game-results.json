@@ -1,0 +1,504 @@
+{
+  "resolution": [
+    240,
+    320
+  ],
+  "scenarios": [
+    {
+      "file": "俄罗斯方块中文版_2832.jar",
+      "width": 240,
+      "height": 320,
+      "frames": 300,
+      "keys": "30:soft1,60:fire,120:5,180:fire,220:left:down,260:left:up"
+    },
+    {
+      "file": "贪吃蛇经典版_4515.jar",
+      "width": 240,
+      "height": 320,
+      "frames": 300,
+      "keys": "30:fire,60:5,100:soft1,150:fire,200:right:down,260:right:up"
+    },
+    {
+      "file": "涂鸦地带_模拟可玩_12472.jar",
+      "width": 240,
+      "height": 320,
+      "frames": 300,
+      "keys": "20:fire,60:soft1,100:5,160:fire,200:up:down,260:up:up"
+    },
+    {
+      "file": "1945空战英雄_6105.jar",
+      "width": 240,
+      "height": 320,
+      "frames": 300,
+      "keys": "30:fire,60:soft1,90:fire,120:5,180:left:down,260:left:up"
+    },
+    {
+      "file": "钻石狂潮_1335.jar",
+      "width": 240,
+      "height": 320,
+      "frames": 300,
+      "keys": "30:fire,60:soft1,100:5,160:fire,200:right:down,260:right:up"
+    },
+    {
+      "file": "蹦球传说_7801.jar",
+      "width": 240,
+      "height": 320,
+      "frames": 300,
+      "keys": "30:fire,90:soft1,150:fire,210:soft1,240:right:down,280:right:up"
+    }
+  ],
+  "interpreter_7b12084": [
+    {
+      "scenario": {
+        "file": "俄罗斯方块中文版_2832.jar",
+        "width": 240,
+        "height": 320,
+        "frames": 300,
+        "keys": "30:soft1,60:fire,120:5,180:fire,220:left:down,260:left:up"
+      },
+      "end": "I (203280) korvo-j2me: RUN_END rc=0 presents=300 input=10 psram_before=13716744 psram_after=13716744 delta=0",
+      "perf": {
+        "elapsed_us": "6710241",
+        "presents": "300",
+        "present_us": "1197165",
+        "present_max_us": "9133",
+        "poll_us": "6049",
+        "poll_calls": "310",
+        "sleep_us": "0",
+        "native_crc": "90bb2232",
+        "lcd_crc": "59994a33",
+        "updated": "60",
+        "unchanged": "240",
+        "hot_peak": "151552",
+        "hot_live": "0",
+        "scale_mismatch": "0",
+        "stack_internal": "3",
+        "stack_psram": "0"
+      },
+      "audio": [
+        "I (203290) korvo-board: AUDIO writes=351 frames=179712 errors=0 tones=0 volume=40",
+        "I (203297) korvo-board: AUDIO_DETAIL offered=81920 accepted=81920 short=0 io_us=3667662 volume_calls=0 queued=0 underruns=0 silence_frames=1384"
+      ],
+      "vm": "stats: frames=300 paints=117 gfx=952 tris=0 m3g=0 time=6.638s fps=45.2 bytecodes=670541 (0.10 M/s) natives=31423 heap=2511072/2511072 bytes cpcache=40472/423 findcache=0/0",
+      "exceptions": {
+        "thrown: java/util/NoSuchElementException at java/util/Vector.firstElement()Ljava/lang/Object; pc=0: (no message)": 7
+      }
+    },
+    {
+      "scenario": {
+        "file": "贪吃蛇经典版_4515.jar",
+        "width": 240,
+        "height": 320,
+        "frames": 300,
+        "keys": "30:fire,60:5,100:soft1,150:fire,200:right:down,260:right:up"
+      },
+      "end": "I (212479) korvo-j2me: RUN_END rc=0 presents=300 input=10 psram_before=13716744 psram_after=13716744 delta=0",
+      "perf": {
+        "elapsed_us": "8884834",
+        "presents": "300",
+        "present_us": "1052137",
+        "present_max_us": "9204",
+        "poll_us": "6122",
+        "poll_calls": "310",
+        "sleep_us": "1270749",
+        "native_crc": "da771ac3",
+        "lcd_crc": "c5b9f3a3",
+        "updated": "4",
+        "unchanged": "296",
+        "hot_peak": "131072",
+        "hot_live": "0",
+        "scale_mismatch": "0",
+        "stack_internal": "2",
+        "stack_psram": "0"
+      },
+      "audio": [
+        "I (212488) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (212495) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+      ],
+      "vm": "stats: frames=300 paints=300 gfx=99 tris=0 m3g=0 time=8.856s fps=33.9 bytecodes=8747 (0.00 M/s) natives=2249 heap=1236256/1236256 bytes cpcache=1777/403 findcache=0/0",
+      "exceptions": {}
+    },
+    {
+      "scenario": {
+        "file": "涂鸦地带_模拟可玩_12472.jar",
+        "width": 240,
+        "height": 320,
+        "frames": 300,
+        "keys": "20:fire,60:soft1,100:5,160:fire,200:up:down,260:up:up"
+      },
+      "end": "I (217699) korvo-j2me: RUN_END rc=0 presents=300 input=10 psram_before=13716744 psram_after=13716744 delta=0",
+      "perf": {
+        "elapsed_us": "4875202",
+        "presents": "300",
+        "present_us": "1041919",
+        "present_max_us": "9017",
+        "poll_us": "15018",
+        "poll_calls": "310",
+        "sleep_us": "0",
+        "native_crc": "d69c7d70",
+        "lcd_crc": "698c9be0",
+        "updated": "19",
+        "unchanged": "281",
+        "hot_peak": "131072",
+        "hot_live": "0",
+        "scale_mismatch": "0",
+        "stack_internal": "2",
+        "stack_psram": "1"
+      },
+      "audio": [
+        "I (217709) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (217715) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+      ],
+      "vm": "stats: frames=300 paints=89 gfx=1468 tris=0 m3g=0 time=4.830s fps=62.1 bytecodes=83525 (0.02 M/s) natives=6328 heap=791584/845072 bytes cpcache=11312/399 findcache=0/0",
+      "exceptions": {
+        "thrown: java/io/IOException at javax/microedition/lcdui/Image.createImage(Ljava/lang/String;)Ljavax/microedition/lcdui/Image; pc=0: /l/1.png": 1,
+        "thrown: java/io/IOException at javax/microedition/lcdui/Image.createImage(Ljava/lang/String;)Ljavax/microedition/lcdui/Image; pc=0: /l/2.png": 1,
+        "thrown: java/io/IOException at javax/microedition/lcdui/Image.createImage(Ljava/lang/String;)Ljavax/microedition/lcdui/Image; pc=0: /l/3.png": 1,
+        "thrown: javax/microedition/rms/RecordStoreNotFoundException at javax/microedition/rms/RecordStore.openRecordStore(Ljava/lang/String;Z)Ljavax/microedition/rms/RecordStore; pc=0: (no message)": 2
+      }
+    },
+    {
+      "scenario": {
+        "file": "1945空战英雄_6105.jar",
+        "width": 240,
+        "height": 320,
+        "frames": 300,
+        "keys": "30:fire,60:soft1,90:fire,120:5,180:left:down,260:left:up"
+      },
+      "end": "I (224112) korvo-j2me: RUN_END rc=0 presents=300 input=10 psram_before=13716744 psram_after=13716744 delta=0",
+      "perf": {
+        "elapsed_us": "6100972",
+        "presents": "300",
+        "present_us": "1037979",
+        "present_max_us": "9057",
+        "poll_us": "2274",
+        "poll_calls": "310",
+        "sleep_us": "0",
+        "native_crc": "dd99d6b9",
+        "lcd_crc": "53228e40",
+        "updated": "3",
+        "unchanged": "297",
+        "hot_peak": "131072",
+        "hot_live": "0",
+        "scale_mismatch": "0",
+        "stack_internal": "2",
+        "stack_psram": "2"
+      },
+      "audio": [
+        "I (224122) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (224128) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+      ],
+      "vm": "stats: frames=300 paints=160 gfx=480 tris=0 m3g=0 time=5.421s fps=55.3 bytecodes=305663 (0.06 M/s) natives=29343 heap=958240/958240 bytes cpcache=46803/412 findcache=0/0",
+      "exceptions": {
+        "thrown: javax/microedition/rms/RecordStoreNotFoundException at javax/microedition/rms/RecordStore.openRecordStore(Ljava/lang/String;Z)Ljavax/microedition/rms/RecordStore; pc=0: (no message)": 3
+      }
+    },
+    {
+      "scenario": {
+        "file": "钻石狂潮_1335.jar",
+        "width": 240,
+        "height": 320,
+        "frames": 300,
+        "keys": "30:fire,60:soft1,100:5,160:fire,200:right:down,260:right:up"
+      },
+      "end": "I (234154) korvo-j2me: RUN_END rc=0 presents=300 input=10 psram_before=13716744 psram_after=13716744 delta=0",
+      "perf": {
+        "elapsed_us": "9727110",
+        "presents": "300",
+        "present_us": "1108699",
+        "present_max_us": "9135",
+        "poll_us": "2991",
+        "poll_calls": "310",
+        "sleep_us": "0",
+        "native_crc": "297038d9",
+        "lcd_crc": "831e66bb",
+        "updated": "69",
+        "unchanged": "231",
+        "hot_peak": "151552",
+        "hot_live": "0",
+        "scale_mismatch": "0",
+        "stack_internal": "3",
+        "stack_psram": "1"
+      },
+      "audio": [
+        "I (234163) korvo-board: AUDIO writes=125 frames=64000 errors=0 tones=0 volume=40",
+        "I (234171) korvo-board: AUDIO_DETAIL offered=29440 accepted=29440 short=0 io_us=1297856 volume_calls=0 queued=0 underruns=0 silence_frames=1024"
+      ],
+      "vm": "stats: frames=300 paints=300 gfx=3754 tris=0 m3g=0 time=9.685s fps=31.0 bytecodes=943594 (0.10 M/s) natives=103609 heap=1685200/1685808 bytes cpcache=80623/595 findcache=0/0",
+      "exceptions": {
+        "thrown: javax/microedition/rms/RecordStoreNotFoundException at javax/microedition/rms/RecordStore.openRecordStore(Ljava/lang/String;Z)Ljavax/microedition/rms/RecordStore; pc=0: (no message)": 1,
+        "thrown: javax/microedition/rms/RecordStoreNotOpenException at javax/microedition/rms/RecordStore.closeRecordStore()V pc=0: (no message)": 1,
+        "thrown: javax/microedition/rms/InvalidRecordIDException at javax/microedition/rms/RecordStore.getRecord(I)[B pc=0: (no message)": 7
+      }
+    },
+    {
+      "scenario": {
+        "file": "蹦球传说_7801.jar",
+        "width": 240,
+        "height": 320,
+        "frames": 300,
+        "keys": "30:fire,90:soft1,150:fire,210:soft1,240:right:down,280:right:up"
+      },
+      "end": "I (242059) korvo-j2me: RUN_END rc=0 presents=300 input=10 psram_before=13716744 psram_after=13716744 delta=0",
+      "perf": {
+        "elapsed_us": "7562567",
+        "presents": "300",
+        "present_us": "1045151",
+        "present_max_us": "9099",
+        "poll_us": "2365",
+        "poll_calls": "310",
+        "sleep_us": "0",
+        "native_crc": "fe359761",
+        "lcd_crc": "d94adfa6",
+        "updated": "37",
+        "unchanged": "263",
+        "hot_peak": "151552",
+        "hot_live": "0",
+        "scale_mismatch": "0",
+        "stack_internal": "3",
+        "stack_psram": "3"
+      },
+      "audio": [
+        "I (242069) korvo-board: AUDIO writes=268 frames=137216 errors=0 tones=0 volume=40",
+        "I (242076) korvo-board: AUDIO_DETAIL offered=63232 accepted=63232 short=0 io_us=2802928 volume_calls=0 queued=0 underruns=0 silence_frames=1024"
+      ],
+      "vm": "stats: frames=300 paints=176 gfx=5939 tris=0 m3g=0 time=7.519s fps=39.9 bytecodes=1198250 (0.16 M/s) natives=66662 heap=1440304/1645328 bytes cpcache=202841/650 findcache=0/0",
+      "exceptions": {
+        "thrown: javax/microedition/rms/RecordStoreNotFoundException at javax/microedition/rms/RecordStore.openRecordStore(Ljava/lang/String;Z)Ljavax/microedition/rms/RecordStore; pc=0: (no message)": 1
+      }
+    }
+  ],
+  "jit_fed8d0c": [
+    {
+      "scenario": {
+        "file": "俄罗斯方块中文版_2832.jar",
+        "width": 240,
+        "height": 320,
+        "frames": 300,
+        "keys": "30:soft1,60:fire,120:5,180:fire,220:left:down,260:left:up"
+      },
+      "end": "I (233144) korvo-j2me: RUN_END rc=0 presents=300 input=10 psram_before=13708768 psram_after=13708768 delta=0",
+      "perf": {
+        "elapsed_us": "6837419",
+        "presents": "300",
+        "present_us": "1168342",
+        "present_max_us": "9053",
+        "poll_us": "4985",
+        "poll_calls": "310",
+        "sleep_us": "0",
+        "native_crc": "90bb2232",
+        "lcd_crc": "59994a33",
+        "updated": "60",
+        "unchanged": "240",
+        "hot_peak": "151552",
+        "hot_live": "0",
+        "scale_mismatch": "0",
+        "stack_internal": "3",
+        "stack_psram": "0"
+      },
+      "audio": [
+        "I (233154) korvo-board: AUDIO writes=351 frames=179712 errors=0 tones=0 volume=40",
+        "I (233161) korvo-board: AUDIO_DETAIL offered=81920 accepted=81920 short=0 io_us=3667961 volume_calls=0 queued=0 underruns=0 silence_frames=1384"
+      ],
+      "jit": "JIT_STATS active=1 compiled=4330 executed=40876 bytecodes=91668 declined=1951 code_bytes=0",
+      "jit_memory": "JIT_MEMORY allocations=4330 commits=4330 refused=0 peak=928 live=0",
+      "vm": "stats: frames=300 paints=116 gfx=956 tris=0 m3g=0 time=6.754s fps=44.4 bytecodes=550513 (0.08 M/s) natives=28951 heap=2454208/2454208 bytes cpcache=34986/423 findcache=0/0",
+      "exceptions": {
+        "thrown: java/util/NoSuchElementException at java/util/Vector.firstElement()Ljava/lang/Object; pc=0: (no message)": 5
+      }
+    },
+    {
+      "scenario": {
+        "file": "贪吃蛇经典版_4515.jar",
+        "width": 240,
+        "height": 320,
+        "frames": 300,
+        "keys": "30:fire,60:5,100:soft1,150:fire,200:right:down,260:right:up"
+      },
+      "end": "I (242367) korvo-j2me: RUN_END rc=0 presents=300 input=10 psram_before=13708768 psram_after=13708768 delta=0",
+      "perf": {
+        "elapsed_us": "8902003",
+        "presents": "300",
+        "present_us": "1022947",
+        "present_max_us": "9144",
+        "poll_us": "6168",
+        "poll_calls": "310",
+        "sleep_us": "1264133",
+        "native_crc": "da771ac3",
+        "lcd_crc": "c5b9f3a3",
+        "updated": "4",
+        "unchanged": "296",
+        "hot_peak": "131072",
+        "hot_live": "0",
+        "scale_mismatch": "0",
+        "stack_internal": "2",
+        "stack_psram": "0"
+      },
+      "audio": [
+        "I (242377) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (242383) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+      ],
+      "jit": "JIT_STATS active=1 compiled=67 executed=70 bytecodes=129 declined=70 code_bytes=0",
+      "jit_memory": "JIT_MEMORY allocations=67 commits=67 refused=0 peak=304 live=0",
+      "vm": "stats: frames=300 paints=300 gfx=99 tris=0 m3g=0 time=8.866s fps=33.8 bytecodes=8747 (0.00 M/s) natives=2249 heap=1236256/1236256 bytes cpcache=1777/403 findcache=0/0",
+      "exceptions": {}
+    },
+    {
+      "scenario": {
+        "file": "涂鸦地带_模拟可玩_12472.jar",
+        "width": 240,
+        "height": 320,
+        "frames": 300,
+        "keys": "20:fire,60:soft1,100:5,160:fire,200:up:down,260:up:up"
+      },
+      "end": "I (247596) korvo-j2me: RUN_END rc=0 presents=300 input=10 psram_before=13708768 psram_after=13708768 delta=0",
+      "perf": {
+        "elapsed_us": "4904028",
+        "presents": "300",
+        "present_us": "1045399",
+        "present_max_us": "9084",
+        "poll_us": "16126",
+        "poll_calls": "310",
+        "sleep_us": "0",
+        "native_crc": "d69c7d70",
+        "lcd_crc": "698c9be0",
+        "updated": "19",
+        "unchanged": "281",
+        "hot_peak": "131072",
+        "hot_live": "0",
+        "scale_mismatch": "0",
+        "stack_internal": "2",
+        "stack_psram": "1"
+      },
+      "audio": [
+        "I (247605) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (247612) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+      ],
+      "jit": "JIT_STATS active=1 compiled=422 executed=13372 bytecodes=36158 declined=357 code_bytes=0",
+      "jit_memory": "JIT_MEMORY allocations=422 commits=422 refused=0 peak=960 live=0",
+      "vm": "stats: frames=300 paints=89 gfx=1468 tris=0 m3g=0 time=4.851s fps=61.8 bytecodes=83490 (0.02 M/s) natives=6328 heap=791584/845072 bytes cpcache=11311/399 findcache=0/0",
+      "exceptions": {
+        "thrown: java/io/IOException at javax/microedition/lcdui/Image.createImage(Ljava/lang/String;)Ljavax/microedition/lcdui/Image; pc=0: /l/1.png": 1,
+        "thrown: java/io/IOException at javax/microedition/lcdui/Image.createImage(Ljava/lang/String;)Ljavax/microedition/lcdui/Image; pc=0: /l/2.png": 1,
+        "thrown: java/io/IOException at javax/microedition/lcdui/Image.createImage(Ljava/lang/String;)Ljavax/microedition/lcdui/Image; pc=0: /l/3.png": 1,
+        "thrown: javax/microedition/rms/RecordStoreNotFoundException at javax/microedition/rms/RecordStore.openRecordStore(Ljava/lang/String;Z)Ljavax/microedition/rms/RecordStore; pc=0: (no message)": 2
+      }
+    },
+    {
+      "scenario": {
+        "file": "1945空战英雄_6105.jar",
+        "width": 240,
+        "height": 320,
+        "frames": 300,
+        "keys": "30:fire,60:soft1,90:fire,120:5,180:left:down,260:left:up"
+      },
+      "end": "I (254095) korvo-j2me: RUN_END rc=0 presents=300 input=10 psram_before=13708768 psram_after=13708768 delta=0",
+      "perf": {
+        "elapsed_us": "6177181",
+        "presents": "300",
+        "present_us": "1044297",
+        "present_max_us": "9106",
+        "poll_us": "2608",
+        "poll_calls": "310",
+        "sleep_us": "0",
+        "native_crc": "dd99d6b9",
+        "lcd_crc": "53228e40",
+        "updated": "3",
+        "unchanged": "297",
+        "hot_peak": "131072",
+        "hot_live": "0",
+        "scale_mismatch": "0",
+        "stack_internal": "2",
+        "stack_psram": "2"
+      },
+      "audio": [
+        "I (254104) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (254111) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+      ],
+      "jit": "JIT_STATS active=1 compiled=118 executed=86945 bytecodes=180340 declined=160 code_bytes=56",
+      "jit_memory": "JIT_MEMORY allocations=118 commits=118 refused=0 peak=784 live=0",
+      "vm": "stats: frames=300 paints=160 gfx=480 tris=0 m3g=0 time=5.499s fps=54.6 bytecodes=305663 (0.06 M/s) natives=29343 heap=958240/958240 bytes cpcache=46803/412 findcache=0/0",
+      "exceptions": {
+        "thrown: javax/microedition/rms/RecordStoreNotFoundException at javax/microedition/rms/RecordStore.openRecordStore(Ljava/lang/String;Z)Ljavax/microedition/rms/RecordStore; pc=0: (no message)": 3
+      }
+    },
+    {
+      "scenario": {
+        "file": "钻石狂潮_1335.jar",
+        "width": 240,
+        "height": 320,
+        "frames": 300,
+        "keys": "30:fire,60:soft1,100:5,160:fire,200:right:down,260:right:up"
+      },
+      "end": "I (264573) korvo-j2me: RUN_END rc=0 presents=300 input=10 psram_before=13708768 psram_after=13708768 delta=0",
+      "perf": {
+        "elapsed_us": "10118302",
+        "presents": "300",
+        "present_us": "1136254",
+        "present_max_us": "9094",
+        "poll_us": "2743",
+        "poll_calls": "310",
+        "sleep_us": "0",
+        "native_crc": "297038d9",
+        "lcd_crc": "831e66bb",
+        "updated": "69",
+        "unchanged": "231",
+        "hot_peak": "151552",
+        "hot_live": "0",
+        "scale_mismatch": "0",
+        "stack_internal": "3",
+        "stack_psram": "1"
+      },
+      "audio": [
+        "I (264583) korvo-board: AUDIO writes=133 frames=68096 errors=0 tones=0 volume=40",
+        "I (264590) korvo-board: AUDIO_DETAIL offered=30976 accepted=30976 short=0 io_us=1372149 volume_calls=0 queued=0 underruns=1 silence_frames=1179"
+      ],
+      "jit": "JIT_STATS active=1 compiled=3268 executed=82763 bytecodes=279024 declined=3326 code_bytes=0",
+      "jit_memory": "JIT_MEMORY allocations=3268 commits=3268 refused=0 peak=1104 live=0",
+      "vm": "stats: frames=300 paints=300 gfx=3751 tris=0 m3g=0 time=10.068s fps=29.8 bytecodes=942423 (0.09 M/s) natives=103522 heap=1681360/1682224 bytes cpcache=80401/595 findcache=0/0",
+      "exceptions": {
+        "thrown: javax/microedition/rms/RecordStoreNotFoundException at javax/microedition/rms/RecordStore.openRecordStore(Ljava/lang/String;Z)Ljavax/microedition/rms/RecordStore; pc=0: (no message)": 1,
+        "thrown: javax/microedition/rms/RecordStoreNotOpenException at javax/microedition/rms/RecordStore.closeRecordStore()V pc=0: (no message)": 1,
+        "thrown: javax/microedition/rms/InvalidRecordIDException at javax/microedition/rms/RecordStore.getRecord(I)[B pc=0: (no message)": 7
+      }
+    },
+    {
+      "scenario": {
+        "file": "蹦球传说_7801.jar",
+        "width": 240,
+        "height": 320,
+        "frames": 300,
+        "keys": "30:fire,90:soft1,150:fire,210:soft1,240:right:down,280:right:up"
+      },
+      "end": "I (272981) korvo-j2me: RUN_END rc=0 presents=300 input=10 psram_before=13708768 psram_after=13708768 delta=0",
+      "perf": {
+        "elapsed_us": "8085624",
+        "presents": "300",
+        "present_us": "1057841",
+        "present_max_us": "9040",
+        "poll_us": "2859",
+        "poll_calls": "310",
+        "sleep_us": "0",
+        "native_crc": "c93135b3",
+        "lcd_crc": "837ff166",
+        "updated": "39",
+        "unchanged": "261",
+        "hot_peak": "151552",
+        "hot_live": "0",
+        "scale_mismatch": "0",
+        "stack_internal": "3",
+        "stack_psram": "3"
+      },
+      "audio": [
+        "I (272991) korvo-board: AUDIO writes=313 frames=160256 errors=0 tones=0 volume=40",
+        "I (272998) korvo-board: AUDIO_DETAIL offered=73472 accepted=73472 short=0 io_us=3279417 volume_calls=0 queued=0 underruns=1 silence_frames=1343"
+      ],
+      "jit": "JIT_STATS active=1 compiled=2545 executed=39218 bytecodes=71162 declined=2325 code_bytes=0",
+      "jit_memory": "JIT_MEMORY allocations=2545 commits=2545 refused=0 peak=864 live=0",
+      "vm": "stats: frames=300 paints=175 gfx=5941 tris=0 m3g=0 time=8.034s fps=37.3 bytecodes=1198740 (0.15 M/s) natives=66670 heap=1440304/1645312 bytes cpcache=202970/650 findcache=0/0",
+      "exceptions": {
+        "thrown: javax/microedition/rms/RecordStoreNotFoundException at javax/microedition/rms/RecordStore.openRecordStore(Ljava/lang/String;Z)Ljavax/microedition/rms/RecordStore; pc=0: (no message)": 1
+      }
+    }
+  ]
+}

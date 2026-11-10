@@ -1,0 +1,107 @@
+e910b30 Record guarded numeric ldc Minecraft screen
+9457c05 Guard heap and UTF-16 allocation size arithmetic
+c841753 Fix M3G transform/length mix-up corrupting file-loaded VertexArrays
+9a4e063 Fix System.arraycopy overlap and partial failure semantics
+d139a2e Fix Java Math numeric edge cases
+76caf42 Fix incomplete Android CMake runtime build
+cdfd172 Record rejected lazy JIT filter optimization
+4acf336 Add Minecraft JIT mode diagnostics and correct backend docs
+46a8526 Record rejected Minecraft float-negation fusion screen
+74ae026 Honor Random subclass extension points in native methods
+176de3a Define wrapping arithmetic for bounded Random rejection
+4afa9e2 Document rejected fusion screen and Android M3G GPU requirements
+78114ba Handle CP cache collisions in interpreter fast lookup
+cb330a3 Optimize RMS record lookup and profile Minecraft loading
+d7a6cc5 Document J2ME-Loader architecture and Minecraft CPU profile
+4addd88 Fix live RMS enumerations and shared store lifecycle
+f56ca23 Fix projected M3G depth and prepare 0.5.5 release
+ed5931f Honor M3G LEQUAL depth comparisons across raster paths
+f9c945d Preserve M3G mesh alpha through clipping and texture blending
+c6561fd Fix M3G default background clearing and World render overloads
+efa71c4 Speed up world generation and preserve M3G depth across host frames
+ba887ad Support Linux DPI scaling and fix encoded image error handling
+7542864 Fix Nokia packed pixels and ARGB polygon rendering
+4d82ba9 Fix Nokia pixel formats and DirectGraphics image semantics
+417a17a Optimize transformed alpha blits and fix buffer and sound APIs
+2622f53 Optimize character copying and fix RMS and game API semantics
+05c8890 Optimize transformed blits and fix stream and Hashtable semantics
+6c2f638 docs: final round-7 release APK and Android smoke verdict
+4761bbd docs: independent verification of the JIT ceiling and heavy-scene hoist
+e18ebb0 docs: round 6-7 notes, JIT ceiling, heavy scene, fuzz3, API audit, Android polish, storage and mutation fuzz
+959fc8a test(m3g): mutation-fuzz the real corpus assets through Loader, duplicate and the raster path
+3d4231a docs: record the Android storage-failure matrix
+33350f7 docs: field/class resolution fast path audit (negative on target codegen)
+f515371 fix(m3g): reset the Background crop on setImage; widen narrow textures
+a0fcfc6 docs: Android in-world headroom audit (round 7)
+44c8ec0 docs(m3g): 3D corpus fidelity sweep, classification and candidates
+ff41b99 fix(m3g): seed the declared JSR 184 constants
+41b81f7 docs: record the Android soft-key and gamepad fix in VERIFICATION
+a9bbd28 fix(android): decide BACK on key-up and map gamepad buttons to MIDP keys
+ab560b1 docs(m3g): JSR 184 API gap audit and saved-state ABI impact inventory
+3bf10cf jit: add x86-64 backend, tests and measured ceiling
+6bb74c2 perf(m3g): hoist the viewport half-size out of the per-vertex projection
+e95b613 fix(m3g): bound animate() on cyclic graphs, keep loader roots non-null, reject foreign vertex buffers
+0bf9048 fix(android): respect audio focus and release held input on pause/panel
+dfd6522 docs: round-5 raster -Os win, Android resize, M3G migration and overflow fixes, save-path result
+e752c51 fix(m3g): correct AnimationTrack inheritance, harden strip/crop index math
+cdaddce perf(m3g): specialise the in-world -Os span loop
+69185f7 fix(android): re-fit the picture when the surface changes size
+37debf9 docs: save-path full-save benchmark and negative round-5 fusion result
+331686f docs: round-4 dig-burst fix, negative results, refreshed M3G counts
+0be1951 perf(util): compare Vector elements by identity when equals is Object.equals
+cbec729 docs(m3g): per-draw residuals profile and rejected micro-optimizations
+4e04800 fix(m3g): bound caller-controlled indices in lights, submeshes and fuzz harness
+b18d0a2 docs: round-3 interpreter and M3G notes, JSR 75 note, refreshed counts
+4691896 perf(interp): fuse float/int superinstructions hot in Minecraft generation
+9ee12ac perf(m3g): resolve the Graphics3D half of a draw once per render pass
+0dc3b4a fix(fs): honour JSR 75 closed/mode rules and metadata answers
+7dcb8c6 perf(android): build the replicated interpreter into the APK
+3c79789 fix(m3g): validate vertex/index/image ranges and refuse scene-graph cycles
+30b1740 perf(m3g): unlit vertex colour without the self-average
+197536a perf(interp): default the replicated interpreter on for native GCC/Clang builds
+6a20fe0 perf(m3g): one reciprocal per fragment, two kinds of free triangles
+2ed35b8 feat(client): remember the games that ran, and star the good ones
+bafe647 feat(client): search the library, press F1, and play with a pad
+b4b3f4b perf(vm): memoise class and field lookups
+4a68a37 docs: point Arch Linux users at the AUR packages
+bea5022 docs: record the sanitized suite on the release tree
+0430eb1 docs: drop the duplicated 0.5.1 recap from the 0.5.2 section
+929167d docs: the Windows screenshot, and the artifact it was taken from
+f46c5dd docs: 0.5.2 ships Windows, and the numbers catch up
+fadc7f6 feat(win32): a Windows x86_64 desktop build, cross-compiled with mingw-w64
+5be4552 test(port): drop the copy the sdl2-compat shim makes in SDL_PushEvent
+d982691 perf(m3g): saturate the fog ramp before it costs anything
+3b4663a feat(client): a desktop library window, drag-and-drop and the settings behind it
+e77fee7 feat(pace): uncapped by default, because the display is the pacer
+fa69053 fix(m3g,pace): per-fragment fog, and 60 fps where the machine can present it
+93899e4 feat(threads): real Java monitors for synchronized, wait and notify
+9553370 release: 0.4.1
+121ab1d feat(android): a frame cap the player controls, measured by the port itself
+bf4cc02 build(android): --opt, and the measurement that keeps the default at -Os
+d971e10 release: 0.4.0
+74b89c6 fix(m3g,pace): Minecraft PE's striped water, missing clouds and low frame rate
+5322db6 fix(ports): the ESP32-S3 image links again, and a datagram bug it found
+1bb0008 feat(diag): say where the frame boundary is when an exception escapes
+1bf6403 docs: the 远古帝国2 freeze no longer reproduces (1700-frame replay with held keys)
+0f29041 feat(vendor): Samsung's SM/SMS helper, with no SMS transport behind it
+cdaaf7d fix(corpus): isolate each title's save directory, and baseline known failures
+39b0c6c feat(pim): JSR 75's contact list, present and honestly empty
+64e644e feat(media): JSR 135 TempoControl and RateControl, with real re-timing
+5a6f6db List the heap probe in the libretro conformance matrix
+e426b61 Fix the libretro heap probe's log prefix, record the result
+a3981e9 libretro: automatic Java heap, the new default
+4590ef0 Record the Android automatic-heap device check
+e52375a Android: log which heap a launch resolves
+15d2f69 Android: automatic Java heap, default for new games
+01a1157 feat(io): JSR 75 security types, and an https connection that is one
+2f31621 fix(mascot): the -Werror build, and the rotation it caught
+38c49ec feat(media): serve the movie's AMR track through a port decoder
+5d0a306 Record the end-to-end LAN join result
+fc7e28c Add UDP datagrams so Minecraft PE LAN mode works
+9a47b15 Deliver Nokia MultipointTouch pointer events
+0d8b25d Record Minecraft UI, snapshot and text-input verification
+a035ddd Run Minecraft PE 0.6.1 past the Loading screen
+87b26b0 fix(media): let a build without AMR compile, and trim MP3 like the rest
+b9c25d7 feat(video): give H.263 and MPEG-4 their own trim switches
+d52f49e fix(media): keep the audible position across loops and seeks
+8a2750e fix(m3g): rasterize pixel centres with consistent shared-edge ownership

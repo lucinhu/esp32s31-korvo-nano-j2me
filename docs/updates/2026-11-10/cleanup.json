@@ -1,0 +1,785 @@
+{
+  "reason": "Obsolete experiment builds; source snapshots, patches, results, logs, images and fixture JARs archived first. Current build and build/latest-3d inputs retained.",
+  "archive": "docs/updates/2026-11-10/historical-build-evidence.tar.gz",
+  "archived_files": 3138,
+  "deleted_trees": [
+    {
+      "path": "build/verification",
+      "bytes": 5335033
+    },
+    {
+      "path": "build/performance",
+      "bytes": 2588588
+    },
+    {
+      "path": "build/upstream-games",
+      "bytes": 3411187
+    },
+    {
+      "path": "build/upstream-host",
+      "bytes": 205139904
+    },
+    {
+      "path": "build/jit-c6b1595",
+      "bytes": 1236687
+    },
+    {
+      "path": "build/jit-cache-admission",
+      "bytes": 1748215047
+    },
+    {
+      "path": "build/jit-loop-count",
+      "bytes": 15583625
+    },
+    {
+      "path": "build/m3g-rgb565",
+      "bytes": 1415768183
+    },
+    {
+      "path": "build/merge-upstream",
+      "bytes": 27688
+    },
+    {
+      "path": "build/merge-main",
+      "bytes": 289
+    },
+    {
+      "path": "build/jit-loop-fastpath",
+      "bytes": 561989834
+    },
+    {
+      "path": "build/jit-game-cache",
+      "bytes": 4299792924
+    },
+    {
+      "path": "build/nfs-startup",
+      "bytes": 70639166
+    },
+    {
+      "path": "build/nfs-performance",
+      "bytes": 624758893
+    },
+    {
+      "path": "build/refresh-20261025",
+      "bytes": 1246855338
+    },
+    {
+      "path": "build/latest-20261025-2052",
+      "bytes": 117621590
+    },
+    {
+      "path": "build/refresh-20261026",
+      "bytes": 71742121
+    },
+    {
+      "path": "build/jit-exec-pool-20261026",
+      "bytes": 414474805
+    },
+    {
+      "path": "build/update-20261027-bujons2i",
+      "bytes": 5850728
+    },
+    {
+      "path": "build/game-fixes-20261027-_grhwc0g",
+      "bytes": 356918784
+    },
+    {
+      "path": "build/source-only-20261028",
+      "bytes": 78788
+    },
+    {
+      "path": "build/device-optimization-20261028",
+      "bytes": 47973960
+    },
+    {
+      "path": "build-media/log",
+      "bytes": 2061032
+    },
+    {
+      "path": "build-media/CMakeFiles",
+      "bytes": 9270604
+    },
+    {
+      "path": "build-media/toolchain",
+      "bytes": 743
+    },
+    {
+      "path": "build-media/components_with_manifests_list.temp.overrides",
+      "bytes": 2
+    },
+    {
+      "path": "build-media/component_manager_run_counter.2708582",
+      "bytes": 1
+    },
+    {
+      "path": "build-media/config.env",
+      "bytes": 10121
+    },
+    {
+      "path": "build-media/config",
+      "bytes": 3909352
+    },
+    {
+      "path": "build-media/kconfigs.in",
+      "bytes": 7202
+    },
+    {
+      "path": "build-media/kconfigs_projbuild.in",
+      "bytes": 791
+    },
+    {
+      "path": "build-media/bootloader-prefix",
+      "bytes": 3032
+    },
+    {
+      "path": "build-media/bootloader",
+      "bytes": 20828576
+    },
+    {
+      "path": "build-media/esp-idf",
+      "bytes": 381208879
+    },
+    {
+      "path": "build-media/gdbinit",
+      "bytes": 1521
+    },
+    {
+      "path": "build-media/esp_err_codes",
+      "bytes": 74796
+    },
+    {
+      "path": "build-media/ldgen_libraries.in",
+      "bytes": 9113
+    },
+    {
+      "path": "build-media/ldgen_fragments",
+      "bytes": 5313
+    },
+    {
+      "path": "build-media/hints.yml",
+      "bytes": 50302
+    },
+    {
+      "path": "build-media/app-flash_args.in",
+      "bytes": 117
+    },
+    {
+      "path": "build-media/app-flash_args",
+      "bytes": 89
+    },
+    {
+      "path": "build-media/flash_app_args",
+      "bytes": 89
+    },
+    {
+      "path": "build-media/flash_args.in",
+      "bytes": 193
+    },
+    {
+      "path": "build-media/flash_args",
+      "bytes": 165
+    },
+    {
+      "path": "build-media/flash_project_args",
+      "bytes": 165
+    },
+    {
+      "path": "build-media/flasher_args.json.in",
+      "bytes": 1007
+    },
+    {
+      "path": "build-media/flasher_args.json",
+      "bytes": 949
+    },
+    {
+      "path": "build-media/bootloader-flash_args",
+      "bytes": 85
+    },
+    {
+      "path": "build-media/flash_bootloader_args",
+      "bytes": 85
+    },
+    {
+      "path": "build-media/partition-table-flash_args",
+      "bytes": 95
+    },
+    {
+      "path": "build-media/j2me-flash_args",
+      "bytes": 70
+    },
+    {
+      "path": "build-media/partition_table",
+      "bytes": 3072
+    },
+    {
+      "path": "build-media/project_elf_src_esp32s31.c",
+      "bytes": 0
+    },
+    {
+      "path": "build-media/j2me.bin",
+      "bytes": 8323072
+    },
+    {
+      "path": "build-media/x509_crt_bundle.S",
+      "bytes": 359824
+    },
+    {
+      "path": "build-media/korvo_demo.jar.S",
+      "bytes": 18029
+    },
+    {
+      "path": "build-media/esp32s31-korvo-nano-j2me.map",
+      "bytes": 8517574
+    },
+    {
+      "path": "build-media/esp32s31-korvo-nano-j2me.bin",
+      "bytes": 5721472
+    },
+    {
+      "path": "build-media/.bin_timestamp",
+      "bytes": 140
+    },
+    {
+      "path": "build-media/component_manager_run_counter.2734654",
+      "bytes": 1
+    },
+    {
+      "path": "build-media/CPackConfig.cmake",
+      "bytes": 4744
+    },
+    {
+      "path": "build-media/CPackSourceConfig.cmake",
+      "bytes": 5219
+    },
+    {
+      "path": "build-media/ldgen_libraries",
+      "bytes": 31708
+    },
+    {
+      "path": "build-media/component_manager_run_counter.2746577",
+      "bytes": 1
+    },
+    {
+      "path": "build-media/j2me_font.otf.S",
+      "bytes": 11562792
+    },
+    {
+      "path": "build-media/esp32s31-korvo-nano-j2me_flashed.bin",
+      "bytes": 5539440
+    },
+    {
+      "path": "build-media/component_manager_run_counter.3037693",
+      "bytes": 1
+    },
+    {
+      "path": "build-media/component_manager_run_counter.3136724",
+      "bytes": 1
+    },
+    {
+      "path": "build-media/component_manager_run_counter.583344",
+      "bytes": 1
+    },
+    {
+      "path": "build-media/component_manager_run_counter.1258471",
+      "bytes": 1
+    },
+    {
+      "path": "build-media/component_manager_run_counter.1321878",
+      "bytes": 1
+    },
+    {
+      "path": "build-media/component_manager_run_counter.1335991",
+      "bytes": 1
+    },
+    {
+      "path": "build-media/component_manager_run_counter.118314",
+      "bytes": 1
+    },
+    {
+      "path": "build-media/component_manager_run_counter.140686",
+      "bytes": 1
+    },
+    {
+      "path": "build-media/component_manager_run_counter.163976",
+      "bytes": 1
+    },
+    {
+      "path": "build-media/component_manager_run_counter.168842",
+      "bytes": 1
+    },
+    {
+      "path": "build-media/component_manager_run_counter.184467",
+      "bytes": 1
+    },
+    {
+      "path": "build-media/component_manager_run_counter.194674",
+      "bytes": 1
+    },
+    {
+      "path": "build-media/component_manager_run_counter.212529",
+      "bytes": 1
+    },
+    {
+      "path": "build-media/component_manager_run_counter.1365008",
+      "bytes": 1
+    },
+    {
+      "path": "build-media/component_manager_run_counter.1367511",
+      "bytes": 1
+    },
+    {
+      "path": "build-media/replay-pcm-bench.jar.S",
+      "bytes": 18352
+    },
+    {
+      "path": "build-media/component_manager_run_counter.1377058",
+      "bytes": 1
+    },
+    {
+      "path": "build-media/replay-midi-bench.jar.S",
+      "bytes": 25322
+    },
+    {
+      "path": "build-media/component_manager_run_counter.1387479",
+      "bytes": 1
+    },
+    {
+      "path": "build-media/component_manager_run_counter.590003",
+      "bytes": 1
+    },
+    {
+      "path": "build-media/rgb.jar.S",
+      "bytes": 14779
+    },
+    {
+      "path": "build-media/pcm.jar.S",
+      "bytes": 18332
+    },
+    {
+      "path": "build-media/midi.jar.S",
+      "bytes": 28536
+    },
+    {
+      "path": "build-media/component_manager_run_counter.613570",
+      "bytes": 1
+    },
+    {
+      "path": "build-media/component_manager_run_counter.639461",
+      "bytes": 1
+    },
+    {
+      "path": "build-media/CMakeCache.txt",
+      "bytes": 35750
+    },
+    {
+      "path": "build-media/project_description.json",
+      "bytes": 329517
+    },
+    {
+      "path": "build-media/cmake_install.cmake",
+      "bytes": 2396
+    },
+    {
+      "path": "build-media/compile_commands.json",
+      "bytes": 11156004
+    },
+    {
+      "path": "build-media/build.ninja",
+      "bytes": 12773952
+    },
+    {
+      "path": "build-media/.ninja_deps",
+      "bytes": 1702728
+    },
+    {
+      "path": "build-media/.ninja_log",
+      "bytes": 236956
+    },
+    {
+      "path": "build-media/midi-paused-handoff.jar.S",
+      "bytes": 30466
+    },
+    {
+      "path": "build-media/esp32s31-korvo-nano-j2me.elf",
+      "bytes": 29602512
+    },
+    {
+      "path": "build-media/validation/startup-list.log",
+      "bytes": 0
+    },
+    {
+      "path": "build-media/validation/boot.log",
+      "bytes": 33620
+    },
+    {
+      "path": "build-media/validation/flash-read.log",
+      "bytes": 735
+    },
+    {
+      "path": "build-media/validation/segment-boundary.bin",
+      "bytes": 128
+    },
+    {
+      "path": "build-media/validation/flash-header-read.log",
+      "bytes": 732
+    },
+    {
+      "path": "build-media/validation/flash-app-header.bin",
+      "bytes": 64
+    },
+    {
+      "path": "build-media/validation/bootloader-flash.log",
+      "bytes": 6075
+    },
+    {
+      "path": "build-media/validation/flashed-app.bin",
+      "bytes": 5539440
+    },
+    {
+      "path": "build-media/validation/first-flash.log",
+      "bytes": 608576
+    },
+    {
+      "path": "build-media/validation/board-session.log",
+      "bytes": 608991
+    },
+    {
+      "path": "build-media/validation/check-session.log",
+      "bytes": 638761
+    },
+    {
+      "path": "build-media/validation/fixed-build.log",
+      "bytes": 4706
+    },
+    {
+      "path": "build-media/validation/fixture-build.log",
+      "bytes": 247
+    },
+    {
+      "path": "build-media/validation/upstream-fixture-build.log",
+      "bytes": 117
+    },
+    {
+      "path": "build-media/validation/host-config.log",
+      "bytes": 274
+    },
+    {
+      "path": "build-media/validation/fixed-app.bin",
+      "bytes": 5539296
+    },
+    {
+      "path": "build-media/validation/host-build.log",
+      "bytes": 9592
+    },
+    {
+      "path": "build-media/validation/host-test-results.log",
+      "bytes": 4967
+    },
+    {
+      "path": "build-media/validation/host-rebuild.log",
+      "bytes": 9592
+    },
+    {
+      "path": "build-media/validation/reconnected-session.log",
+      "bytes": 1253184
+    },
+    {
+      "path": "build-media/validation/espressif-media-pass.png",
+      "bytes": 7105
+    },
+    {
+      "path": "build-media/validation/midi-diagnostic-build.log",
+      "bytes": 4383
+    },
+    {
+      "path": "build-media/validation/midi-disassembly.txt",
+      "bytes": 506633
+    },
+    {
+      "path": "build-media/validation/midi-diagnostic.bin",
+      "bytes": 5539424
+    },
+    {
+      "path": "build-media/validation/midi-fixed-build.log",
+      "bytes": 8649
+    },
+    {
+      "path": "build-media/validation/midi-host-build.log",
+      "bytes": 9592
+    },
+    {
+      "path": "build-media/validation/midi-host-results.log",
+      "bytes": 4967
+    },
+    {
+      "path": "build-media/validation/midi-fixed-app.bin",
+      "bytes": 5543120
+    },
+    {
+      "path": "build-media/validation/midi-final-build.log",
+      "bytes": 4383
+    },
+    {
+      "path": "build-media/validation/midi-final-host-build.log",
+      "bytes": 9592
+    },
+    {
+      "path": "build-media/validation/final-board-session.log",
+      "bytes": 19435
+    },
+    {
+      "path": "build-media/validation/midi-final-app.bin",
+      "bytes": 5543248
+    },
+    {
+      "path": "build-media/validation/midi-final-host-results.log",
+      "bytes": 5226
+    },
+    {
+      "path": "build-media/validation/vo-amrwbenc-build.log",
+      "bytes": 16863
+    },
+    {
+      "path": "build-media/validation/vo-amrwbenc-src",
+      "bytes": 7142911
+    },
+    {
+      "path": "build-media/validation/amr-board-session.log",
+      "bytes": 10903
+    },
+    {
+      "path": "build-media/validation/amr-fixture-generation.log",
+      "bytes": 688
+    },
+    {
+      "path": "build-media/validation/amr-fixture-build.log",
+      "bytes": 1171
+    },
+    {
+      "path": "build-media/validation/amr-audition-pass.png",
+      "bytes": 5259
+    },
+    {
+      "path": "build-media/validation/lostisland-audio.log",
+      "bytes": 114389
+    },
+    {
+      "path": "build-media/validation/lostisland-assets",
+      "bytes": 4371
+    },
+    {
+      "path": "build-media/validation/lostisland-initial.png",
+      "bytes": 39517
+    },
+    {
+      "path": "build-media/validation/lostisland-q.javap",
+      "bytes": 6813
+    },
+    {
+      "path": "build-media/validation/lostisland-s.javap",
+      "bytes": 29329
+    },
+    {
+      "path": "build-media/validation/lostisland-start.png",
+      "bytes": 2857
+    },
+    {
+      "path": "build-media/validation/lostisland-after-language.png",
+      "bytes": 1964
+    },
+    {
+      "path": "build-media/validation/lostisland-callers.javap",
+      "bytes": 1664994
+    },
+    {
+      "path": "build-media/validation/lostisland-music-enabled.png",
+      "bytes": 1000
+    },
+    {
+      "path": "build-media/validation/lostisland-title-silent.png",
+      "bytes": 39517
+    },
+    {
+      "path": "build-media/validation/lostisland-build.log",
+      "bytes": 40134
+    },
+    {
+      "path": "build-media/validation/lostisland-host-build.log",
+      "bytes": 10091
+    },
+    {
+      "path": "build-media/validation/lostisland-host-check-build.log",
+      "bytes": 9741
+    },
+    {
+      "path": "build-media/validation/lostisland-multitrack-app.bin",
+      "bytes": 5544480
+    },
+    {
+      "path": "build-media/validation/lostisland-host-results.log",
+      "bytes": 5366
+    },
+    {
+      "path": "build-media/validation/lostisland-merge-check.log",
+      "bytes": 353
+    },
+    {
+      "path": "build-media/validation/midi-file-alloc.c",
+      "bytes": 130
+    },
+    {
+      "path": "build-media/validation/midi-file-check.so",
+      "bytes": 45784
+    },
+    {
+      "path": "build-media/validation/lostisland-1ba-merged.mid",
+      "bytes": 110
+    },
+    {
+      "path": "build-media/validation/lostisland-22b-merged.mid",
+      "bytes": 124
+    },
+    {
+      "path": "build-media/validation/lostisland-255-merged.mid",
+      "bytes": 3338
+    },
+    {
+      "path": "build-media/validation/lostisland-title-multitrack.png",
+      "bytes": 39517
+    },
+    {
+      "path": "build-media/validation/volume-debug-build.log",
+      "bytes": 8563
+    },
+    {
+      "path": "build-media/validation/volume-debug-app.bin",
+      "bytes": 5545168
+    },
+    {
+      "path": "build-media/validation/volume-debug-app.elf",
+      "bytes": 26190284
+    },
+    {
+      "path": "build-media/validation/midi-noteoff-build.log",
+      "bytes": 40330
+    },
+    {
+      "path": "build-media/validation/midi-noteoff-host-build.log",
+      "bytes": 9385
+    },
+    {
+      "path": "build-media/validation/midi-noteoff-host-results.log",
+      "bytes": 5447
+    },
+    {
+      "path": "build-media/validation/midi-noteoff-app.bin",
+      "bytes": 5544608
+    },
+    {
+      "path": "build-media/validation/lostisland-noteoff-title.png",
+      "bytes": 39517
+    },
+    {
+      "path": "build-media/validation/lcdui-fixtures.log",
+      "bytes": 389
+    },
+    {
+      "path": "build-media/validation/lcdui-memory-build.log",
+      "bytes": 10308
+    },
+    {
+      "path": "build-media/validation/lostisland-final-build.log",
+      "bytes": 8621
+    },
+    {
+      "path": "build-media/validation/lostisland-final-app.bin",
+      "bytes": 5544736
+    },
+    {
+      "path": "build-media/validation/lostisland-final-host-results.log",
+      "bytes": 18117
+    },
+    {
+      "path": "build-media/validation/lcdui-memory-rebuild.log",
+      "bytes": 4871
+    },
+    {
+      "path": "build-media/validation/lcdui-memory-results.log",
+      "bytes": 13216
+    },
+    {
+      "path": "build-media/validation/lostisland-final-title.png",
+      "bytes": 39517
+    },
+    {
+      "path": "build-media/validation/lostisland-final-board.log",
+      "bytes": 26595
+    },
+    {
+      "path": "build-media-host",
+      "bytes": 170575681
+    },
+    {
+      "path": "build-adapter-tests",
+      "bytes": 681267
+    }
+  ],
+  "deleted_root_logs": [
+    "build-first.log",
+    "build-flash-storage.log",
+    "flash-device.log",
+    "flash-games.log",
+    "build-final.log",
+    "flash-app.log",
+    "build-icons.log",
+    "flash-icons.log",
+    "build-perf-baseline.log",
+    "flash-perf-baseline.log",
+    "build-perf-opt.log",
+    "build-perf-opt-flash.log",
+    "build-perf-final.log",
+    "build-perf-iram.log",
+    "build-perf-release.log",
+    "build-perf-release-flash.log",
+    "build-perf-release2.log",
+    "build-perf-release2-flash.log",
+    "build-upstream.log",
+    "build-upstream-final.log",
+    "build-upstream-flash.log",
+    "build-upstream-iram.log",
+    "build-upstream-iram-flash.log",
+    "build-upstream-unfused.log",
+    "build-upstream-unfused-flash.log",
+    "build-upstream-stack.log",
+    "build-upstream-stack-flash.log",
+    "build-upstream-latest.log",
+    "build-fps.log",
+    "build-fps-flash.log",
+    "build-jit.log",
+    "build-jit-flash.log",
+    "build-jit-memory.log",
+    "build-jit-memory-flash.log",
+    "build-jit-reserve.log",
+    "build-jit-reserve-flash.log",
+    "build-jit-final.log",
+    "build-jit-final-flash.log",
+    "build-latest-config.log",
+    "build-latest.log",
+    "build-latest-flash.log",
+    "build-latest-final.log",
+    "build-latest-final-flash.log",
+    "build-latest-release.log",
+    "build-latest-release-flash.log",
+    "build-upstream-c6b1595.log",
+    "build-upstream-c6b1595-tests.log"
+  ],
+  "media_archive": "docs/updates/2026-11-10/historical-media-evidence.tar.gz",
+  "media_archived_files": 71,
+  "removed_validation_builds": [
+    {
+      "path": "build-host",
+      "bytes": 1985993778,
+      "reason": "Temporary sanitized regression and unpatched baseline builds, logs retained."
+    }
+  ]
+}

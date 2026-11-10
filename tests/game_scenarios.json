@@ -1,0 +1,44 @@
+[
+  {
+    "file": "俄罗斯方块中文版_2832.jar",
+    "width": 240,
+    "height": 320,
+    "frames": 300,
+    "keys": "30:soft1,60:fire,120:5,180:fire,220:left:down,260:left:up"
+  },
+  {
+    "file": "贪吃蛇经典版_4515.jar",
+    "width": 240,
+    "height": 320,
+    "frames": 300,
+    "keys": "30:fire,60:5,100:soft1,150:fire,200:right:down,260:right:up"
+  },
+  {
+    "file": "涂鸦地带_模拟可玩_12472.jar",
+    "width": 240,
+    "height": 320,
+    "frames": 300,
+    "keys": "20:fire,60:soft1,100:5,160:fire,200:up:down,260:up:up"
+  },
+  {
+    "file": "1945空战英雄_6105.jar",
+    "width": 240,
+    "height": 320,
+    "frames": 300,
+    "keys": "30:fire,60:soft1,90:fire,120:5,180:left:down,260:left:up"
+  },
+  {
+    "file": "钻石狂潮_1335.jar",
+    "width": 240,
+    "height": 320,
+    "frames": 300,
+    "keys": "30:fire,60:soft1,100:5,160:fire,200:right:down,260:right:up"
+  },
+  {
+    "file": "蹦球传说_7801.jar",
+    "width": 240,
+    "height": 320,
+    "frames": 300,
+    "keys": "30:fire,90:soft1,150:fire,210:soft1,240:right:down,280:right:up"
+  }
+]

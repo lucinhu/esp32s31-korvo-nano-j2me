@@ -1,0 +1,92 @@
+version: 1
+board: esp32_s31_korvo1
+chip: esp32s31
+
+devices:
+  sdcard_power_ctrl:
+    type: power_ctrl
+    sub_type: gpio
+
+  audio_dac:
+    type: audio_codec
+    peripherals:
+    - gpio_pa_control
+    - i2s_audio_out
+    - i2c_master
+
+  audio_adc:
+    type: audio_codec
+    peripherals:
+    - i2s_audio_in
+    - i2c_master
+
+  fs_sdcard:
+    type: fs_fat
+    sub_type: sdmmc
+    io:
+      clk: 24
+      cmd: 25
+      d0: 20
+      d1: 21
+      d2: 22
+      d3: 23
+
+  display_lcd:
+    type: display_lcd
+    sub_type: rgb
+    io:
+      hsync_gpio_num: 44
+      vsync_gpio_num: 45
+      de_gpio_num: 43
+      pclk_gpio_num: 40
+      data_gpio_nums: [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 33, 34, 35, 36]
+
+  lcd_touch:
+    type: lcd_touch
+    sub_type: i2c
+    peripherals:
+    - i2c_master
+    dependencies:
+      espressif/esp_lcd_touch_gt1151: '*'
+
+peripherals:
+  i2c_master:
+    type: i2c
+    role: master
+    io:
+      sda_io_num: 0
+      scl_io_num: 1
+
+  i2s_audio_out:
+    type: i2s
+    role: master
+    format: std-out
+    io:
+      mclk: 2
+      bclk: 3
+      ws: 4
+      dout: 5
+      din: 6
+
+  i2s_audio_in:
+    type: i2s
+    role: master
+    format: std-in
+    io:
+      mclk: 2
+      bclk: 3
+      ws: 4
+      dout: 5
+      din: 6
+
+  gpio_pa_control:
+    type: gpio
+    role: io
+    io:
+      pin: 7
+
+  gpio_sd_power:
+    type: gpio
+    role: io
+    io:
+      pin: 39

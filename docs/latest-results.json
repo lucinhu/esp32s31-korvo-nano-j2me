@@ -1,0 +1,1792 @@
+{
+  "build": {
+    "upstream": "fe974fc7c29f462fdcbbcdcdb307cc7b2108d527",
+    "embedded_jars": [
+      {
+        "alias": "dmc",
+        "source": "/home/lucinhu/Documents/game-roms/jar/鬼泣3D中文版_3376.jar",
+        "size": 1145816,
+        "sha256": "ddc43800481c4ea831c81abcde3788d5981437f7ceefa81df31853f4dd51fd63"
+      },
+      {
+        "alias": "gof",
+        "source": "/home/lucinhu/Documents/game-roms/jar/浴火银河_10189.jar",
+        "size": 522822,
+        "sha256": "513d3558b7d0edc119f632e62188e4639d1a6d02fc653f21a9456a6e908f5618"
+      },
+      {
+        "alias": "moto",
+        "source": "/home/lucinhu/Documents/game-roms/jar/3D摩托赛车_9287.jar",
+        "size": 344041,
+        "sha256": "0d987ea3930ad52e48daeefc33b7223892032206adb14acb45c6dbb55a84ab48"
+      }
+    ],
+    "resolution": [
+      240,
+      320
+    ],
+    "jit_runtime_default": "off",
+    "benchmark_firmware_sha256": "df9fbffc4c51497fd0b35c34a603aa5faa8538395fe00e826891012ecde854d2",
+    "interactive_firmware_sha256": "7ff2080c50e19e656c397885d58b553c7ee799afc5a3c31a29a85b08edb6ab87",
+    "final_firmware_sha256": "5be90dc756a9ae6a8a517dfcd274d2b451bd82e8458908ecbb7795655d9af327"
+  },
+  "end_to_end": {
+    "off": [
+      {
+        "case": "cpu-0",
+        "perf": {
+          "elapsed_us": "9876248",
+          "presents": "313",
+          "present_us": "2071434",
+          "present_max_us": "9123",
+          "poll_us": "2759",
+          "poll_calls": "313",
+          "sleep_us": "0",
+          "native_crc": "9e3b7837",
+          "lcd_crc": "cbd4506b",
+          "updated": "240",
+          "unchanged": "73",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+        "jit_memory": "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=0 recompiled=0 unsupported=0 short=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+        "end": "I (39615) korvo-j2me: RUN_END rc=0 presents=313 input=0 psram_before=11654328 psram_after=11654328 delta=0",
+        "audio": [
+          "I (39615) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (39622) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=313 paints=122 gfx=16226 tris=0 m3g=0 time=9.825s fps=31.9 bytecodes=11385053 (1.16 M/s) natives=18076 heap=390480/390480 bytes cpcache=2922081/36 findcache=0/0",
+        "checks": [
+          "PERF_BENCH frames=120 work=4000 checksum=-1082513742"
+        ]
+      },
+      {
+        "case": "cpu-1",
+        "perf": {
+          "elapsed_us": "9871192",
+          "presents": "313",
+          "present_us": "2075099",
+          "present_max_us": "9125",
+          "poll_us": "2731",
+          "poll_calls": "313",
+          "sleep_us": "0",
+          "native_crc": "9e3b7837",
+          "lcd_crc": "cbd4506b",
+          "updated": "240",
+          "unchanged": "73",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+        "jit_memory": "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=0 recompiled=0 unsupported=0 short=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+        "end": "I (50060) korvo-j2me: RUN_END rc=0 presents=313 input=0 psram_before=11654328 psram_after=11654328 delta=0",
+        "audio": [
+          "I (50060) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (50067) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=313 paints=122 gfx=16226 tris=0 m3g=0 time=9.820s fps=31.9 bytecodes=11385053 (1.16 M/s) natives=18076 heap=390480/390480 bytes cpcache=2922081/36 findcache=0/0",
+        "checks": [
+          "PERF_BENCH frames=120 work=4000 checksum=-1082513742"
+        ]
+      },
+      {
+        "case": "render-0",
+        "perf": {
+          "elapsed_us": "8076124",
+          "presents": "241",
+          "present_us": "1502707",
+          "present_max_us": "9046",
+          "poll_us": "2477",
+          "poll_calls": "241",
+          "sleep_us": "0",
+          "native_crc": "c28d5ef8",
+          "lcd_crc": "df7449c1",
+          "updated": "241",
+          "unchanged": "0",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+        "jit_memory": "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=0 recompiled=0 unsupported=0 short=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+        "end": "I (58658) korvo-j2me: RUN_END rc=0 presents=241 input=0 psram_before=11654328 psram_after=11654328 delta=0",
+        "audio": [
+          "I (58658) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (58665) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=241 paints=240 gfx=31680 tris=0 m3g=0 time=8.026s fps=30.0 bytecodes=704929 (0.09 M/s) natives=65296 heap=398624/398624 bytes cpcache=112074/27 findcache=0/0",
+        "checks": [
+          "RENDER_BENCH frames=240 final=240"
+        ]
+      },
+      {
+        "case": "render-1",
+        "perf": {
+          "elapsed_us": "8087174",
+          "presents": "241",
+          "present_us": "1503059",
+          "present_max_us": "9111",
+          "poll_us": "2462",
+          "poll_calls": "241",
+          "sleep_us": "0",
+          "native_crc": "c28d5ef8",
+          "lcd_crc": "df7449c1",
+          "updated": "241",
+          "unchanged": "0",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+        "jit_memory": "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=0 recompiled=0 unsupported=0 short=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+        "end": "I (67297) korvo-j2me: RUN_END rc=0 presents=241 input=0 psram_before=11654328 psram_after=11654328 delta=0",
+        "audio": [
+          "I (67297) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (67304) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=241 paints=240 gfx=31680 tris=0 m3g=0 time=8.037s fps=30.0 bytecodes=704929 (0.09 M/s) natives=65296 heap=398624/398624 bytes cpcache=112074/27 findcache=0/0",
+        "checks": [
+          "RENDER_BENCH frames=240 final=240"
+        ]
+      },
+      {
+        "case": "audio-0",
+        "perf": {
+          "elapsed_us": "11751512",
+          "presents": "599",
+          "present_us": "1967450",
+          "present_max_us": "9070",
+          "poll_us": "5325",
+          "poll_calls": "599",
+          "sleep_us": "0",
+          "native_crc": "45756d2b",
+          "lcd_crc": "67f08603",
+          "updated": "2",
+          "unchanged": "597",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+        "jit_memory": "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=0 recompiled=0 unsupported=0 short=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+        "end": "I (79568) korvo-j2me: RUN_END rc=0 presents=599 input=0 psram_before=11654328 psram_after=11654328 delta=0",
+        "audio": [
+          "I (79568) korvo-board: AUDIO writes=581 frames=297472 errors=0 tones=0 volume=40",
+          "I (79575) korvo-board: AUDIO_DETAIL offered=193338 accepted=135380 short=1 io_us=6069759 volume_calls=1 queued=0 underruns=0 silence_frames=2771"
+        ],
+        "vm": "stats: frames=599 paints=599 gfx=2392 tris=0 m3g=0 time=11.701s fps=51.2 bytecodes=21505 (0.00 M/s) natives=141575 heap=823744/823744 bytes cpcache=8890/54 findcache=0/0",
+        "checks": [
+          "AUDIO_BENCH_BEGIN WAV duration=3000000",
+          "AUDIO_BENCH_END WAV time=3000000 state=300",
+          "AUDIO_BENCH_BEGIN MIDI duration=3139682",
+          "AUDIO_BENCH_END MIDI time=3139682 state=300"
+        ]
+      },
+      {
+        "case": "nfs14",
+        "perf": {
+          "elapsed_us": "7837428",
+          "presents": "301",
+          "present_us": "945116",
+          "present_max_us": "9155",
+          "poll_us": "3706",
+          "poll_calls": "301",
+          "sleep_us": "158459",
+          "native_crc": "ed752148",
+          "lcd_crc": "0d4e14b8",
+          "updated": "3",
+          "unchanged": "298",
+          "hot_peak": "151552",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "3",
+          "stack_psram": "0"
+        },
+        "jit": "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+        "jit_memory": "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=0 recompiled=0 unsupported=0 short=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+        "end": "I (88121) korvo-j2me: RUN_END rc=0 presents=301 input=0 psram_before=11654328 psram_after=11654328 delta=0",
+        "audio": [
+          "I (88121) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (88128) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=300 paints=92 gfx=534 tris=0 m3g=0 time=6.385s fps=47.0 bytecodes=317905 (0.05 M/s) natives=61990 heap=2501024/2501264 bytes cpcache=44505/616 findcache=0/0",
+        "checks": []
+      },
+      {
+        "case": "nfs16",
+        "perf": {
+          "elapsed_us": "14492148",
+          "presents": "301",
+          "present_us": "1102940",
+          "present_max_us": "9228",
+          "poll_us": "3951",
+          "poll_calls": "301",
+          "sleep_us": "214560",
+          "native_crc": "218ed823",
+          "lcd_crc": "736a4521",
+          "updated": "31",
+          "unchanged": "270",
+          "hot_peak": "151552",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "3",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+        "jit_memory": "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=0 recompiled=0 unsupported=0 short=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+        "end": "I (103386) korvo-j2me: RUN_END rc=0 presents=301 input=0 psram_before=11654328 psram_after=11654328 delta=0",
+        "audio": [
+          "I (103386) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (103393) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=300 paints=300 gfx=12850 tris=0 m3g=0 time=13.074s fps=22.9 bytecodes=7856162 (0.60 M/s) natives=214204 heap=1411024/1482512 bytes cpcache=543310/1076 findcache=0/0",
+        "checks": []
+      }
+    ],
+    "on": [
+      {
+        "case": "cpu-0",
+        "perf": {
+          "elapsed_us": "15105994",
+          "presents": "553",
+          "present_us": "2892984",
+          "present_max_us": "9091",
+          "poll_us": "4399",
+          "poll_calls": "553",
+          "sleep_us": "0",
+          "native_crc": "9e3b7837",
+          "lcd_crc": "cbd4506b",
+          "updated": "242",
+          "unchanged": "311",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=1 compiled=11 executed=527957 bytecodes=2151590 declined=175 code_bytes=442",
+        "jit_memory": "JIT_MEMORY allocations=11 commits=11 refused=0 peak=688 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=638 recompiled=0 unsupported=2 short=173 memory_failures=0 commit_failures=0 peak_code=442 metadata=5000 stats=1 detailed=0",
+        "end": "I (121677) korvo-j2me: RUN_END rc=0 presents=553 input=0 psram_before=11654328 psram_after=11654328 delta=0",
+        "audio": [
+          "I (121677) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (121684) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=553 paints=124 gfx=16492 tris=0 m3g=0 time=15.053s fps=36.7 bytecodes=11390671 (0.76 M/s) natives=18368 heap=391792/391792 bytes cpcache=2922761/36 findcache=0/0",
+        "checks": [
+          "PERF_BENCH frames=120 work=4000 checksum=-1082513742"
+        ]
+      },
+      {
+        "case": "cpu-1",
+        "perf": {
+          "elapsed_us": "15105220",
+          "presents": "553",
+          "present_us": "2892852",
+          "present_max_us": "9097",
+          "poll_us": "4479",
+          "poll_calls": "553",
+          "sleep_us": "0",
+          "native_crc": "9e3b7837",
+          "lcd_crc": "cbd4506b",
+          "updated": "242",
+          "unchanged": "311",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=1 compiled=11 executed=527957 bytecodes=2151590 declined=175 code_bytes=442",
+        "jit_memory": "JIT_MEMORY allocations=11 commits=11 refused=0 peak=688 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=638 recompiled=0 unsupported=2 short=173 memory_failures=0 commit_failures=0 peak_code=442 metadata=5000 stats=1 detailed=0",
+        "end": "I (137341) korvo-j2me: RUN_END rc=0 presents=553 input=0 psram_before=11654328 psram_after=11654328 delta=0",
+        "audio": [
+          "I (137341) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (137348) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=553 paints=124 gfx=16492 tris=0 m3g=0 time=15.052s fps=36.7 bytecodes=11390671 (0.76 M/s) natives=18368 heap=391792/391792 bytes cpcache=2922761/36 findcache=0/0",
+        "checks": [
+          "PERF_BENCH frames=120 work=4000 checksum=-1082513742"
+        ]
+      },
+      {
+        "case": "render-0",
+        "perf": {
+          "elapsed_us": "8090693",
+          "presents": "241",
+          "present_us": "1497686",
+          "present_max_us": "9084",
+          "poll_us": "2522",
+          "poll_calls": "241",
+          "sleep_us": "0",
+          "native_crc": "c28d5ef8",
+          "lcd_crc": "df7449c1",
+          "updated": "241",
+          "unchanged": "0",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=1 compiled=8 executed=77464 bytecodes=355915 declined=40 code_bytes=310",
+        "jit_memory": "JIT_MEMORY allocations=8 commits=8 refused=0 peak=480 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=30 recompiled=0 unsupported=1 short=39 memory_failures=0 commit_failures=0 peak_code=310 metadata=5000 stats=1 detailed=0",
+        "end": "I (145950) korvo-j2me: RUN_END rc=0 presents=241 input=0 psram_before=11654328 psram_after=11654328 delta=0",
+        "audio": [
+          "I (145950) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (145957) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=241 paints=240 gfx=31680 tris=0 m3g=0 time=8.038s fps=30.0 bytecodes=704929 (0.09 M/s) natives=65296 heap=398624/398624 bytes cpcache=112074/27 findcache=0/0",
+        "checks": [
+          "RENDER_BENCH frames=240 final=240"
+        ]
+      },
+      {
+        "case": "render-1",
+        "perf": {
+          "elapsed_us": "8090632",
+          "presents": "241",
+          "present_us": "1498773",
+          "present_max_us": "9084",
+          "poll_us": "2499",
+          "poll_calls": "241",
+          "sleep_us": "0",
+          "native_crc": "c28d5ef8",
+          "lcd_crc": "df7449c1",
+          "updated": "241",
+          "unchanged": "0",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=1 compiled=8 executed=77464 bytecodes=355915 declined=40 code_bytes=310",
+        "jit_memory": "JIT_MEMORY allocations=8 commits=8 refused=0 peak=480 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=30 recompiled=0 unsupported=1 short=39 memory_failures=0 commit_failures=0 peak_code=310 metadata=5000 stats=1 detailed=0",
+        "end": "I (154590) korvo-j2me: RUN_END rc=0 presents=241 input=0 psram_before=11654328 psram_after=11654328 delta=0",
+        "audio": [
+          "I (154590) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (154597) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=241 paints=240 gfx=31680 tris=0 m3g=0 time=8.038s fps=30.0 bytecodes=704929 (0.09 M/s) natives=65296 heap=398624/398624 bytes cpcache=112074/27 findcache=0/0",
+        "checks": [
+          "RENDER_BENCH frames=240 final=240"
+        ]
+      },
+      {
+        "case": "audio-0",
+        "perf": {
+          "elapsed_us": "11650314",
+          "presents": "589",
+          "present_us": "1998405",
+          "present_max_us": "9095",
+          "poll_us": "5250",
+          "poll_calls": "589",
+          "sleep_us": "0",
+          "native_crc": "45756d2b",
+          "lcd_crc": "67f08603",
+          "updated": "2",
+          "unchanged": "587",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=1 compiled=1 executed=581 bytecodes=2324 declined=18 code_bytes=30",
+        "jit_memory": "JIT_MEMORY allocations=1 commits=1 refused=0 peak=48 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=16 recompiled=0 unsupported=1 short=17 memory_failures=0 commit_failures=0 peak_code=30 metadata=5000 stats=1 detailed=0",
+        "end": "I (166760) korvo-j2me: RUN_END rc=0 presents=589 input=0 psram_before=11654328 psram_after=11654328 delta=0",
+        "audio": [
+          "I (166760) korvo-board: AUDIO writes=581 frames=297472 errors=0 tones=0 volume=40",
+          "I (166767) korvo-board: AUDIO_DETAIL offered=193338 accepted=135380 short=1 io_us=6066999 volume_calls=0 queued=0 underruns=0 silence_frames=2771"
+        ],
+        "vm": "stats: frames=589 paints=589 gfx=2352 tris=0 m3g=0 time=11.599s fps=50.8 bytecodes=21175 (0.00 M/s) natives=141431 heap=820064/820064 bytes cpcache=8750/54 findcache=0/0",
+        "checks": [
+          "AUDIO_BENCH_BEGIN WAV duration=3000000",
+          "AUDIO_BENCH_END WAV time=3000000 state=300",
+          "AUDIO_BENCH_BEGIN MIDI duration=3139682",
+          "AUDIO_BENCH_END MIDI time=3139682 state=300"
+        ]
+      },
+      {
+        "case": "nfs14",
+        "perf": {
+          "elapsed_us": "8052222",
+          "presents": "301",
+          "present_us": "1018696",
+          "present_max_us": "9232",
+          "poll_us": "3731",
+          "poll_calls": "301",
+          "sleep_us": "157640",
+          "native_crc": "ed752148",
+          "lcd_crc": "0d4e14b8",
+          "updated": "3",
+          "unchanged": "298",
+          "hot_peak": "151552",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "3",
+          "stack_psram": "0"
+        },
+        "jit": "JIT_STATS active=1 compiled=133 executed=18296 bytecodes=117789 declined=1150 code_bytes=2832",
+        "jit_memory": "JIT_MEMORY allocations=133 commits=133 refused=0 peak=4160 live=0",
+        "jit_detail": "JIT_DETAIL evictions=72 site_evictions=16059 recompiled=3 unsupported=13 short=1137 memory_failures=0 commit_failures=0 peak_code=2882 metadata=5000 stats=1 detailed=0",
+        "end": "I (175547) korvo-j2me: RUN_END rc=0 presents=301 input=0 psram_before=11654328 psram_after=11654328 delta=0",
+        "audio": [
+          "I (175547) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (175554) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=300 paints=91 gfx=529 tris=0 m3g=0 time=6.587s fps=45.5 bytecodes=317884 (0.05 M/s) natives=61985 heap=2500912/2501152 bytes cpcache=44499/616 findcache=0/0",
+        "checks": []
+      },
+      {
+        "case": "nfs16",
+        "perf": {
+          "elapsed_us": "16138953",
+          "presents": "301",
+          "present_us": "1091684",
+          "present_max_us": "9221",
+          "poll_us": "3897",
+          "poll_calls": "301",
+          "sleep_us": "214247",
+          "native_crc": "218ed823",
+          "lcd_crc": "736a4521",
+          "updated": "28",
+          "unchanged": "273",
+          "hot_peak": "151552",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "3",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=1 compiled=4304 executed=481297 bytecodes=3131827 declined=44082 code_bytes=3274",
+        "jit_memory": "JIT_MEMORY allocations=4304 commits=4304 refused=0 peak=4864 live=0",
+        "jit_detail": "JIT_DETAIL evictions=4240 site_evictions=896010 recompiled=18 unsupported=2 short=44080 memory_failures=0 commit_failures=0 peak_code=3460 metadata=5000 stats=1 detailed=0",
+        "end": "I (192468) korvo-j2me: RUN_END rc=0 presents=301 input=0 psram_before=11654328 psram_after=11654328 delta=0",
+        "audio": [
+          "I (192468) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (192475) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=300 paints=300 gfx=12850 tris=0 m3g=0 time=14.696s fps=20.4 bytecodes=7855806 (0.53 M/s) natives=214204 heap=1411024/1482512 bytes cpcache=543440/1076 findcache=0/0",
+        "checks": []
+      }
+    ]
+  },
+  "pure_kernels": {
+    "off": [
+      {
+        "case": "kernels-0",
+        "perf": {
+          "elapsed_us": "1082791",
+          "presents": "5",
+          "present_us": "21424",
+          "present_max_us": "9063",
+          "poll_us": "695",
+          "poll_calls": "5",
+          "sleep_us": "0",
+          "native_crc": "066e64a1",
+          "lcd_crc": "743ecd69",
+          "updated": "1",
+          "unchanged": "4",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+        "jit_memory": "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=0 recompiled=0 unsupported=0 short=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+        "end": "I (30923) korvo-j2me: RUN_END rc=0 presents=5 input=0 psram_before=11653816 psram_after=11653816 delta=0",
+        "audio": [
+          "I (30924) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (30930) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=5 paints=3 gfx=4 tris=0 m3g=0 time=1.033s fps=4.8 bytecodes=4821083 (4.67 M/s) natives=106 heap=315712/315712 bytes cpcache=200111/48 findcache=0/0",
+        "checks": [
+          "KERNEL name=locals iterations=50000 checksum=2f66c58 elapsed_ms=142",
+          "KERNEL name=constants iterations=50000 checksum=839a908 elapsed_ms=111",
+          "KERNEL name=fields iterations=50000 checksum=4c1935ff elapsed_ms=199",
+          "KERNEL name=arrays iterations=50000 checksum=452ca3 elapsed_ms=206",
+          "KERNEL name=branches iterations=50000 checksum=a632cf73 elapsed_ms=207",
+          "KERNELS_DONE"
+        ]
+      },
+      {
+        "case": "kernels-1",
+        "perf": {
+          "elapsed_us": "1085171",
+          "presents": "5",
+          "present_us": "22442",
+          "present_max_us": "9077",
+          "poll_us": "382",
+          "poll_calls": "5",
+          "sleep_us": "0",
+          "native_crc": "066e64a1",
+          "lcd_crc": "743ecd69",
+          "updated": "1",
+          "unchanged": "4",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+        "jit_memory": "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=0 recompiled=0 unsupported=0 short=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+        "end": "I (32583) korvo-j2me: RUN_END rc=0 presents=5 input=0 psram_before=11653816 psram_after=11653816 delta=0",
+        "audio": [
+          "I (32584) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (32590) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=5 paints=3 gfx=4 tris=0 m3g=0 time=1.036s fps=4.8 bytecodes=4821083 (4.65 M/s) natives=106 heap=315712/315712 bytes cpcache=200111/48 findcache=0/0",
+        "checks": [
+          "KERNEL name=locals iterations=50000 checksum=2f66c58 elapsed_ms=143",
+          "KERNEL name=constants iterations=50000 checksum=839a908 elapsed_ms=110",
+          "KERNEL name=fields iterations=50000 checksum=4c1935ff elapsed_ms=200",
+          "KERNEL name=arrays iterations=50000 checksum=452ca3 elapsed_ms=206",
+          "KERNEL name=branches iterations=50000 checksum=a632cf73 elapsed_ms=206",
+          "KERNELS_DONE"
+        ]
+      }
+    ],
+    "probe": [
+      {
+        "case": "kernels-0",
+        "perf": {
+          "elapsed_us": "2724412",
+          "presents": "5",
+          "present_us": "21400",
+          "present_max_us": "9024",
+          "poll_us": "695",
+          "poll_calls": "5",
+          "sleep_us": "0",
+          "native_crc": "066e64a1",
+          "lcd_crc": "743ecd69",
+          "updated": "1",
+          "unchanged": "4",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=1 compiled=0 executed=0 bytecodes=0 declined=59 code_bytes=0",
+        "jit_memory": "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=106 recompiled=0 unsupported=0 short=59 memory_failures=0 commit_failures=0 peak_code=0 metadata=5000 stats=1 detailed=0",
+        "end": "I (38541) korvo-j2me: RUN_END rc=0 presents=5 input=0 psram_before=11653816 psram_after=11653816 delta=0",
+        "audio": [
+          "I (38542) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (38548) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=5 paints=3 gfx=4 tris=0 m3g=0 time=2.674s fps=1.9 bytecodes=4821083 (1.80 M/s) natives=106 heap=315712/315712 bytes cpcache=200111/48 findcache=0/0",
+        "checks": [
+          "KERNEL name=locals iterations=50000 checksum=2f66c58 elapsed_ms=502",
+          "KERNEL name=constants iterations=50000 checksum=839a908 elapsed_ms=303",
+          "KERNEL name=fields iterations=50000 checksum=4c1935ff elapsed_ms=474",
+          "KERNEL name=arrays iterations=50000 checksum=452ca3 elapsed_ms=584",
+          "KERNEL name=branches iterations=50000 checksum=a632cf73 elapsed_ms=641",
+          "KERNELS_DONE"
+        ]
+      },
+      {
+        "case": "kernels-1",
+        "perf": {
+          "elapsed_us": "2737405",
+          "presents": "5",
+          "present_us": "21344",
+          "present_max_us": "8968",
+          "poll_us": "688",
+          "poll_calls": "5",
+          "sleep_us": "0",
+          "native_crc": "066e64a1",
+          "lcd_crc": "743ecd69",
+          "updated": "1",
+          "unchanged": "4",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=1 compiled=0 executed=0 bytecodes=0 declined=59 code_bytes=0",
+        "jit_memory": "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=106 recompiled=0 unsupported=0 short=59 memory_failures=0 commit_failures=0 peak_code=0 metadata=5000 stats=1 detailed=0",
+        "end": "I (41852) korvo-j2me: RUN_END rc=0 presents=5 input=0 psram_before=11653816 psram_after=11653816 delta=0",
+        "audio": [
+          "I (41853) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (41859) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=5 paints=3 gfx=4 tris=0 m3g=0 time=2.687s fps=1.9 bytecodes=4821083 (1.79 M/s) natives=106 heap=315712/315712 bytes cpcache=200111/48 findcache=0/0",
+        "checks": [
+          "KERNEL name=locals iterations=50000 checksum=2f66c58 elapsed_ms=506",
+          "KERNEL name=constants iterations=50000 checksum=839a908 elapsed_ms=304",
+          "KERNEL name=fields iterations=50000 checksum=4c1935ff elapsed_ms=474",
+          "KERNEL name=arrays iterations=50000 checksum=452ca3 elapsed_ms=586",
+          "KERNEL name=branches iterations=50000 checksum=a632cf73 elapsed_ms=645",
+          "KERNELS_DONE"
+        ]
+      }
+    ],
+    "on": [
+      {
+        "case": "kernels-0",
+        "perf": {
+          "elapsed_us": "1534939",
+          "presents": "5",
+          "present_us": "21297",
+          "present_max_us": "8962",
+          "poll_us": "690",
+          "poll_calls": "5",
+          "sleep_us": "0",
+          "native_crc": "066e64a1",
+          "lcd_crc": "743ecd69",
+          "updated": "1",
+          "unchanged": "4",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=1 compiled=35 executed=300021 bytecodes=2481036 declined=56 code_bytes=1772",
+        "jit_memory": "JIT_MEMORY allocations=35 commits=35 refused=0 peak=2464 live=0",
+        "jit_detail": "JIT_DETAIL evictions=4 site_evictions=105 recompiled=0 unsupported=0 short=56 memory_failures=0 commit_failures=0 peak_code=1772 metadata=5000 stats=1 detailed=0",
+        "end": "I (46611) korvo-j2me: RUN_END rc=0 presents=5 input=0 psram_before=11653816 psram_after=11653816 delta=0",
+        "audio": [
+          "I (46612) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (46618) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=5 paints=3 gfx=4 tris=0 m3g=0 time=1.483s fps=3.4 bytecodes=4821083 (3.25 M/s) natives=106 heap=315712/315712 bytes cpcache=200111/48 findcache=0/0",
+        "checks": [
+          "KERNEL name=locals iterations=50000 checksum=2f66c58 elapsed_ms=120",
+          "KERNEL name=constants iterations=50000 checksum=839a908 elapsed_ms=116",
+          "KERNEL name=fields iterations=50000 checksum=4c1935ff elapsed_ms=407",
+          "KERNEL name=arrays iterations=50000 checksum=452ca3 elapsed_ms=414",
+          "KERNEL name=branches iterations=50000 checksum=a632cf73 elapsed_ms=258",
+          "KERNELS_DONE"
+        ]
+      },
+      {
+        "case": "kernels-1",
+        "perf": {
+          "elapsed_us": "1529953",
+          "presents": "5",
+          "present_us": "21403",
+          "present_max_us": "9018",
+          "poll_us": "692",
+          "poll_calls": "5",
+          "sleep_us": "0",
+          "native_crc": "066e64a1",
+          "lcd_crc": "743ecd69",
+          "updated": "1",
+          "unchanged": "4",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=1 compiled=35 executed=300021 bytecodes=2481036 declined=56 code_bytes=1772",
+        "jit_memory": "JIT_MEMORY allocations=35 commits=35 refused=0 peak=2464 live=0",
+        "jit_detail": "JIT_DETAIL evictions=4 site_evictions=105 recompiled=0 unsupported=0 short=56 memory_failures=0 commit_failures=0 peak_code=1772 metadata=5000 stats=1 detailed=0",
+        "end": "I (48716) korvo-j2me: RUN_END rc=0 presents=5 input=0 psram_before=11653816 psram_after=11653816 delta=0",
+        "audio": [
+          "I (48717) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (48723) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=5 paints=3 gfx=4 tris=0 m3g=0 time=1.478s fps=3.4 bytecodes=4821083 (3.26 M/s) natives=106 heap=315712/315712 bytes cpcache=200111/48 findcache=0/0",
+        "checks": [
+          "KERNEL name=locals iterations=50000 checksum=2f66c58 elapsed_ms=121",
+          "KERNEL name=constants iterations=50000 checksum=839a908 elapsed_ms=117",
+          "KERNEL name=fields iterations=50000 checksum=4c1935ff elapsed_ms=404",
+          "KERNEL name=arrays iterations=50000 checksum=452ca3 elapsed_ms=410",
+          "KERNEL name=branches iterations=50000 checksum=a632cf73 elapsed_ms=259",
+          "KERNELS_DONE"
+        ]
+      }
+    ]
+  },
+  "interactive_games": {
+    "dmc": {
+      "end": "I (817153) korvo-j2me: RUN_END rc=0 presents=26960 input=36 psram_before=11653816 psram_after=11653816 delta=0",
+      "audio": [
+        "I (817153) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (817159) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+      ],
+      "stats": [
+        "stats: frames=26960 paints=8188 gfx=2413085 tris=582667 m3g=0 time=763.820s fps=35.3 bytecodes=154972058 (0.20 M/s) natives=5694280 heap=2185440/2877712 bytes cpcache=24937104/1123 findcache=0/0",
+        "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+        "JIT_DETAIL evictions=0 site_evictions=0 recompiled=0 unsupported=0 short=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+        "PERF elapsed_us=763896106 presents=26960 present_us=88596264 present_max_us=9400 poll_us=3927717 poll_calls=26997 sleep_us=418120 native_crc=7b61a7c8 lcd_crc=cda0f555 updated=4276 unchanged=22684 hot_peak=151552 hot_live=0 scale_mismatch=0 stack_internal=3 stack_psram=1",
+        "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0"
+      ]
+    },
+    "gof_dialogue": {
+      "end": "I (1233544) korvo-j2me: RUN_END rc=0 presents=11981 input=47 psram_before=11653816 psram_after=11653816 delta=0",
+      "audio": [
+        "I (1233544) korvo-board: AUDIO writes=6948 frames=3557376 errors=0 tones=0 volume=40",
+        "I (1233551) korvo-board: AUDIO_DETAIL offered=1387903 accepted=1387903 short=0 io_us=73184326 volume_calls=1 queued=0 underruns=387 silence_frames=536092"
+      ],
+      "stats": [
+        "stats: frames=11981 paints=7788 gfx=365038 tris=435835 m3g=0 time=399.123s fps=30.0 bytecodes=52874870 (0.13 M/s) natives=2938962 heap=4010128/6291392 bytes cpcache=13334628/1688 findcache=0/0",
+        "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+        "JIT_DETAIL evictions=0 site_evictions=0 recompiled=0 unsupported=0 short=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+        "PERF elapsed_us=399195085 presents=11981 present_us=51619650 present_max_us=9171 poll_us=83165 poll_calls=12029 sleep_us=0 native_crc=2dd916c6 lcd_crc=ec9633e7 updated=3188 unchanged=8793 hot_peak=151552 hot_live=0 scale_mismatch=0 stack_internal=3 stack_psram=0",
+        "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0"
+      ]
+    },
+    "moto": {
+      "end": "I (1461249) korvo-j2me: RUN_END rc=0 presents=3416 input=19 psram_before=11653816 psram_after=11653816 delta=0",
+      "audio": [
+        "I (1461249) korvo-board: AUDIO writes=5051 frames=2586112 errors=0 tones=0 volume=40",
+        "I (1461256) korvo-board: AUDIO_DETAIL offered=1137152 accepted=1137152 short=0 io_us=53126348 volume_calls=0 queued=0 underruns=10 silence_frames=110681"
+      ],
+      "stats": [
+        "stats: frames=3416 paints=3416 gfx=112699 tris=62258 m3g=10280 time=213.981s fps=16.0 bytecodes=3387325 (0.02 M/s) natives=702741 heap=3929024/6290048 bytes cpcache=820356/815 findcache=0/0",
+        "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+        "JIT_DETAIL evictions=0 site_evictions=0 recompiled=0 unsupported=0 short=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+        "PERF elapsed_us=214042249 presents=3416 present_us=12626548 present_max_us=9096 poll_us=28778 poll_calls=3436 sleep_us=0 native_crc=970c429f lcd_crc=f30b86d6 updated=376 unchanged=3040 hot_peak=151552 hot_live=0 scale_mismatch=0 stack_internal=3 stack_psram=4",
+        "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0"
+      ]
+    }
+  },
+  "validation": {
+    "host_asan_ubsan_werror": {
+      "passed": 13,
+      "failed": 0,
+      "log": "build/latest-3d/host-tests.log"
+    },
+    "scaler_oracle_frames": 1800,
+    "app_only_flash_verified": true,
+    "normal_rms_not_used_by_bench": true,
+    "final_smoke": "SMOKE_PASS psram_after=[11653432, 11653432, 11653432]",
+    "final_serial_upload_crc_reserve_duplicate_timeout_checks": "PASS",
+    "final_console": {
+      "injected_row_error_base_baud_fallback": "PASS",
+      "identical_menu_lcd_screenshots": 4,
+      "storage": "STORAGE root=/flash total=8220672 free=397312 reserve=262144",
+      "games": [
+        "I (1227228) korvo-j2me: GAMES count=22 (0 is built-in demo)",
+        "GAMES_BEGIN 22",
+        "0 BUILT-IN DEMO",
+        "1 /flash/games/g323942169575.jar 都市赛车6火线追击.jar",
+        "2 /flash/games/g77d10a56e51a.jar 极品飞车14之热力追踪中文版.jar",
+        "3 /flash/games/g7d4369009c5d.jar 狂野飙车4-亡命都市.jar",
+        "4 /flash/games/g876dfdaa8a2c.jar 家园6之革命完美汉化版_索爱 K790系列(240x320).jar",
+        "5 /flash/games/g92c5f29e1d66.jar 极品飞车16：亡命狂飙.jar",
+        "6 /flash/games/gffe21f751ac6.jar 孤岛余生2时间之谜汉化版.jar",
+        "7 /flash/j2me/钻石狂潮_1335.jar",
+        "8 /flash/j2me/audiodemo.jar",
+        "9 /flash/j2me/perf-cpu.jar",
+        "10 /flash/j2me/perf-render.jar",
+        "11 /flash/j2me/perf-audio.jar",
+        "12 /flash/j2me/perf-render2.jar",
+        "13 /flash/j2me/俄罗斯方块中文版_2832.jar",
+        "14 /flash/j2me/贪吃蛇经典版_4515.jar",
+        "15 /flash/j2me/涂鸦地带_模拟可玩_12472.jar",
+        "16 /flash/j2me/1945空战英雄_6105.jar",
+        "17 /flash/j2me/蹦球传说_7801.jar",
+        "18 @test-dmc.jar 鬼泣3D中文版 [APP]",
+        "19 @test-gof.jar 浴火银河 [APP]",
+        "20 @test-moto.jar 3D摩托赛车 [APP]",
+        "21 @test-kernels.jar JIT FIXED KERNELS [APP]",
+        "GAMES_END"
+      ],
+      "fps": "FPS_STATE on rate=0.0",
+      "jit": "JIT_STATE off available=1",
+      "status": "STATUS running=0 res=240x320 presents=11086 input=25 psram=11653432 internal=275163"
+    }
+  },
+  "final_end_to_end": {
+    "off": [
+      {
+        "case": "cpu-0",
+        "perf": {
+          "elapsed_us": "9853831",
+          "presents": "313",
+          "present_us": "2051100",
+          "present_max_us": "9117",
+          "poll_us": "2624",
+          "poll_calls": "313",
+          "sleep_us": "0",
+          "native_crc": "9e3b7837",
+          "lcd_crc": "cbd4506b",
+          "updated": "240",
+          "unchanged": "73",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+        "jit_memory": "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=0 recompiled=0 unsupported=0 short=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+        "end": "I (44975) korvo-j2me: RUN_END rc=0 presents=313 input=0 psram_before=11653432 psram_after=11653432 delta=0",
+        "audio": [
+          "I (44975) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (44981) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=313 paints=122 gfx=16226 tris=0 m3g=0 time=9.803s fps=31.9 bytecodes=11385053 (1.16 M/s) natives=18076 heap=390480/390480 bytes cpcache=2922081/36 findcache=0/0",
+        "checks": [
+          "PERF_BENCH frames=120 work=4000 checksum=-1082513742"
+        ]
+      },
+      {
+        "case": "cpu-1",
+        "perf": {
+          "elapsed_us": "9858896",
+          "presents": "313",
+          "present_us": "2052948",
+          "present_max_us": "9117",
+          "poll_us": "2633",
+          "poll_calls": "313",
+          "sleep_us": "0",
+          "native_crc": "9e3b7837",
+          "lcd_crc": "cbd4506b",
+          "updated": "240",
+          "unchanged": "73",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+        "jit_memory": "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=0 recompiled=0 unsupported=0 short=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+        "end": "I (55410) korvo-j2me: RUN_END rc=0 presents=313 input=0 psram_before=11653432 psram_after=11653432 delta=0",
+        "audio": [
+          "I (55410) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (55416) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=313 paints=122 gfx=16226 tris=0 m3g=0 time=9.808s fps=31.9 bytecodes=11385053 (1.16 M/s) natives=18076 heap=390480/390480 bytes cpcache=2922081/36 findcache=0/0",
+        "checks": [
+          "PERF_BENCH frames=120 work=4000 checksum=-1082513742"
+        ]
+      },
+      {
+        "case": "render-0",
+        "perf": {
+          "elapsed_us": "8066059",
+          "presents": "241",
+          "present_us": "1502586",
+          "present_max_us": "9118",
+          "poll_us": "2195",
+          "poll_calls": "241",
+          "sleep_us": "0",
+          "native_crc": "c28d5ef8",
+          "lcd_crc": "df7449c1",
+          "updated": "241",
+          "unchanged": "0",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+        "jit_memory": "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=0 recompiled=0 unsupported=0 short=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+        "end": "I (64020) korvo-j2me: RUN_END rc=0 presents=241 input=0 psram_before=11653432 psram_after=11653432 delta=0",
+        "audio": [
+          "I (64020) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (64026) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=241 paints=240 gfx=31680 tris=0 m3g=0 time=8.015s fps=30.1 bytecodes=704929 (0.09 M/s) natives=65296 heap=398624/398624 bytes cpcache=112074/27 findcache=0/0",
+        "checks": [
+          "RENDER_BENCH frames=240 final=240"
+        ]
+      },
+      {
+        "case": "render-1",
+        "perf": {
+          "elapsed_us": "8067065",
+          "presents": "241",
+          "present_us": "1502495",
+          "present_max_us": "9119",
+          "poll_us": "2199",
+          "poll_calls": "241",
+          "sleep_us": "0",
+          "native_crc": "c28d5ef8",
+          "lcd_crc": "df7449c1",
+          "updated": "241",
+          "unchanged": "0",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+        "jit_memory": "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=0 recompiled=0 unsupported=0 short=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+        "end": "I (72658) korvo-j2me: RUN_END rc=0 presents=241 input=0 psram_before=11653432 psram_after=11653432 delta=0",
+        "audio": [
+          "I (72658) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (72664) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=241 paints=240 gfx=31680 tris=0 m3g=0 time=8.016s fps=30.1 bytecodes=704929 (0.09 M/s) natives=65296 heap=398624/398624 bytes cpcache=112074/27 findcache=0/0",
+        "checks": [
+          "RENDER_BENCH frames=240 final=240"
+        ]
+      },
+      {
+        "case": "audio-0",
+        "perf": {
+          "elapsed_us": "11674020",
+          "presents": "592",
+          "present_us": "1998957",
+          "present_max_us": "9099",
+          "poll_us": "4759",
+          "poll_calls": "592",
+          "sleep_us": "0",
+          "native_crc": "45756d2b",
+          "lcd_crc": "67f08603",
+          "updated": "2",
+          "unchanged": "590",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+        "jit_memory": "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=0 recompiled=0 unsupported=0 short=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+        "end": "I (84871) korvo-j2me: RUN_END rc=0 presents=592 input=0 psram_before=11653432 psram_after=11653432 delta=0",
+        "audio": [
+          "I (84871) korvo-board: AUDIO writes=581 frames=297472 errors=0 tones=0 volume=40",
+          "I (84877) korvo-board: AUDIO_DETAIL offered=193338 accepted=135380 short=1 io_us=6066766 volume_calls=1 queued=0 underruns=0 silence_frames=2771"
+        ],
+        "vm": "stats: frames=592 paints=592 gfx=2364 tris=0 m3g=0 time=11.624s fps=50.9 bytecodes=21274 (0.00 M/s) natives=141473 heap=821168/821168 bytes cpcache=8792/54 findcache=0/0",
+        "checks": [
+          "AUDIO_BENCH_BEGIN WAV duration=3000000",
+          "AUDIO_BENCH_END WAV time=3000000 state=300",
+          "AUDIO_BENCH_BEGIN MIDI duration=3139682",
+          "AUDIO_BENCH_END MIDI time=3139682 state=300"
+        ]
+      },
+      {
+        "case": "nfs14",
+        "perf": {
+          "elapsed_us": "7933299",
+          "presents": "301",
+          "present_us": "944931",
+          "present_max_us": "9227",
+          "poll_us": "3812",
+          "poll_calls": "301",
+          "sleep_us": "158316",
+          "native_crc": "ed752148",
+          "lcd_crc": "0d4e14b8",
+          "updated": "3",
+          "unchanged": "298",
+          "hot_peak": "151552",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "3",
+          "stack_psram": "0"
+        },
+        "jit": "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+        "jit_memory": "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=0 recompiled=0 unsupported=0 short=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+        "end": "I (93566) korvo-j2me: RUN_END rc=0 presents=301 input=0 psram_before=11653432 psram_after=11653432 delta=0",
+        "audio": [
+          "I (93566) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (93572) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=300 paints=92 gfx=534 tris=0 m3g=0 time=6.404s fps=46.8 bytecodes=317905 (0.05 M/s) natives=61990 heap=2501024/2501264 bytes cpcache=44505/616 findcache=0/0",
+        "checks": []
+      },
+      {
+        "case": "nfs16",
+        "perf": {
+          "elapsed_us": "14510054",
+          "presents": "301",
+          "present_us": "1092599",
+          "present_max_us": "9235",
+          "poll_us": "3716",
+          "poll_calls": "301",
+          "sleep_us": "216011",
+          "native_crc": "218ed823",
+          "lcd_crc": "736a4521",
+          "updated": "30",
+          "unchanged": "271",
+          "hot_peak": "151552",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "3",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+        "jit_memory": "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=0 recompiled=0 unsupported=0 short=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+        "end": "I (108891) korvo-j2me: RUN_END rc=0 presents=301 input=0 psram_before=11653432 psram_after=11653432 delta=0",
+        "audio": [
+          "I (108891) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (108897) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=300 paints=300 gfx=12850 tris=0 m3g=0 time=13.011s fps=23.1 bytecodes=7856084 (0.60 M/s) natives=214204 heap=1411024/1482512 bytes cpcache=543310/1076 findcache=0/0",
+        "checks": []
+      }
+    ],
+    "on": [
+      {
+        "case": "cpu-0",
+        "perf": {
+          "elapsed_us": "15123739",
+          "presents": "553",
+          "present_us": "2854586",
+          "present_max_us": "9077",
+          "poll_us": "4322",
+          "poll_calls": "553",
+          "sleep_us": "0",
+          "native_crc": "9e3b7837",
+          "lcd_crc": "cbd4506b",
+          "updated": "242",
+          "unchanged": "311",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=1 compiled=11 executed=527957 bytecodes=2151590 declined=59 code_bytes=442",
+        "jit_memory": "JIT_MEMORY allocations=11 commits=11 refused=0 peak=688 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=642 recompiled=0 unsupported=2 short=57 memory_failures=0 commit_failures=0 peak_code=442 metadata=5000 stats=1 detailed=0",
+        "end": "I (127121) korvo-j2me: RUN_END rc=0 presents=553 input=0 psram_before=11653432 psram_after=11653432 delta=0",
+        "audio": [
+          "I (127122) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (127128) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=553 paints=124 gfx=16492 tris=0 m3g=0 time=15.071s fps=36.7 bytecodes=11390671 (0.76 M/s) natives=18368 heap=391792/391792 bytes cpcache=2922761/36 findcache=0/0",
+        "checks": [
+          "PERF_BENCH frames=120 work=4000 checksum=-1082513742"
+        ]
+      },
+      {
+        "case": "cpu-1",
+        "perf": {
+          "elapsed_us": "15115813",
+          "presents": "553",
+          "present_us": "2844041",
+          "present_max_us": "9082",
+          "poll_us": "4304",
+          "poll_calls": "553",
+          "sleep_us": "0",
+          "native_crc": "9e3b7837",
+          "lcd_crc": "cbd4506b",
+          "updated": "242",
+          "unchanged": "311",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=1 compiled=11 executed=527957 bytecodes=2151590 declined=59 code_bytes=442",
+        "jit_memory": "JIT_MEMORY allocations=11 commits=11 refused=0 peak=688 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=642 recompiled=0 unsupported=2 short=57 memory_failures=0 commit_failures=0 peak_code=442 metadata=5000 stats=1 detailed=0",
+        "end": "I (142818) korvo-j2me: RUN_END rc=0 presents=553 input=0 psram_before=11653432 psram_after=11653432 delta=0",
+        "audio": [
+          "I (142818) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (142824) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=553 paints=124 gfx=16492 tris=0 m3g=0 time=15.063s fps=36.7 bytecodes=11390671 (0.76 M/s) natives=18368 heap=391792/391792 bytes cpcache=2922761/36 findcache=0/0",
+        "checks": [
+          "PERF_BENCH frames=120 work=4000 checksum=-1082513742"
+        ]
+      },
+      {
+        "case": "render-0",
+        "perf": {
+          "elapsed_us": "8090546",
+          "presents": "241",
+          "present_us": "1498046",
+          "present_max_us": "9084",
+          "poll_us": "2137",
+          "poll_calls": "241",
+          "sleep_us": "0",
+          "native_crc": "c28d5ef8",
+          "lcd_crc": "df7449c1",
+          "updated": "241",
+          "unchanged": "0",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=1 compiled=8 executed=77464 bytecodes=355915 declined=40 code_bytes=310",
+        "jit_memory": "JIT_MEMORY allocations=8 commits=8 refused=0 peak=480 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=31 recompiled=0 unsupported=1 short=39 memory_failures=0 commit_failures=0 peak_code=310 metadata=5000 stats=1 detailed=0",
+        "end": "I (151450) korvo-j2me: RUN_END rc=0 presents=241 input=0 psram_before=11653432 psram_after=11653432 delta=0",
+        "audio": [
+          "I (151450) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (151456) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=241 paints=240 gfx=31680 tris=0 m3g=0 time=8.038s fps=30.0 bytecodes=704929 (0.09 M/s) natives=65296 heap=398624/398624 bytes cpcache=112074/27 findcache=0/0",
+        "checks": [
+          "RENDER_BENCH frames=240 final=240"
+        ]
+      },
+      {
+        "case": "render-1",
+        "perf": {
+          "elapsed_us": "8090553",
+          "presents": "241",
+          "present_us": "1498109",
+          "present_max_us": "9086",
+          "poll_us": "2120",
+          "poll_calls": "241",
+          "sleep_us": "0",
+          "native_crc": "c28d5ef8",
+          "lcd_crc": "df7449c1",
+          "updated": "241",
+          "unchanged": "0",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=1 compiled=8 executed=77464 bytecodes=355915 declined=40 code_bytes=310",
+        "jit_memory": "JIT_MEMORY allocations=8 commits=8 refused=0 peak=480 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=31 recompiled=0 unsupported=1 short=39 memory_failures=0 commit_failures=0 peak_code=310 metadata=5000 stats=1 detailed=0",
+        "end": "I (160120) korvo-j2me: RUN_END rc=0 presents=241 input=0 psram_before=11653432 psram_after=11653432 delta=0",
+        "audio": [
+          "I (160120) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (160126) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=241 paints=240 gfx=31680 tris=0 m3g=0 time=8.038s fps=30.0 bytecodes=704929 (0.09 M/s) natives=65296 heap=398624/398624 bytes cpcache=112074/27 findcache=0/0",
+        "checks": [
+          "RENDER_BENCH frames=240 final=240"
+        ]
+      },
+      {
+        "case": "audio-0",
+        "perf": {
+          "elapsed_us": "11584190",
+          "presents": "589",
+          "present_us": "1936293",
+          "present_max_us": "9070",
+          "poll_us": "4751",
+          "poll_calls": "589",
+          "sleep_us": "0",
+          "native_crc": "45756d2b",
+          "lcd_crc": "67f08603",
+          "updated": "2",
+          "unchanged": "587",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=1 compiled=1 executed=581 bytecodes=2324 declined=18 code_bytes=30",
+        "jit_memory": "JIT_MEMORY allocations=1 commits=1 refused=0 peak=48 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=12 recompiled=0 unsupported=1 short=17 memory_failures=0 commit_failures=0 peak_code=30 metadata=5000 stats=1 detailed=0",
+        "end": "I (172258) korvo-j2me: RUN_END rc=0 presents=589 input=0 psram_before=11653432 psram_after=11653432 delta=0",
+        "audio": [
+          "I (172258) korvo-board: AUDIO writes=581 frames=297472 errors=0 tones=0 volume=40",
+          "I (172265) korvo-board: AUDIO_DETAIL offered=193338 accepted=135380 short=1 io_us=6065783 volume_calls=0 queued=0 underruns=0 silence_frames=2771"
+        ],
+        "vm": "stats: frames=589 paints=589 gfx=2352 tris=0 m3g=0 time=11.532s fps=51.1 bytecodes=21175 (0.00 M/s) natives=141433 heap=820064/820064 bytes cpcache=8750/54 findcache=0/0",
+        "checks": [
+          "AUDIO_BENCH_BEGIN WAV duration=3000000",
+          "AUDIO_BENCH_END WAV time=3000000 state=300",
+          "AUDIO_BENCH_BEGIN MIDI duration=3139682",
+          "AUDIO_BENCH_END MIDI time=3139682 state=300"
+        ]
+      },
+      {
+        "case": "nfs14",
+        "perf": {
+          "elapsed_us": "8080122",
+          "presents": "301",
+          "present_us": "995780",
+          "present_max_us": "9232",
+          "poll_us": "3761",
+          "poll_calls": "301",
+          "sleep_us": "157850",
+          "native_crc": "ed752148",
+          "lcd_crc": "0d4e14b8",
+          "updated": "3",
+          "unchanged": "298",
+          "hot_peak": "151552",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "3",
+          "stack_psram": "0"
+        },
+        "jit": "JIT_STATS active=1 compiled=125 executed=18328 bytecodes=118017 declined=1146 code_bytes=2648",
+        "jit_memory": "JIT_MEMORY allocations=125 commits=125 refused=0 peak=4032 live=0",
+        "jit_detail": "JIT_DETAIL evictions=69 site_evictions=15959 recompiled=2 unsupported=12 short=1134 memory_failures=0 commit_failures=0 peak_code=2834 metadata=5000 stats=1 detailed=0",
+        "end": "I (181095) korvo-j2me: RUN_END rc=0 presents=301 input=0 psram_before=11653432 psram_after=11653432 delta=0",
+        "audio": [
+          "I (181096) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (181102) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=300 paints=91 gfx=528 tris=0 m3g=0 time=6.547s fps=45.8 bytecodes=317865 (0.05 M/s) natives=61981 heap=2500912/2501152 bytes cpcache=44491/616 findcache=0/0",
+        "checks": []
+      },
+      {
+        "case": "nfs16",
+        "perf": {
+          "elapsed_us": "16185919",
+          "presents": "301",
+          "present_us": "1006071",
+          "present_max_us": "9146",
+          "poll_us": "4168",
+          "poll_calls": "301",
+          "sleep_us": "214711",
+          "native_crc": "218ed823",
+          "lcd_crc": "736a4521",
+          "updated": "28",
+          "unchanged": "273",
+          "hot_peak": "151552",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "3",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=1 compiled=4203 executed=469340 bytecodes=3055767 declined=40545 code_bytes=3314",
+        "jit_memory": "JIT_MEMORY allocations=4203 commits=4203 refused=0 peak=4736 live=0",
+        "jit_detail": "JIT_DETAIL evictions=4140 site_evictions=1069968 recompiled=18 unsupported=2 short=40543 memory_failures=0 commit_failures=0 peak_code=3376 metadata=5000 stats=1 detailed=0",
+        "end": "I (198105) korvo-j2me: RUN_END rc=0 presents=301 input=0 psram_before=11653432 psram_after=11653432 delta=0",
+        "audio": [
+          "I (198106) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (198112) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=300 paints=300 gfx=12850 tris=0 m3g=0 time=14.686s fps=20.4 bytecodes=7855777 (0.53 M/s) natives=214204 heap=1411024/1482512 bytes cpcache=543440/1076 findcache=0/0",
+        "checks": []
+      }
+    ]
+  },
+  "final_pure_kernels": {
+    "off": [
+      {
+        "case": "kernels-0",
+        "perf": {
+          "elapsed_us": "1083687",
+          "presents": "5",
+          "present_us": "21384",
+          "present_max_us": "9071",
+          "poll_us": "694",
+          "poll_calls": "5",
+          "sleep_us": "0",
+          "native_crc": "066e64a1",
+          "lcd_crc": "743ecd69",
+          "updated": "1",
+          "unchanged": "4",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+        "jit_memory": "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=0 recompiled=0 unsupported=0 short=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+        "end": "I (202283) korvo-j2me: RUN_END rc=0 presents=5 input=0 psram_before=11653432 psram_after=11653432 delta=0",
+        "audio": [
+          "I (202283) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (202289) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=5 paints=3 gfx=4 tris=0 m3g=0 time=1.034s fps=4.8 bytecodes=4821083 (4.66 M/s) natives=106 heap=315712/315712 bytes cpcache=200111/48 findcache=0/0",
+        "checks": [
+          "KERNEL name=locals iterations=50000 checksum=2f66c58 elapsed_ms=142",
+          "KERNEL name=constants iterations=50000 checksum=839a908 elapsed_ms=111",
+          "KERNEL name=fields iterations=50000 checksum=4c1935ff elapsed_ms=201",
+          "KERNEL name=arrays iterations=50000 checksum=452ca3 elapsed_ms=206",
+          "KERNEL name=branches iterations=50000 checksum=a632cf73 elapsed_ms=205",
+          "KERNELS_DONE"
+        ]
+      },
+      {
+        "case": "kernels-1",
+        "perf": {
+          "elapsed_us": "1083679",
+          "presents": "5",
+          "present_us": "21431",
+          "present_max_us": "9056",
+          "poll_us": "691",
+          "poll_calls": "5",
+          "sleep_us": "0",
+          "native_crc": "066e64a1",
+          "lcd_crc": "743ecd69",
+          "updated": "1",
+          "unchanged": "4",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+        "jit_memory": "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=0 recompiled=0 unsupported=0 short=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+        "end": "I (203951) korvo-j2me: RUN_END rc=0 presents=5 input=0 psram_before=11653432 psram_after=11653432 delta=0",
+        "audio": [
+          "I (203951) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (203957) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=5 paints=3 gfx=4 tris=0 m3g=0 time=1.034s fps=4.8 bytecodes=4821083 (4.66 M/s) natives=106 heap=315712/315712 bytes cpcache=200111/48 findcache=0/0",
+        "checks": [
+          "KERNEL name=locals iterations=50000 checksum=2f66c58 elapsed_ms=144",
+          "KERNEL name=constants iterations=50000 checksum=839a908 elapsed_ms=110",
+          "KERNEL name=fields iterations=50000 checksum=4c1935ff elapsed_ms=201",
+          "KERNEL name=arrays iterations=50000 checksum=452ca3 elapsed_ms=205",
+          "KERNEL name=branches iterations=50000 checksum=a632cf73 elapsed_ms=204",
+          "KERNELS_DONE"
+        ]
+      }
+    ],
+    "probe": [
+      {
+        "case": "kernels-0",
+        "perf": {
+          "elapsed_us": "2754588",
+          "presents": "5",
+          "present_us": "22332",
+          "present_max_us": "8951",
+          "poll_us": "386",
+          "poll_calls": "5",
+          "sleep_us": "0",
+          "native_crc": "066e64a1",
+          "lcd_crc": "743ecd69",
+          "updated": "1",
+          "unchanged": "4",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=1 compiled=0 executed=0 bytecodes=0 declined=59 code_bytes=0",
+        "jit_memory": "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=107 recompiled=0 unsupported=0 short=59 memory_failures=0 commit_failures=0 peak_code=0 metadata=5000 stats=1 detailed=0",
+        "end": "I (209706) korvo-j2me: RUN_END rc=0 presents=5 input=0 psram_before=11653432 psram_after=11653432 delta=0",
+        "audio": [
+          "I (209706) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (209712) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=5 paints=3 gfx=4 tris=0 m3g=0 time=2.704s fps=1.8 bytecodes=4821083 (1.78 M/s) natives=106 heap=315712/315712 bytes cpcache=200111/48 findcache=0/0",
+        "checks": [
+          "KERNEL name=locals iterations=50000 checksum=2f66c58 elapsed_ms=507",
+          "KERNEL name=constants iterations=50000 checksum=839a908 elapsed_ms=306",
+          "KERNEL name=fields iterations=50000 checksum=4c1935ff elapsed_ms=488",
+          "KERNEL name=arrays iterations=50000 checksum=452ca3 elapsed_ms=588",
+          "KERNEL name=branches iterations=50000 checksum=a632cf73 elapsed_ms=645",
+          "KERNELS_DONE"
+        ]
+      },
+      {
+        "case": "kernels-1",
+        "perf": {
+          "elapsed_us": "2757357",
+          "presents": "5",
+          "present_us": "21439",
+          "present_max_us": "9030",
+          "poll_us": "701",
+          "poll_calls": "5",
+          "sleep_us": "0",
+          "native_crc": "066e64a1",
+          "lcd_crc": "743ecd69",
+          "updated": "1",
+          "unchanged": "4",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=1 compiled=0 executed=0 bytecodes=0 declined=59 code_bytes=0",
+        "jit_memory": "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+        "jit_detail": "JIT_DETAIL evictions=0 site_evictions=107 recompiled=0 unsupported=0 short=59 memory_failures=0 commit_failures=0 peak_code=0 metadata=5000 stats=1 detailed=0",
+        "end": "I (213046) korvo-j2me: RUN_END rc=0 presents=5 input=0 psram_before=11653432 psram_after=11653432 delta=0",
+        "audio": [
+          "I (213046) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (213052) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=5 paints=3 gfx=4 tris=0 m3g=0 time=2.707s fps=1.8 bytecodes=4821083 (1.78 M/s) natives=106 heap=315712/315712 bytes cpcache=200111/48 findcache=0/0",
+        "checks": [
+          "KERNEL name=locals iterations=50000 checksum=2f66c58 elapsed_ms=511",
+          "KERNEL name=constants iterations=50000 checksum=839a908 elapsed_ms=308",
+          "KERNEL name=fields iterations=50000 checksum=4c1935ff elapsed_ms=487",
+          "KERNEL name=arrays iterations=50000 checksum=452ca3 elapsed_ms=588",
+          "KERNEL name=branches iterations=50000 checksum=a632cf73 elapsed_ms=644",
+          "KERNELS_DONE"
+        ]
+      }
+    ],
+    "on": [
+      {
+        "case": "kernels-0",
+        "perf": {
+          "elapsed_us": "1538881",
+          "presents": "5",
+          "present_us": "21330",
+          "present_max_us": "8941",
+          "poll_us": "696",
+          "poll_calls": "5",
+          "sleep_us": "0",
+          "native_crc": "066e64a1",
+          "lcd_crc": "743ecd69",
+          "updated": "1",
+          "unchanged": "4",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=1 compiled=35 executed=300021 bytecodes=2481036 declined=56 code_bytes=1546",
+        "jit_memory": "JIT_MEMORY allocations=35 commits=35 refused=0 peak=2208 live=0",
+        "jit_detail": "JIT_DETAIL evictions=6 site_evictions=107 recompiled=0 unsupported=0 short=56 memory_failures=0 commit_failures=0 peak_code=1546 metadata=5000 stats=1 detailed=0",
+        "end": "I (217655) korvo-j2me: RUN_END rc=0 presents=5 input=0 psram_before=11653432 psram_after=11653432 delta=0",
+        "audio": [
+          "I (217655) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (217661) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=5 paints=3 gfx=4 tris=0 m3g=0 time=1.487s fps=3.4 bytecodes=4821083 (3.24 M/s) natives=106 heap=315712/315712 bytes cpcache=200111/48 findcache=0/0",
+        "checks": [
+          "KERNEL name=locals iterations=50000 checksum=2f66c58 elapsed_ms=121",
+          "KERNEL name=constants iterations=50000 checksum=839a908 elapsed_ms=116",
+          "KERNEL name=fields iterations=50000 checksum=4c1935ff elapsed_ms=416",
+          "KERNEL name=arrays iterations=50000 checksum=452ca3 elapsed_ms=409",
+          "KERNEL name=branches iterations=50000 checksum=a632cf73 elapsed_ms=256",
+          "KERNELS_DONE"
+        ]
+      },
+      {
+        "case": "kernels-1",
+        "perf": {
+          "elapsed_us": "1538854",
+          "presents": "5",
+          "present_us": "21323",
+          "present_max_us": "8934",
+          "poll_us": "692",
+          "poll_calls": "5",
+          "sleep_us": "0",
+          "native_crc": "066e64a1",
+          "lcd_crc": "743ecd69",
+          "updated": "1",
+          "unchanged": "4",
+          "hot_peak": "131072",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "jit": "JIT_STATS active=1 compiled=35 executed=300021 bytecodes=2481036 declined=56 code_bytes=1546",
+        "jit_memory": "JIT_MEMORY allocations=35 commits=35 refused=0 peak=2208 live=0",
+        "jit_detail": "JIT_DETAIL evictions=6 site_evictions=107 recompiled=0 unsupported=0 short=56 memory_failures=0 commit_failures=0 peak_code=1546 metadata=5000 stats=1 detailed=0",
+        "end": "I (219775) korvo-j2me: RUN_END rc=0 presents=5 input=0 psram_before=11653432 psram_after=11653432 delta=0",
+        "audio": [
+          "I (219775) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+          "I (219781) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+        ],
+        "vm": "stats: frames=5 paints=3 gfx=4 tris=0 m3g=0 time=1.487s fps=3.4 bytecodes=4821083 (3.24 M/s) natives=106 heap=315712/315712 bytes cpcache=200111/48 findcache=0/0",
+        "checks": [
+          "KERNEL name=locals iterations=50000 checksum=2f66c58 elapsed_ms=121",
+          "KERNEL name=constants iterations=50000 checksum=839a908 elapsed_ms=117",
+          "KERNEL name=fields iterations=50000 checksum=4c1935ff elapsed_ms=416",
+          "KERNEL name=arrays iterations=50000 checksum=452ca3 elapsed_ms=410",
+          "KERNEL name=branches iterations=50000 checksum=a632cf73 elapsed_ms=256",
+          "KERNELS_DONE"
+        ]
+      }
+    ]
+  },
+  "final_gof_dialogue": {
+    "end": "I (392923) korvo-j2me: RUN_END rc=0 presents=1365 input=17 psram_before=11653432 psram_after=11653432 delta=0",
+    "audio": [
+      "I (392923) korvo-board: AUDIO writes=8084 frames=4139008 errors=0 tones=0 volume=40",
+      "I (392930) korvo-board: AUDIO_DETAIL offered=1387903 accepted=1387903 short=0 io_us=85277073 volume_calls=0 queued=0 underruns=272 silence_frames=1117724"
+    ],
+    "stats": [
+      "stats: frames=1365 paints=46 gfx=107540 tris=101622 m3g=0 time=108.001s fps=12.6 bytecodes=19938604 (0.18 M/s) natives=1398397 heap=5596992/5598080 bytes cpcache=4214842/1687 findcache=0/0",
+      "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+      "JIT_DETAIL evictions=0 site_evictions=0 recompiled=0 unsupported=0 short=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+      "PERF elapsed_us=108087088 presents=1365 present_us=9336356 present_max_us=9838 poll_us=11463 poll_calls=1383 sleep_us=0 native_crc=2f43d2aa lcd_crc=23d62709 updated=1037 unchanged=328 hot_peak=151552 hot_live=0 scale_mismatch=0 stack_internal=3 stack_psram=0",
+      "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0"
+    ]
+  },
+  "fps_scene_samples": {
+    "moto": {
+      "scene": "3D摩托赛车 城市赛道，UP持续加速",
+      "resolution": [
+        240,
+        320
+      ],
+      "jit": "off",
+      "overlay": "on",
+      "no_screenshots_during_sample": true,
+      "warmup_seconds": 5,
+      "samples": [
+        {
+          "sample": 0,
+          "host_monotonic": 288162.861194616,
+          "fps": 3.9
+        },
+        {
+          "sample": 1,
+          "host_monotonic": 288163.892122954,
+          "fps": 3.9
+        },
+        {
+          "sample": 2,
+          "host_monotonic": 288164.91344209,
+          "fps": 3.9
+        },
+        {
+          "sample": 3,
+          "host_monotonic": 288165.939383713,
+          "fps": 3.9
+        },
+        {
+          "sample": 4,
+          "host_monotonic": 288166.949761088,
+          "fps": 3.9
+        },
+        {
+          "sample": 5,
+          "host_monotonic": 288167.95709994,
+          "fps": 3.8
+        },
+        {
+          "sample": 6,
+          "host_monotonic": 288168.985144994,
+          "fps": 3.8
+        },
+        {
+          "sample": 7,
+          "host_monotonic": 288170.025063851,
+          "fps": 3.8
+        },
+        {
+          "sample": 8,
+          "host_monotonic": 288171.055695403,
+          "fps": 3.9
+        },
+        {
+          "sample": 9,
+          "host_monotonic": 288172.058230914,
+          "fps": 4.0
+        },
+        {
+          "sample": 10,
+          "host_monotonic": 288173.243122906,
+          "fps": 4.0
+        },
+        {
+          "sample": 11,
+          "host_monotonic": 288174.282802827,
+          "fps": 3.9
+        },
+        {
+          "sample": 12,
+          "host_monotonic": 288175.46048195,
+          "fps": 3.9
+        },
+        {
+          "sample": 13,
+          "host_monotonic": 288176.509223544,
+          "fps": 3.9
+        },
+        {
+          "sample": 14,
+          "host_monotonic": 288177.560460089,
+          "fps": 3.9
+        },
+        {
+          "sample": 15,
+          "host_monotonic": 288178.75996143,
+          "fps": 4.0
+        },
+        {
+          "sample": 16,
+          "host_monotonic": 288179.794375112,
+          "fps": 4.0
+        },
+        {
+          "sample": 17,
+          "host_monotonic": 288180.861846666,
+          "fps": 4.1
+        },
+        {
+          "sample": 18,
+          "host_monotonic": 288181.945907428,
+          "fps": 4.1
+        },
+        {
+          "sample": 19,
+          "host_monotonic": 288183.110320191,
+          "fps": 4.2
+        }
+      ],
+      "mean": 3.94,
+      "median": 3.9,
+      "min": 3.8,
+      "max": 4.2
+    },
+    "dmc": {
+      "scene": "鬼泣3D 第一关战斗房间，FIRE持续按住",
+      "resolution": [
+        240,
+        320
+      ],
+      "jit": "off",
+      "overlay": "on",
+      "no_screenshots_during_sample": true,
+      "warmup_seconds": 5,
+      "samples": [
+        {
+          "sample": 0,
+          "host_monotonic": 288550.267566381,
+          "fps": 8.4
+        },
+        {
+          "sample": 1,
+          "host_monotonic": 288551.321120075,
+          "fps": 7.9
+        },
+        {
+          "sample": 2,
+          "host_monotonic": 288552.421331194,
+          "fps": 8.4
+        },
+        {
+          "sample": 3,
+          "host_monotonic": 288553.515480902,
+          "fps": 9.8
+        },
+        {
+          "sample": 4,
+          "host_monotonic": 288554.62935422,
+          "fps": 9.8
+        },
+        {
+          "sample": 5,
+          "host_monotonic": 288555.648228564,
+          "fps": 8.9
+        },
+        {
+          "sample": 6,
+          "host_monotonic": 288556.747951066,
+          "fps": 8.9
+        },
+        {
+          "sample": 7,
+          "host_monotonic": 288557.857923193,
+          "fps": 9.1
+        },
+        {
+          "sample": 8,
+          "host_monotonic": 288558.955946132,
+          "fps": 9.0
+        },
+        {
+          "sample": 9,
+          "host_monotonic": 288560.071428141,
+          "fps": 8.3
+        },
+        {
+          "sample": 10,
+          "host_monotonic": 288561.236487204,
+          "fps": 8.4
+        },
+        {
+          "sample": 11,
+          "host_monotonic": 288562.320743706,
+          "fps": 8.4
+        },
+        {
+          "sample": 12,
+          "host_monotonic": 288563.391944564,
+          "fps": 8.3
+        },
+        {
+          "sample": 13,
+          "host_monotonic": 288564.468343316,
+          "fps": 8.4
+        },
+        {
+          "sample": 14,
+          "host_monotonic": 288565.543661583,
+          "fps": 8.5
+        },
+        {
+          "sample": 15,
+          "host_monotonic": 288566.652260927,
+          "fps": 7.9
+        },
+        {
+          "sample": 16,
+          "host_monotonic": 288567.710405382,
+          "fps": 7.9
+        },
+        {
+          "sample": 17,
+          "host_monotonic": 288568.835351891,
+          "fps": 7.7
+        },
+        {
+          "sample": 18,
+          "host_monotonic": 288569.867894179,
+          "fps": 8.0
+        },
+        {
+          "sample": 19,
+          "host_monotonic": 288571.052312734,
+          "fps": 7.4
+        }
+      ],
+      "mean": 8.47,
+      "median": 8.4,
+      "min": 7.4,
+      "max": 9.8
+    }
+  },
+  "fps_dmc_exit": {
+    "end": "I (1183295) korvo-j2me: RUN_END rc=0 presents=11086 input=25 psram_before=11653432 psram_after=11653432 delta=0",
+    "audio": [
+      "I (1183295) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+      "I (1183301) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+    ],
+    "stats": [
+      "stats: frames=11086 paints=4291 gfx=661938 tris=1055090 m3g=0 time=432.706s fps=25.6 bytecodes=49424764 (0.11 M/s) natives=3081081 heap=2189056/3009392 bytes cpcache=8631684/1121 findcache=0/0",
+      "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+      "JIT_DETAIL evictions=0 site_evictions=0 recompiled=0 unsupported=0 short=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+      "PERF elapsed_us=432781468 presents=11086 present_us=38428330 present_max_us=9335 poll_us=255824 poll_calls=11112 sleep_us=418158 native_crc=f5211a7f lcd_crc=7ef5e4b0 updated=2576 unchanged=8510 hot_peak=151552 hot_live=0 scale_mismatch=0 stack_internal=3 stack_psram=1",
+      "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0"
+    ]
+  }
+}

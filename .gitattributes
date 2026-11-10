@@ -1,0 +1,2 @@
+# Patch context lines intentionally carry their leading space.
+*.patch -whitespace

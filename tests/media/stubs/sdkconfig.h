@@ -1,0 +1,3 @@
+#pragma once
+#define CONFIG_IDF_TARGET_ESP32S31 1
+#define CONFIG_ESP_AUDIO_CODEC_S31_USE_ASM 0

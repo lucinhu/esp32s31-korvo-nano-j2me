@@ -1,0 +1,48 @@
+nano-j2me 更新与清理，2026-11-10
+
+远程：https://github.com/lucinhu/nano_j2me.git，main
+更新前：f835b4415262aa38dd82d7361089ded95ef74027（0.3.0）
+更新后：e910b308a014f22a7f3f43b71c6d917ee28ed593（0.5.5）
+快进 107 个提交，更新前主分支没有独有提交。
+主仓库索引仍指向 3c3070767f235bc59a0331bb90d9374eb8923e8e（perf/m3g-rgb565），不是更新前实际运行分支。检查开始时主仓库尚无首次提交；现按用户要求准备首次提交与 main 推送。
+
+原有未提交修改：6 个文件，+320/-16，已保留并自动合并到新版。
+1. include/nj2me/nj_gfx.h：增加 NJ_ROP_OPAQUE，忽略源 alpha，同时保留整体 alpha、裁剪、掩码及 XOR 规则。
+2. src/gfx/nj_gfx.c：实现 OPAQUE 的绘制和 ARGB 快速路径，避免生成不透明像素临时副本。
+3. src/midp/nj_lib_lcdui.c：drawRGB 在源数组与目标不重叠时直接借用 int[]；支持正/负/零及较窄扫描步长；重叠时保留完整快照；内存不足时禁止不安全的逐行覆盖；先合并纵向平移再检查坐标范围。240×320 调用可省去 307200 字节的临时分配与拷贝。
+4. tests/stub_font.c：补齐 glyph_ascent 字段初始化。
+5. tests/test_gfx.c：补充 OPAQUE 在三种像素格式、变换、掩码、XOR、裁剪和整体 alpha 下的对照测试。
+6. tests/test_lcdui.c：补充 drawRGB 的扫描布局、透明度、源数组不变、别名/OOM 和坐标边界回归。
+原始补丁：nano-j2me-local-before.patch；最终补丁另存 nano-j2me-local-after.patch。
+补丁已提交为 00318b4 并按用户要求合入、推送到 nano-j2me 的 main；其父提交是 e910b30。临时远程分支和本地分支均已删除，主仓库直接引用 main 上的该提交。
+
+上游变化摘要：
+- M3G 像素中心/边归属、深度与 LEQUAL、背景清除、透明度、顶点数组加载及边界检查修复。
+- Java 监视器同步、wait/notify；常量池查找碰撞、Math/Random、arraycopy 和分配长度检查修复。
+- RMS 查询优化、动态枚举及共享存储生命周期修复；IO、FileConnection 和 Nokia 图形语义修复。
+- 媒体播放位置、TempoControl/RateControl、视频 AMR 音轨和播放生命周期改进。
+- 新增 UDP、PIM、Samsung 类库；桌面/Android 前端及 x86-64 JIT。板级未提供网络传输回调，新增 UDP 类库不表示本板已联网。
+
+本次主工程修改：补齐 4 个新增核心源文件；README 更新版本、记录与当前串口示例。板级原有改动保留。
+
+本轮追加的界面与显示修改：
+- 去掉游戏底部 J2ME 分辨率状态行；深色界面、青绿色按键高亮、顶部游戏标题和工具栏、清晰的游戏列表与分页。
+- 在 392×432 可用区域内做最大整数倍缩放。240×320、320×240 为 1 倍；176×208、128×160 为 2 倍；触摸坐标跟随同一视口。
+- RGB GDMA 保持 64 字节突发，改用两个驱动管理的 PSRAM 帧缓冲；等待 on_frame_buf_complete 后才复用旧缓冲，PPA SRM/DMA 同步脏矩形，PPA 失败时使用 CPU 同步。游戏画面和 FPS 覆盖合批提交。
+- 参考用户指定的 pxa-projects/firmware/boards/esp32s31-korvo-1 显示驱动；采用双缓冲降低常驻内存，相比原版增加约 750 KiB PSRAM。
+
+已完成的验证：
+- ESP32-S31 固件编译及分区大小检查通过。
+- 原更新版本实机 smoke 通过；三次退出 PSRAM 一致，按键、指针及音调通过。最终界面/DMA 版本的实机验证继续进行。
+- 图形测试 18250 项断言通过；媒体适配 4 项通过；LCDUI 内存和短 PCM 生命周期通过。
+- 整数缩放全部 66049 个支持尺寸组合的边界检查、1800 帧矩形对照通过（ASan/UBSan）。
+- JIT 代码池、重采样及生产显示代码的宿主模拟回归共 3 项通过（ASan/UBSan）。显示测试覆盖延迟释放、批处理、脏区保留与 PPA 失败回退。
+- 初次核心全量测试 142 项，8 失败、4 跳过。构建路径造成的 5 项失败均已复测通过；桌面 UI 在补齐本机游戏夹具并启用字体后通过；Tempo/PIM 复测通过。剩余两项：check_flushdemo 的一帧撕裂在未加补丁的 e910b30 上同样复现；check_api_audit 两次达到 300 秒超时。未宣称完整测试全绿。SF2/paint-pump 两项仍因缺少夹具跳过。
+
+清理：
+- 删除 22 个旧实验构建目录及重复日志，共约 10.4 GiB；补丁、源码快照、截图和结果已归档 historical-build-evidence.tar.gz（约 29 MiB，仅本机保留）。
+- 清理旧媒体构建和临时验证构建；保留当前 build、媒体测试 JAR、源码、资源及依赖。精确路径和字节数见 cleanup.json。
+- 原游戏分区不可挂载，初始化前原始数据已保留为 build/recovery/j2me-before.bin（仅本机；8323072 字节）。
+- 构建产物、商用游戏 JAR、本机备份、历史归档和原始日志均不提交到 GitHub。
+
+Git：nano-j2me 的 main 已推送到 00318b4；临时分支已删除。主仓库 main 的首次提交按用户要求发布；最终实机结果会补充提交。

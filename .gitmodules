@@ -1,0 +1,4 @@
+[submodule "third_party/nano_j2me"]
+	path = third_party/nano_j2me
+	url = https://github.com/lucinhu/nano_j2me.git
+	branch = main

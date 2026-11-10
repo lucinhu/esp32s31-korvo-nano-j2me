@@ -1,0 +1,11 @@
+/build*/
+/managed_components/
+/sdkconfig.old
+/.cache/
+/__pycache__/
+/*.log
+**/__pycache__/
+/flash_data/games/*.jar
+/docs/updates/**/historical-*.tar.gz
+/docs/updates/**/*.log
+/gfx_demo.ppm

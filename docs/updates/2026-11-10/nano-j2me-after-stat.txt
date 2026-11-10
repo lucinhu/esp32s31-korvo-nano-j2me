@@ -1,0 +1,7 @@
+ include/nj2me/nj_gfx.h  |   4 +-
+ src/gfx/nj_gfx.c        |  22 ++++++-
+ src/midp/nj_lib_lcdui.c |  63 +++++++++++++++----
+ tests/stub_font.c       |   3 +-
+ tests/test_gfx.c        |  85 ++++++++++++++++++++++++++
+ tests/test_lcdui.c      | 159 +++++++++++++++++++++++++++++++++++++++++++++++-
+ 6 files changed, 320 insertions(+), 16 deletions(-)

@@ -1,0 +1,372 @@
+{
+  "date": "2026-10-22",
+  "board": "ESP32-S31-Korvo-1",
+  "resolution": [
+    240,
+    320
+  ],
+  "cpu_mhz": 320,
+  "psram_mhz": 250,
+  "volume": 40,
+  "submodule": "179722a408d33745759f6e65d7e9d198487e6c79",
+  "firmware_sha256": "2e99403fc6a296a3ab5940670c6034423bc766408a393378129122c7f50d6e35",
+  "baseline": [
+    {
+      "case": "render-0",
+      "perf": {
+        "elapsed_us": "8543339",
+        "presents": "241",
+        "present_us": "1875365",
+        "present_max_us": "7809",
+        "poll_us": "1978",
+        "poll_calls": "241",
+        "sleep_us": "0",
+        "native_crc": "c28d5ef8",
+        "lcd_crc": "df7449c1"
+      },
+      "end": "I (581212) korvo-j2me: RUN_END rc=0 presents=241 input=0 psram_before=13708896 psram_after=13708896 delta=0",
+      "audio": [
+        "I (581221) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (581228) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0"
+      ],
+      "vm": "stats: frames=241 paints=240 gfx=31680 tris=0 m3g=0 time=8.516s fps=28.3 bytecodes=581089 (0.07 M/s) natives=65296 heap=398608/398608 bytes cpcache=112074/27 findcache=0/0",
+      "checks": [
+        "RENDER_BENCH frames=240 final=240"
+      ]
+    },
+    {
+      "case": "render-1",
+      "perf": {
+        "elapsed_us": "8542829",
+        "presents": "241",
+        "present_us": "1875332",
+        "present_max_us": "7812",
+        "poll_us": "1971",
+        "poll_calls": "241",
+        "sleep_us": "0",
+        "native_crc": "c28d5ef8",
+        "lcd_crc": "df7449c1"
+      },
+      "end": "I (590162) korvo-j2me: RUN_END rc=0 presents=241 input=0 psram_before=13708896 psram_after=13708896 delta=0",
+      "audio": [
+        "I (590171) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (590178) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0"
+      ],
+      "vm": "stats: frames=241 paints=240 gfx=31680 tris=0 m3g=0 time=8.515s fps=28.3 bytecodes=581089 (0.07 M/s) natives=65296 heap=398608/398608 bytes cpcache=112074/27 findcache=0/0",
+      "checks": [
+        "RENDER_BENCH frames=240 final=240"
+      ]
+    },
+    {
+      "case": "cpu-0",
+      "perf": {
+        "elapsed_us": "14396148",
+        "presents": "481",
+        "present_us": "3755416",
+        "present_max_us": "7835",
+        "poll_us": "3599",
+        "poll_calls": "481",
+        "sleep_us": "0",
+        "native_crc": "9e3b7837",
+        "lcd_crc": "cbd4506b"
+      },
+      "end": "I (89090) korvo-j2me: RUN_END rc=0 presents=481 input=0 psram_before=13708896 psram_after=13708896 delta=0",
+      "vm": "stats: frames=481 paints=124 gfx=16492 tris=0 m3g=0 time=14.368s fps=33.5 bytecodes=9886690 (0.69 M/s) natives=18368 heap=391776/391776 bytes cpcache=2922761/36 findcache=0/0",
+      "checks": [
+        "PERF_BENCH frames=120 work=4000 checksum=-1082513742"
+      ],
+      "audio": [
+        "I (89099) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (89106) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0"
+      ]
+    },
+    {
+      "case": "cpu-1",
+      "perf": {
+        "elapsed_us": "14394659",
+        "presents": "481",
+        "present_us": "3755749",
+        "present_max_us": "7833",
+        "poll_us": "3609",
+        "poll_calls": "481",
+        "sleep_us": "0",
+        "native_crc": "9e3b7837",
+        "lcd_crc": "cbd4506b"
+      },
+      "end": "I (103854) korvo-j2me: RUN_END rc=0 presents=481 input=0 psram_before=13708896 psram_after=13708896 delta=0",
+      "vm": "stats: frames=481 paints=124 gfx=16492 tris=0 m3g=0 time=14.366s fps=33.5 bytecodes=9886690 (0.69 M/s) natives=18368 heap=391776/391776 bytes cpcache=2922761/36 findcache=0/0",
+      "checks": [
+        "PERF_BENCH frames=120 work=4000 checksum=-1082513742"
+      ],
+      "audio": [
+        "I (103863) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (103870) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0"
+      ]
+    },
+    {
+      "case": "audio-0",
+      "perf": {
+        "elapsed_us": "12123046",
+        "presents": "489",
+        "present_us": "3803511",
+        "present_max_us": "7805",
+        "poll_us": "3744",
+        "poll_calls": "489",
+        "sleep_us": "0",
+        "native_crc": "45756d2b",
+        "lcd_crc": "67f08603"
+      },
+      "end": "I (116349) korvo-j2me: RUN_END rc=0 presents=489 input=0 psram_before=13708896 psram_after=13708896 delta=0",
+      "vm": "stats: frames=489 paints=489 gfx=1952 tris=0 m3g=0 time=12.096s fps=40.4 bytecodes=17871 (0.00 M/s) natives=140147 heap=783248/783248 bytes cpcache=7350/54 findcache=0/0",
+      "checks": [
+        "AUDIO_BENCH_BEGIN WAV duration=3000000",
+        "AUDIO_BENCH_END WAV time=2798004 state=400",
+        "AUDIO_BENCH_BEGIN MIDI duration=3139682",
+        "AUDIO_BENCH_END MIDI time=371609 state=400"
+      ],
+      "audio": [
+        "I (116358) korvo-board: AUDIO writes=547 frames=152139 errors=0 tones=0 volume=40",
+        "I (116365) korvo-board: AUDIO_DETAIL offered=2106760 accepted=69890 short=273 io_us=352825 volume_calls=547 queued=0"
+      ]
+    },
+    {
+      "case": "nfs14",
+      "perf": {
+        "elapsed_us": "9067988",
+        "presents": "301",
+        "present_us": "2347953",
+        "present_max_us": "7858",
+        "poll_us": "3755",
+        "poll_calls": "301",
+        "sleep_us": "157968",
+        "native_crc": "ed752148",
+        "lcd_crc": "0d4e14b8"
+      },
+      "end": "I (125823) korvo-j2me: RUN_END rc=0 presents=301 input=0 psram_before=13708896 psram_after=13708896 delta=0",
+      "vm": "stats: frames=300 paints=85 gfx=498 tris=0 m3g=0 time=7.826s fps=38.3 bytecodes=298274 (0.04 M/s) natives=61951 heap=2500224/2500464 bytes cpcache=44455/616 findcache=0/0",
+      "checks": [],
+      "audio": [
+        "I (125833) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (125839) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0"
+      ]
+    },
+    {
+      "case": "nfs16",
+      "perf": {
+        "elapsed_us": "16030160",
+        "presents": "301",
+        "present_us": "2339126",
+        "present_max_us": "7828",
+        "poll_us": "3750",
+        "poll_calls": "301",
+        "sleep_us": "217133",
+        "native_crc": "218ed823",
+        "lcd_crc": "736a4521"
+      },
+      "end": "I (142226) korvo-j2me: RUN_END rc=0 presents=301 input=0 psram_before=13708896 psram_after=13708896 delta=0",
+      "vm": "stats: frames=300 paints=300 gfx=12850 tris=0 m3g=0 time=14.700s fps=20.4 bytecodes=7303817 (0.50 M/s) natives=214204 heap=1411008/1482496 bytes cpcache=543440/1076 findcache=0/0",
+      "checks": [],
+      "audio": [
+        "I (142235) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (142242) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0"
+      ]
+    }
+  ],
+  "optimized": [
+    {
+      "case": "render-0",
+      "perf": {
+        "elapsed_us": "8065201",
+        "presents": "241",
+        "present_us": "1495706",
+        "present_max_us": "9051",
+        "poll_us": "2322",
+        "poll_calls": "241",
+        "sleep_us": "0",
+        "native_crc": "c28d5ef8",
+        "lcd_crc": "df7449c1",
+        "updated": "241",
+        "unchanged": "0",
+        "hot_peak": "98288",
+        "hot_live": "0",
+        "scale_mismatch": "0"
+      },
+      "end": "I (29724) korvo-j2me: RUN_END rc=0 presents=241 input=0 psram_before=13733944 psram_after=13733944 delta=0",
+      "audio": [
+        "I (29733) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (29740) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+      ],
+      "vm": "stats: frames=241 paints=240 gfx=31680 tris=0 m3g=0 time=8.037s fps=30.0 bytecodes=581089 (0.07 M/s) natives=65296 heap=398608/398608 bytes cpcache=112074/27 findcache=0/0",
+      "checks": [
+        "RENDER_BENCH frames=240 final=240"
+      ]
+    },
+    {
+      "case": "render-1",
+      "perf": {
+        "elapsed_us": "8065222",
+        "presents": "241",
+        "present_us": "1495997",
+        "present_max_us": "9054",
+        "poll_us": "2314",
+        "poll_calls": "241",
+        "sleep_us": "0",
+        "native_crc": "c28d5ef8",
+        "lcd_crc": "df7449c1",
+        "updated": "241",
+        "unchanged": "0",
+        "hot_peak": "98288",
+        "hot_live": "0",
+        "scale_mismatch": "0"
+      },
+      "end": "I (38203) korvo-j2me: RUN_END rc=0 presents=241 input=0 psram_before=13733944 psram_after=13733944 delta=0",
+      "audio": [
+        "I (38212) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (38219) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+      ],
+      "vm": "stats: frames=241 paints=240 gfx=31680 tris=0 m3g=0 time=8.037s fps=30.0 bytecodes=581089 (0.07 M/s) natives=65296 heap=398608/398608 bytes cpcache=112074/27 findcache=0/0",
+      "checks": [
+        "RENDER_BENCH frames=240 final=240"
+      ]
+    },
+    {
+      "case": "cpu-0",
+      "perf": {
+        "elapsed_us": "8928059",
+        "presents": "241",
+        "present_us": "1818690",
+        "present_max_us": "9068",
+        "poll_us": "2299",
+        "poll_calls": "241",
+        "sleep_us": "0",
+        "native_crc": "9e3b7837",
+        "lcd_crc": "cbd4506b",
+        "updated": "240",
+        "unchanged": "1",
+        "hot_peak": "98288",
+        "hot_live": "0",
+        "scale_mismatch": "0"
+      },
+      "end": "I (47530) korvo-j2me: RUN_END rc=0 presents=241 input=0 psram_before=13733944 psram_after=13733944 delta=0",
+      "audio": [
+        "I (47539) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (47546) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+      ],
+      "vm": "stats: frames=241 paints=122 gfx=16226 tris=0 m3g=0 time=8.900s fps=27.1 bytecodes=9882102 (1.11 M/s) natives=18076 heap=390464/390464 bytes cpcache=2922081/36 findcache=0/0",
+      "checks": [
+        "PERF_BENCH frames=120 work=4000 checksum=-1082513742"
+      ]
+    },
+    {
+      "case": "cpu-1",
+      "perf": {
+        "elapsed_us": "8934777",
+        "presents": "241",
+        "present_us": "1818235",
+        "present_max_us": "9065",
+        "poll_us": "2299",
+        "poll_calls": "241",
+        "sleep_us": "0",
+        "native_crc": "9e3b7837",
+        "lcd_crc": "cbd4506b",
+        "updated": "240",
+        "unchanged": "1",
+        "hot_peak": "98288",
+        "hot_live": "0",
+        "scale_mismatch": "0"
+      },
+      "end": "I (56902) korvo-j2me: RUN_END rc=0 presents=241 input=0 psram_before=13733944 psram_after=13733944 delta=0",
+      "audio": [
+        "I (56911) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (56918) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+      ],
+      "vm": "stats: frames=241 paints=122 gfx=16226 tris=0 m3g=0 time=8.906s fps=27.1 bytecodes=9882102 (1.11 M/s) natives=18076 heap=390464/390464 bytes cpcache=2922081/36 findcache=0/0",
+      "checks": [
+        "PERF_BENCH frames=120 work=4000 checksum=-1082513742"
+      ]
+    },
+    {
+      "case": "audio-0",
+      "perf": {
+        "elapsed_us": "11554624",
+        "presents": "600",
+        "present_us": "2049329",
+        "present_max_us": "9061",
+        "poll_us": "5282",
+        "poll_calls": "600",
+        "sleep_us": "0",
+        "native_crc": "45756d2b",
+        "lcd_crc": "67f08603",
+        "updated": "2",
+        "unchanged": "598",
+        "hot_peak": "98288",
+        "hot_live": "0",
+        "scale_mismatch": "0"
+      },
+      "end": "I (68858) korvo-j2me: RUN_END rc=0 presents=600 input=0 psram_before=13733944 psram_after=13733944 delta=0",
+      "audio": [
+        "I (68867) korvo-board: AUDIO writes=581 frames=297472 errors=0 tones=0 volume=40",
+        "I (68874) korvo-board: AUDIO_DETAIL offered=193338 accepted=135380 short=1 io_us=6062841 volume_calls=1 queued=0 underruns=0 silence_frames=2771"
+      ],
+      "vm": "stats: frames=600 paints=600 gfx=2396 tris=0 m3g=0 time=11.526s fps=52.1 bytecodes=21534 (0.00 M/s) natives=141589 heap=824096/824096 bytes cpcache=8904/54 findcache=0/0",
+      "checks": [
+        "AUDIO_BENCH_BEGIN WAV duration=3000000",
+        "AUDIO_BENCH_END WAV time=3000000 state=300",
+        "AUDIO_BENCH_BEGIN MIDI duration=3139682",
+        "AUDIO_BENCH_END MIDI time=3139682 state=300"
+      ]
+    },
+    {
+      "case": "nfs14",
+      "perf": {
+        "elapsed_us": "7653717",
+        "presents": "301",
+        "present_us": "944841",
+        "present_max_us": "9212",
+        "poll_us": "3843",
+        "poll_calls": "301",
+        "sleep_us": "158038",
+        "native_crc": "ed752148",
+        "lcd_crc": "0d4e14b8",
+        "updated": "3",
+        "unchanged": "298",
+        "hot_peak": "98304",
+        "hot_live": "0",
+        "scale_mismatch": "0"
+      },
+      "end": "I (76916) korvo-j2me: RUN_END rc=0 presents=301 input=0 psram_before=13733944 psram_after=13733944 delta=0",
+      "audio": [
+        "I (76925) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (76931) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+      ],
+      "vm": "stats: frames=300 paints=92 gfx=534 tris=0 m3g=0 time=6.333s fps=47.4 bytecodes=298440 (0.05 M/s) natives=61990 heap=2501008/2501248 bytes cpcache=44505/616 findcache=0/0",
+      "checks": []
+    },
+    {
+      "case": "nfs16",
+      "perf": {
+        "elapsed_us": "14190616",
+        "presents": "301",
+        "present_us": "1078394",
+        "present_max_us": "9143",
+        "poll_us": "4173",
+        "poll_calls": "301",
+        "sleep_us": "214788",
+        "native_crc": "218ed823",
+        "lcd_crc": "736a4521",
+        "updated": "31",
+        "unchanged": "270",
+        "hot_peak": "98304",
+        "hot_live": "0",
+        "scale_mismatch": "0"
+      },
+      "end": "I (91509) korvo-j2me: RUN_END rc=0 presents=301 input=0 psram_before=13733944 psram_after=13733944 delta=0",
+      "audio": [
+        "I (91518) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+        "I (91525) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+      ],
+      "vm": "stats: frames=300 paints=300 gfx=12850 tris=0 m3g=0 time=12.898s fps=23.3 bytecodes=7304285 (0.57 M/s) natives=214204 heap=1411008/1482496 bytes cpcache=543336/1076 findcache=0/0",
+      "checks": []
+    }
+  ]
+}

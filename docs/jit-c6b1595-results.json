@@ -1,0 +1,6480 @@
+{
+  "revision": "c6b1595c083044844979db4d0fb2f0fdf1d9f664",
+  "date": "2026-10-23",
+  "target": "anonymous embedded target",
+  "resolution": [
+    240,
+    320
+  ],
+  "volume": 40,
+  "jit_stats": true,
+  "detailed_jit_stats": false,
+  "superinstructions": false,
+  "threaded_dispatch": false,
+  "normal_saves_preserved": true,
+  "submodule_source_unmodified": true,
+  "kernel_jar_sha256": "eb827f5c61d98617959705fdf0932f799230468b0cb756150477466894b3e0d9",
+  "all": {
+    "off": [
+      {
+        "case": "cpu-0",
+        "elapsed_seconds": 8.601966,
+        "perf": {
+          "elapsed_us": "8601966",
+          "presents": "313",
+          "present_us": "2048451",
+          "present_max_us": "9091",
+          "poll_us": "2728",
+          "poll_calls": "313",
+          "sleep_us": "0",
+          "native_crc": "9e3b7837",
+          "lcd_crc": "cbd4506b",
+          "updated": "240",
+          "unchanged": "73",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 313,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 0,
+          "compiled": 0,
+          "executed": 0,
+          "bytecodes": 0,
+          "declined": 0,
+          "code_bytes": 0
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 0,
+          "short": 0,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 0,
+          "metadata": 0,
+          "stats": 0,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 0,
+          "commits": 0,
+          "refused": 0,
+          "peak": 0,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "checks": [
+          "PERF_BENCH frames=120 work=4000 checksum=-1082513742"
+        ]
+      },
+      {
+        "case": "cpu-1",
+        "elapsed_seconds": 8.600995,
+        "perf": {
+          "elapsed_us": "8600995",
+          "presents": "313",
+          "present_us": "2048234",
+          "present_max_us": "9096",
+          "poll_us": "2731",
+          "poll_calls": "313",
+          "sleep_us": "0",
+          "native_crc": "9e3b7837",
+          "lcd_crc": "cbd4506b",
+          "updated": "240",
+          "unchanged": "73",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 313,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 0,
+          "compiled": 0,
+          "executed": 0,
+          "bytecodes": 0,
+          "declined": 0,
+          "code_bytes": 0
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 0,
+          "short": 0,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 0,
+          "metadata": 0,
+          "stats": 0,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 0,
+          "commits": 0,
+          "refused": 0,
+          "peak": 0,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "checks": [
+          "PERF_BENCH frames=120 work=4000 checksum=-1082513742"
+        ]
+      },
+      {
+        "case": "render-0",
+        "elapsed_seconds": 5.450156,
+        "perf": {
+          "elapsed_us": "5450156",
+          "presents": "241",
+          "present_us": "1497069",
+          "present_max_us": "9074",
+          "poll_us": "2284",
+          "poll_calls": "241",
+          "sleep_us": "0",
+          "native_crc": "c28d5ef8",
+          "lcd_crc": "df7449c1",
+          "updated": "241",
+          "unchanged": "0",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 241,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 0,
+          "compiled": 0,
+          "executed": 0,
+          "bytecodes": 0,
+          "declined": 0,
+          "code_bytes": 0
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 0,
+          "short": 0,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 0,
+          "metadata": 0,
+          "stats": 0,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 0,
+          "commits": 0,
+          "refused": 0,
+          "peak": 0,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "checks": [
+          "RENDER_BENCH frames=240 final=240"
+        ]
+      },
+      {
+        "case": "render-1",
+        "elapsed_seconds": 5.450086,
+        "perf": {
+          "elapsed_us": "5450086",
+          "presents": "241",
+          "present_us": "1497236",
+          "present_max_us": "9071",
+          "poll_us": "2279",
+          "poll_calls": "241",
+          "sleep_us": "0",
+          "native_crc": "c28d5ef8",
+          "lcd_crc": "df7449c1",
+          "updated": "241",
+          "unchanged": "0",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 241,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 0,
+          "compiled": 0,
+          "executed": 0,
+          "bytecodes": 0,
+          "declined": 0,
+          "code_bytes": 0
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 0,
+          "short": 0,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 0,
+          "metadata": 0,
+          "stats": 0,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 0,
+          "commits": 0,
+          "refused": 0,
+          "peak": 0,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "checks": [
+          "RENDER_BENCH frames=240 final=240"
+        ]
+      },
+      {
+        "case": "audio-0",
+        "elapsed_seconds": 10.66113,
+        "perf": {
+          "elapsed_us": "10661130",
+          "presents": "627",
+          "present_us": "2122680",
+          "present_max_us": "9017",
+          "poll_us": "14017",
+          "poll_calls": "627",
+          "sleep_us": "0",
+          "native_crc": "45756d2b",
+          "lcd_crc": "67f08603",
+          "updated": "2",
+          "unchanged": "625",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 627,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 0,
+          "compiled": 0,
+          "executed": 0,
+          "bytecodes": 0,
+          "declined": 0,
+          "code_bytes": 0
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 0,
+          "short": 0,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 0,
+          "metadata": 0,
+          "stats": 0,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 0,
+          "commits": 0,
+          "refused": 0,
+          "peak": 0,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 581,
+            "frames": 297472,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 193338,
+            "accepted": 135380,
+            "short": 1,
+            "io_us": 6068120,
+            "volume_calls": 1,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 2771
+          }
+        ],
+        "checks": [
+          "AUDIO_BENCH_BEGIN WAV duration=3000000",
+          "AUDIO_BENCH_END WAV time=3000000 state=300",
+          "AUDIO_BENCH_BEGIN MIDI duration=3139682",
+          "AUDIO_BENCH_END MIDI time=3139682 state=300"
+        ]
+      },
+      {
+        "case": "nfs14",
+        "elapsed_seconds": 7.241505,
+        "perf": {
+          "elapsed_us": "7241505",
+          "presents": "301",
+          "present_us": "946549",
+          "present_max_us": "9226",
+          "poll_us": "3714",
+          "poll_calls": "301",
+          "sleep_us": "158055",
+          "native_crc": "ed752148",
+          "lcd_crc": "0d4e14b8",
+          "updated": "3",
+          "unchanged": "298",
+          "hot_peak": "151536",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "3",
+          "stack_psram": "0"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 301,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 0,
+          "compiled": 0,
+          "executed": 0,
+          "bytecodes": 0,
+          "declined": 0,
+          "code_bytes": 0
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 0,
+          "short": 0,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 0,
+          "metadata": 0,
+          "stats": 0,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 0,
+          "commits": 0,
+          "refused": 0,
+          "peak": 0,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "checks": []
+      },
+      {
+        "case": "nfs16",
+        "elapsed_seconds": 11.496435,
+        "perf": {
+          "elapsed_us": "11496435",
+          "presents": "301",
+          "present_us": "1115722",
+          "present_max_us": "9046",
+          "poll_us": "4053",
+          "poll_calls": "301",
+          "sleep_us": "215718",
+          "native_crc": "218ed823",
+          "lcd_crc": "736a4521",
+          "updated": "34",
+          "unchanged": "267",
+          "hot_peak": "151536",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "3",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 301,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 0,
+          "compiled": 0,
+          "executed": 0,
+          "bytecodes": 0,
+          "declined": 0,
+          "code_bytes": 0
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 0,
+          "short": 0,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 0,
+          "metadata": 0,
+          "stats": 0,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 0,
+          "commits": 0,
+          "refused": 0,
+          "peak": 0,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "checks": []
+      }
+    ],
+    "on": [
+      {
+        "case": "cpu-0",
+        "elapsed_seconds": 7.886017,
+        "perf": {
+          "elapsed_us": "7886017",
+          "presents": "313",
+          "present_us": "2073597",
+          "present_max_us": "9144",
+          "poll_us": "2744",
+          "poll_calls": "313",
+          "sleep_us": "0",
+          "native_crc": "9e3b7837",
+          "lcd_crc": "cbd4506b",
+          "updated": "240",
+          "unchanged": "73",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 313,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 1,
+          "compiled": 14,
+          "executed": 527072,
+          "bytecodes": 8406361,
+          "declined": 63,
+          "code_bytes": 1466
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 30,
+          "short": 33,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 1466,
+          "metadata": 9432,
+          "stats": 1,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 14,
+          "commits": 14,
+          "refused": 0,
+          "peak": 1776,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "checks": [
+          "PERF_BENCH frames=120 work=4000 checksum=-1082513742"
+        ]
+      },
+      {
+        "case": "cpu-1",
+        "elapsed_seconds": 7.89005,
+        "perf": {
+          "elapsed_us": "7890050",
+          "presents": "313",
+          "present_us": "2072851",
+          "present_max_us": "9137",
+          "poll_us": "2735",
+          "poll_calls": "313",
+          "sleep_us": "0",
+          "native_crc": "9e3b7837",
+          "lcd_crc": "cbd4506b",
+          "updated": "240",
+          "unchanged": "73",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 313,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 1,
+          "compiled": 14,
+          "executed": 527072,
+          "bytecodes": 8406361,
+          "declined": 63,
+          "code_bytes": 1466
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 30,
+          "short": 33,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 1466,
+          "metadata": 9432,
+          "stats": 1,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 14,
+          "commits": 14,
+          "refused": 0,
+          "peak": 1776,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "checks": [
+          "PERF_BENCH frames=120 work=4000 checksum=-1082513742"
+        ]
+      },
+      {
+        "case": "render-0",
+        "elapsed_seconds": 5.453684,
+        "perf": {
+          "elapsed_us": "5453684",
+          "presents": "241",
+          "present_us": "1507296",
+          "present_max_us": "9126",
+          "poll_us": "2252",
+          "poll_calls": "241",
+          "sleep_us": "0",
+          "native_crc": "c28d5ef8",
+          "lcd_crc": "df7449c1",
+          "updated": "241",
+          "unchanged": "0",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 241,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 1,
+          "compiled": 7,
+          "executed": 46999,
+          "bytecodes": 480861,
+          "declined": 31,
+          "code_bytes": 774
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 11,
+          "short": 20,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 774,
+          "metadata": 9432,
+          "stats": 1,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 7,
+          "commits": 7,
+          "refused": 0,
+          "peak": 944,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "checks": [
+          "RENDER_BENCH frames=240 final=240"
+        ]
+      },
+      {
+        "case": "render-1",
+        "elapsed_seconds": 5.452656,
+        "perf": {
+          "elapsed_us": "5452656",
+          "presents": "241",
+          "present_us": "1507150",
+          "present_max_us": "9119",
+          "poll_us": "2266",
+          "poll_calls": "241",
+          "sleep_us": "0",
+          "native_crc": "c28d5ef8",
+          "lcd_crc": "df7449c1",
+          "updated": "241",
+          "unchanged": "0",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 241,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 1,
+          "compiled": 7,
+          "executed": 46999,
+          "bytecodes": 480861,
+          "declined": 31,
+          "code_bytes": 774
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 11,
+          "short": 20,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 774,
+          "metadata": 9432,
+          "stats": 1,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 7,
+          "commits": 7,
+          "refused": 0,
+          "peak": 944,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "checks": [
+          "RENDER_BENCH frames=240 final=240"
+        ]
+      },
+      {
+        "case": "audio-0",
+        "elapsed_seconds": 10.547221,
+        "perf": {
+          "elapsed_us": "10547221",
+          "presents": "615",
+          "present_us": "2165666",
+          "present_max_us": "9144",
+          "poll_us": "9139",
+          "poll_calls": "615",
+          "sleep_us": "0",
+          "native_crc": "45756d2b",
+          "lcd_crc": "67f08603",
+          "updated": "2",
+          "unchanged": "613",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 615,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 1,
+          "compiled": 2,
+          "executed": 763,
+          "bytecodes": 3203,
+          "declined": 17,
+          "code_bytes": 116
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 4,
+          "short": 13,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 116,
+          "metadata": 9432,
+          "stats": 1,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 2,
+          "commits": 2,
+          "refused": 0,
+          "peak": 176,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 581,
+            "frames": 297472,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 193338,
+            "accepted": 135380,
+            "short": 1,
+            "io_us": 6066958,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 2771
+          }
+        ],
+        "checks": [
+          "AUDIO_BENCH_BEGIN WAV duration=3000000",
+          "AUDIO_BENCH_END WAV time=3000000 state=300",
+          "AUDIO_BENCH_BEGIN MIDI duration=3139682",
+          "AUDIO_BENCH_END MIDI time=3139682 state=300"
+        ]
+      },
+      {
+        "case": "nfs14",
+        "elapsed_seconds": 7.336302,
+        "perf": {
+          "elapsed_us": "7336302",
+          "presents": "301",
+          "present_us": "945178",
+          "present_max_us": "9235",
+          "poll_us": "3736",
+          "poll_calls": "301",
+          "sleep_us": "158255",
+          "native_crc": "ed752148",
+          "lcd_crc": "0d4e14b8",
+          "updated": "3",
+          "unchanged": "298",
+          "hot_peak": "151536",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "3",
+          "stack_psram": "0"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 301,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 1,
+          "compiled": 384,
+          "executed": 28361,
+          "bytecodes": 175648,
+          "declined": 677,
+          "code_bytes": 6076
+        },
+        "jit_detail": {
+          "evictions": 320,
+          "method_map_evictions": 106,
+          "recompiled": 15,
+          "unsupported": 237,
+          "short": 440,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 6216,
+          "metadata": 9432,
+          "stats": 1,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 384,
+          "commits": 384,
+          "refused": 0,
+          "peak": 7648,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "checks": []
+      },
+      {
+        "case": "nfs16",
+        "elapsed_seconds": 13.867555,
+        "perf": {
+          "elapsed_us": "13867555",
+          "presents": "301",
+          "present_us": "1050173",
+          "present_max_us": "9402",
+          "poll_us": "3946",
+          "poll_calls": "301",
+          "sleep_us": "216074",
+          "native_crc": "218ed823",
+          "lcd_crc": "736a4521",
+          "updated": "28",
+          "unchanged": "273",
+          "hot_peak": "151536",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "3",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 301,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 1,
+          "compiled": 5732,
+          "executed": 388450,
+          "bytecodes": 2179488,
+          "declined": 31920,
+          "code_bytes": 5058
+        },
+        "jit_detail": {
+          "evictions": 5668,
+          "method_map_evictions": 22938,
+          "recompiled": 10128,
+          "unsupported": 11487,
+          "short": 20433,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 6308,
+          "metadata": 9432,
+          "stats": 1,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 5732,
+          "commits": 5732,
+          "refused": 0,
+          "peak": 7808,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "checks": []
+      }
+    ]
+  },
+  "kernels": {
+    "off": [
+      {
+        "case": "kernels-0",
+        "elapsed_seconds": 1.075589,
+        "perf": {
+          "elapsed_us": "1075589",
+          "presents": "5",
+          "present_us": "21499",
+          "present_max_us": "9103",
+          "poll_us": "682",
+          "poll_calls": "5",
+          "sleep_us": "0",
+          "native_crc": "066e64a1",
+          "lcd_crc": "743ecd69",
+          "updated": "1",
+          "unchanged": "4",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 5,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 0,
+          "compiled": 0,
+          "executed": 0,
+          "bytecodes": 0,
+          "declined": 0,
+          "code_bytes": 0
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 0,
+          "short": 0,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 0,
+          "metadata": 0,
+          "stats": 0,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 0,
+          "commits": 0,
+          "refused": 0,
+          "peak": 0,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "checks": [
+          "KERNEL name=locals iterations=50000 checksum=2f66c58 elapsed_ms=139",
+          "KERNEL name=constants iterations=50000 checksum=839a908 elapsed_ms=111",
+          "KERNEL name=fields iterations=50000 checksum=4c1935ff elapsed_ms=201",
+          "KERNEL name=arrays iterations=50000 checksum=452ca3 elapsed_ms=200",
+          "KERNEL name=branches iterations=50000 checksum=a632cf73 elapsed_ms=202",
+          "KERNELS_DONE"
+        ]
+      },
+      {
+        "case": "kernels-1",
+        "elapsed_seconds": 1.073621,
+        "perf": {
+          "elapsed_us": "1073621",
+          "presents": "5",
+          "present_us": "21491",
+          "present_max_us": "9084",
+          "poll_us": "684",
+          "poll_calls": "5",
+          "sleep_us": "0",
+          "native_crc": "066e64a1",
+          "lcd_crc": "743ecd69",
+          "updated": "1",
+          "unchanged": "4",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 5,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 0,
+          "compiled": 0,
+          "executed": 0,
+          "bytecodes": 0,
+          "declined": 0,
+          "code_bytes": 0
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 0,
+          "short": 0,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 0,
+          "metadata": 0,
+          "stats": 0,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 0,
+          "commits": 0,
+          "refused": 0,
+          "peak": 0,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "checks": [
+          "KERNEL name=locals iterations=50000 checksum=2f66c58 elapsed_ms=140",
+          "KERNEL name=constants iterations=50000 checksum=839a908 elapsed_ms=109",
+          "KERNEL name=fields iterations=50000 checksum=4c1935ff elapsed_ms=198",
+          "KERNEL name=arrays iterations=50000 checksum=452ca3 elapsed_ms=200",
+          "KERNEL name=branches iterations=50000 checksum=a632cf73 elapsed_ms=202",
+          "KERNELS_DONE"
+        ]
+      }
+    ],
+    "probe": [
+      {
+        "case": "kernels-0",
+        "elapsed_seconds": 2.542284,
+        "perf": {
+          "elapsed_us": "2542284",
+          "presents": "5",
+          "present_us": "22196",
+          "present_max_us": "9021",
+          "poll_us": "382",
+          "poll_calls": "5",
+          "sleep_us": "0",
+          "native_crc": "066e64a1",
+          "lcd_crc": "743ecd69",
+          "updated": "1",
+          "unchanged": "4",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 5,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 1,
+          "compiled": 0,
+          "executed": 0,
+          "bytecodes": 0,
+          "declined": 114,
+          "code_bytes": 0
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 113,
+          "short": 1,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 0,
+          "metadata": 9432,
+          "stats": 1,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 0,
+          "commits": 0,
+          "refused": 0,
+          "peak": 0,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "checks": [
+          "KERNEL name=locals iterations=50000 checksum=2f66c58 elapsed_ms=427",
+          "KERNEL name=constants iterations=50000 checksum=839a908 elapsed_ms=275",
+          "KERNEL name=fields iterations=50000 checksum=4c1935ff elapsed_ms=491",
+          "KERNEL name=arrays iterations=50000 checksum=452ca3 elapsed_ms=549",
+          "KERNEL name=branches iterations=50000 checksum=a632cf73 elapsed_ms=574",
+          "KERNELS_DONE"
+        ]
+      },
+      {
+        "case": "kernels-1",
+        "elapsed_seconds": 2.541215,
+        "perf": {
+          "elapsed_us": "2541215",
+          "presents": "5",
+          "present_us": "21387",
+          "present_max_us": "9031",
+          "poll_us": "685",
+          "poll_calls": "5",
+          "sleep_us": "0",
+          "native_crc": "066e64a1",
+          "lcd_crc": "743ecd69",
+          "updated": "1",
+          "unchanged": "4",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 5,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 1,
+          "compiled": 0,
+          "executed": 0,
+          "bytecodes": 0,
+          "declined": 114,
+          "code_bytes": 0
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 113,
+          "short": 1,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 0,
+          "metadata": 9432,
+          "stats": 1,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 0,
+          "commits": 0,
+          "refused": 0,
+          "peak": 0,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "checks": [
+          "KERNEL name=locals iterations=50000 checksum=2f66c58 elapsed_ms=427",
+          "KERNEL name=constants iterations=50000 checksum=839a908 elapsed_ms=274",
+          "KERNEL name=fields iterations=50000 checksum=4c1935ff elapsed_ms=493",
+          "KERNEL name=arrays iterations=50000 checksum=452ca3 elapsed_ms=547",
+          "KERNEL name=branches iterations=50000 checksum=a632cf73 elapsed_ms=576",
+          "KERNELS_DONE"
+        ]
+      }
+    ],
+    "on": [
+      {
+        "case": "kernels-0",
+        "elapsed_seconds": 0.400225,
+        "perf": {
+          "elapsed_us": "400225",
+          "presents": "5",
+          "present_us": "22004",
+          "present_max_us": "9034",
+          "poll_us": "683",
+          "poll_calls": "5",
+          "sleep_us": "0",
+          "native_crc": "066e64a1",
+          "lcd_crc": "743ecd69",
+          "updated": "1",
+          "unchanged": "4",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 5,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 1,
+          "compiled": 11,
+          "executed": 50117,
+          "bytecodes": 4639635,
+          "declined": 101,
+          "code_bytes": 3656
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 100,
+          "short": 1,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 3656,
+          "metadata": 9432,
+          "stats": 1,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 11,
+          "commits": 11,
+          "refused": 0,
+          "peak": 3904,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "checks": [
+          "KERNEL name=locals iterations=50000 checksum=2f66c58 elapsed_ms=12",
+          "KERNEL name=constants iterations=50000 checksum=839a908 elapsed_ms=6",
+          "KERNEL name=fields iterations=50000 checksum=4c1935ff elapsed_ms=12",
+          "KERNEL name=arrays iterations=50000 checksum=452ca3 elapsed_ms=21",
+          "KERNEL name=branches iterations=50000 checksum=a632cf73 elapsed_ms=122",
+          "KERNELS_DONE"
+        ]
+      },
+      {
+        "case": "kernels-1",
+        "elapsed_seconds": 0.399814,
+        "perf": {
+          "elapsed_us": "399814",
+          "presents": "5",
+          "present_us": "21598",
+          "present_max_us": "9029",
+          "poll_us": "684",
+          "poll_calls": "5",
+          "sleep_us": "0",
+          "native_crc": "066e64a1",
+          "lcd_crc": "743ecd69",
+          "updated": "1",
+          "unchanged": "4",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 5,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 1,
+          "compiled": 11,
+          "executed": 50117,
+          "bytecodes": 4639635,
+          "declined": 101,
+          "code_bytes": 3656
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 100,
+          "short": 1,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 3656,
+          "metadata": 9432,
+          "stats": 1,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 11,
+          "commits": 11,
+          "refused": 0,
+          "peak": 3904,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "checks": [
+          "KERNEL name=locals iterations=50000 checksum=2f66c58 elapsed_ms=12",
+          "KERNEL name=constants iterations=50000 checksum=839a908 elapsed_ms=6",
+          "KERNEL name=fields iterations=50000 checksum=4c1935ff elapsed_ms=12",
+          "KERNEL name=arrays iterations=50000 checksum=452ca3 elapsed_ms=21",
+          "KERNEL name=branches iterations=50000 checksum=a632cf73 elapsed_ms=123",
+          "KERNELS_DONE"
+        ]
+      }
+    ]
+  },
+  "mixed": {
+    "off": [
+      {
+        "case": "mixed-0",
+        "elapsed_seconds": 0.647095,
+        "perf": {
+          "elapsed_us": "647095",
+          "presents": "5",
+          "present_us": "22500",
+          "present_max_us": "9118",
+          "poll_us": "384",
+          "poll_calls": "5",
+          "sleep_us": "0",
+          "native_crc": "066e64a1",
+          "lcd_crc": "743ecd69",
+          "updated": "1",
+          "unchanged": "4",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 5,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 0,
+          "compiled": 0,
+          "executed": 0,
+          "bytecodes": 0,
+          "declined": 0,
+          "code_bytes": 0
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 0,
+          "short": 0,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 0,
+          "metadata": 0,
+          "stats": 0,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 0,
+          "commits": 0,
+          "refused": 0,
+          "peak": 0,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "checks": [
+          "MIXED iterations=50000 checksum=553f49c9 elapsed_ms=423"
+        ]
+      },
+      {
+        "case": "mixed-1",
+        "elapsed_seconds": 0.648351,
+        "perf": {
+          "elapsed_us": "648351",
+          "presents": "5",
+          "present_us": "23702",
+          "present_max_us": "9050",
+          "poll_us": "384",
+          "poll_calls": "5",
+          "sleep_us": "0",
+          "native_crc": "066e64a1",
+          "lcd_crc": "743ecd69",
+          "updated": "1",
+          "unchanged": "4",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 5,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 0,
+          "compiled": 0,
+          "executed": 0,
+          "bytecodes": 0,
+          "declined": 0,
+          "code_bytes": 0
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 0,
+          "short": 0,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 0,
+          "metadata": 0,
+          "stats": 0,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 0,
+          "commits": 0,
+          "refused": 0,
+          "peak": 0,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "checks": [
+          "MIXED iterations=50000 checksum=553f49c9 elapsed_ms=423"
+        ]
+      }
+    ],
+    "probe": [
+      {
+        "case": "mixed-0",
+        "elapsed_seconds": 1.309127,
+        "perf": {
+          "elapsed_us": "1309127",
+          "presents": "5",
+          "present_us": "23163",
+          "present_max_us": "9118",
+          "poll_us": "383",
+          "poll_calls": "5",
+          "sleep_us": "0",
+          "native_crc": "066e64a1",
+          "lcd_crc": "743ecd69",
+          "updated": "1",
+          "unchanged": "4",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 5,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 1,
+          "compiled": 0,
+          "executed": 0,
+          "bytecodes": 0,
+          "declined": 31,
+          "code_bytes": 0
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 31,
+          "short": 0,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 0,
+          "metadata": 9432,
+          "stats": 1,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 0,
+          "commits": 0,
+          "refused": 0,
+          "peak": 0,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "checks": [
+          "MIXED iterations=50000 checksum=553f49c9 elapsed_ms=1082"
+        ]
+      },
+      {
+        "case": "mixed-1",
+        "elapsed_seconds": 1.305202,
+        "perf": {
+          "elapsed_us": "1305202",
+          "presents": "5",
+          "present_us": "23371",
+          "present_max_us": "9111",
+          "poll_us": "387",
+          "poll_calls": "5",
+          "sleep_us": "0",
+          "native_crc": "066e64a1",
+          "lcd_crc": "743ecd69",
+          "updated": "1",
+          "unchanged": "4",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 5,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 1,
+          "compiled": 0,
+          "executed": 0,
+          "bytecodes": 0,
+          "declined": 31,
+          "code_bytes": 0
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 31,
+          "short": 0,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 0,
+          "metadata": 9432,
+          "stats": 1,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 0,
+          "commits": 0,
+          "refused": 0,
+          "peak": 0,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "checks": [
+          "MIXED iterations=50000 checksum=553f49c9 elapsed_ms=1078"
+        ]
+      }
+    ],
+    "on": [
+      {
+        "case": "mixed-0",
+        "elapsed_seconds": 0.404227,
+        "perf": {
+          "elapsed_us": "404227",
+          "presents": "5",
+          "present_us": "22614",
+          "present_max_us": "9100",
+          "poll_us": "680",
+          "poll_calls": "5",
+          "sleep_us": "0",
+          "native_crc": "066e64a1",
+          "lcd_crc": "743ecd69",
+          "updated": "1",
+          "unchanged": "4",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 5,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 1,
+          "compiled": 23,
+          "executed": 99922,
+          "bytecodes": 1899041,
+          "declined": 19,
+          "code_bytes": 6350
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 19,
+          "short": 0,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 6350,
+          "metadata": 9432,
+          "stats": 1,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 23,
+          "commits": 23,
+          "refused": 0,
+          "peak": 6912,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "checks": [
+          "MIXED iterations=50000 checksum=553f49c9 elapsed_ms=177"
+        ]
+      },
+      {
+        "case": "mixed-1",
+        "elapsed_seconds": 0.404365,
+        "perf": {
+          "elapsed_us": "404365",
+          "presents": "5",
+          "present_us": "22200",
+          "present_max_us": "9117",
+          "poll_us": "379",
+          "poll_calls": "5",
+          "sleep_us": "0",
+          "native_crc": "066e64a1",
+          "lcd_crc": "743ecd69",
+          "updated": "1",
+          "unchanged": "4",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 5,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 1,
+          "compiled": 23,
+          "executed": 99922,
+          "bytecodes": 1899041,
+          "declined": 19,
+          "code_bytes": 6350
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 19,
+          "short": 0,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 6350,
+          "metadata": 9432,
+          "stats": 1,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 23,
+          "commits": 23,
+          "refused": 0,
+          "peak": 6912,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "checks": [
+          "MIXED iterations=50000 checksum=553f49c9 elapsed_ms=177"
+        ]
+      }
+    ]
+  },
+  "games": {
+    "off": [
+      {
+        "case": "俄罗斯方块中文版_2832.jar",
+        "elapsed_seconds": 6.466437,
+        "perf": {
+          "elapsed_us": "6466437",
+          "presents": "300",
+          "present_us": "1160752",
+          "present_max_us": "9111",
+          "poll_us": "4899",
+          "poll_calls": "310",
+          "sleep_us": "0",
+          "native_crc": "90bb2232",
+          "lcd_crc": "59994a33",
+          "updated": "59",
+          "unchanged": "241",
+          "hot_peak": "151536",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "3",
+          "stack_psram": "0"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 300,
+          "input": 10,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 0,
+          "compiled": 0,
+          "executed": 0,
+          "bytecodes": 0,
+          "declined": 0,
+          "code_bytes": 0
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 0,
+          "short": 0,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 0,
+          "metadata": 0,
+          "stats": 0,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 0,
+          "commits": 0,
+          "refused": 0,
+          "peak": 0,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 343,
+            "frames": 175616,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 80128,
+            "accepted": 80128,
+            "short": 0,
+            "io_us": 3588451,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 1189
+          }
+        ],
+        "scenario": {
+          "file": "俄罗斯方块中文版_2832.jar",
+          "width": 240,
+          "height": 320,
+          "frames": 300,
+          "keys": "30:soft1,60:fire,120:5,180:fire,220:left:down,260:left:up"
+        },
+        "logged_exceptions": {
+          "thrown: java/util/NoSuchElementException at java/util/Vector.firstElement()Ljava/lang/Object; pc=0: (no message)": 2
+        }
+      },
+      {
+        "case": "贪吃蛇经典版_4515.jar",
+        "elapsed_seconds": 9.094072,
+        "perf": {
+          "elapsed_us": "9094072",
+          "presents": "300",
+          "present_us": "1021809",
+          "present_max_us": "9195",
+          "poll_us": "6193",
+          "poll_calls": "310",
+          "sleep_us": "1285947",
+          "native_crc": "da771ac3",
+          "lcd_crc": "c5b9f3a3",
+          "updated": "4",
+          "unchanged": "296",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "0"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 300,
+          "input": 10,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 0,
+          "compiled": 0,
+          "executed": 0,
+          "bytecodes": 0,
+          "declined": 0,
+          "code_bytes": 0
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 0,
+          "short": 0,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 0,
+          "metadata": 0,
+          "stats": 0,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 0,
+          "commits": 0,
+          "refused": 0,
+          "peak": 0,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "scenario": {
+          "file": "贪吃蛇经典版_4515.jar",
+          "width": 240,
+          "height": 320,
+          "frames": 300,
+          "keys": "30:fire,60:5,100:soft1,150:fire,200:right:down,260:right:up"
+        },
+        "logged_exceptions": {}
+      },
+      {
+        "case": "涂鸦地带_模拟可玩_12472.jar",
+        "elapsed_seconds": 4.867457,
+        "perf": {
+          "elapsed_us": "4867457",
+          "presents": "300",
+          "present_us": "1035464",
+          "present_max_us": "8994",
+          "poll_us": "20158",
+          "poll_calls": "310",
+          "sleep_us": "0",
+          "native_crc": "cc2bad51",
+          "lcd_crc": "80c77cf9",
+          "updated": "18",
+          "unchanged": "282",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 300,
+          "input": 10,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 0,
+          "compiled": 0,
+          "executed": 0,
+          "bytecodes": 0,
+          "declined": 0,
+          "code_bytes": 0
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 0,
+          "short": 0,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 0,
+          "metadata": 0,
+          "stats": 0,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 0,
+          "commits": 0,
+          "refused": 0,
+          "peak": 0,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "scenario": {
+          "file": "涂鸦地带_模拟可玩_12472.jar",
+          "width": 240,
+          "height": 320,
+          "frames": 300,
+          "keys": "20:fire,60:soft1,100:5,160:fire,200:up:down,260:up:up"
+        },
+        "logged_exceptions": {
+          "thrown: java/io/IOException at javax/microedition/lcdui/Image.createImage(Ljava/lang/String;)Ljavax/microedition/lcdui/Image; pc=0: /l/1.png": 1,
+          "thrown: java/io/IOException at javax/microedition/lcdui/Image.createImage(Ljava/lang/String;)Ljavax/microedition/lcdui/Image; pc=0: /l/2.png": 1,
+          "thrown: java/io/IOException at javax/microedition/lcdui/Image.createImage(Ljava/lang/String;)Ljavax/microedition/lcdui/Image; pc=0: /l/3.png": 1,
+          "thrown: javax/microedition/rms/RecordStoreNotFoundException at javax/microedition/rms/RecordStore.openRecordStore(Ljava/lang/String;Z)Ljavax/microedition/rms/RecordStore; pc=0: (no message)": 2
+        }
+      },
+      {
+        "case": "1945空战英雄_6105.jar",
+        "elapsed_seconds": 5.889987,
+        "perf": {
+          "elapsed_us": "5889987",
+          "presents": "300",
+          "present_us": "1035019",
+          "present_max_us": "9021",
+          "poll_us": "2517",
+          "poll_calls": "310",
+          "sleep_us": "0",
+          "native_crc": "dd99d6b9",
+          "lcd_crc": "53228e40",
+          "updated": "3",
+          "unchanged": "297",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "2"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 300,
+          "input": 10,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 0,
+          "compiled": 0,
+          "executed": 0,
+          "bytecodes": 0,
+          "declined": 0,
+          "code_bytes": 0
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 0,
+          "short": 0,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 0,
+          "metadata": 0,
+          "stats": 0,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 0,
+          "commits": 0,
+          "refused": 0,
+          "peak": 0,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "scenario": {
+          "file": "1945空战英雄_6105.jar",
+          "width": 240,
+          "height": 320,
+          "frames": 300,
+          "keys": "30:fire,60:soft1,90:fire,120:5,180:left:down,260:left:up"
+        },
+        "logged_exceptions": {
+          "thrown: javax/microedition/rms/RecordStoreNotFoundException at javax/microedition/rms/RecordStore.openRecordStore(Ljava/lang/String;Z)Ljavax/microedition/rms/RecordStore; pc=0: (no message)": 3
+        }
+      },
+      {
+        "case": "钻石狂潮_1335.jar",
+        "elapsed_seconds": 9.014272,
+        "perf": {
+          "elapsed_us": "9014272",
+          "presents": "300",
+          "present_us": "1050809",
+          "present_max_us": "9087",
+          "poll_us": "2778",
+          "poll_calls": "310",
+          "sleep_us": "0",
+          "native_crc": "e9fe5d31",
+          "lcd_crc": "96bf212a",
+          "updated": "72",
+          "unchanged": "228",
+          "hot_peak": "151536",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "3",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 300,
+          "input": 10,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 0,
+          "compiled": 0,
+          "executed": 0,
+          "bytecodes": 0,
+          "declined": 0,
+          "code_bytes": 0
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 0,
+          "short": 0,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 0,
+          "metadata": 0,
+          "stats": 0,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 0,
+          "commits": 0,
+          "refused": 0,
+          "peak": 0,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 34,
+            "frames": 17408,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 6656,
+            "accepted": 6656,
+            "short": 0,
+            "io_us": 333206,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 1,
+            "silence_frames": 2920
+          }
+        ],
+        "scenario": {
+          "file": "钻石狂潮_1335.jar",
+          "width": 240,
+          "height": 320,
+          "frames": 300,
+          "keys": "30:fire,60:soft1,100:5,160:fire,200:right:down,260:right:up"
+        },
+        "logged_exceptions": {
+          "thrown: javax/microedition/rms/RecordStoreNotFoundException at javax/microedition/rms/RecordStore.openRecordStore(Ljava/lang/String;Z)Ljavax/microedition/rms/RecordStore; pc=0: (no message)": 1,
+          "thrown: javax/microedition/rms/RecordStoreNotOpenException at javax/microedition/rms/RecordStore.closeRecordStore()V pc=0: (no message)": 1,
+          "thrown: javax/microedition/rms/InvalidRecordIDException at javax/microedition/rms/RecordStore.getRecord(I)[B pc=0: (no message)": 7
+        }
+      },
+      {
+        "case": "蹦球传说_7801.jar",
+        "elapsed_seconds": 6.605852,
+        "perf": {
+          "elapsed_us": "6605852",
+          "presents": "300",
+          "present_us": "1073753",
+          "present_max_us": "9056",
+          "poll_us": "2767",
+          "poll_calls": "310",
+          "sleep_us": "0",
+          "native_crc": "6ef25dde",
+          "lcd_crc": "0ddfe736",
+          "updated": "37",
+          "unchanged": "263",
+          "hot_peak": "151536",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "3",
+          "stack_psram": "3"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 300,
+          "input": 10,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 0,
+          "compiled": 0,
+          "executed": 0,
+          "bytecodes": 0,
+          "declined": 0,
+          "code_bytes": 0
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 0,
+          "short": 0,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 0,
+          "metadata": 0,
+          "stats": 0,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 0,
+          "commits": 0,
+          "refused": 0,
+          "peak": 0,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 222,
+            "frames": 113664,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 51200,
+            "accepted": 51200,
+            "short": 0,
+            "io_us": 2311709,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 1,
+            "silence_frames": 2210
+          }
+        ],
+        "scenario": {
+          "file": "蹦球传说_7801.jar",
+          "width": 240,
+          "height": 320,
+          "frames": 300,
+          "keys": "30:fire,90:soft1,150:fire,210:soft1,240:right:down,280:right:up"
+        },
+        "logged_exceptions": {
+          "thrown: javax/microedition/rms/RecordStoreNotFoundException at javax/microedition/rms/RecordStore.openRecordStore(Ljava/lang/String;Z)Ljavax/microedition/rms/RecordStore; pc=0: (no message)": 1
+        }
+      }
+    ],
+    "on": [
+      {
+        "case": "俄罗斯方块中文版_2832.jar",
+        "elapsed_seconds": 6.766176,
+        "perf": {
+          "elapsed_us": "6766176",
+          "presents": "300",
+          "present_us": "1200717",
+          "present_max_us": "9136",
+          "poll_us": "5237",
+          "poll_calls": "310",
+          "sleep_us": "0",
+          "native_crc": "90bb2232",
+          "lcd_crc": "59994a33",
+          "updated": "60",
+          "unchanged": "240",
+          "hot_peak": "151536",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "3",
+          "stack_psram": "0"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 300,
+          "input": 10,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 1,
+          "compiled": 389,
+          "executed": 30073,
+          "bytecodes": 285050,
+          "declined": 2867,
+          "code_bytes": 7810
+        },
+        "jit_detail": {
+          "evictions": 336,
+          "method_map_evictions": 536,
+          "recompiled": 382,
+          "unsupported": 1931,
+          "short": 936,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 8162,
+          "metadata": 9432,
+          "stats": 1,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 389,
+          "commits": 389,
+          "refused": 0,
+          "peak": 9392,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 346,
+            "frames": 177152,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 80896,
+            "accepted": 80896,
+            "short": 0,
+            "io_us": 3623093,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 1054
+          }
+        ],
+        "scenario": {
+          "file": "俄罗斯方块中文版_2832.jar",
+          "width": 240,
+          "height": 320,
+          "frames": 300,
+          "keys": "30:soft1,60:fire,120:5,180:fire,220:left:down,260:left:up"
+        },
+        "logged_exceptions": {
+          "thrown: java/util/NoSuchElementException at java/util/Vector.firstElement()Ljava/lang/Object; pc=0: (no message)": 3
+        }
+      },
+      {
+        "case": "贪吃蛇经典版_4515.jar",
+        "elapsed_seconds": 9.127922,
+        "perf": {
+          "elapsed_us": "9127922",
+          "presents": "300",
+          "present_us": "1050765",
+          "present_max_us": "9195",
+          "poll_us": "6465",
+          "poll_calls": "310",
+          "sleep_us": "1276228",
+          "native_crc": "da771ac3",
+          "lcd_crc": "c5b9f3a3",
+          "updated": "4",
+          "unchanged": "296",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "0"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 300,
+          "input": 10,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 1,
+          "compiled": 31,
+          "executed": 648,
+          "bytecodes": 2823,
+          "declined": 106,
+          "code_bytes": 2800
+        },
+        "jit_detail": {
+          "evictions": 1,
+          "method_map_evictions": 39,
+          "recompiled": 0,
+          "unsupported": 20,
+          "short": 86,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 2800,
+          "metadata": 9432,
+          "stats": 1,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 31,
+          "commits": 31,
+          "refused": 0,
+          "peak": 3520,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "scenario": {
+          "file": "贪吃蛇经典版_4515.jar",
+          "width": 240,
+          "height": 320,
+          "frames": 300,
+          "keys": "30:fire,60:5,100:soft1,150:fire,200:right:down,260:right:up"
+        },
+        "logged_exceptions": {}
+      },
+      {
+        "case": "涂鸦地带_模拟可玩_12472.jar",
+        "elapsed_seconds": 4.872774,
+        "perf": {
+          "elapsed_us": "4872774",
+          "presents": "300",
+          "present_us": "1028210",
+          "present_max_us": "9024",
+          "poll_us": "17804",
+          "poll_calls": "310",
+          "sleep_us": "0",
+          "native_crc": "cc2bad51",
+          "lcd_crc": "80c77cf9",
+          "updated": "18",
+          "unchanged": "282",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 300,
+          "input": 10,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 1,
+          "compiled": 36,
+          "executed": 2744,
+          "bytecodes": 21547,
+          "declined": 406,
+          "code_bytes": 3420
+        },
+        "jit_detail": {
+          "evictions": 5,
+          "method_map_evictions": 297,
+          "recompiled": 39,
+          "unsupported": 266,
+          "short": 140,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 3420,
+          "metadata": 9432,
+          "stats": 1,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 36,
+          "commits": 36,
+          "refused": 0,
+          "peak": 4144,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "scenario": {
+          "file": "涂鸦地带_模拟可玩_12472.jar",
+          "width": 240,
+          "height": 320,
+          "frames": 300,
+          "keys": "20:fire,60:soft1,100:5,160:fire,200:up:down,260:up:up"
+        },
+        "logged_exceptions": {
+          "thrown: java/io/IOException at javax/microedition/lcdui/Image.createImage(Ljava/lang/String;)Ljavax/microedition/lcdui/Image; pc=0: /l/1.png": 1,
+          "thrown: java/io/IOException at javax/microedition/lcdui/Image.createImage(Ljava/lang/String;)Ljavax/microedition/lcdui/Image; pc=0: /l/2.png": 1,
+          "thrown: java/io/IOException at javax/microedition/lcdui/Image.createImage(Ljava/lang/String;)Ljavax/microedition/lcdui/Image; pc=0: /l/3.png": 1,
+          "thrown: javax/microedition/rms/RecordStoreNotFoundException at javax/microedition/rms/RecordStore.openRecordStore(Ljava/lang/String;Z)Ljavax/microedition/rms/RecordStore; pc=0: (no message)": 2
+        }
+      },
+      {
+        "case": "1945空战英雄_6105.jar",
+        "elapsed_seconds": 5.926199,
+        "perf": {
+          "elapsed_us": "5926199",
+          "presents": "300",
+          "present_us": "1030172",
+          "present_max_us": "9051",
+          "poll_us": "2508",
+          "poll_calls": "310",
+          "sleep_us": "0",
+          "native_crc": "dd99d6b9",
+          "lcd_crc": "53228e40",
+          "updated": "3",
+          "unchanged": "297",
+          "hot_peak": "131056",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "2",
+          "stack_psram": "2"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 300,
+          "input": 10,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 1,
+          "compiled": 19,
+          "executed": 22648,
+          "bytecodes": 147527,
+          "declined": 147,
+          "code_bytes": 1896
+        },
+        "jit_detail": {
+          "evictions": 3,
+          "method_map_evictions": 73,
+          "recompiled": 0,
+          "unsupported": 67,
+          "short": 80,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 1896,
+          "metadata": 9432,
+          "stats": 1,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 19,
+          "commits": 19,
+          "refused": 0,
+          "peak": 2288,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 0,
+            "frames": 0,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 0,
+            "accepted": 0,
+            "short": 0,
+            "io_us": 0,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 0,
+            "silence_frames": 0
+          }
+        ],
+        "scenario": {
+          "file": "1945空战英雄_6105.jar",
+          "width": 240,
+          "height": 320,
+          "frames": 300,
+          "keys": "30:fire,60:soft1,90:fire,120:5,180:left:down,260:left:up"
+        },
+        "logged_exceptions": {
+          "thrown: javax/microedition/rms/RecordStoreNotFoundException at javax/microedition/rms/RecordStore.openRecordStore(Ljava/lang/String;Z)Ljavax/microedition/rms/RecordStore; pc=0: (no message)": 3
+        }
+      },
+      {
+        "case": "钻石狂潮_1335.jar",
+        "elapsed_seconds": 9.057336,
+        "perf": {
+          "elapsed_us": "9057336",
+          "presents": "300",
+          "present_us": "1109601",
+          "present_max_us": "9137",
+          "poll_us": "3411",
+          "poll_calls": "310",
+          "sleep_us": "0",
+          "native_crc": "297038d9",
+          "lcd_crc": "831e66bb",
+          "updated": "72",
+          "unchanged": "228",
+          "hot_peak": "151536",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "3",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 300,
+          "input": 10,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 1,
+          "compiled": 496,
+          "executed": 57025,
+          "bytecodes": 468840,
+          "declined": 1243,
+          "code_bytes": 5242
+        },
+        "jit_detail": {
+          "evictions": 435,
+          "method_map_evictions": 160,
+          "recompiled": 99,
+          "unsupported": 606,
+          "short": 637,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 5882,
+          "metadata": 9432,
+          "stats": 1,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 496,
+          "commits": 496,
+          "refused": 0,
+          "peak": 7232,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 87,
+            "frames": 44544,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 19200,
+            "accepted": 19200,
+            "short": 0,
+            "io_us": 893181,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 1,
+            "silence_frames": 2750
+          }
+        ],
+        "scenario": {
+          "file": "钻石狂潮_1335.jar",
+          "width": 240,
+          "height": 320,
+          "frames": 300,
+          "keys": "30:fire,60:soft1,100:5,160:fire,200:right:down,260:right:up"
+        },
+        "logged_exceptions": {
+          "thrown: javax/microedition/rms/RecordStoreNotFoundException at javax/microedition/rms/RecordStore.openRecordStore(Ljava/lang/String;Z)Ljavax/microedition/rms/RecordStore; pc=0: (no message)": 1,
+          "thrown: javax/microedition/rms/RecordStoreNotOpenException at javax/microedition/rms/RecordStore.closeRecordStore()V pc=0: (no message)": 1,
+          "thrown: javax/microedition/rms/InvalidRecordIDException at javax/microedition/rms/RecordStore.getRecord(I)[B pc=0: (no message)": 7
+        }
+      },
+      {
+        "case": "蹦球传说_7801.jar",
+        "elapsed_seconds": 7.093151,
+        "perf": {
+          "elapsed_us": "7093151",
+          "presents": "300",
+          "present_us": "1053950",
+          "present_max_us": "9063",
+          "poll_us": "2801",
+          "poll_calls": "310",
+          "sleep_us": "0",
+          "native_crc": "6ef25dde",
+          "lcd_crc": "0ddfe736",
+          "updated": "36",
+          "unchanged": "264",
+          "hot_peak": "151536",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "3",
+          "stack_psram": "3"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 300,
+          "input": 10,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 1,
+          "compiled": 150,
+          "executed": 36619,
+          "bytecodes": 225664,
+          "declined": 8813,
+          "code_bytes": 5792
+        },
+        "jit_detail": {
+          "evictions": 94,
+          "method_map_evictions": 9588,
+          "recompiled": 1585,
+          "unsupported": 1642,
+          "short": 7171,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 5818,
+          "metadata": 9432,
+          "stats": 1,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 150,
+          "commits": 150,
+          "refused": 0,
+          "peak": 7136,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 262,
+            "frames": 134144,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 60416,
+            "accepted": 60416,
+            "short": 0,
+            "io_us": 2733234,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 1,
+            "silence_frames": 2628
+          }
+        ],
+        "scenario": {
+          "file": "蹦球传说_7801.jar",
+          "width": 240,
+          "height": 320,
+          "frames": 300,
+          "keys": "30:fire,90:soft1,150:fire,210:soft1,240:right:down,280:right:up"
+        },
+        "logged_exceptions": {
+          "thrown: javax/microedition/rms/RecordStoreNotFoundException at javax/microedition/rms/RecordStore.openRecordStore(Ljava/lang/String;Z)Ljavax/microedition/rms/RecordStore; pc=0: (no message)": 1
+        }
+      }
+    ]
+  },
+  "diamond-repeat": {
+    "off": [
+      {
+        "case": "钻石狂潮_1335.jar",
+        "elapsed_seconds": 9.100214,
+        "perf": {
+          "elapsed_us": "9100214",
+          "presents": "300",
+          "present_us": "1051576",
+          "present_max_us": "9092",
+          "poll_us": "2708",
+          "poll_calls": "310",
+          "sleep_us": "0",
+          "native_crc": "e9fe5d31",
+          "lcd_crc": "96bf212a",
+          "updated": "72",
+          "unchanged": "228",
+          "hot_peak": "151536",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "3",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 300,
+          "input": 10,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 0,
+          "compiled": 0,
+          "executed": 0,
+          "bytecodes": 0,
+          "declined": 0,
+          "code_bytes": 0
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 0,
+          "short": 0,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 0,
+          "metadata": 0,
+          "stats": 0,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 0,
+          "commits": 0,
+          "refused": 0,
+          "peak": 0,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 34,
+            "frames": 17408,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 6656,
+            "accepted": 6656,
+            "short": 0,
+            "io_us": 333152,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 1,
+            "silence_frames": 2920
+          }
+        ],
+        "scenario": {
+          "file": "钻石狂潮_1335.jar",
+          "width": 240,
+          "height": 320,
+          "frames": 300,
+          "keys": "30:fire,60:soft1,100:5,160:fire,200:right:down,260:right:up"
+        },
+        "logged_exceptions": {
+          "thrown: javax/microedition/rms/RecordStoreNotFoundException at javax/microedition/rms/RecordStore.openRecordStore(Ljava/lang/String;Z)Ljavax/microedition/rms/RecordStore; pc=0: (no message)": 1,
+          "thrown: javax/microedition/rms/RecordStoreNotOpenException at javax/microedition/rms/RecordStore.closeRecordStore()V pc=0: (no message)": 1,
+          "thrown: javax/microedition/rms/InvalidRecordIDException at javax/microedition/rms/RecordStore.getRecord(I)[B pc=0: (no message)": 7
+        }
+      },
+      {
+        "case": "钻石狂潮_1335.jar",
+        "elapsed_seconds": 9.117236,
+        "perf": {
+          "elapsed_us": "9117236",
+          "presents": "300",
+          "present_us": "1055061",
+          "present_max_us": "9086",
+          "poll_us": "2715",
+          "poll_calls": "310",
+          "sleep_us": "0",
+          "native_crc": "e9fe5d31",
+          "lcd_crc": "96bf212a",
+          "updated": "72",
+          "unchanged": "228",
+          "hot_peak": "151536",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "3",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 300,
+          "input": 10,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 0,
+          "compiled": 0,
+          "executed": 0,
+          "bytecodes": 0,
+          "declined": 0,
+          "code_bytes": 0
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 0,
+          "short": 0,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 0,
+          "metadata": 0,
+          "stats": 0,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 0,
+          "commits": 0,
+          "refused": 0,
+          "peak": 0,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 34,
+            "frames": 17408,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 6400,
+            "accepted": 6400,
+            "short": 0,
+            "io_us": 335235,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 1,
+            "silence_frames": 3478
+          }
+        ],
+        "scenario": {
+          "file": "钻石狂潮_1335.jar",
+          "width": 240,
+          "height": 320,
+          "frames": 300,
+          "keys": "30:fire,60:soft1,100:5,160:fire,200:right:down,260:right:up"
+        },
+        "logged_exceptions": {
+          "thrown: javax/microedition/rms/RecordStoreNotFoundException at javax/microedition/rms/RecordStore.openRecordStore(Ljava/lang/String;Z)Ljavax/microedition/rms/RecordStore; pc=0: (no message)": 1,
+          "thrown: javax/microedition/rms/RecordStoreNotOpenException at javax/microedition/rms/RecordStore.closeRecordStore()V pc=0: (no message)": 1,
+          "thrown: javax/microedition/rms/InvalidRecordIDException at javax/microedition/rms/RecordStore.getRecord(I)[B pc=0: (no message)": 7
+        }
+      }
+    ],
+    "on": [
+      {
+        "case": "钻石狂潮_1335.jar",
+        "elapsed_seconds": 9.247228,
+        "perf": {
+          "elapsed_us": "9247228",
+          "presents": "300",
+          "present_us": "1111875",
+          "present_max_us": "9134",
+          "poll_us": "4995",
+          "poll_calls": "310",
+          "sleep_us": "0",
+          "native_crc": "297038d9",
+          "lcd_crc": "831e66bb",
+          "updated": "72",
+          "unchanged": "228",
+          "hot_peak": "151536",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "3",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 300,
+          "input": 10,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 1,
+          "compiled": 496,
+          "executed": 56959,
+          "bytecodes": 468233,
+          "declined": 1243,
+          "code_bytes": 5242
+        },
+        "jit_detail": {
+          "evictions": 435,
+          "method_map_evictions": 160,
+          "recompiled": 98,
+          "unsupported": 606,
+          "short": 637,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 5882,
+          "metadata": 9432,
+          "stats": 1,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 496,
+          "commits": 496,
+          "refused": 0,
+          "peak": 7232,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 89,
+            "frames": 45568,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 19456,
+            "accepted": 19456,
+            "short": 0,
+            "io_us": 908965,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 1,
+            "silence_frames": 3216
+          }
+        ],
+        "scenario": {
+          "file": "钻石狂潮_1335.jar",
+          "width": 240,
+          "height": 320,
+          "frames": 300,
+          "keys": "30:fire,60:soft1,100:5,160:fire,200:right:down,260:right:up"
+        },
+        "logged_exceptions": {
+          "thrown: javax/microedition/rms/RecordStoreNotFoundException at javax/microedition/rms/RecordStore.openRecordStore(Ljava/lang/String;Z)Ljavax/microedition/rms/RecordStore; pc=0: (no message)": 1,
+          "thrown: javax/microedition/rms/RecordStoreNotOpenException at javax/microedition/rms/RecordStore.closeRecordStore()V pc=0: (no message)": 1,
+          "thrown: javax/microedition/rms/InvalidRecordIDException at javax/microedition/rms/RecordStore.getRecord(I)[B pc=0: (no message)": 7
+        }
+      },
+      {
+        "case": "钻石狂潮_1335.jar",
+        "elapsed_seconds": 9.288285,
+        "perf": {
+          "elapsed_us": "9288285",
+          "presents": "300",
+          "present_us": "1114146",
+          "present_max_us": "9136",
+          "poll_us": "4669",
+          "poll_calls": "310",
+          "sleep_us": "0",
+          "native_crc": "297038d9",
+          "lcd_crc": "831e66bb",
+          "updated": "72",
+          "unchanged": "228",
+          "hot_peak": "151536",
+          "hot_live": "0",
+          "scale_mismatch": "0",
+          "stack_internal": "3",
+          "stack_psram": "1"
+        },
+        "end": {
+          "rc": 0,
+          "presents": 300,
+          "input": 10,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit": {
+          "active": 1,
+          "compiled": 496,
+          "executed": 56959,
+          "bytecodes": 468233,
+          "declined": 1243,
+          "code_bytes": 5242
+        },
+        "jit_detail": {
+          "evictions": 435,
+          "method_map_evictions": 160,
+          "recompiled": 98,
+          "unsupported": 606,
+          "short": 637,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 5882,
+          "metadata": 9432,
+          "stats": 1,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 496,
+          "commits": 496,
+          "refused": 0,
+          "peak": 7232,
+          "live": 0
+        },
+        "audio": [
+          {
+            "writes": 89,
+            "frames": 45568,
+            "errors": 0,
+            "tones": 0,
+            "volume": 40
+          },
+          {
+            "offered": 19456,
+            "accepted": 19456,
+            "short": 0,
+            "io_us": 911343,
+            "volume_calls": 0,
+            "queued": 0,
+            "underruns": 1,
+            "silence_frames": 3216
+          }
+        ],
+        "scenario": {
+          "file": "钻石狂潮_1335.jar",
+          "width": 240,
+          "height": 320,
+          "frames": 300,
+          "keys": "30:fire,60:soft1,100:5,160:fire,200:right:down,260:right:up"
+        },
+        "logged_exceptions": {
+          "thrown: javax/microedition/rms/RecordStoreNotFoundException at javax/microedition/rms/RecordStore.openRecordStore(Ljava/lang/String;Z)Ljavax/microedition/rms/RecordStore; pc=0: (no message)": 1,
+          "thrown: javax/microedition/rms/RecordStoreNotOpenException at javax/microedition/rms/RecordStore.closeRecordStore()V pc=0: (no message)": 1,
+          "thrown: javax/microedition/rms/InvalidRecordIDException at javax/microedition/rms/RecordStore.getRecord(I)[B pc=0: (no message)": 7
+        }
+      }
+    ]
+  },
+  "scene_fps": {
+    "moto": {
+      "off": {
+        "resolution": [
+          240,
+          320
+        ],
+        "jit": "off",
+        "warmup_seconds": 5,
+        "sampling_seconds": 22.013714638946112,
+        "sample_interval_seconds": 1,
+        "held_key": "up",
+        "no_screenshots_during_sampling": true,
+        "samples": [
+          {
+            "sample": 0,
+            "time_seconds": 1.035997411236167e-05,
+            "fps": 4.1
+          },
+          {
+            "sample": 1,
+            "time_seconds": 1.0307216959772632,
+            "fps": 4.2
+          },
+          {
+            "sample": 2,
+            "time_seconds": 2.1692011959967203,
+            "fps": 4.3
+          },
+          {
+            "sample": 3,
+            "time_seconds": 3.312155058956705,
+            "fps": 4.5
+          },
+          {
+            "sample": 4,
+            "time_seconds": 4.423010175989475,
+            "fps": 4.4
+          },
+          {
+            "sample": 5,
+            "time_seconds": 5.539679686946329,
+            "fps": 4.4
+          },
+          {
+            "sample": 6,
+            "time_seconds": 6.645691710000392,
+            "fps": 4.4
+          },
+          {
+            "sample": 7,
+            "time_seconds": 7.759688404970802,
+            "fps": 4.4
+          },
+          {
+            "sample": 8,
+            "time_seconds": 8.885662703949492,
+            "fps": 4.2
+          },
+          {
+            "sample": 9,
+            "time_seconds": 9.96459126699483,
+            "fps": 3.9
+          },
+          {
+            "sample": 10,
+            "time_seconds": 11.067062800982967,
+            "fps": 3.8
+          },
+          {
+            "sample": 11,
+            "time_seconds": 12.090711237979122,
+            "fps": 3.9
+          },
+          {
+            "sample": 12,
+            "time_seconds": 13.144708403968252,
+            "fps": 4.0
+          },
+          {
+            "sample": 13,
+            "time_seconds": 14.324325208959635,
+            "fps": 0.0
+          },
+          {
+            "sample": 14,
+            "time_seconds": 15.369716905988753,
+            "fps": 0.0
+          },
+          {
+            "sample": 15,
+            "time_seconds": 16.488340788986534,
+            "fps": 4.1
+          },
+          {
+            "sample": 16,
+            "time_seconds": 17.49073485698318,
+            "fps": 4.1
+          },
+          {
+            "sample": 17,
+            "time_seconds": 18.6510040309513,
+            "fps": 4.1
+          },
+          {
+            "sample": 18,
+            "time_seconds": 19.81332526297774,
+            "fps": 4.1
+          },
+          {
+            "sample": 19,
+            "time_seconds": 20.853110369993374,
+            "fps": 4.1
+          }
+        ],
+        "mean": 3.75,
+        "median": 4.1,
+        "minimum": 0.0,
+        "maximum": 4.5,
+        "sample_audio_detail_delta": {
+          "offered": 0,
+          "accepted": 0,
+          "short": 0,
+          "io_us": 0,
+          "volume_calls": 0,
+          "queued": 0,
+          "underruns": 0,
+          "silence_frames": 0
+        },
+        "sample_audio_output_delta": {
+          "writes": 0,
+          "frames": 0,
+          "errors": 0,
+          "tones": 0,
+          "volume": 0
+        },
+        "end": {
+          "rc": 0,
+          "presents": 420,
+          "input": 19,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit_stats": {
+          "active": 0,
+          "compiled": 0,
+          "executed": 0,
+          "bytecodes": 0,
+          "declined": 0,
+          "code_bytes": 0
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 0,
+          "short": 0,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 0,
+          "metadata": 0,
+          "stats": 0,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 0,
+          "commits": 0,
+          "refused": 0,
+          "peak": 0,
+          "live": 0
+        },
+        "vm": "stats: frames=420 paints=420 gfx=9913 tris=22930 m3g=3708 time=44.959s fps=9.3 bytecodes=1674697 (0.04 M/s) natives=354094 heap=3902144/6285600 bytes cpcache=411069/784 findcache=0/0",
+        "navigation_keys": "fire,fire,fire,fire,softr,softr,fire,fire",
+        "repeated_keys": "",
+        "repeat_period_seconds": null,
+        "repeated_pulses_including_warmup": null,
+        "screenshot_source": "lcd"
+      },
+      "on": {
+        "resolution": [
+          240,
+          320
+        ],
+        "jit": "on",
+        "warmup_seconds": 5,
+        "sampling_seconds": 21.82203765702434,
+        "sample_interval_seconds": 1,
+        "held_key": "up",
+        "no_screenshots_during_sampling": true,
+        "samples": [
+          {
+            "sample": 0,
+            "time_seconds": 3.958004526793957e-06,
+            "fps": 3.9
+          },
+          {
+            "sample": 1,
+            "time_seconds": 1.0379882149863988,
+            "fps": 4.2
+          },
+          {
+            "sample": 2,
+            "time_seconds": 2.183416693995241,
+            "fps": 4.3
+          },
+          {
+            "sample": 3,
+            "time_seconds": 3.337199828994926,
+            "fps": 4.4
+          },
+          {
+            "sample": 4,
+            "time_seconds": 4.452952843974344,
+            "fps": 4.4
+          },
+          {
+            "sample": 5,
+            "time_seconds": 5.616469774977304,
+            "fps": 4.4
+          },
+          {
+            "sample": 6,
+            "time_seconds": 6.6819592990214005,
+            "fps": 4.4
+          },
+          {
+            "sample": 7,
+            "time_seconds": 7.7973295749980025,
+            "fps": 4.4
+          },
+          {
+            "sample": 8,
+            "time_seconds": 8.920438305998687,
+            "fps": 4.2
+          },
+          {
+            "sample": 9,
+            "time_seconds": 10.08174340298865,
+            "fps": 3.9
+          },
+          {
+            "sample": 10,
+            "time_seconds": 11.134708079975098,
+            "fps": 3.8
+          },
+          {
+            "sample": 11,
+            "time_seconds": 12.161744448007084,
+            "fps": 3.9
+          },
+          {
+            "sample": 12,
+            "time_seconds": 13.166416605992708,
+            "fps": 3.9
+          },
+          {
+            "sample": 13,
+            "time_seconds": 14.358442393015139,
+            "fps": 0.0
+          },
+          {
+            "sample": 14,
+            "time_seconds": 15.484249236993492,
+            "fps": 0.0
+          },
+          {
+            "sample": 15,
+            "time_seconds": 16.52171871997416,
+            "fps": 4.1
+          },
+          {
+            "sample": 16,
+            "time_seconds": 17.524403953982983,
+            "fps": 4.1
+          },
+          {
+            "sample": 17,
+            "time_seconds": 18.68898924801033,
+            "fps": 4.1
+          },
+          {
+            "sample": 18,
+            "time_seconds": 19.69373059499776,
+            "fps": 4.1
+          },
+          {
+            "sample": 19,
+            "time_seconds": 20.743162465980276,
+            "fps": 4.1
+          }
+        ],
+        "mean": 3.73,
+        "median": 4.1,
+        "minimum": 0.0,
+        "maximum": 4.4,
+        "sample_audio_detail_delta": {
+          "offered": 0,
+          "accepted": 0,
+          "short": 0,
+          "io_us": 0,
+          "volume_calls": 0,
+          "queued": 0,
+          "underruns": 0,
+          "silence_frames": 0
+        },
+        "sample_audio_output_delta": {
+          "writes": 0,
+          "frames": 0,
+          "errors": 0,
+          "tones": 0,
+          "volume": 0
+        },
+        "end": {
+          "rc": 0,
+          "presents": 410,
+          "input": 19,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit_stats": {
+          "active": 1,
+          "compiled": 95,
+          "executed": 8469,
+          "bytecodes": 43118,
+          "declined": 352,
+          "code_bytes": 4332
+        },
+        "jit_detail": {
+          "evictions": 41,
+          "method_map_evictions": 48,
+          "recompiled": 0,
+          "unsupported": 148,
+          "short": 204,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 4332,
+          "metadata": 9432,
+          "stats": 1,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 95,
+          "commits": 95,
+          "refused": 0,
+          "peak": 5680,
+          "live": 0
+        },
+        "vm": "stats: frames=410 paints=410 gfx=9644 tris=22286 m3g=3644 time=44.372s fps=9.2 bytecodes=1667741 (0.04 M/s) natives=351945 heap=3901920/6284704 bytes cpcache=404422/784 findcache=0/0",
+        "navigation_keys": "fire,fire,fire,fire,softr,softr,fire,fire",
+        "repeated_keys": "",
+        "repeat_period_seconds": null,
+        "repeated_pulses_including_warmup": null,
+        "screenshot_source": "lcd"
+      }
+    },
+    "dmc": {
+      "off": {
+        "resolution": [
+          240,
+          320
+        ],
+        "jit": "off",
+        "warmup_seconds": 5,
+        "sampling_seconds": 21.241876149957534,
+        "sample_interval_seconds": 1,
+        "held_key": "fire",
+        "no_screenshots_during_sampling": true,
+        "samples": [
+          {
+            "sample": 0,
+            "time_seconds": 5.149981006979942e-06,
+            "fps": 10.4
+          },
+          {
+            "sample": 1,
+            "time_seconds": 1.0760009379591793,
+            "fps": 10.4
+          },
+          {
+            "sample": 2,
+            "time_seconds": 2.147584788966924,
+            "fps": 12.1
+          },
+          {
+            "sample": 3,
+            "time_seconds": 3.2399915979476646,
+            "fps": 10.9
+          },
+          {
+            "sample": 4,
+            "time_seconds": 4.274987617973238,
+            "fps": 10.7
+          },
+          {
+            "sample": 5,
+            "time_seconds": 5.29255736694904,
+            "fps": 10.9
+          },
+          {
+            "sample": 6,
+            "time_seconds": 6.300321041955613,
+            "fps": 10.6
+          },
+          {
+            "sample": 7,
+            "time_seconds": 7.322596128971782,
+            "fps": 10.1
+          },
+          {
+            "sample": 8,
+            "time_seconds": 8.514590282982681,
+            "fps": 9.8
+          },
+          {
+            "sample": 9,
+            "time_seconds": 9.522641578980256,
+            "fps": 9.4
+          },
+          {
+            "sample": 10,
+            "time_seconds": 10.58463287097402,
+            "fps": 9.2
+          },
+          {
+            "sample": 11,
+            "time_seconds": 11.65329780394677,
+            "fps": 9.4
+          },
+          {
+            "sample": 12,
+            "time_seconds": 12.717908698949032,
+            "fps": 9.2
+          },
+          {
+            "sample": 13,
+            "time_seconds": 13.789980628993362,
+            "fps": 9.4
+          },
+          {
+            "sample": 14,
+            "time_seconds": 14.840701606997754,
+            "fps": 9.4
+          },
+          {
+            "sample": 15,
+            "time_seconds": 15.90163296094397,
+            "fps": 9.5
+          },
+          {
+            "sample": 16,
+            "time_seconds": 16.955605600960553,
+            "fps": 9.2
+          },
+          {
+            "sample": 17,
+            "time_seconds": 18.051004780980293,
+            "fps": 9.7
+          },
+          {
+            "sample": 18,
+            "time_seconds": 19.15658402995905,
+            "fps": 9.6
+          },
+          {
+            "sample": 19,
+            "time_seconds": 20.20700550294714,
+            "fps": 9.6
+          }
+        ],
+        "mean": 9.975,
+        "median": 9.649999999999999,
+        "minimum": 9.2,
+        "maximum": 12.1,
+        "sample_audio_detail_delta": {
+          "offered": 0,
+          "accepted": 0,
+          "short": 0,
+          "io_us": 0,
+          "volume_calls": 0,
+          "queued": 0,
+          "underruns": 0,
+          "silence_frames": 0
+        },
+        "sample_audio_output_delta": {
+          "writes": 0,
+          "frames": 0,
+          "errors": 0,
+          "tones": 0,
+          "volume": 0
+        },
+        "end": {
+          "rc": 0,
+          "presents": 1680,
+          "input": 23,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit_stats": {
+          "active": 0,
+          "compiled": 0,
+          "executed": 0,
+          "bytecodes": 0,
+          "declined": 0,
+          "code_bytes": 0
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 0,
+          "short": 0,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 0,
+          "metadata": 0,
+          "stats": 0,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 0,
+          "commits": 0,
+          "refused": 0,
+          "peak": 0,
+          "live": 0
+        },
+        "vm": "stats: frames=1680 paints=911 gfx=105830 tris=314736 m3g=0 time=138.402s fps=12.1 bytecodes=15202438 (0.11 M/s) natives=1483549 heap=2216816/2879104 bytes cpcache=3121138/1120 findcache=0/0",
+        "navigation_keys": "softl,softl,fire,softl,softl,softl,softl,softl,softl,softl",
+        "repeated_keys": "",
+        "repeat_period_seconds": null,
+        "repeated_pulses_including_warmup": null,
+        "screenshot_source": "lcd"
+      },
+      "on": {
+        "resolution": [
+          240,
+          320
+        ],
+        "jit": "on",
+        "warmup_seconds": 5,
+        "sampling_seconds": 21.328068200033158,
+        "sample_interval_seconds": 1,
+        "held_key": "fire",
+        "no_screenshots_during_sampling": true,
+        "samples": [
+          {
+            "sample": 0,
+            "time_seconds": 5.751033313572407e-06,
+            "fps": 11.0
+          },
+          {
+            "sample": 1,
+            "time_seconds": 1.08272989600664,
+            "fps": 10.8
+          },
+          {
+            "sample": 2,
+            "time_seconds": 2.1767593410331756,
+            "fps": 10.9
+          },
+          {
+            "sample": 3,
+            "time_seconds": 3.194821671990212,
+            "fps": 9.2
+          },
+          {
+            "sample": 4,
+            "time_seconds": 4.264939274988137,
+            "fps": 9.2
+          },
+          {
+            "sample": 5,
+            "time_seconds": 5.349724431987852,
+            "fps": 8.9
+          },
+          {
+            "sample": 6,
+            "time_seconds": 6.37565815198468,
+            "fps": 10.8
+          },
+          {
+            "sample": 7,
+            "time_seconds": 7.396437349030748,
+            "fps": 10.8
+          },
+          {
+            "sample": 8,
+            "time_seconds": 8.462455456028692,
+            "fps": 8.9
+          },
+          {
+            "sample": 9,
+            "time_seconds": 9.525610373995733,
+            "fps": 8.9
+          },
+          {
+            "sample": 10,
+            "time_seconds": 10.550737801007926,
+            "fps": 10.1
+          },
+          {
+            "sample": 11,
+            "time_seconds": 11.663350154994987,
+            "fps": 9.2
+          },
+          {
+            "sample": 12,
+            "time_seconds": 12.739488461986184,
+            "fps": 9.4
+          },
+          {
+            "sample": 13,
+            "time_seconds": 13.916680708003696,
+            "fps": 9.4
+          },
+          {
+            "sample": 14,
+            "time_seconds": 14.960076934017707,
+            "fps": 9.4
+          },
+          {
+            "sample": 15,
+            "time_seconds": 16.01161476300331,
+            "fps": 9.4
+          },
+          {
+            "sample": 16,
+            "time_seconds": 17.062344719015528,
+            "fps": 9.4
+          },
+          {
+            "sample": 17,
+            "time_seconds": 18.13400444103172,
+            "fps": 9.5
+          },
+          {
+            "sample": 18,
+            "time_seconds": 19.19367681699805,
+            "fps": 9.5
+          },
+          {
+            "sample": 19,
+            "time_seconds": 20.25683923799079,
+            "fps": 9.5
+          }
+        ],
+        "mean": 9.71,
+        "median": 9.4,
+        "minimum": 8.9,
+        "maximum": 11.0,
+        "sample_audio_detail_delta": {
+          "offered": 0,
+          "accepted": 0,
+          "short": 0,
+          "io_us": 0,
+          "volume_calls": 0,
+          "queued": 0,
+          "underruns": 0,
+          "silence_frames": 0
+        },
+        "sample_audio_output_delta": {
+          "writes": 0,
+          "frames": 0,
+          "errors": 0,
+          "tones": 0,
+          "volume": 0
+        },
+        "end": {
+          "rc": 0,
+          "presents": 1618,
+          "input": 23,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit_stats": {
+          "active": 1,
+          "compiled": 16395,
+          "executed": 306733,
+          "bytecodes": 2043380,
+          "declined": 76887,
+          "code_bytes": 7978
+        },
+        "jit_detail": {
+          "evictions": 16331,
+          "method_map_evictions": 50363,
+          "recompiled": 16108,
+          "unsupported": 20786,
+          "short": 56101,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 8626,
+          "metadata": 9432,
+          "stats": 1,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 16395,
+          "commits": 16395,
+          "refused": 0,
+          "peak": 10032,
+          "live": 0
+        },
+        "vm": "stats: frames=1618 paints=892 gfx=97051 tris=244404 m3g=0 time=137.536s fps=11.8 bytecodes=14475542 (0.11 M/s) natives=1461505 heap=2105680/2879168 bytes cpcache=2934757/1120 findcache=0/0",
+        "navigation_keys": "softl,softl,fire,softl,softl,softl,softl,softl,softl,softl",
+        "repeated_keys": "",
+        "repeat_period_seconds": null,
+        "repeated_pulses_including_warmup": null,
+        "screenshot_source": "lcd"
+      }
+    },
+    "bounce-pulse": {
+      "off": {
+        "resolution": [
+          240,
+          320
+        ],
+        "jit": "off",
+        "warmup_seconds": 5,
+        "sampling_seconds": 25.831982888979837,
+        "sample_interval_seconds": 0.55,
+        "held_key": "",
+        "no_screenshots_during_sampling": true,
+        "samples": [
+          {
+            "sample": 0,
+            "time_seconds": 1.4488003216683865e-05,
+            "fps": 17.6
+          },
+          {
+            "sample": 1,
+            "time_seconds": 0.6212172550149262,
+            "fps": 17.9
+          },
+          {
+            "sample": 2,
+            "time_seconds": 1.2666193949989974,
+            "fps": 9.9
+          },
+          {
+            "sample": 3,
+            "time_seconds": 1.8943746709846891,
+            "fps": 17.5
+          },
+          {
+            "sample": 4,
+            "time_seconds": 2.5425060740089975,
+            "fps": 17.4
+          },
+          {
+            "sample": 5,
+            "time_seconds": 3.177960611996241,
+            "fps": 13.5
+          },
+          {
+            "sample": 6,
+            "time_seconds": 3.831963912991341,
+            "fps": 17.1
+          },
+          {
+            "sample": 7,
+            "time_seconds": 4.462221801979467,
+            "fps": 15.6
+          },
+          {
+            "sample": 8,
+            "time_seconds": 5.167651498981286,
+            "fps": 15.5
+          },
+          {
+            "sample": 9,
+            "time_seconds": 5.79862548498204,
+            "fps": 17.8
+          },
+          {
+            "sample": 10,
+            "time_seconds": 6.454586596984882,
+            "fps": 9.6
+          },
+          {
+            "sample": 11,
+            "time_seconds": 7.079014527029358,
+            "fps": 17.0
+          },
+          {
+            "sample": 12,
+            "time_seconds": 7.722774024005048,
+            "fps": 13.7
+          },
+          {
+            "sample": 13,
+            "time_seconds": 8.380051731015556,
+            "fps": 13.9
+          },
+          {
+            "sample": 14,
+            "time_seconds": 9.015188046032563,
+            "fps": 15.9
+          },
+          {
+            "sample": 15,
+            "time_seconds": 9.659736449015327,
+            "fps": 13.9
+          },
+          {
+            "sample": 16,
+            "time_seconds": 10.371947998995893,
+            "fps": 15.3
+          },
+          {
+            "sample": 17,
+            "time_seconds": 11.022128185024485,
+            "fps": 17.9
+          },
+          {
+            "sample": 18,
+            "time_seconds": 11.666686606011353,
+            "fps": 15.7
+          },
+          {
+            "sample": 19,
+            "time_seconds": 12.303484870004468,
+            "fps": 15.9
+          },
+          {
+            "sample": 20,
+            "time_seconds": 12.938249380036723,
+            "fps": 11.9
+          },
+          {
+            "sample": 21,
+            "time_seconds": 13.576770068029873,
+            "fps": 15.5
+          },
+          {
+            "sample": 22,
+            "time_seconds": 14.214007514994591,
+            "fps": 13.7
+          },
+          {
+            "sample": 23,
+            "time_seconds": 14.765505764982663,
+            "fps": 15.4
+          },
+          {
+            "sample": 24,
+            "time_seconds": 15.397673633007798,
+            "fps": 13.6
+          },
+          {
+            "sample": 25,
+            "time_seconds": 16.030791152035818,
+            "fps": 15.6
+          },
+          {
+            "sample": 26,
+            "time_seconds": 16.665559599001426,
+            "fps": 11.6
+          },
+          {
+            "sample": 27,
+            "time_seconds": 17.345397642988246,
+            "fps": 15.3
+          },
+          {
+            "sample": 28,
+            "time_seconds": 17.980509530985728,
+            "fps": 13.7
+          },
+          {
+            "sample": 29,
+            "time_seconds": 18.623671095003374,
+            "fps": 17.5
+          },
+          {
+            "sample": 30,
+            "time_seconds": 19.257547791989055,
+            "fps": 15.8
+          },
+          {
+            "sample": 31,
+            "time_seconds": 19.972280952031724,
+            "fps": 13.7
+          },
+          {
+            "sample": 32,
+            "time_seconds": 20.64451131800888,
+            "fps": 17.3
+          },
+          {
+            "sample": 33,
+            "time_seconds": 21.29652002902003,
+            "fps": 11.9
+          },
+          {
+            "sample": 34,
+            "time_seconds": 21.92481520801084,
+            "fps": 17.7
+          },
+          {
+            "sample": 35,
+            "time_seconds": 22.56957179500023,
+            "fps": 15.8
+          },
+          {
+            "sample": 36,
+            "time_seconds": 23.213776185002644,
+            "fps": 15.6
+          },
+          {
+            "sample": 37,
+            "time_seconds": 23.848858868004754,
+            "fps": 19.4
+          },
+          {
+            "sample": 38,
+            "time_seconds": 24.48589971201727,
+            "fps": 15.8
+          },
+          {
+            "sample": 39,
+            "time_seconds": 25.183744313020725,
+            "fps": 17.8
+          }
+        ],
+        "mean": 15.33,
+        "median": 15.6,
+        "minimum": 9.6,
+        "maximum": 19.4,
+        "sample_audio_detail_delta": {
+          "offered": 493320,
+          "accepted": 493320,
+          "short": 0,
+          "io_us": 22180555,
+          "volume_calls": 0,
+          "queued": -6,
+          "underruns": 0,
+          "silence_frames": 1093
+        },
+        "sample_audio_output_delta": {
+          "writes": 2109,
+          "frames": 1079808,
+          "errors": 0,
+          "tones": 0,
+          "volume": 0
+        },
+        "end": {
+          "rc": 0,
+          "presents": 2549,
+          "input": 93,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit_stats": {
+          "active": 0,
+          "compiled": 0,
+          "executed": 0,
+          "bytecodes": 0,
+          "declined": 0,
+          "code_bytes": 0
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 0,
+          "short": 0,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 0,
+          "metadata": 0,
+          "stats": 0,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 0,
+          "commits": 0,
+          "refused": 0,
+          "peak": 0,
+          "live": 0
+        },
+        "vm": "stats: frames=2549 paints=179 gfx=88387 tris=0 m3g=0 time=56.680s fps=45.0 bytecodes=61358582 (1.08 M/s) natives=381771 heap=2583344/3481616 bytes cpcache=10231002/1218 findcache=0/0",
+        "navigation_keys": "fire,5,fire,softl,fire,5,fire,fire,fire",
+        "repeated_keys": "6,4",
+        "repeat_period_seconds": 0.5,
+        "repeated_pulses_including_warmup": 37,
+        "screenshot_source": "game"
+      },
+      "on": {
+        "resolution": [
+          240,
+          320
+        ],
+        "jit": "on",
+        "warmup_seconds": 5,
+        "sampling_seconds": 26.11051408899948,
+        "sample_interval_seconds": 0.55,
+        "held_key": "",
+        "no_screenshots_during_sampling": true,
+        "samples": [
+          {
+            "sample": 0,
+            "time_seconds": 5.150039214640856e-06,
+            "fps": 9.9
+          },
+          {
+            "sample": 1,
+            "time_seconds": 0.6398433550493792,
+            "fps": 11.4
+          },
+          {
+            "sample": 2,
+            "time_seconds": 1.2858303730026819,
+            "fps": 9.3
+          },
+          {
+            "sample": 3,
+            "time_seconds": 1.9136963480268605,
+            "fps": 11.6
+          },
+          {
+            "sample": 4,
+            "time_seconds": 2.5850603420403786,
+            "fps": 9.4
+          },
+          {
+            "sample": 5,
+            "time_seconds": 3.2441757520427927,
+            "fps": 11.2
+          },
+          {
+            "sample": 6,
+            "time_seconds": 3.875751367013436,
+            "fps": 13.4
+          },
+          {
+            "sample": 7,
+            "time_seconds": 4.4925757860182784,
+            "fps": 11.5
+          },
+          {
+            "sample": 8,
+            "time_seconds": 5.1771513590356335,
+            "fps": 11.8
+          },
+          {
+            "sample": 9,
+            "time_seconds": 5.810989662015345,
+            "fps": 11.3
+          },
+          {
+            "sample": 10,
+            "time_seconds": 6.452741074026562,
+            "fps": 9.7
+          },
+          {
+            "sample": 11,
+            "time_seconds": 7.0783503410057165,
+            "fps": 9.5
+          },
+          {
+            "sample": 12,
+            "time_seconds": 7.726241619035136,
+            "fps": 9.6
+          },
+          {
+            "sample": 13,
+            "time_seconds": 8.342546262021642,
+            "fps": 9.5
+          },
+          {
+            "sample": 14,
+            "time_seconds": 9.012582790048327,
+            "fps": 11.5
+          },
+          {
+            "sample": 15,
+            "time_seconds": 9.668615567032248,
+            "fps": 9.9
+          },
+          {
+            "sample": 16,
+            "time_seconds": 10.403692482039332,
+            "fps": 9.8
+          },
+          {
+            "sample": 17,
+            "time_seconds": 11.067815162008628,
+            "fps": 9.3
+          },
+          {
+            "sample": 18,
+            "time_seconds": 11.710114882036578,
+            "fps": 7.7
+          },
+          {
+            "sample": 19,
+            "time_seconds": 12.378245618019719,
+            "fps": 11.7
+          },
+          {
+            "sample": 20,
+            "time_seconds": 13.016144408029504,
+            "fps": 5.9
+          },
+          {
+            "sample": 21,
+            "time_seconds": 13.682284411042929,
+            "fps": 11.6
+          },
+          {
+            "sample": 22,
+            "time_seconds": 14.32325816800585,
+            "fps": 11.7
+          },
+          {
+            "sample": 23,
+            "time_seconds": 15.003301531018224,
+            "fps": 11.2
+          },
+          {
+            "sample": 24,
+            "time_seconds": 15.643987182003912,
+            "fps": 11.8
+          },
+          {
+            "sample": 25,
+            "time_seconds": 16.311643499007914,
+            "fps": 11.3
+          },
+          {
+            "sample": 26,
+            "time_seconds": 16.95159541902831,
+            "fps": 9.8
+          },
+          {
+            "sample": 27,
+            "time_seconds": 17.618925348040648,
+            "fps": 11.8
+          },
+          {
+            "sample": 28,
+            "time_seconds": 18.246966915030498,
+            "fps": 7.6
+          },
+          {
+            "sample": 29,
+            "time_seconds": 18.912584869016428,
+            "fps": 11.8
+          },
+          {
+            "sample": 30,
+            "time_seconds": 19.555254810024053,
+            "fps": 7.6
+          },
+          {
+            "sample": 31,
+            "time_seconds": 20.22129711904563,
+            "fps": 9.9
+          },
+          {
+            "sample": 32,
+            "time_seconds": 20.86023956601275,
+            "fps": 11.6
+          },
+          {
+            "sample": 33,
+            "time_seconds": 21.514423087995965,
+            "fps": 9.8
+          },
+          {
+            "sample": 34,
+            "time_seconds": 22.143895598012023,
+            "fps": 11.8
+          },
+          {
+            "sample": 35,
+            "time_seconds": 22.801247205003165,
+            "fps": 13.4
+          },
+          {
+            "sample": 36,
+            "time_seconds": 23.435892127046827,
+            "fps": 13.9
+          },
+          {
+            "sample": 37,
+            "time_seconds": 24.08462313603377,
+            "fps": 11.8
+          },
+          {
+            "sample": 38,
+            "time_seconds": 24.707549158018082,
+            "fps": 9.8
+          },
+          {
+            "sample": 39,
+            "time_seconds": 25.441845133027527,
+            "fps": 11.5
+          }
+        ],
+        "mean": 10.615,
+        "median": 11.25,
+        "minimum": 5.9,
+        "maximum": 13.9,
+        "sample_audio_detail_delta": {
+          "offered": 482312,
+          "accepted": 482312,
+          "short": 0,
+          "io_us": 21687348,
+          "volume_calls": 0,
+          "queued": -6,
+          "underruns": 0,
+          "silence_frames": 1083
+        },
+        "sample_audio_output_delta": {
+          "writes": 2061,
+          "frames": 1055232,
+          "errors": 0,
+          "tones": 0,
+          "volume": 0
+        },
+        "end": {
+          "rc": 0,
+          "presents": 2417,
+          "input": 93,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit_stats": {
+          "active": 1,
+          "compiled": 20228,
+          "executed": 1335062,
+          "bytecodes": 13252531,
+          "declined": 153373,
+          "code_bytes": 7184
+        },
+        "jit_detail": {
+          "evictions": 20164,
+          "method_map_evictions": 65134,
+          "recompiled": 12449,
+          "unsupported": 56076,
+          "short": 97297,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 15792,
+          "metadata": 9432,
+          "stats": 1,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 20228,
+          "commits": 20228,
+          "refused": 0,
+          "peak": 17232,
+          "live": 0
+        },
+        "vm": "stats: frames=2417 paints=180 gfx=61061 tris=0 m3g=0 time=57.104s fps=42.3 bytecodes=44731662 (0.78 M/s) natives=291772 heap=2573456/3481584 bytes cpcache=6187395/1215 findcache=0/0",
+        "navigation_keys": "fire,5,fire,softl,fire,5,fire,fire,fire",
+        "repeated_keys": "6,4",
+        "repeat_period_seconds": 0.5,
+        "repeated_pulses_including_warmup": 37,
+        "screenshot_source": "game"
+      }
+    },
+    "doodle-pulse": {
+      "off": {
+        "resolution": [
+          240,
+          320
+        ],
+        "jit": "off",
+        "warmup_seconds": 5,
+        "sampling_seconds": 25.041535407013725,
+        "sample_interval_seconds": 0.55,
+        "held_key": "",
+        "no_screenshots_during_sampling": true,
+        "samples": [
+          {
+            "sample": 0,
+            "time_seconds": 4.539033398032188e-06,
+            "fps": 3.9
+          },
+          {
+            "sample": 1,
+            "time_seconds": 0.6343102680402808,
+            "fps": 1.9
+          },
+          {
+            "sample": 2,
+            "time_seconds": 1.2530679400078952,
+            "fps": 5.9
+          },
+          {
+            "sample": 3,
+            "time_seconds": 1.8827151600271463,
+            "fps": 1.9
+          },
+          {
+            "sample": 4,
+            "time_seconds": 2.5078716890420765,
+            "fps": 3.9
+          },
+          {
+            "sample": 5,
+            "time_seconds": 3.1528634499991313,
+            "fps": 3.9
+          },
+          {
+            "sample": 6,
+            "time_seconds": 3.782681514043361,
+            "fps": 7.8
+          },
+          {
+            "sample": 7,
+            "time_seconds": 4.409013280994259,
+            "fps": 3.9
+          },
+          {
+            "sample": 8,
+            "time_seconds": 5.028887980035506,
+            "fps": 1.9
+          },
+          {
+            "sample": 9,
+            "time_seconds": 5.6566075760056265,
+            "fps": 1.9
+          },
+          {
+            "sample": 10,
+            "time_seconds": 6.2834967790404335,
+            "fps": 3.9
+          },
+          {
+            "sample": 11,
+            "time_seconds": 6.912908372993115,
+            "fps": 3.9
+          },
+          {
+            "sample": 12,
+            "time_seconds": 7.543975534033962,
+            "fps": 1.9
+          },
+          {
+            "sample": 13,
+            "time_seconds": 8.172901968006045,
+            "fps": 1.9
+          },
+          {
+            "sample": 14,
+            "time_seconds": 8.789283106045332,
+            "fps": 3.9
+          },
+          {
+            "sample": 15,
+            "time_seconds": 9.423855039000046,
+            "fps": 3.9
+          },
+          {
+            "sample": 16,
+            "time_seconds": 10.031082578992937,
+            "fps": 1.9
+          },
+          {
+            "sample": 17,
+            "time_seconds": 10.670741112029646,
+            "fps": 1.9
+          },
+          {
+            "sample": 18,
+            "time_seconds": 11.290157743031159,
+            "fps": 3.9
+          },
+          {
+            "sample": 19,
+            "time_seconds": 11.917883902031463,
+            "fps": 5.7
+          },
+          {
+            "sample": 20,
+            "time_seconds": 12.540279439010192,
+            "fps": 0.0
+          },
+          {
+            "sample": 21,
+            "time_seconds": 13.171570995007642,
+            "fps": 1.9
+          },
+          {
+            "sample": 22,
+            "time_seconds": 13.786572348035406,
+            "fps": 3.9
+          },
+          {
+            "sample": 23,
+            "time_seconds": 14.414995116996579,
+            "fps": 3.9
+          },
+          {
+            "sample": 24,
+            "time_seconds": 15.032399212999735,
+            "fps": 1.9
+          },
+          {
+            "sample": 25,
+            "time_seconds": 15.657783714996185,
+            "fps": 1.9
+          },
+          {
+            "sample": 26,
+            "time_seconds": 16.289983352005947,
+            "fps": 3.9
+          },
+          {
+            "sample": 27,
+            "time_seconds": 16.941311352013145,
+            "fps": 3.9
+          },
+          {
+            "sample": 28,
+            "time_seconds": 17.564396995992865,
+            "fps": 1.9
+          },
+          {
+            "sample": 29,
+            "time_seconds": 18.21487953403266,
+            "fps": 1.9
+          },
+          {
+            "sample": 30,
+            "time_seconds": 18.83295202703448,
+            "fps": 3.9
+          },
+          {
+            "sample": 31,
+            "time_seconds": 19.460068740998395,
+            "fps": 5.9
+          },
+          {
+            "sample": 32,
+            "time_seconds": 20.040530704020057,
+            "fps": 1.9
+          },
+          {
+            "sample": 33,
+            "time_seconds": 20.666173584992066,
+            "fps": 3.9
+          },
+          {
+            "sample": 34,
+            "time_seconds": 21.29151572502451,
+            "fps": 1.9
+          },
+          {
+            "sample": 35,
+            "time_seconds": 21.924876233038958,
+            "fps": 5.8
+          },
+          {
+            "sample": 36,
+            "time_seconds": 22.545186767994892,
+            "fps": 0.0
+          },
+          {
+            "sample": 37,
+            "time_seconds": 23.17081349802902,
+            "fps": 5.8
+          },
+          {
+            "sample": 38,
+            "time_seconds": 23.804085857991595,
+            "fps": 3.9
+          },
+          {
+            "sample": 39,
+            "time_seconds": 24.452838918019552,
+            "fps": 5.9
+          }
+        ],
+        "mean": 3.3425,
+        "median": 3.9,
+        "minimum": 0.0,
+        "maximum": 7.8,
+        "sample_audio_detail_delta": {
+          "offered": 0,
+          "accepted": 0,
+          "short": 0,
+          "io_us": 0,
+          "volume_calls": 0,
+          "queued": 0,
+          "underruns": 0,
+          "silence_frames": 0
+        },
+        "sample_audio_output_delta": {
+          "writes": 0,
+          "frames": 0,
+          "errors": 0,
+          "tones": 0,
+          "volume": 0
+        },
+        "end": {
+          "rc": 0,
+          "presents": 4165,
+          "input": 89,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit_stats": {
+          "active": 0,
+          "compiled": 0,
+          "executed": 0,
+          "bytecodes": 0,
+          "declined": 0,
+          "code_bytes": 0
+        },
+        "jit_detail": {
+          "evictions": 0,
+          "method_map_evictions": 0,
+          "recompiled": 0,
+          "unsupported": 0,
+          "short": 0,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 0,
+          "metadata": 0,
+          "stats": 0,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 0,
+          "commits": 0,
+          "refused": 0,
+          "peak": 0,
+          "live": 0
+        },
+        "vm": "stats: frames=4165 paints=418 gfx=35887 tris=0 m3g=0 time=53.327s fps=78.1 bytecodes=2958050 (0.06 M/s) natives=144325 heap=1068320/1069904 bytes cpcache=708969/536 findcache=0/0",
+        "navigation_keys": "fire,softl,5,fire,6,4,fire",
+        "repeated_keys": "6,4",
+        "repeat_period_seconds": 0.5,
+        "repeated_pulses_including_warmup": 37,
+        "screenshot_source": "game"
+      },
+      "on": {
+        "resolution": [
+          240,
+          320
+        ],
+        "jit": "on",
+        "warmup_seconds": 5,
+        "sampling_seconds": 25.624838153016753,
+        "sample_interval_seconds": 0.55,
+        "held_key": "",
+        "no_screenshots_during_sampling": true,
+        "samples": [
+          {
+            "sample": 0,
+            "time_seconds": 8.806993719190359e-06,
+            "fps": 1.9
+          },
+          {
+            "sample": 1,
+            "time_seconds": 0.6357332940096967,
+            "fps": 3.9
+          },
+          {
+            "sample": 2,
+            "time_seconds": 1.2636902499943972,
+            "fps": 5.9
+          },
+          {
+            "sample": 3,
+            "time_seconds": 1.9037080240086652,
+            "fps": 5.9
+          },
+          {
+            "sample": 4,
+            "time_seconds": 2.5325008850195445,
+            "fps": 3.8
+          },
+          {
+            "sample": 5,
+            "time_seconds": 3.185454424994532,
+            "fps": 1.9
+          },
+          {
+            "sample": 6,
+            "time_seconds": 3.814002772036474,
+            "fps": 5.9
+          },
+          {
+            "sample": 7,
+            "time_seconds": 4.4748284019879065,
+            "fps": 5.9
+          },
+          {
+            "sample": 8,
+            "time_seconds": 5.17540835600812,
+            "fps": 1.9
+          },
+          {
+            "sample": 9,
+            "time_seconds": 5.806522686034441,
+            "fps": 3.9
+          },
+          {
+            "sample": 10,
+            "time_seconds": 6.454299145028926,
+            "fps": 5.8
+          },
+          {
+            "sample": 11,
+            "time_seconds": 7.084996234043501,
+            "fps": 3.9
+          },
+          {
+            "sample": 12,
+            "time_seconds": 7.7249469110392965,
+            "fps": 3.9
+          },
+          {
+            "sample": 13,
+            "time_seconds": 8.350999096990563,
+            "fps": 1.9
+          },
+          {
+            "sample": 14,
+            "time_seconds": 9.015538556035608,
+            "fps": 1.9
+          },
+          {
+            "sample": 15,
+            "time_seconds": 9.638576199009549,
+            "fps": 3.9
+          },
+          {
+            "sample": 16,
+            "time_seconds": 10.381506787030958,
+            "fps": 3.9
+          },
+          {
+            "sample": 17,
+            "time_seconds": 11.015232095029205,
+            "fps": 5.8
+          },
+          {
+            "sample": 18,
+            "time_seconds": 11.638369377003983,
+            "fps": 3.9
+          },
+          {
+            "sample": 19,
+            "time_seconds": 12.279012827028055,
+            "fps": 1.9
+          },
+          {
+            "sample": 20,
+            "time_seconds": 12.903330325032584,
+            "fps": 5.8
+          },
+          {
+            "sample": 21,
+            "time_seconds": 13.549055867013521,
+            "fps": 7.8
+          },
+          {
+            "sample": 22,
+            "time_seconds": 14.175673805002589,
+            "fps": 3.8
+          },
+          {
+            "sample": 23,
+            "time_seconds": 14.782886355998926,
+            "fps": 1.9
+          },
+          {
+            "sample": 24,
+            "time_seconds": 15.398693324998021,
+            "fps": 5.9
+          },
+          {
+            "sample": 25,
+            "time_seconds": 16.031413999036886,
+            "fps": 1.9
+          },
+          {
+            "sample": 26,
+            "time_seconds": 16.652789251005743,
+            "fps": 3.9
+          },
+          {
+            "sample": 27,
+            "time_seconds": 17.281568876001984,
+            "fps": 1.9
+          },
+          {
+            "sample": 28,
+            "time_seconds": 17.905695002002176,
+            "fps": 5.9
+          },
+          {
+            "sample": 29,
+            "time_seconds": 18.53440327203134,
+            "fps": 1.9
+          },
+          {
+            "sample": 30,
+            "time_seconds": 19.149168507021386,
+            "fps": 3.9
+          },
+          {
+            "sample": 31,
+            "time_seconds": 19.788830917037558,
+            "fps": 1.9
+          },
+          {
+            "sample": 32,
+            "time_seconds": 20.42353766603628,
+            "fps": 5.9
+          },
+          {
+            "sample": 33,
+            "time_seconds": 21.07312485598959,
+            "fps": 1.9
+          },
+          {
+            "sample": 34,
+            "time_seconds": 21.710049026994966,
+            "fps": 3.9
+          },
+          {
+            "sample": 35,
+            "time_seconds": 22.353502893995028,
+            "fps": 1.9
+          },
+          {
+            "sample": 36,
+            "time_seconds": 22.97836913203355,
+            "fps": 5.9
+          },
+          {
+            "sample": 37,
+            "time_seconds": 23.638078106043395,
+            "fps": 1.9
+          },
+          {
+            "sample": 38,
+            "time_seconds": 24.26673903601477,
+            "fps": 3.9
+          },
+          {
+            "sample": 39,
+            "time_seconds": 24.991920194996055,
+            "fps": 1.9
+          }
+        ],
+        "mean": 3.785,
+        "median": 3.9,
+        "minimum": 1.9,
+        "maximum": 7.8,
+        "sample_audio_detail_delta": {
+          "offered": 0,
+          "accepted": 0,
+          "short": 0,
+          "io_us": 0,
+          "volume_calls": 0,
+          "queued": 0,
+          "underruns": 0,
+          "silence_frames": 0
+        },
+        "sample_audio_output_delta": {
+          "writes": 0,
+          "frames": 0,
+          "errors": 0,
+          "tones": 0,
+          "volume": 0
+        },
+        "end": {
+          "rc": 0,
+          "presents": 4093,
+          "input": 91,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "jit_stats": {
+          "active": 1,
+          "compiled": 101,
+          "executed": 144949,
+          "bytecodes": 837295,
+          "declined": 27719,
+          "code_bytes": 6176
+        },
+        "jit_detail": {
+          "evictions": 40,
+          "method_map_evictions": 12461,
+          "recompiled": 4629,
+          "unsupported": 7369,
+          "short": 20350,
+          "faults": 0,
+          "memory_failures": 0,
+          "commit_failures": 0,
+          "peak_code": 6234,
+          "metadata": 9432,
+          "stats": 1,
+          "detailed": 0
+        },
+        "jit_memory": {
+          "allocations": 101,
+          "commits": 101,
+          "refused": 0,
+          "peak": 7632,
+          "live": 0
+        },
+        "vm": "stats: frames=4093 paints=423 gfx=36607 tris=0 m3g=0 time=54.259s fps=75.4 bytecodes=3013136 (0.06 M/s) natives=147156 heap=1079856/1081376 bytes cpcache=651447/536 findcache=0/0",
+        "navigation_keys": "fire,softl,5,fire,6,4,fire",
+        "repeated_keys": "6,4",
+        "repeat_period_seconds": 0.5,
+        "repeated_pulses_including_warmup": 38,
+        "screenshot_source": "game"
+      }
+    }
+  },
+  "cross_version_render": {
+    "old_revision": "fe974fc7c29f462fdcbbcdcdb307cc7b2108d527",
+    "old_off_elapsed_us": [
+      8066059,
+      8067065
+    ],
+    "new_off_elapsed_us": [
+      5450156,
+      5450086
+    ],
+    "meaning": "Identical fixed redraw workload, includes lifecycle; not gameplay FPS and not an isolated JIT effect."
+  },
+  "two_d_diagnostics": {
+    "bounce": {
+      "off": {
+        "mean": 3.015,
+        "median": 2.9,
+        "samples": [
+          {
+            "sample": 0,
+            "time_seconds": 5.23001654073596e-06,
+            "fps": 3.9
+          },
+          {
+            "sample": 1,
+            "time_seconds": 1.0212180059752427,
+            "fps": 3.9
+          },
+          {
+            "sample": 2,
+            "time_seconds": 2.1654550320236012,
+            "fps": 0.0
+          },
+          {
+            "sample": 3,
+            "time_seconds": 3.179074836021755,
+            "fps": 5.8
+          },
+          {
+            "sample": 4,
+            "time_seconds": 4.186770863016136,
+            "fps": 3.9
+          },
+          {
+            "sample": 5,
+            "time_seconds": 5.2069954259786755,
+            "fps": 0.0
+          },
+          {
+            "sample": 6,
+            "time_seconds": 6.3734864789876156,
+            "fps": 1.9
+          },
+          {
+            "sample": 7,
+            "time_seconds": 7.385645343980286,
+            "fps": 0.0
+          },
+          {
+            "sample": 8,
+            "time_seconds": 8.406742730003316,
+            "fps": 3.9
+          },
+          {
+            "sample": 9,
+            "time_seconds": 9.416245520988014,
+            "fps": 0.0
+          },
+          {
+            "sample": 10,
+            "time_seconds": 10.43573505897075,
+            "fps": 5.9
+          },
+          {
+            "sample": 11,
+            "time_seconds": 11.581379080016632,
+            "fps": 1.9
+          },
+          {
+            "sample": 12,
+            "time_seconds": 12.605507961008698,
+            "fps": 0.0
+          },
+          {
+            "sample": 13,
+            "time_seconds": 13.621483407972846,
+            "fps": 5.9
+          },
+          {
+            "sample": 14,
+            "time_seconds": 14.644875172001775,
+            "fps": 7.9
+          },
+          {
+            "sample": 15,
+            "time_seconds": 15.655911808018573,
+            "fps": 1.9
+          },
+          {
+            "sample": 16,
+            "time_seconds": 16.79643186600879,
+            "fps": 5.8
+          },
+          {
+            "sample": 17,
+            "time_seconds": 17.811696466000285,
+            "fps": 1.9
+          },
+          {
+            "sample": 18,
+            "time_seconds": 18.839354565017857,
+            "fps": 3.9
+          },
+          {
+            "sample": 19,
+            "time_seconds": 19.849121915001888,
+            "fps": 1.9
+          }
+        ],
+        "held_key": "fire",
+        "sampling_seconds": 20.869706816971302
+      },
+      "on": {
+        "mean": 5.3,
+        "median": 5.8,
+        "samples": [
+          {
+            "sample": 0,
+            "time_seconds": 4.71901148557663e-06,
+            "fps": 5.7
+          },
+          {
+            "sample": 1,
+            "time_seconds": 1.1920860590180382,
+            "fps": 5.7
+          },
+          {
+            "sample": 2,
+            "time_seconds": 2.209567769023124,
+            "fps": 5.8
+          },
+          {
+            "sample": 3,
+            "time_seconds": 3.2331798680243082,
+            "fps": 5.9
+          },
+          {
+            "sample": 4,
+            "time_seconds": 4.253520024998579,
+            "fps": 5.9
+          },
+          {
+            "sample": 5,
+            "time_seconds": 5.264092540019192,
+            "fps": 5.9
+          },
+          {
+            "sample": 6,
+            "time_seconds": 6.395870005013421,
+            "fps": 3.8
+          },
+          {
+            "sample": 7,
+            "time_seconds": 7.413844808994327,
+            "fps": 5.7
+          },
+          {
+            "sample": 8,
+            "time_seconds": 8.42730596702313,
+            "fps": 5.8
+          },
+          {
+            "sample": 9,
+            "time_seconds": 9.44206996500725,
+            "fps": 5.8
+          },
+          {
+            "sample": 10,
+            "time_seconds": 10.449978980992455,
+            "fps": 5.7
+          },
+          {
+            "sample": 11,
+            "time_seconds": 11.602279352024198,
+            "fps": 7.4
+          },
+          {
+            "sample": 12,
+            "time_seconds": 12.632907557010185,
+            "fps": 1.9
+          },
+          {
+            "sample": 13,
+            "time_seconds": 13.646337066020351,
+            "fps": 3.9
+          },
+          {
+            "sample": 14,
+            "time_seconds": 14.662559407006484,
+            "fps": 5.8
+          },
+          {
+            "sample": 15,
+            "time_seconds": 15.828460805991199,
+            "fps": 5.8
+          },
+          {
+            "sample": 16,
+            "time_seconds": 16.84548567800084,
+            "fps": 5.8
+          },
+          {
+            "sample": 17,
+            "time_seconds": 17.853578020003624,
+            "fps": 1.9
+          },
+          {
+            "sample": 18,
+            "time_seconds": 18.86686978599755,
+            "fps": 5.9
+          },
+          {
+            "sample": 19,
+            "time_seconds": 19.874560676980764,
+            "fps": 5.9
+          }
+        ],
+        "held_key": "fire",
+        "sampling_seconds": 21.028572480019648
+      }
+    },
+    "bounce-moving": {
+      "off": {
+        "mean": 7.1875,
+        "median": 7.75,
+        "samples": [
+          {
+            "sample": 0,
+            "time_seconds": 3.988039679825306e-06,
+            "fps": 7.7
+          },
+          {
+            "sample": 1,
+            "time_seconds": 0.6118746020365506,
+            "fps": 7.7
+          },
+          {
+            "sample": 2,
+            "time_seconds": 1.225605343002826,
+            "fps": 7.8
+          },
+          {
+            "sample": 3,
+            "time_seconds": 1.8343124910024926,
+            "fps": 9.8
+          },
+          {
+            "sample": 4,
+            "time_seconds": 2.449114893039223,
+            "fps": 7.8
+          },
+          {
+            "sample": 5,
+            "time_seconds": 3.0675528140272945,
+            "fps": 5.7
+          },
+          {
+            "sample": 6,
+            "time_seconds": 3.6855762400082313,
+            "fps": 7.8
+          },
+          {
+            "sample": 7,
+            "time_seconds": 4.303898231999483,
+            "fps": 7.7
+          },
+          {
+            "sample": 8,
+            "time_seconds": 4.959438182006124,
+            "fps": 5.8
+          },
+          {
+            "sample": 9,
+            "time_seconds": 5.573929394013248,
+            "fps": 7.9
+          },
+          {
+            "sample": 10,
+            "time_seconds": 6.201273635029793,
+            "fps": 7.9
+          },
+          {
+            "sample": 11,
+            "time_seconds": 6.817308271012735,
+            "fps": 5.8
+          },
+          {
+            "sample": 12,
+            "time_seconds": 7.428582574997563,
+            "fps": 7.8
+          },
+          {
+            "sample": 13,
+            "time_seconds": 8.035847369988915,
+            "fps": 5.8
+          },
+          {
+            "sample": 14,
+            "time_seconds": 8.657219673041254,
+            "fps": 9.6
+          },
+          {
+            "sample": 15,
+            "time_seconds": 9.288275038008578,
+            "fps": 5.9
+          },
+          {
+            "sample": 16,
+            "time_seconds": 9.963529022003058,
+            "fps": 5.9
+          },
+          {
+            "sample": 17,
+            "time_seconds": 10.571968823031057,
+            "fps": 7.8
+          },
+          {
+            "sample": 18,
+            "time_seconds": 11.194863590993918,
+            "fps": 5.9
+          },
+          {
+            "sample": 19,
+            "time_seconds": 11.815902171016205,
+            "fps": 5.9
+          },
+          {
+            "sample": 20,
+            "time_seconds": 12.429219988000114,
+            "fps": 5.6
+          },
+          {
+            "sample": 21,
+            "time_seconds": 13.048308641999029,
+            "fps": 7.9
+          },
+          {
+            "sample": 22,
+            "time_seconds": 13.687595929019153,
+            "fps": 9.5
+          },
+          {
+            "sample": 23,
+            "time_seconds": 14.310594934038818,
+            "fps": 7.8
+          },
+          {
+            "sample": 24,
+            "time_seconds": 14.970961121027358,
+            "fps": 7.8
+          },
+          {
+            "sample": 25,
+            "time_seconds": 15.583587707020342,
+            "fps": 9.6
+          },
+          {
+            "sample": 26,
+            "time_seconds": 16.195145087025594,
+            "fps": 5.9
+          },
+          {
+            "sample": 27,
+            "time_seconds": 16.807152560038958,
+            "fps": 5.9
+          },
+          {
+            "sample": 28,
+            "time_seconds": 17.445386709994636,
+            "fps": 7.7
+          },
+          {
+            "sample": 29,
+            "time_seconds": 18.06376808404457,
+            "fps": 3.8
+          },
+          {
+            "sample": 30,
+            "time_seconds": 18.68359839299228,
+            "fps": 7.9
+          },
+          {
+            "sample": 31,
+            "time_seconds": 19.29827888199361,
+            "fps": 7.8
+          },
+          {
+            "sample": 32,
+            "time_seconds": 20.001576867012773,
+            "fps": 5.8
+          },
+          {
+            "sample": 33,
+            "time_seconds": 20.635570940037724,
+            "fps": 7.8
+          },
+          {
+            "sample": 34,
+            "time_seconds": 21.245875035005156,
+            "fps": 7.7
+          },
+          {
+            "sample": 35,
+            "time_seconds": 21.87054957501823,
+            "fps": 5.8
+          },
+          {
+            "sample": 36,
+            "time_seconds": 22.486295262991916,
+            "fps": 5.7
+          },
+          {
+            "sample": 37,
+            "time_seconds": 23.09387796901865,
+            "fps": 7.8
+          },
+          {
+            "sample": 38,
+            "time_seconds": 23.702270328998566,
+            "fps": 7.9
+          },
+          {
+            "sample": 39,
+            "time_seconds": 24.324279949010815,
+            "fps": 7.8
+          }
+        ],
+        "held_key": "right",
+        "sampling_seconds": 25.004727505031042
+      },
+      "on": {
+        "mean": 5.075,
+        "median": 5.8,
+        "samples": [
+          {
+            "sample": 0,
+            "time_seconds": 5.992013029754162e-06,
+            "fps": 1.9
+          },
+          {
+            "sample": 1,
+            "time_seconds": 0.6132425629766658,
+            "fps": 5.8
+          },
+          {
+            "sample": 2,
+            "time_seconds": 1.2299338310258463,
+            "fps": 5.6
+          },
+          {
+            "sample": 3,
+            "time_seconds": 1.837224613991566,
+            "fps": 3.9
+          },
+          {
+            "sample": 4,
+            "time_seconds": 2.4499328230158426,
+            "fps": 5.9
+          },
+          {
+            "sample": 5,
+            "time_seconds": 3.0646212860010564,
+            "fps": 5.8
+          },
+          {
+            "sample": 6,
+            "time_seconds": 3.6799080729833804,
+            "fps": 3.9
+          },
+          {
+            "sample": 7,
+            "time_seconds": 4.293988323013764,
+            "fps": 5.9
+          },
+          {
+            "sample": 8,
+            "time_seconds": 4.969790009025019,
+            "fps": 5.7
+          },
+          {
+            "sample": 9,
+            "time_seconds": 5.579989314021077,
+            "fps": 5.8
+          },
+          {
+            "sample": 10,
+            "time_seconds": 6.191780566005036,
+            "fps": 3.9
+          },
+          {
+            "sample": 11,
+            "time_seconds": 6.811319962027483,
+            "fps": 5.9
+          },
+          {
+            "sample": 12,
+            "time_seconds": 7.418681608978659,
+            "fps": 5.8
+          },
+          {
+            "sample": 13,
+            "time_seconds": 8.027068649011198,
+            "fps": 3.9
+          },
+          {
+            "sample": 14,
+            "time_seconds": 8.641950657998677,
+            "fps": 3.8
+          },
+          {
+            "sample": 15,
+            "time_seconds": 9.248685777012724,
+            "fps": 5.9
+          },
+          {
+            "sample": 16,
+            "time_seconds": 9.974135308992118,
+            "fps": 5.8
+          },
+          {
+            "sample": 17,
+            "time_seconds": 10.604389161977451,
+            "fps": 3.9
+          },
+          {
+            "sample": 18,
+            "time_seconds": 11.218755604000762,
+            "fps": 3.9
+          },
+          {
+            "sample": 19,
+            "time_seconds": 11.859678276989143,
+            "fps": 5.8
+          },
+          {
+            "sample": 20,
+            "time_seconds": 12.468420059012715,
+            "fps": 3.8
+          },
+          {
+            "sample": 21,
+            "time_seconds": 13.09072770201601,
+            "fps": 5.8
+          },
+          {
+            "sample": 22,
+            "time_seconds": 13.709354438004084,
+            "fps": 5.8
+          },
+          {
+            "sample": 23,
+            "time_seconds": 14.321912312996574,
+            "fps": 5.7
+          },
+          {
+            "sample": 24,
+            "time_seconds": 14.97690374898957,
+            "fps": 3.8
+          },
+          {
+            "sample": 25,
+            "time_seconds": 15.60263199498877,
+            "fps": 5.7
+          },
+          {
+            "sample": 26,
+            "time_seconds": 16.211622477974743,
+            "fps": 5.9
+          },
+          {
+            "sample": 27,
+            "time_seconds": 16.82563630200457,
+            "fps": 5.9
+          },
+          {
+            "sample": 28,
+            "time_seconds": 17.435640637006145,
+            "fps": 3.8
+          },
+          {
+            "sample": 29,
+            "time_seconds": 18.053338352998253,
+            "fps": 5.8
+          },
+          {
+            "sample": 30,
+            "time_seconds": 18.661928337009158,
+            "fps": 5.8
+          },
+          {
+            "sample": 31,
+            "time_seconds": 19.271521663002204,
+            "fps": 3.9
+          },
+          {
+            "sample": 32,
+            "time_seconds": 19.979207989003044,
+            "fps": 3.8
+          },
+          {
+            "sample": 33,
+            "time_seconds": 20.59168758499436,
+            "fps": 5.8
+          },
+          {
+            "sample": 34,
+            "time_seconds": 21.21208975702757,
+            "fps": 3.8
+          },
+          {
+            "sample": 35,
+            "time_seconds": 21.83558561099926,
+            "fps": 5.8
+          },
+          {
+            "sample": 36,
+            "time_seconds": 22.44268761499552,
+            "fps": 5.8
+          },
+          {
+            "sample": 37,
+            "time_seconds": 23.053583208995406,
+            "fps": 5.9
+          },
+          {
+            "sample": 38,
+            "time_seconds": 23.66430072602816,
+            "fps": 5.8
+          },
+          {
+            "sample": 39,
+            "time_seconds": 24.271226396027487,
+            "fps": 5.8
+          }
+        ],
+        "held_key": "right",
+        "sampling_seconds": 25.00636330700945
+      }
+    },
+    "doodle": {
+      "off": {
+        "mean": 0.0,
+        "median": 0.0,
+        "samples": [
+          {
+            "sample": 0,
+            "time_seconds": 3.6869896575808525e-06,
+            "fps": 0.0
+          },
+          {
+            "sample": 1,
+            "time_seconds": 0.6117095759836957,
+            "fps": 0.0
+          },
+          {
+            "sample": 2,
+            "time_seconds": 1.2241167649626732,
+            "fps": 0.0
+          },
+          {
+            "sample": 3,
+            "time_seconds": 1.8396115249488503,
+            "fps": 0.0
+          },
+          {
+            "sample": 4,
+            "time_seconds": 2.451384049956687,
+            "fps": 0.0
+          },
+          {
+            "sample": 5,
+            "time_seconds": 3.067120107996743,
+            "fps": 0.0
+          },
+          {
+            "sample": 6,
+            "time_seconds": 3.6777412809897214,
+            "fps": 0.0
+          },
+          {
+            "sample": 7,
+            "time_seconds": 4.284395856957417,
+            "fps": 0.0
+          },
+          {
+            "sample": 8,
+            "time_seconds": 4.899402220966294,
+            "fps": 0.0
+          },
+          {
+            "sample": 9,
+            "time_seconds": 5.5793617779854685,
+            "fps": 0.0
+          },
+          {
+            "sample": 10,
+            "time_seconds": 6.190158783982042,
+            "fps": 0.0
+          },
+          {
+            "sample": 11,
+            "time_seconds": 6.8024332209606655,
+            "fps": 0.0
+          },
+          {
+            "sample": 12,
+            "time_seconds": 7.414939546957612,
+            "fps": 0.0
+          },
+          {
+            "sample": 13,
+            "time_seconds": 8.036447893944569,
+            "fps": 0.0
+          },
+          {
+            "sample": 14,
+            "time_seconds": 8.643369615951087,
+            "fps": 0.0
+          },
+          {
+            "sample": 15,
+            "time_seconds": 9.256682069972157,
+            "fps": 0.0
+          },
+          {
+            "sample": 16,
+            "time_seconds": 9.87243792496156,
+            "fps": 0.0
+          },
+          {
+            "sample": 17,
+            "time_seconds": 10.581435975967906,
+            "fps": 0.0
+          },
+          {
+            "sample": 18,
+            "time_seconds": 11.190145606989972,
+            "fps": 0.0
+          },
+          {
+            "sample": 19,
+            "time_seconds": 11.803005903959274,
+            "fps": 0.0
+          },
+          {
+            "sample": 20,
+            "time_seconds": 12.415381932980381,
+            "fps": 0.0
+          },
+          {
+            "sample": 21,
+            "time_seconds": 13.030973827000707,
+            "fps": 0.0
+          },
+          {
+            "sample": 22,
+            "time_seconds": 13.641060506983195,
+            "fps": 0.0
+          },
+          {
+            "sample": 23,
+            "time_seconds": 14.255193305958528,
+            "fps": 0.0
+          },
+          {
+            "sample": 24,
+            "time_seconds": 14.865177171945106,
+            "fps": 0.0
+          },
+          {
+            "sample": 25,
+            "time_seconds": 15.582644904963672,
+            "fps": 0.0
+          },
+          {
+            "sample": 26,
+            "time_seconds": 16.19106371398084,
+            "fps": 0.0
+          },
+          {
+            "sample": 27,
+            "time_seconds": 16.805128603999037,
+            "fps": 0.0
+          },
+          {
+            "sample": 28,
+            "time_seconds": 17.419105266977567,
+            "fps": 0.0
+          },
+          {
+            "sample": 29,
+            "time_seconds": 18.028128140955232,
+            "fps": 0.0
+          },
+          {
+            "sample": 30,
+            "time_seconds": 18.63800088595599,
+            "fps": 0.0
+          },
+          {
+            "sample": 31,
+            "time_seconds": 19.25266479095444,
+            "fps": 0.0
+          },
+          {
+            "sample": 32,
+            "time_seconds": 19.859792272967752,
+            "fps": 0.0
+          },
+          {
+            "sample": 33,
+            "time_seconds": 20.590142220957205,
+            "fps": 0.0
+          },
+          {
+            "sample": 34,
+            "time_seconds": 21.19940530997701,
+            "fps": 0.0
+          },
+          {
+            "sample": 35,
+            "time_seconds": 21.81115670496365,
+            "fps": 0.0
+          },
+          {
+            "sample": 36,
+            "time_seconds": 22.421799589996226,
+            "fps": 0.0
+          },
+          {
+            "sample": 37,
+            "time_seconds": 23.03512682096334,
+            "fps": 0.0
+          },
+          {
+            "sample": 38,
+            "time_seconds": 23.64935381896794,
+            "fps": 0.0
+          },
+          {
+            "sample": 39,
+            "time_seconds": 24.25962404697202,
+            "fps": 0.0
+          }
+        ],
+        "held_key": "6",
+        "sampling_seconds": 24.86963048495818
+      }
+    },
+    "reason_excluded_from_walking_table": "Constant held keys produced limited movement; the bouncing-ball FIRE run also crossed the opening dialogue. Pulse-key runs are the walking comparison."
+  },
+  "discarded_runs": [
+    {
+      "reason": "First DMC navigation ended at a static mission-start prompt; zero readings excluded from combat FPS."
+    },
+    {
+      "reason": "Initial 1945 and bouncing-ball navigation stayed in intro/menu; excluded from gameplay FPS."
+    }
+  ],
+  "storage_change": {
+    "before_extra_two_d_free_bytes": 393216,
+    "final_free_bytes": 380928,
+    "unattributed_extra_used_bytes": 12288,
+    "temporary_rms_cleanup_reported_success": true
+  },
+  "validation": {
+    "host_jit_tests_passed": 3,
+    "isolated_demo_runs": [
+      {
+        "jit": "on",
+        "end": {
+          "rc": 0,
+          "presents": 90,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "input_test": false
+      },
+      {
+        "jit": "on",
+        "end": {
+          "rc": 0,
+          "presents": 90,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "input_test": false
+      },
+      {
+        "jit": "on",
+        "end": {
+          "rc": 0,
+          "presents": 90,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "input_test": false
+      },
+      {
+        "jit": "off",
+        "end": {
+          "rc": 0,
+          "presents": 90,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "input_test": false
+      },
+      {
+        "jit": "off",
+        "end": {
+          "rc": 0,
+          "presents": 90,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "input_test": false
+      },
+      {
+        "jit": "off",
+        "end": {
+          "rc": 0,
+          "presents": 90,
+          "input": 0,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "input_test": false
+      },
+      {
+        "jit": "off",
+        "end": {
+          "rc": 0,
+          "presents": 93,
+          "input": 7,
+          "psram_before": 11634808,
+          "psram_after": 11634808,
+          "delta": 0
+        },
+        "input_test": true
+      }
+    ],
+    "final_storage": {
+      "total": 8220672,
+      "free": 380928,
+      "reserve": 262144
+    },
+    "final_status": {
+      "running": 0,
+      "res": 240,
+      "presents": 4093,
+      "input": 91,
+      "psram": 11634808,
+      "internal": 274139
+    },
+    "final_jit": "off",
+    "final_fps_overlay": "on"
+  },
+  "fixed_workload_crc_checks": [
+    {
+      "case": "cpu-0",
+      "native_crc_match": true,
+      "lcd_crc_match": true
+    },
+    {
+      "case": "cpu-1",
+      "native_crc_match": true,
+      "lcd_crc_match": true
+    },
+    {
+      "case": "render-0",
+      "native_crc_match": true,
+      "lcd_crc_match": true
+    },
+    {
+      "case": "render-1",
+      "native_crc_match": true,
+      "lcd_crc_match": true
+    },
+    {
+      "case": "audio-0",
+      "native_crc_match": true,
+      "lcd_crc_match": true
+    },
+    {
+      "case": "nfs14",
+      "native_crc_match": true,
+      "lcd_crc_match": true
+    },
+    {
+      "case": "nfs16",
+      "native_crc_match": true,
+      "lcd_crc_match": true
+    }
+  ],
+  "kernel_ms_means": {
+    "off": {
+      "locals": 139.5,
+      "constants": 110,
+      "fields": 199.5,
+      "arrays": 200,
+      "branches": 202
+    },
+    "probe": {
+      "locals": 427,
+      "constants": 274.5,
+      "fields": 492,
+      "arrays": 548,
+      "branches": 575
+    },
+    "on": {
+      "locals": 12,
+      "constants": 6,
+      "fields": 12,
+      "arrays": 21,
+      "branches": 122.5
+    }
+  }
+}

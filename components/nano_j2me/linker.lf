@@ -1,0 +1,9 @@
+# Keep the hot interpreter loop out of PSRAM instruction-cache contention
+# with RGB scanout, graphics and the Java heap. No upstream annotations needed.
+[mapping:korvo_vm_hot_code]
+archive: libnano_j2me.a
+entries:
+    nj_interp (noflash)
+    nj_jit (noflash)
+    # The triangle raster loop is also hot while rendering M3G worlds.
+    nj_lib_m3g:jr_emit (noflash)

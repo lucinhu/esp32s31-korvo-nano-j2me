@@ -1,0 +1,7 @@
+## main...origin/main
+ M include/nj2me/nj_gfx.h
+ M src/gfx/nj_gfx.c
+ M src/midp/nj_lib_lcdui.c
+ M tests/stub_font.c
+ M tests/test_gfx.c
+ M tests/test_lcdui.c
