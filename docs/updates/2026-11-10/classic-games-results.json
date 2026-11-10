@@ -1,0 +1,29 @@
+[
+  {
+    "name": "仙剑奇侠传完美版_11857.jar",
+    "end": "I (372321) korvo-j2me: RUN_END rc=0 presents=180 input=6 psram_before=15216240 psram_after=15216240 delta=0",
+    "perf": "PERF elapsed_us=21276610 presents=180 present_us=904579 present_max_us=37201 poll_us=36135 poll_calls=186 sleep_us=9883334 native_crc=f690db30 lcd_crc=21fae7e1 updated=18 unchanged=162 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=2",
+    "exceptions": []
+  },
+  {
+    "name": "帝国时代2汉化版_7864.jar",
+    "end": "I (377860) korvo-j2me: RUN_END rc=0 presents=180 input=6 psram_before=15216240 psram_after=15216240 delta=0",
+    "perf": "PERF elapsed_us=4652461 presents=180 present_us=715520 present_max_us=32761 poll_us=2162 poll_calls=186 sleep_us=0 native_crc=3c10d7da lcd_crc=b5053324 updated=5 unchanged=175 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=5",
+    "exceptions": [
+      "thrown: javax/microedition/rms/RecordStoreNotFoundException at javax/microedition/rms/RecordStore.openRecordStore(Ljava/lang/String;Z)Ljavax/microedition/rms/RecordStore; pc=0: (no message)",
+      "thrown: javax/microedition/rms/InvalidRecordIDException at javax/microedition/rms/RecordStore.getRecord(I)[B pc=0: (no message)"
+    ]
+  },
+  {
+    "name": "帝国时代Ⅲ汉化版_10379.jar",
+    "end": "I (382204) korvo-j2me: RUN_END rc=0 presents=180 input=6 psram_before=15216240 psram_after=15216240 delta=0",
+    "perf": "PERF elapsed_us=3676175 presents=180 present_us=634342 present_max_us=35865 poll_us=2210 poll_calls=186 sleep_us=0 native_crc=c3a22a42 lcd_crc=213da87b updated=3 unchanged=177 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=15",
+    "exceptions": []
+  },
+  {
+    "name": "3D滚球_11586.jar",
+    "end": "I (386940) korvo-j2me: RUN_END rc=0 presents=180 input=6 psram_before=15216240 psram_after=15216240 delta=0",
+    "perf": "PERF elapsed_us=4007969 presents=180 present_us=708913 present_max_us=34072 poll_us=3862 poll_calls=186 sleep_us=0 native_crc=91b534aa lcd_crc=273ef82d updated=10 unchanged=170 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=5",
+    "exceptions": []
+  }
+]

@@ -1,11 +1,11 @@
 idf_component_register(
-    SRCS "main.c" "launcher_ui.c" "korvo_board.c" "korvo_display.c" "korvo_port.c" "korvo_jit.c" "jit_code_pool.c" "korvo_test_games.c" "audio_resampler.c"
+    SRCS "main.c" "launcher_ui.c" "korvo_board.c" "korvo_display.c" "korvo_settings.c" "korvo_port.c" "korvo_jit.c" "jit_code_pool.c" "korvo_test_games.c" "audio_resampler.c"
          "korvo_image.c" "korvo_media.c" "korvo_inflate.c" "korvo_font.c"
          "korvo_midi.c" "korvo_midi_file.c" "korvo_soundfont.c"
     INCLUDE_DIRS "."
     REQUIRES nano_j2me esp_board_manager esp_timer heap esp_lcd esp_mm
              esp_driver_gpio esp_driver_uart esp_driver_ppa esp_ringbuf
-             fatfs wear_levelling
+             fatfs wear_levelling nvs_flash
              espressif__esp_lcd_touch espressif__esp_codec_dev
     PRIV_REQUIRES espressif__esp_new_jpeg espressif__libpng espressif__esp_audio_codec
                   espressif__esp_midi espressif__freetype espressif__zlib

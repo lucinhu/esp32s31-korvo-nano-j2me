@@ -64,6 +64,16 @@ void launcher_ui_fps(bool enabled)
             LAUNCHER_FPS_W, LAUNCHER_FPS_H, enabled);
 }
 
+void launcher_ui_scale(int width, int height, bool pixel_perfect)
+{
+    char label[24];
+    launcher_rect view = launcher_game_rect(width, height, pixel_perfect);
+    if (pixel_perfect) snprintf(label, sizeof label, "PIXEL %dX", view.w / width);
+    else snprintf(label, sizeof label, "MAX SIZE");
+    control(label, LAUNCHER_SCALE_X, LAUNCHER_SCALE_Y,
+            LAUNCHER_SCALE_W, LAUNCHER_SCALE_H, pixel_perfect);
+}
+
 void launcher_ui_key(unsigned index, bool pressed)
 {
     if (index >= launcher_button_count) return;
@@ -101,7 +111,7 @@ void launcher_ui_volume(int volume)
     text_center(label, 12, 408, 176, 14, 1, UI_MUTED);
 }
 
-void launcher_ui_game(int width, int height, bool fps)
+void launcher_ui_game(int width, int height, bool fps, bool pixel_perfect)
 {
     korvo_fill(0, 0, LCD_W, LCD_H, UI_BG);
     korvo_fill(0, 0, LCD_W, 44, SURFACE);
@@ -109,9 +119,10 @@ void launcher_ui_game(int width, int height, bool fps)
     korvo_fill(600, 44, 200, LCD_H - 44, SURFACE);
     control("MENU", LAUNCHER_MENU_X, LAUNCHER_MENU_Y, LAUNCHER_MENU_W, LAUNCHER_MENU_H, false);
     launcher_ui_fps(fps);
+    launcher_ui_scale(width, height, pixel_perfect);
     for (unsigned i = 0; i < launcher_button_count; ++i) launcher_ui_key(i, false);
     launcher_ui_volume(korvo_get_volume());
-    launcher_rect view = launcher_game_rect(width, height);
+    launcher_rect view = launcher_game_rect(width, height, pixel_perfect);
     if (view.w && view.h) {
         rounded(view.x - 2, view.y - 2, view.w + 4, view.h + 4, BORDER);
         korvo_fill(view.x, view.y, view.w, view.h, 0);
@@ -141,7 +152,7 @@ void launcher_ui_menu_row(unsigned row, unsigned index, const char *title)
         korvo_fill(746 + col, y + 12 + col, 1, 19 - col * 2, UI_MUTED);
 }
 
-void launcher_ui_menu_end(unsigned page, unsigned pages, int width, int height)
+void launcher_ui_menu_end(unsigned page, unsigned pages, int width, int height, bool pixel_perfect)
 {
     control("PREV", 20, LAUNCHER_NAV_Y, 140, LAUNCHER_NAV_H, false);
     control("NEXT", 172, LAUNCHER_NAV_Y, 140, LAUNCHER_NAV_H, false);
@@ -150,6 +161,8 @@ void launcher_ui_menu_end(unsigned page, unsigned pages, int width, int height)
     control("DEMO", 628, LAUNCHER_NAV_Y, 152, LAUNCHER_NAV_H, true);
     char text[80]; snprintf(text, sizeof text, "PAGE %u/%u", page + 1, pages);
     korvo_text(20, 458, text, 2, UI_MUTED);
-    snprintf(text, sizeof text, "%d X %d  /  PIXEL PERFECT", width, height);
+    snprintf(text, sizeof text, "%d X %d", width, height);
     korvo_text(350, 458, text, 2, UI_MUTED);
+    control(pixel_perfect ? "PIXEL ON" : "MAX SIZE", LAUNCHER_MENU_SCALE_X, LAUNCHER_MENU_SCALE_Y,
+            LAUNCHER_MENU_SCALE_W, LAUNCHER_MENU_SCALE_H, pixel_perfect);
 }

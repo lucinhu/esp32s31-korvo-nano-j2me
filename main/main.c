@@ -5,6 +5,8 @@
 #include "korvo_test_games.h"
 #include "korvo_font.h"
 #include "launcher_ui.h"
+#include "korvo_settings.h"
+#include "esp_system.h"
 #include <dirent.h>
 #include <errno.h>
 #include <stdio.h>
@@ -36,7 +38,9 @@ static char game_titles[MAX_GAMES][192];
 static unsigned game_count = 1, page;
 static int screen_width = 240, screen_height = 320;
 static bool running, pumping, touch_latched, quit_requested;
-static int pending_game = -1;
+static int pending_game = -1, active_game;
+static bool pixel_perfect;
+static korvo_settings preferences;
 static unsigned run_frames;
 static bool benchmark;
 static bool fps_enabled;
@@ -55,12 +59,31 @@ extern const unsigned char korvo_font_start[] asm("_binary_korvo_font_start");
 extern const unsigned char korvo_font_end[] asm("_binary_korvo_font_end");
 static unsigned command_len;
 
+static void save_preferences(void)
+{
+    preferences.width = screen_width; preferences.height = screen_height;
+    preferences.volume = korvo_get_volume(); preferences.fps = fps_enabled;
+    preferences.pixel_perfect = pixel_perfect;
+    const char *jit = korvo_jit_mode_name();
+    preferences.jit_mode = !strcmp(jit, "probe") ? 2 : !strcmp(jit, "on") ? 1 : 0;
+    preferences.jit_internal = !strcmp(korvo_jit_memory_name(), "internal");
+    esp_err_t rc = korvo_settings_save(&preferences);
+    if (rc != ESP_OK) ESP_LOGW(TAG, "Settings save failed: %s", esp_err_to_name(rc));
+}
+
+static void report_preferences(void)
+{
+    printf("SETTINGS res=%dx%d volume=%d fps=%s scale=%s jit=%s memory=%s\n",
+           screen_width, screen_height, korvo_get_volume(), fps_enabled ? "on" : "off",
+           pixel_perfect ? "pixel" : "fit", korvo_jit_mode_name(), korvo_jit_memory_name());
+}
+
 static bool inside(int x, int y, int bx, int by, int w, int h)
 { return x >= bx && y >= by && x < bx + w && y < by + h; }
 
 void launcher_view(int width, int height, int *x, int *y, int *w, int *h)
 {
-    launcher_rect view = launcher_game_rect(width, height);
+    launcher_rect view = launcher_game_rect(width, height, pixel_perfect);
     *x = view.x; *y = view.y; *w = view.w; *h = view.h;
 }
 
@@ -106,10 +129,10 @@ static const char *basename_of(const char *path)
 
 static void draw_game(int index)
 {
-    launcher_ui_game(screen_width, screen_height, fps_enabled);
+    launcher_ui_game(screen_width, screen_height, fps_enabled, pixel_perfect);
     const char *title = index ? (game_titles[index][0] ? game_titles[index] : basename_of(games[index]))
                               : "HARDWARE DEMO";
-    korvo_filename_clipped(148, 10, title, 500);
+    korvo_filename_clipped(148, 10, title, 350);
     korvo_flush();
 }
 
@@ -123,13 +146,14 @@ static void draw_menu(void)
                              : "BUILT-IN HARDWARE DEMO";
         launcher_ui_menu_row(i, n, title);
     }
-    launcher_ui_menu_end(page, (game_count + PAGE_SIZE - 1) / PAGE_SIZE, screen_width, screen_height);
+    launcher_ui_menu_end(page, (game_count + PAGE_SIZE - 1) / PAGE_SIZE, screen_width, screen_height, pixel_perfect);
     korvo_flush();
 }
 
 static void change_volume(int volume)
 {
     korvo_volume(volume);
+    save_preferences();
     if (running) {
         launcher_ui_volume(korvo_get_volume());
         korvo_flush_rect(12, 408, 176, 58);
@@ -140,6 +164,7 @@ static void set_fps(bool enabled)
 {
     if (fps_enabled == enabled) return;
     fps_enabled = enabled;
+    save_preferences();
     reset_fps_sample();
     if (running) {
         /* Restore the pixels covered by the overlay immediately on disable. */
@@ -148,6 +173,23 @@ static void set_fps(bool enabled)
         launcher_fps_present(true);
     } else draw_menu();
     printf("FPS_STATE %s\n", fps_enabled ? "on" : "off"); fflush(stdout);
+}
+
+static void set_scale(bool pixel)
+{
+    pixel_perfect = pixel;
+    save_preferences();
+    if (running && port_state.pixels) {
+        korvo_display_begin();
+        draw_game(active_game);
+        korvo_port_update_view(&port_state);
+        korvo_present(&port_state);
+        launcher_fps_present(true);
+        korvo_display_end();
+    } else draw_menu();
+    int x, y, w, h;
+    launcher_view(screen_width, screen_height, &x, &y, &w, &h);
+    printf("SCALE_STATE %s view=%d,%d,%d,%d\n", pixel ? "pixel" : "fit", x,y,w,h);
 }
 
 static void scan_dir(const char *path)
@@ -226,6 +268,7 @@ static void cycle_resolution(void)
     else if (screen_width == 176) { screen_width = 128; screen_height = 160; }
     else if (screen_width == 128) { screen_width = 320; screen_height = 240; }
     else { screen_width = 240; screen_height = 320; }
+    save_preferences();
 }
 
 static void touch_poll(void)
@@ -236,6 +279,10 @@ static void touch_poll(void)
     touch_latched = count > 0;
     for (int n = 0; !benchmark && fresh && n < count; ++n)
         if (inside(xs[n], ys[n], LAUNCHER_FPS_X, LAUNCHER_FPS_Y, LAUNCHER_FPS_W, LAUNCHER_FPS_H)) { set_fps(!fps_enabled); break; }
+        else if (inside(xs[n], ys[n], running ? LAUNCHER_SCALE_X : LAUNCHER_MENU_SCALE_X,
+                        running ? LAUNCHER_SCALE_Y : LAUNCHER_MENU_SCALE_Y,
+                        running ? LAUNCHER_SCALE_W : LAUNCHER_MENU_SCALE_W,
+                        running ? LAUNCHER_SCALE_H : LAUNCHER_MENU_SCALE_H)) { set_scale(!pixel_perfect); break; }
     if (!running) {
         if (!fresh || !count) return;
         int x = xs[0], y = ys[0];
@@ -414,8 +461,18 @@ static void handle_command(char *line)
     int a = 0, b = 0;
     sscanf(line, "%23s %127s", op, arg);
     if (!strcmp(op, "help")) {
-        puts("COMMANDS list | storage | display | displaytest [frames] | demo [frames] | run INDEX [frames] | bench INDEX FRAMES [keys] | stop | res W H | fps [on/off] | jit [on/off/probe] | jit memory [mapped/internal] (menu only) | key NAME down/up | pointer down/move/up X Y | volume N | stats | shot [game/lcd/full] [baud] | put SIZE CRC32 NAME.jar [baud]");
+        puts("COMMANDS list | storage | settings | reboot (menu) | scale pixel/fit | display | displaytest [frames] | demo [frames] | run INDEX [frames] | bench INDEX FRAMES [keys] | stop | res W H | fps [on/off] | jit [on/off/probe] | jit memory [mapped/internal] (menu only) | key NAME down/up | pointer down/move/up X Y | volume N | stats | shot [game/lcd/full] [baud] | put SIZE CRC32 NAME.jar [baud]");
     } else if (!strcmp(op, "list")) { if (!running) scan_games(); list_games(); }
+    else if (!strcmp(op, "settings")) { report_preferences(); }
+    else if (!strcmp(op, "reboot")) {
+        if (running) { puts("ERROR stop current game first"); return; }
+        esp_restart();
+    }
+    else if (!strcmp(op, "scale")) {
+        if (!strcmp(arg, "pixel")) set_scale(true);
+        else if (!strcmp(arg, "fit")) set_scale(false);
+        else puts("ERROR scale pixel/fit");
+    }
     else if (!strcmp(op, "display")) { korvo_display_stats(); }
     else if (!strcmp(op, "displaytest")) {
         if (running) { puts("ERROR stop current game first"); return; }
@@ -444,7 +501,7 @@ static void handle_command(char *line)
     else if (!strcmp(op, "res")) {
         sscanf(line, "%*s %d %d", &a, &b);
         if (running || a < 64 || b < 64 || a > 320 || b > 320) { puts("ERROR res requires menu and 64..320 dimensions"); return; }
-        screen_width = a; screen_height = b; draw_menu(); printf("RES_OK %d %d\n", a, b);
+        screen_width = a; screen_height = b; save_preferences(); draw_menu(); printf("RES_OK %d %d\n", a, b);
     } else if (!strcmp(op, "volume")) { change_volume(atoi(arg)); printf("VOLUME %d\n", korvo_get_volume()); }
     else if (!strcmp(op, "fps")) {
         if (*arg && strcmp(arg, "on") && strcmp(arg, "off")) { puts("ERROR fps on/off"); return; }
@@ -458,6 +515,7 @@ static void handle_command(char *line)
             if (running || (*memory && !korvo_jit_memory_set(memory))) {
                 puts("ERROR jit memory internal/mapped requires menu"); return;
             }
+            if (*memory) save_preferences();
             printf("JIT_MEMORY_STATE %s\n", korvo_jit_memory_name());
             return;
         }
@@ -466,6 +524,7 @@ static void handle_command(char *line)
         }
         if (*arg) {
             if (!strcmp(arg,"probe")) korvo_jit_probe(); else korvo_jit_enable(!strcmp(arg,"on"));
+            save_preferences();
             draw_menu();
         }
         printf("JIT_STATE %s available=%d\n", korvo_jit_mode_name(), NJ_ENABLE_JIT);
@@ -576,6 +635,7 @@ static void run_game(int index)
     run_frames = 0; quit_requested = false; touch_keys = 0; pointer_down = false;
     xQueueReset(events); running = true; last_stats = esp_timer_get_time();
     reset_fps_sample();
+    active_game = index;
     draw_game(index);
     ESP_LOGI(TAG, "RUN_BEGIN index=%d %s res=%dx%d heap=%uKiB rms=%s", index,
              index ? games[index] : "builtin-demo", screen_width, screen_height, (unsigned)(opts.heap_bytes / 1024), rms);
@@ -598,6 +658,14 @@ static void run_game(int index)
 static void launcher_task(void *arg)
 {
     (void)arg;
+    esp_err_t settings_rc = korvo_settings_load(&preferences);
+    if (settings_rc != ESP_OK) ESP_LOGW(TAG, "Settings unavailable: %s", esp_err_to_name(settings_rc));
+    screen_width = preferences.width; screen_height = preferences.height;
+    fps_enabled = preferences.fps; pixel_perfect = preferences.pixel_perfect;
+    korvo_volume(preferences.volume);
+    if (preferences.jit_mode == 2) korvo_jit_probe();
+    else korvo_jit_enable(preferences.jit_mode == 1);
+    (void)korvo_jit_memory_set(preferences.jit_internal ? "internal" : "mapped");
     ESP_ERROR_CHECK(korvo_board_init());
     ESP_ERROR_CHECK(uart_driver_install(UART_NUM_0, 4096, 0, 0, NULL, 0));
     events = xQueueCreate(128, sizeof(nj_event));
@@ -611,6 +679,7 @@ static void launcher_task(void *arg)
     scan_games(); draw_menu();
     ESP_LOGI(TAG, "READY nano_j2me %s console=115200 flash=2000000; type help", NJ_VERSION_STRING);
     list_games();
+    report_preferences();
     while (true) {
         launcher_pump();
         if (pending_game >= 0) { int index = pending_game; pending_game = -1; run_game(index); }

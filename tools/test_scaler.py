@@ -34,7 +34,7 @@ int main(void) {
     /* Every accepted launcher resolution must remain centered, integer-scaled
      * and inside the control-free viewport. Check the first excluded scale. */
     for (int w=64;w<=320;++w) for (int h=64;h<=320;++h) {
-        launcher_rect v=launcher_game_rect(w,h);
+        launcher_rect v=launcher_game_rect(w,h,true);
         assert(v.w%w==0 && v.h%h==0 && v.w/w==v.h/h);
         int scale=v.w/w;
         assert(scale>=1 && ((scale+1)*w>LAUNCHER_VIEW_W ||
@@ -43,17 +43,22 @@ int main(void) {
         assert(v.y>=LAUNCHER_VIEW_TOP && v.y+v.h<=476);
         assert(v.x==(LCD_W-v.w)/2);
         assert(v.y==LAUNCHER_VIEW_TOP+(LAUNCHER_VIEW_H-v.h)/2);
+        v=launcher_game_rect(w,h,false);
+        assert(v.w==LAUNCHER_VIEW_W || v.h==LAUNCHER_VIEW_H);
+        assert(v.x>=204 && v.x+v.w<=596 && v.y>=44 && v.y+v.h<=476);
+        assert(abs(v.w*h-v.h*w)<(w>h?w:h));
     }
     const int sizes[][2]={{240,320},{176,208},{128,160},{320,240},{64,320},{320,64}};
     const int scales[]={1,2,2,1,1,1};
     unsigned checks=0;
+    for (int pixel=0;pixel<=1;++pixel)
     for (unsigned size=0;size<sizeof(sizes)/sizeof(sizes[0]);++size) {
         korvo_port_state s={ .width=sizes[size][0], .height=sizes[size][1] };
         s.pixels=calloc(s.width*s.height,2);
         s.previous_pixels=malloc(s.width*s.height*2);
         assert(s.pixels && s.previous_pixels);
-        launcher_rect v=launcher_game_rect(s.width,s.height);
-        assert(v.w==s.width*scales[size] && v.h==s.height*scales[size]);
+        launcher_rect v=launcher_game_rect(s.width,s.height,pixel);
+        if (pixel) assert(v.w==s.width*scales[size] && v.h==s.height*scales[size]);
         s.view_x=v.x; s.view_y=v.y; s.view_w=v.w; s.view_h=v.h;
         for (int i=0;i<s.view_w;++i) s.xmap[i]=i*s.width/s.view_w;
         for (int i=0;i<s.view_h;++i) s.ymap[i]=i*s.height/s.view_h;

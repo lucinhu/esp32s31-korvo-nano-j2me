@@ -33,6 +33,7 @@ typedef struct korvo_port_state {
 
 void korvo_port_init(nj_port *port, korvo_port_state *state, int width, int height);
 void korvo_present(korvo_port_state *state);
+void korvo_port_update_view(korvo_port_state *state);
 void korvo_port_report(korvo_port_state *state, int64_t elapsed_us);
 void launcher_pump(void);
 int launcher_event(nj_event *event);

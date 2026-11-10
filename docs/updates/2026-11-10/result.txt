@@ -25,17 +25,18 @@ nano-j2me 更新与清理，2026-11-10
 
 本次主工程修改：补齐 4 个新增核心源文件；README 更新版本、记录与当前串口示例。板级原有改动保留。
 
-本轮追加的界面与显示修改：
+本轮追加的界面、设置与显示修改：
+- 分辨率、音量、FPS、缩放模式、JIT 模式和内存选项保存到 NVS。实机修改为 176×208 / 音量30 / FPS开 / Pixel开 / JIT probe / internal 后重启完整恢复；再修改为 240×320 / 音量40 / FPS关 / MAX SIZE / JIT关 / mapped，第二次重启完整恢复。
 - 去掉游戏底部 J2ME 分辨率状态行；深色界面、青绿色按键高亮、顶部游戏标题和工具栏、清晰的游戏列表与分页。
-- 在 392×432 可用区域内做最大整数倍缩放。240×320、320×240 为 1 倍；176×208、128×160 为 2 倍；触摸坐标跟随同一视口。
+- 提供 PIXEL ON / MAX SIZE 即时切换。首次启动 Pixel Perfect 关闭，按比例放大至 392×432 可用区域的最大尺寸；240×320 对应 324×432。整数模式下 240×320、320×240 为 1 倍，176×208、128×160 为 2 倍；触摸坐标跟随同一视口。
 - RGB GDMA 保持 64 字节突发，改用两个驱动管理的 PSRAM 帧缓冲；等待 on_frame_buf_complete 后才复用旧缓冲，PPA SRM/DMA 同步脏矩形，PPA 失败时使用 CPU 同步。游戏画面和 FPS 覆盖合批提交。
 - 参考用户指定的 pxa-projects/firmware/boards/esp32s31-korvo-1 显示驱动；采用双缓冲降低常驻内存，相比原版增加约 750 KiB PSRAM。
 
 已完成的验证：
 - ESP32-S31 固件编译及分区大小检查通过。
-- 原更新版本实机 smoke 通过；三次退出 PSRAM 一致，按键、指针及音调通过。最终界面/DMA 版本的实机验证继续进行。
+- 最终界面/DMA/NVS 版本实机 smoke 通过；三次退出 PSRAM 均为 15216240，按键、指针及音调通过。
 - 图形测试 18250 项断言通过；媒体适配 4 项通过；LCDUI 内存和短 PCM 生命周期通过。
-- 整数缩放全部 66049 个支持尺寸组合的边界检查、1800 帧矩形对照通过（ASan/UBSan）。
+- 整数缩放全部 66049 个支持尺寸组合的边界检查、两种缩放模式共 3600 帧矩形对照通过（ASan/UBSan）。
 - JIT 代码池、重采样及生产显示代码的宿主模拟回归共 3 项通过（ASan/UBSan）。显示测试覆盖延迟释放、批处理、脏区保留与 PPA 失败回退。
 - 初次核心全量测试 142 项，8 失败、4 跳过。构建路径造成的 5 项失败均已复测通过；桌面 UI 在补齐本机游戏夹具并启用字体后通过；Tempo/PIM 复测通过。剩余两项：check_flushdemo 的一帧撕裂在未加补丁的 e910b30 上同样复现；check_api_audit 两次达到 300 秒超时。未宣称完整测试全绿。SF2/paint-pump 两项仍因缺少夹具跳过。
 
@@ -45,4 +46,14 @@ nano-j2me 更新与清理，2026-11-10
 - 原游戏分区不可挂载，初始化前原始数据已保留为 build/recovery/j2me-before.bin（仅本机；8323072 字节）。
 - 构建产物、商用游戏 JAR、本机备份、历史归档和原始日志均不提交到 GitHub。
 
-Git：nano-j2me 的 main 已推送到 00318b4；临时分支已删除。主仓库 main 的首次提交按用户要求发布；最终实机结果会补充提交。
+实机显示与游戏结果：
+- 90 次局部 DMA 更新后两块完整帧缓冲一致，mismatches=0。最新设置验证完成时 submitted=440、completed=440、dma_copies=440、cpu_copies=0、timeouts=0。
+- 同一 MIDlet 内即时切换 PIXEL / MAX SIZE、开关 FPS、四种常用分辨率实机通过，退出 scale_mismatch=0、内存 delta=0。
+- 3D摩托赛车实机运行 320 帧、退出 rc=0，缩放像素检查和 PSRAM 回收通过；不据此宣称完整比赛通过。
+- 追加 9 款本机经典游戏，原 JAR 不变，CRC 分块上传通过；清单见 classic-games.json。仙剑完美版、帝国时代2、帝国时代III、3D滚球均完成 180 帧加载/输入/销毁检查，rc=0、scale_mismatch=0、delta=0。帝国时代2冷启动产生游戏捕获的 RMS 未建档异常。未将启动通过表述为完整通关或全部操作可玩。
+- 实机帧缓冲截图：device-menu.png、device-game-pixel.png、device-game-max.png、device-game-2x.png、device-moto-max.png、device-pal.png。这些不是屏幕实拍。
+
+本次最终固件：7919360 字节；SHA-256 5c7d1715dca6afea9986d11862be605e31195b10384f71df692fbe17bd2a8ccf。
+原游戏分区备份 SHA-256：cfb55e464ac11c683b05a1c231ba0a6c0e4a7bdc58174bcb9a161932b56ca352。
+
+Git：nano-j2me 的 main 已推送到 00318b4；临时分支已删除。主仓库 main 的首次提交为 d215052，本轮设置与缩放补充提交后继续记录 JBenchmark 实机得分。

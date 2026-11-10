@@ -112,6 +112,15 @@ static int now_datetime(void *ud, nj_datetime *out)
         .hour = t.tm_hour, .minute = t.tm_min, .second = t.tm_sec, .weekday = t.tm_wday };
     return 1;
 }
+void korvo_port_update_view(korvo_port_state *s)
+{
+    launcher_view(s->width,s->height,&s->view_x,&s->view_y,&s->view_w,&s->view_h);
+    for (int i=0;i<s->view_w;++i) s->xmap[i] = i * s->width / s->view_w;
+    for (int i=0;i<s->view_h;++i) s->ymap[i] = i * s->height / s->view_h;
+    s->previous_valid = false;
+    s->probes_valid = false;
+}
+
 static int display_init(void *ud, int *w, int *h, int *stride, void **px)
 {
     korvo_port_state *s = ud;
@@ -121,9 +130,7 @@ static int display_init(void *ud, int *w, int *h, int *stride, void **px)
 #if KORVO_FAST_RENDER
     s->previous_pixels = heap_caps_malloc(s->width * s->height * 2,MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT);
     if (!s->previous_pixels) { heap_caps_free(s->pixels); s->pixels = NULL; return -1; }
-    launcher_view(s->width,s->height,&s->view_x,&s->view_y,&s->view_w,&s->view_h);
-    for (int i=0;i<s->view_w;++i) s->xmap[i] = i * s->width / s->view_w;
-    for (int i=0;i<s->view_h;++i) s->ymap[i] = i * s->height / s->view_h;
+    korvo_port_update_view(s);
 #endif
     *w = s->width; *h = s->height; *stride = s->width * 2; *px = s->pixels;
     return NJ_PIXFMT_RGB565;
