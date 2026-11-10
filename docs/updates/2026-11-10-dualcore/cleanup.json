@@ -1,0 +1,98 @@
+{
+  "obsolete_results_removed": [
+    {
+      "path": "docs/updates/2026-11-10-dualcore/fixed-render-results.json",
+      "bytes": 3865
+    },
+    {
+      "path": "docs/updates/2026-11-10-dualcore/fixed-render-final.json",
+      "bytes": 4631
+    },
+    {
+      "path": "docs/updates/2026-11-10-dualcore/jbenchmark3d-off.png",
+      "bytes": 3576
+    },
+    {
+      "path": "docs/updates/2026-11-10-dualcore/jbenchmark3d-on.png",
+      "bytes": 3684
+    },
+    {
+      "path": "docs/updates/2026-11-10-dualcore/screen-fill-results.json",
+      "bytes": 3425
+    },
+    {
+      "path": "docs/updates/2026-11-10-dualcore/simd-results.json",
+      "bytes": 6249
+    }
+  ],
+  "temporary_builds_removed": [
+    {
+      "path": "build/dualcore/host",
+      "bytes": 156558482
+    },
+    {
+      "path": "build/dualcore/adapter",
+      "bytes": 1056846
+    },
+    {
+      "path": "build/dualcore/s31-trm.txt",
+      "bytes": 4641151
+    },
+    {
+      "path": "build/dualcore/srm-page.png",
+      "bytes": 318638
+    },
+    {
+      "path": "tools/__pycache__",
+      "bytes": 17404
+    },
+    {
+      "path": "third_party/nano_j2me/tests/out",
+      "bytes": 85590
+    },
+    {
+      "path": "build/dualcore/measure.py",
+      "bytes": 2197
+    },
+    {
+      "path": "build/dualcore/jbenchmark_compare.py",
+      "bytes": 848
+    },
+    {
+      "path": "build/dualcore/final_preflight.py",
+      "bytes": 1304
+    },
+    {
+      "path": "build/dualcore/hardware_verify.py",
+      "bytes": 1913
+    },
+    {
+      "path": "build/dualcore/simd_verify.py",
+      "bytes": 1254
+    },
+    {
+      "path": "build/dualcore/install_requested.py",
+      "bytes": 749
+    },
+    {
+      "path": "build/dualcore/ppa_verify.py",
+      "bytes": 1323
+    },
+    {
+      "path": "build/dualcore/final_hardware_suite.py",
+      "bytes": 2361
+    },
+    {
+      "path": "build/dualcore/final_device.py",
+      "bytes": 2355
+    }
+  ],
+  "total_bytes_removed": 162717845,
+  "kept": [
+    "current ESP-IDF build and firmware",
+    "build/latest-3d/jars (CMake inputs)",
+    "build/dualcore/perf-*.jar (reusable comparison fixtures)",
+    "managed_components and font assets",
+    "existing raw FAT recovery image"
+  ]
+}

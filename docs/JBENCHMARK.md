@@ -21,7 +21,7 @@ HD 的双线性过滤为 Success（91%），三线性过滤 Failed/Not supported
 
 本次发现并修复了三类问题：Item 合法布局标志被拒绝；Gauge 错误禁止程序更新非交互进度条；M3G Loader 漏计 SkinnedMesh 引用、Graphics3D 缺失 numTextureUnits 属性。修复与回归测试已进入核心 main。另修复了空闲计数达到 255 后不再重绘的帧泵问题；回归测试在旧代码上失败、修复后通过。初次失败/停留在初始化的画面未作为有效得分，最终表格仅采用重跑完成后的结果。软件模拟器的分数需要结合图形与 API 兼容程度理解，不能据此等同于原生手机 GPU 性能。
 
-复现时先在菜单设置上述选项，通过 `settings` 确认，再用 `list` 查看当前索引。本机四个程序依次是 16、17、18、19：
+复现时先在菜单设置上述选项，通过 `settings` 确认，再用 `list` 查看当前索引。该轮四个程序的索引为 16、17、18、19（后续安装/删除游戏后请重新用 list 查询）：
 
 ```sh
 python3 tools/serial_console.py --port /dev/ttyUSB1 command list
@@ -37,3 +37,5 @@ HD 场景兼容性诊断：map.m3g 返回 4 个根对象，World 位于首项，
 最终设备回归：90 次局部更新，两块完整帧缓冲差异为 0；DMA 提交/完成/复制均 3545，CPU 回退及超时均 0。三轮演示退出后 PSRAM 均 15,216,240 字节；按键与指针通过；3D摩托 180 帧退出 rc=0、scale_mismatch=0、PSRAM delta=0。设备回到菜单，保留 MAX SIZE 和用户最后开启的 FPS，设置存入 NVS。
 
 按用户要求，HD 原包另复制到 `/home/lucinhu/Documents/game-roms/jar/JBenchmarkHD.jar`，351,431 字节，SHA-256 `58cd27a6fe6fc539fabb3bb0f593cd45ce236e3e242e5d64e7f01b1db07f4890`。
+
+后续双核、SIMD 和二维 DMA 固件的同机对照见 [性能更新](DUALCORE.md)。本页保留 `a028d18` 的历史得分；新固件数据及设置单独记录，避免混淆版本。

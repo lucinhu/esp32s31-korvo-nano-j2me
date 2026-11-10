@@ -1,0 +1,25 @@
+{
+  "stress": "SIMD_TEST rounds=128 mismatches=0 core=1 blocks128=110720",
+  "states": [
+    {
+      "res": "240x320",
+      "volume": "40",
+      "fps": "off",
+      "scale": "fit",
+      "jit": "off",
+      "memory": "mapped",
+      "parallel": "off",
+      "simd": "off"
+    },
+    {
+      "res": "240x320",
+      "volume": "40",
+      "fps": "off",
+      "scale": "fit",
+      "jit": "off",
+      "memory": "mapped",
+      "parallel": "on",
+      "simd": "on"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "initial": {
+    "res": "240x320",
+    "volume": "40",
+    "fps": "on",
+    "scale": "fit",
+    "jit": "off",
+    "memory": "mapped",
+    "parallel": "on"
+  },
+  "stress": "PARALLEL_TEST rounds=300 mismatches=0 caller_core=0 worker_core=1",
+  "reboot_states": [
+    {
+      "res": "240x320",
+      "volume": "40",
+      "fps": "on",
+      "scale": "fit",
+      "jit": "off",
+      "memory": "mapped",
+      "parallel": "off"
+    },
+    {
+      "res": "240x320",
+      "volume": "40",
+      "fps": "on",
+      "scale": "fit",
+      "jit": "off",
+      "memory": "mapped",
+      "parallel": "on"
+    }
+  ],
+  "final": {
+    "res": "240x320",
+    "volume": "40",
+    "fps": "on",
+    "scale": "fit",
+    "jit": "off",
+    "memory": "mapped",
+    "parallel": "on"
+  }
+}

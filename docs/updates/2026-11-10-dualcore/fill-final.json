@@ -1,0 +1,378 @@
+[
+  {
+    "mode": "serial",
+    "phases": [
+      {
+        "phase": "full",
+        "checksum": "f4602800",
+        "elapsed_ms": 4919
+      },
+      {
+        "phase": "clipped",
+        "checksum": "5b483ec",
+        "elapsed_ms": 4827
+      }
+    ],
+    "perf": {
+      "elapsed_us": "10887228",
+      "presents": "42",
+      "present_us": "162147",
+      "present_max_us": "24285",
+      "poll_us": "2019",
+      "poll_calls": "42",
+      "sleep_us": "0",
+      "native_crc": "e430c397",
+      "lcd_crc": "9a83e5df",
+      "updated": "2",
+      "unchanged": "40",
+      "hot_peak": "0",
+      "hot_live": "0",
+      "scale_mismatch": "0",
+      "stack_internal": "0",
+      "stack_psram": "3"
+    },
+    "simd": {
+      "enabled": "0",
+      "core": "1",
+      "fills": "0",
+      "blocks128": "0"
+    },
+    "end": "I (365940) korvo-j2me: RUN_END rc=0 presents=42 input=0 psram_before=15215968 psram_after=15215968 delta=0",
+    "ppa": {
+      "enabled": "0",
+      "available": "1",
+      "fills": "0",
+      "pixels": "0"
+    },
+    "parallel": "PARALLEL enabled=0 worker_core=1 jobs=0 worker_us=0 wait_us=0 stack_free=7836"
+  },
+  {
+    "mode": "dual",
+    "phases": [
+      {
+        "phase": "full",
+        "checksum": "f4602800",
+        "elapsed_ms": 4289
+      },
+      {
+        "phase": "clipped",
+        "checksum": "5b483ec",
+        "elapsed_ms": 4185
+      }
+    ],
+    "perf": {
+      "elapsed_us": "9605932",
+      "presents": "42",
+      "present_us": "166071",
+      "present_max_us": "24711",
+      "poll_us": "2095",
+      "poll_calls": "42",
+      "sleep_us": "0",
+      "native_crc": "e430c397",
+      "lcd_crc": "9a83e5df",
+      "updated": "2",
+      "unchanged": "40",
+      "hot_peak": "0",
+      "hot_live": "0",
+      "scale_mismatch": "0",
+      "stack_internal": "0",
+      "stack_psram": "3"
+    },
+    "simd": {
+      "enabled": "0",
+      "core": "1",
+      "fills": "2880",
+      "blocks128": "0"
+    },
+    "end": "I (376192) korvo-j2me: RUN_END rc=0 presents=42 input=0 psram_before=15215968 psram_after=15215968 delta=0",
+    "ppa": {
+      "enabled": "0",
+      "available": "1",
+      "fills": "0",
+      "pixels": "0"
+    },
+    "parallel": "PARALLEL enabled=1 worker_core=1 jobs=2880 worker_us=8139790 wait_us=20412 stack_free=7836"
+  },
+  {
+    "mode": "simd",
+    "phases": [
+      {
+        "phase": "full",
+        "checksum": "f4602800",
+        "elapsed_ms": 4284
+      },
+      {
+        "phase": "clipped",
+        "checksum": "5b483ec",
+        "elapsed_ms": 4179
+      }
+    ],
+    "perf": {
+      "elapsed_us": "9606004",
+      "presents": "42",
+      "present_us": "176448",
+      "present_max_us": "26671",
+      "poll_us": "1937",
+      "poll_calls": "42",
+      "sleep_us": "0",
+      "native_crc": "e430c397",
+      "lcd_crc": "9a83e5df",
+      "updated": "2",
+      "unchanged": "40",
+      "hot_peak": "0",
+      "hot_live": "0",
+      "scale_mismatch": "0",
+      "stack_internal": "0",
+      "stack_psram": "3"
+    },
+    "simd": {
+      "enabled": "1",
+      "core": "1",
+      "fills": "2880",
+      "blocks128": "24778080"
+    },
+    "end": "I (386488) korvo-j2me: RUN_END rc=0 presents=42 input=0 psram_before=15215968 psram_after=15215968 delta=0",
+    "ppa": {
+      "enabled": "0",
+      "available": "1",
+      "fills": "0",
+      "pixels": "0"
+    },
+    "parallel": "PARALLEL enabled=1 worker_core=1 jobs=2880 worker_us=8120793 wait_us=13419 stack_free=7836"
+  },
+  {
+    "mode": "ppa",
+    "phases": [
+      {
+        "phase": "full",
+        "checksum": "f4602800",
+        "elapsed_ms": 2123
+      },
+      {
+        "phase": "clipped",
+        "checksum": "5b483ec",
+        "elapsed_ms": 1919
+      }
+    ],
+    "perf": {
+      "elapsed_us": "5169343",
+      "presents": "42",
+      "present_us": "155376",
+      "present_max_us": "18647",
+      "poll_us": "1851",
+      "poll_calls": "42",
+      "sleep_us": "0",
+      "native_crc": "e430c397",
+      "lcd_crc": "9a83e5df",
+      "updated": "2",
+      "unchanged": "40",
+      "hot_peak": "0",
+      "hot_live": "0",
+      "scale_mismatch": "0",
+      "stack_internal": "0",
+      "stack_psram": "3"
+    },
+    "simd": {
+      "enabled": "0",
+      "core": "1",
+      "fills": "0",
+      "blocks128": "0"
+    },
+    "end": "I (392301) korvo-j2me: RUN_END rc=0 presents=42 input=0 psram_before=15215968 psram_after=15215968 delta=0",
+    "ppa": {
+      "enabled": "1",
+      "available": "1",
+      "fills": "2880",
+      "pixels": "194025600"
+    },
+    "parallel": "PARALLEL enabled=1 worker_core=1 jobs=0 worker_us=0 wait_us=0 stack_free=7836"
+  },
+  {
+    "mode": "ppa",
+    "phases": [
+      {
+        "phase": "full",
+        "checksum": "f4602800",
+        "elapsed_ms": 2123
+      },
+      {
+        "phase": "clipped",
+        "checksum": "5b483ec",
+        "elapsed_ms": 1919
+      }
+    ],
+    "perf": {
+      "elapsed_us": "5169332",
+      "presents": "42",
+      "present_us": "154400",
+      "present_max_us": "18686",
+      "poll_us": "1800",
+      "poll_calls": "42",
+      "sleep_us": "0",
+      "native_crc": "e430c397",
+      "lcd_crc": "9a83e5df",
+      "updated": "2",
+      "unchanged": "40",
+      "hot_peak": "0",
+      "hot_live": "0",
+      "scale_mismatch": "0",
+      "stack_internal": "0",
+      "stack_psram": "3"
+    },
+    "simd": {
+      "enabled": "0",
+      "core": "1",
+      "fills": "0",
+      "blocks128": "0"
+    },
+    "end": "I (398162) korvo-j2me: RUN_END rc=0 presents=42 input=0 psram_before=15215968 psram_after=15215968 delta=0",
+    "ppa": {
+      "enabled": "1",
+      "available": "1",
+      "fills": "2880",
+      "pixels": "194025600"
+    },
+    "parallel": "PARALLEL enabled=1 worker_core=1 jobs=0 worker_us=0 wait_us=0 stack_free=7836"
+  },
+  {
+    "mode": "simd",
+    "phases": [
+      {
+        "phase": "full",
+        "checksum": "f4602800",
+        "elapsed_ms": 4284
+      },
+      {
+        "phase": "clipped",
+        "checksum": "5b483ec",
+        "elapsed_ms": 4180
+      }
+    ],
+    "perf": {
+      "elapsed_us": "9605980",
+      "presents": "42",
+      "present_us": "177716",
+      "present_max_us": "26752",
+      "poll_us": "2003",
+      "poll_calls": "42",
+      "sleep_us": "0",
+      "native_crc": "e430c397",
+      "lcd_crc": "9a83e5df",
+      "updated": "2",
+      "unchanged": "40",
+      "hot_peak": "0",
+      "hot_live": "0",
+      "scale_mismatch": "0",
+      "stack_internal": "0",
+      "stack_psram": "3"
+    },
+    "simd": {
+      "enabled": "1",
+      "core": "1",
+      "fills": "2880",
+      "blocks128": "24778080"
+    },
+    "end": "I (408412) korvo-j2me: RUN_END rc=0 presents=42 input=0 psram_before=15215968 psram_after=15215968 delta=0",
+    "ppa": {
+      "enabled": "0",
+      "available": "1",
+      "fills": "0",
+      "pixels": "0"
+    },
+    "parallel": "PARALLEL enabled=1 worker_core=1 jobs=2880 worker_us=8120742 wait_us=13095 stack_free=7836"
+  },
+  {
+    "mode": "dual",
+    "phases": [
+      {
+        "phase": "full",
+        "checksum": "f4602800",
+        "elapsed_ms": 4288
+      },
+      {
+        "phase": "clipped",
+        "checksum": "5b483ec",
+        "elapsed_ms": 4185
+      }
+    ],
+    "perf": {
+      "elapsed_us": "9606007",
+      "presents": "42",
+      "present_us": "165702",
+      "present_max_us": "24716",
+      "poll_us": "1873",
+      "poll_calls": "42",
+      "sleep_us": "0",
+      "native_crc": "e430c397",
+      "lcd_crc": "9a83e5df",
+      "updated": "2",
+      "unchanged": "40",
+      "hot_peak": "0",
+      "hot_live": "0",
+      "scale_mismatch": "0",
+      "stack_internal": "0",
+      "stack_psram": "3"
+    },
+    "simd": {
+      "enabled": "0",
+      "core": "1",
+      "fills": "2880",
+      "blocks128": "0"
+    },
+    "end": "I (418707) korvo-j2me: RUN_END rc=0 presents=42 input=0 psram_before=15215968 psram_after=15215968 delta=0",
+    "ppa": {
+      "enabled": "0",
+      "available": "1",
+      "fills": "0",
+      "pixels": "0"
+    },
+    "parallel": "PARALLEL enabled=1 worker_core=1 jobs=2880 worker_us=8139713 wait_us=20420 stack_free=7836"
+  },
+  {
+    "mode": "serial",
+    "phases": [
+      {
+        "phase": "full",
+        "checksum": "f4602800",
+        "elapsed_ms": 4919
+      },
+      {
+        "phase": "clipped",
+        "checksum": "5b483ec",
+        "elapsed_ms": 4827
+      }
+    ],
+    "perf": {
+      "elapsed_us": "10887214",
+      "presents": "42",
+      "present_us": "163971",
+      "present_max_us": "26148",
+      "poll_us": "1902",
+      "poll_calls": "42",
+      "sleep_us": "0",
+      "native_crc": "e430c397",
+      "lcd_crc": "9a83e5df",
+      "updated": "2",
+      "unchanged": "40",
+      "hot_peak": "0",
+      "hot_live": "0",
+      "scale_mismatch": "0",
+      "stack_internal": "0",
+      "stack_psram": "3"
+    },
+    "simd": {
+      "enabled": "0",
+      "core": "1",
+      "fills": "0",
+      "blocks128": "0"
+    },
+    "end": "I (430236) korvo-j2me: RUN_END rc=0 presents=42 input=0 psram_before=15215968 psram_after=15215968 delta=0",
+    "ppa": {
+      "enabled": "0",
+      "available": "1",
+      "fills": "0",
+      "pixels": "0"
+    },
+    "parallel": "PARALLEL enabled=0 worker_core=1 jobs=0 worker_us=0 wait_us=0 stack_free=7836"
+  }
+]

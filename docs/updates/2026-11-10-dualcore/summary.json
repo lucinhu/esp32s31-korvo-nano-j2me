@@ -1,0 +1,147 @@
+{
+  "date": "2026-11-10",
+  "board": "ESP32-S31-Korvo-1 rev0",
+  "cpu_mhz": 320,
+  "psram_mhz": 250,
+  "core_commit": "6a135819c026183cf8409e9d79948c735ad54dd6",
+  "firmware": {
+    "bytes": 7941840,
+    "sha256": "68bd7b0d24b0ec9732cb02fd19b93597deeaa553c0b9968cafe91c817543741d"
+  },
+  "settings": {
+    "resolution": "240x320",
+    "scale": "fit",
+    "jit": "off",
+    "fps": "off during measurements"
+  },
+  "fill": {
+    "mean_ms": {
+      "serial": 9746,
+      "dual": 8473.5,
+      "simd": 8463.5,
+      "ppa": 4042
+    },
+    "ppa_speedup_over_serial": 2.4111825828797624,
+    "simd_speedup_over_dual_c": 1.0011815442783718,
+    "java_checksums": {
+      "full": "f4602800",
+      "clipped": "5b483ec"
+    },
+    "native_crc": "e430c397",
+    "lcd_crc": "9a83e5df",
+    "runs": 8,
+    "all_pixels_match": true,
+    "all_teardown_delta_zero": true,
+    "source": "fill-final.json"
+  },
+  "m3g": {
+    "mean_ms": {
+      "flat": {
+        "off": 4741,
+        "on": 3240.5,
+        "speedup": 1.4630458262613795
+      },
+      "gouraud": {
+        "off": 6591.5,
+        "on": 4446.5,
+        "speedup": 1.4824018891262791
+      },
+      "nearest": {
+        "off": 7623.5,
+        "on": 5043,
+        "speedup": 1.5116993852865357
+      },
+      "linear-alpha": {
+        "off": 14724.5,
+        "on": 9796.5,
+        "speedup": 1.5030367988567346
+      }
+    },
+    "native_crc": "c4e65f9a",
+    "lcd_crc": "658aacbb",
+    "runs": 4,
+    "all_pixels_match": true,
+    "all_teardown_delta_zero": true,
+    "source": "m3g-final.json"
+  },
+  "jbenchmark3d": {
+    "version": "3.1.0",
+    "off": {
+      "hq": 112,
+      "lq": 172,
+      "triangles_s": 17573,
+      "ktexels_s": 2922
+    },
+    "on": {
+      "hq": 141,
+      "lq": 209,
+      "triangles_s": 17542,
+      "ktexels_s": 3286
+    },
+    "off_screenshot": "jbenchmark3d-final-off.png",
+    "on_screenshot": "jbenchmark3d-final-on.png",
+    "source": "jbenchmark3d-final.json",
+    "comparison_switches": [
+      "parallel",
+      "simd",
+      "ppafill"
+    ]
+  },
+  "tests": {
+    "core_asan_ubsan": [
+      "test_gfx",
+      "test_gfx_fill",
+      "test_m3g",
+      "test_m3g_targets",
+      "test_m3g_parallel",
+      "test_m3g_depth_compare"
+    ],
+    "adapter_asan_ubsan": [
+      "jit_code_pool",
+      "audio_resampler",
+      "display_buffers"
+    ],
+    "concurrent_raster_forks": 234,
+    "identical_color_depth_bytes": 117504000,
+    "fill_regression_rectangles": 90,
+    "simd_psram_rounds": 128,
+    "simd_psram_mismatches": 0,
+    "parallel_psram_rounds": 300,
+    "parallel_psram_mismatches": 0,
+    "settings_reboot_verified": [
+      "parallel",
+      "simd",
+      "ppafill"
+    ],
+    "ppa_scale2_enabled": false,
+    "startup_samples": {
+      "names": [
+        "3D摩托赛车",
+        "合金弹头4(完美汉化版)"
+      ],
+      "frames": 300,
+      "rc": 0,
+      "scale_mismatch": 0,
+      "teardown_delta": 0,
+      "note": "Fresh temporary RMS; expected missing-record lookups were caught by the games. Startup/input samples, not complete playthroughs or audio concurrency tests."
+    },
+    "display_test_frames": 90,
+    "display_test_mismatches": 0,
+    "canvas_equivalence": "canvas-final.json (serial/PPA, native/LCD CRC match, teardown delta=0)"
+  },
+  "games": {
+    "requested_count": 7,
+    "requested_bytes": 4755644,
+    "removed_old_samples": 6,
+    "saved_rms_preserved": true,
+    "manifest": "requested-games.json"
+  },
+  "final_device": {
+    "settings": "SETTINGS res=240x320 volume=40 fps=on scale=fit jit=off memory=mapped parallel=on simd=on ppafill=on",
+    "storage": "STORAGE root=/flash total=8220672 free=638976 reserve=262144",
+    "display": "DISPLAY buffers=2 rgb_dma=1 burst=64 submitted=624 completed=624 dma_copies=624 cpu_copies=0 timeouts=0 dma2d_copies=624 game_blits=47 ppa_scalings=0 sync_us=1370468",
+    "status": "STATUS running=0 res=240x320 presents=69 input=7 psram=15215836 internal=255567",
+    "source": "device-final.json"
+  },
+  "cleanup_bytes": 162717845
+}

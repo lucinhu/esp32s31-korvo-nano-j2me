@@ -1,0 +1,65 @@
+{
+  "off": {
+    "status": [
+      "STATUS running=1 res=240x320 presents=2842 input=2 psram=3199744 internal=255567",
+      "I (715553) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+      "I (715555) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+    ],
+    "end": "I (719132) korvo-j2me: RUN_END rc=0 presents=2847 input=3 psram_before=15215968 psram_after=15215968 delta=0",
+    "audio": [
+      "I (719132) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+      "I (719138) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+    ],
+    "stop": [
+      "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000Z\ufffd\ufffd\u067d\ufffdj2me: RUN presents=2845 input=2 PSRAM=3124 KiB",
+      "STOP_REQUESTED",
+      "run ended: the user asked the app to quit (exit code 0)",
+      "where: thread 1 running depth=0 (current)",
+      "stats: frames=2847 paints=2529 gfx=131992 tris=117407 m3g=6598 time=149.732s fps=19.0 bytecodes=11063388 (0.07 M/s) natives=560479 heap=2515840/634672 bytes cpcache=1028266/306 findcache=2090044/177834",
+      "teardown: calling destroyApp()",
+      "teardown: destroyApp() returned",
+      "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+      "JIT_DETAIL evictions=0 method_map_evictions=0 recompiled=0 unsupported=0 short=0 faults=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+      "released 1488 host blocks at teardown",
+      "PERF elapsed_us=149785592 presents=2847 present_us=9222605 present_max_us=30268 poll_us=90877 poll_calls=2851 sleep_us=0 native_crc=dab17330 lcd_crc=e90121e9 updated=16 unchanged=2831 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=3",
+      "PARALLEL enabled=0 worker_core=1 jobs=0 worker_us=0 wait_us=0 stack_free=7004",
+      "SIMD enabled=0 core=1 fills=0 blocks128=0",
+      "PPA_FILL enabled=0 available=1 fills=0 pixels=0",
+      "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+      "JIT_POOL memory=mapped reserved=0 live=0 map_failures=0 commit_us=0 code_hash=811c9dc5 released=1",
+      "BENCH_CLEAN ok=1",
+      "I (719132) korvo-j2me: RUN_END rc=0 presents=2847 input=3 psram_before=15215968 psram_after=15215968 delta=0"
+    ]
+  },
+  "on": {
+    "status": [
+      "STATUS running=1 res=240x320 presents=2811 input=2 psram=3199744 internal=255567",
+      "I (865904) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+      "I (865906) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+    ],
+    "end": "I (869420) korvo-j2me: RUN_END rc=0 presents=2813 input=3 psram_before=15215968 psram_after=15215968 delta=0",
+    "audio": [
+      "I (869420) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+      "I (869426) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+    ],
+    "stop": [
+      "STOP_REQUESTED",
+      "run ended: the user asked the app to quit (exit code 0)",
+      "where: thread 1 running depth=0 (current)",
+      "stats: frames=2813 paints=2494 gfx=132100 tris=123012 m3g=7936 time=149.602s fps=18.8 bytecodes=11107698 (0.07 M/s) natives=566878 heap=2513536/634672 bytes cpcache=1034423/306 findcache=2217249/184551",
+      "teardown: calling destroyApp()",
+      "teardown: destroyApp() returned",
+      "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+      "JIT_DETAIL evictions=0 method_map_evictions=0 recompiled=0 unsupported=0 short=0 faults=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+      "released 1488 host blocks at teardown",
+      "PERF elapsed_us=149654800 presents=2813 present_us=9188841 present_max_us=32907 poll_us=88732 poll_calls=2817 sleep_us=0 native_crc=858aa695 lcd_crc=84af551b updated=17 unchanged=2796 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=3",
+      "PARALLEL enabled=1 worker_core=1 jobs=10751 worker_us=26805509 wait_us=9374758 stack_free=7004",
+      "SIMD enabled=1 core=1 fills=0 blocks128=0",
+      "PPA_FILL enabled=1 available=1 fills=4 pixels=290560",
+      "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+      "JIT_POOL memory=mapped reserved=0 live=0 map_failures=0 commit_us=0 code_hash=811c9dc5 released=1",
+      "BENCH_CLEAN ok=1",
+      "I (869420) korvo-j2me: RUN_END rc=0 presents=2813 input=3 psram_before=15215968 psram_after=15215968 delta=0"
+    ]
+  }
+}

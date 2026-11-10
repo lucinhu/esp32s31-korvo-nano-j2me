@@ -1,5 +1,8 @@
 #define LOG_LOCAL_LEVEL ESP_LOG_INFO
 #include "korvo_port.h"
+#include "korvo_parallel.h"
+#include "korvo_simd.h"
+#include "korvo_ppa.h"
 #include "korvo_jit.h"
 #include "korvo_media.h"
 #include "korvo_midi.h"
@@ -197,6 +200,20 @@ static void present_rect(korvo_port_state *s, int x, int y, int w, int h)
     int dx1=(x1*s->view_w+s->width-1)/s->width;
     int dy0=(first*s->view_h+s->height-1)/s->height;
     int dy1=(last*s->view_h+s->height-1)/s->height;
+    if (s->view_w == s->width && s->view_h == s->height &&
+        korvo_display_blit(s->pixels, s->width, s->height, x0, first,
+                          x1-x0, last-first, s->view_x+dx0, s->view_y+dy0)) {
+        korvo_flush_rect(s->view_x+dx0,s->view_y+dy0,dx1-dx0,dy1-dy0);
+        ++s->updated_frames;
+        return;
+    }
+    if (s->view_w == 2*s->width && s->view_h == 2*s->height &&
+        korvo_display_scale2(s->pixels, s->width, s->height, x0, first,
+                            x1-x0, last-first, s->view_x+dx0, s->view_y+dy0)) {
+        korvo_flush_rect(s->view_x+dx0,s->view_y+dy0,dx1-dx0,dy1-dy0);
+        ++s->updated_frames;
+        return;
+    }
     int previous_row=-1;
     /* Stage each scaled source row in internal task RAM. Bulk copies avoid
      * slow individual halfword writes to the PSRAM LCD framebuffer. */
@@ -270,6 +287,9 @@ void korvo_port_report(korvo_port_state *s, int64_t elapsed_us)
            (unsigned long long)elapsed_us, s->presents, (unsigned long long)s->present_us, (unsigned)s->present_max_us,
            (unsigned long long)s->poll_us, (unsigned)s->poll_calls, (unsigned long long)s->sleep_us,
            (unsigned long)hash, (unsigned long)lcd_hash,s->updated_frames,s->unchanged_frames,(unsigned)s->hot_peak,(unsigned)s->hot_used,(unsigned)mismatches,s->stack_internal,s->stack_psram);
+    korvo_parallel_stats();
+    korvo_simd_stats();
+    korvo_ppa_stats();
     printf("JIT_MEMORY allocations=%u commits=%u refused=%u peak=%u live=%u\n",
            s->jit_allocations,s->jit_commits,s->jit_refused,(unsigned)s->jit_code_peak,(unsigned)s->jit_code_live);
 }
@@ -395,6 +415,11 @@ void korvo_port_init(nj_port *p, korvo_port_state *s, int width, int height)
         .pcm_open = pcm_open, .pcm_write = pcm_write, .pcm_close = pcm_close, .pcm_free = pcm_free,
         .device_property = property, .shutdown = shutdown_port,
         .width = width, .height = height };
+    korvo_parallel_reset();
+    korvo_simd_reset();
+    korvo_ppa_reset();
+    if (korvo_parallel_enabled()) p->parallel_for = korvo_parallel_run;
+    p->gfx_fill_rect = korvo_simd_fill_rect;
     korvo_jit_port(p);
     korvo_media_port(p);
     korvo_midi_port(p, s);

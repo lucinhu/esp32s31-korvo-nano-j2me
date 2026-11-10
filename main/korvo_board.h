@@ -18,6 +18,11 @@ void korvo_display_begin(void);
 void korvo_display_end(void);
 void korvo_display_stats(void);
 void korvo_display_test(unsigned frames);
+bool korvo_display_blit(const uint16_t *source, int width, int height,
+                        int sx, int sy, int w, int h, int dx, int dy);
+bool korvo_display_scale2(const uint16_t *source, int width, int height,
+                          int sx, int sy, int w, int h, int dx, int dy);
+void korvo_display_accel_test(void);
 void korvo_flush_rect(int x, int y, int w, int h);
 void korvo_fill(int x, int y, int w, int h, uint16_t color);
 void korvo_text(int x, int y, const char *text, int scale, uint16_t color);

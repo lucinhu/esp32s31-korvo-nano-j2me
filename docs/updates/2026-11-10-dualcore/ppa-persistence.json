@@ -1,0 +1,32 @@
+{
+  "boot": [
+    "ACCEL_TEST ppa_scale2=0 mismatches=158985 elapsed_us=44175 dma2d=1",
+    "ACCEL_COPY pixels=36608 rounds=20 cpu_us=28580 ppa_us=19152 dma2d_us=13085 errors=0",
+    "PPA_FILL_TEST available=1 mismatches=0"
+  ],
+  "stress": "SIMD_TEST rounds=128 mismatches=0 core=1 blocks128=110720",
+  "states": [
+    {
+      "res": "240x320",
+      "volume": "40",
+      "fps": "off",
+      "scale": "fit",
+      "jit": "off",
+      "memory": "mapped",
+      "parallel": "on",
+      "simd": "on",
+      "ppafill": "off"
+    },
+    {
+      "res": "240x320",
+      "volume": "40",
+      "fps": "off",
+      "scale": "fit",
+      "jit": "off",
+      "memory": "mapped",
+      "parallel": "on",
+      "simd": "on",
+      "ppafill": "on"
+    }
+  ]
+}

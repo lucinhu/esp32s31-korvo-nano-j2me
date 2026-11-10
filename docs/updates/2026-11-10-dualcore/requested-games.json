@@ -1,0 +1,110 @@
+{
+  "packages": [
+    {
+      "source": "/home/lucinhu/Documents/game-roms/jar/3D版田园物语_6744.jar",
+      "name": "3D版田园物语_6744.jar",
+      "bytes": 992288,
+      "sha256": "8ad0920c1ebf685a1272bfa5f7fc1e0c4415189bcb82d0e28bd82917fca54e63",
+      "crc32": "0d88c387",
+      "installed_path": "/flash/j2me/3D版田园物语_6744.jar"
+    },
+    {
+      "source": "/home/lucinhu/Documents/game-roms/jar/模拟人生3_7562.jar",
+      "name": "模拟人生3_7562.jar",
+      "bytes": 572830,
+      "sha256": "777fffbae7441c4d3e481218afe8b8af8dea7f9397895aa6b185c176ec0a4860",
+      "crc32": "aed60464",
+      "installed_path": "/flash/j2me/模拟人生3_7562.jar"
+    },
+    {
+      "source": "/home/lucinhu/Documents/game-roms/jar/合金弹头4(完美汉化版)_4053.jar",
+      "name": "合金弹头4(完美汉化版)_4053.jar",
+      "bytes": 817704,
+      "sha256": "e441fda98bdb0c5a78f02e024028ff614815d98b735b53b97125cf10f01ff559",
+      "crc32": "2b9ddf22",
+      "installed_path": "/flash/j2me/合金弹头4(完美汉化版)_4053.jar"
+    },
+    {
+      "source": "/home/lucinhu/Documents/game-roms/jar/帝国时代3-亚洲王朝_6288.jar",
+      "name": "帝国时代3-亚洲王朝_6288.jar",
+      "bytes": 609880,
+      "sha256": "5418027d2b37e29112c09ba2f1e7fac03d39c92b3009f6eebafc5af740ce266c",
+      "crc32": "98fc2517",
+      "installed_path": "/flash/j2me/帝国时代3-亚洲王朝_6288.jar"
+    },
+    {
+      "source": "/home/lucinhu/Documents/game-roms/jar/孢子生命起源_6515.jar",
+      "name": "孢子生命起源_6515.jar",
+      "bytes": 674654,
+      "sha256": "d96b4cbc96a74cd6494eaaedcfe6deadc4fe24525e24e6b0837a4a70a91e3035",
+      "crc32": "b9c1bbe7",
+      "installed_path": "/flash/j2me/孢子生命起源_6515.jar"
+    },
+    {
+      "source": "/home/lucinhu/Documents/game-roms/jar/仙剑奇侠传(2008)_12406.jar",
+      "name": "仙剑奇侠传(2008)_12406.jar",
+      "bytes": 711995,
+      "sha256": "a9943ed281fa1d6133ed432a2cde6851fd6e3eef199a06c19353fc264dde07e3",
+      "crc32": "0c297d6b",
+      "installed_path": "/flash/j2me/仙剑奇侠传(2008)_12406.jar"
+    },
+    {
+      "source": "/home/lucinhu/Documents/game-roms/jar/鲁宾逊漂流记汉化版_702.jar",
+      "name": "鲁宾逊漂流记汉化版_702.jar",
+      "bytes": 376293,
+      "sha256": "c1bb54615a469b27cfa45fbca0a83408c5ca53633d8ffc92de9f857f6a40d7b7",
+      "crc32": "fedd4891",
+      "installed_path": "/flash/j2me/鲁宾逊漂流记汉化版_702.jar"
+    }
+  ],
+  "removed": [
+    {
+      "name": "g323942169575.jar",
+      "index": 1,
+      "path": "/flash/games/g323942169575.jar",
+      "bytes": 962980
+    },
+    {
+      "name": "g77d10a56e51a.jar",
+      "index": 1,
+      "path": "/flash/games/g77d10a56e51a.jar",
+      "bytes": 1249241
+    },
+    {
+      "name": "g7d4369009c5d.jar",
+      "index": 1,
+      "path": "/flash/games/g7d4369009c5d.jar",
+      "bytes": 631266
+    },
+    {
+      "name": "g876dfdaa8a2c.jar",
+      "index": 1,
+      "path": "/flash/games/g876dfdaa8a2c.jar",
+      "bytes": 643446
+    },
+    {
+      "name": "g92c5f29e1d66.jar",
+      "index": 1,
+      "path": "/flash/games/g92c5f29e1d66.jar",
+      "bytes": 1071450
+    },
+    {
+      "name": "gffe21f751ac6.jar",
+      "index": 1,
+      "path": "/flash/games/gffe21f751ac6.jar",
+      "bytes": 631579
+    }
+  ],
+  "uploaded": [
+    "3D版田园物语_6744.jar",
+    "模拟人生3_7562.jar",
+    "合金弹头4(完美汉化版)_4053.jar",
+    "帝国时代3-亚洲王朝_6288.jar",
+    "孢子生命起源_6515.jar",
+    "仙剑奇侠传(2008)_12406.jar",
+    "鲁宾逊漂流记汉化版_702.jar"
+  ],
+  "already_installed": [],
+  "free_before": 204800,
+  "free_after": 647168
+}

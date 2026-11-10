@@ -1,0 +1,40 @@
+{
+  "@test-moto.jar": {
+    "end": "I (1103381) korvo-j2me: RUN_END rc=0 presents=300 input=10 psram_before=15215836 psram_after=15215836 delta=0",
+    "perf": "PERF elapsed_us=5488122 presents=300 present_us=1157558 present_max_us=26631 poll_us=6709 poll_calls=310 sleep_us=0 native_crc=abab2648 lcd_crc=0630bf2c updated=15 unchanged=285 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=6",
+    "audio": [
+      "I (1103381) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+      "I (1103387) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+    ],
+    "parallel": "PARALLEL enabled=1 worker_core=1 jobs=0 worker_us=0 wait_us=0 stack_free=7004",
+    "simd": "SIMD enabled=1 core=1 fills=0 blocks128=0",
+    "ppa": "PPA_FILL enabled=1 available=1 fills=101 pixels=7724480",
+    "exceptions": [
+      "thrown: javax/microedition/rms/InvalidRecordIDException at javax/microedition/rms/RecordStore.getRecord(I[BI)I pc=0: (no message)"
+    ]
+  },
+  "/flash/j2me/合金弹头4(完美汉化版)_4053.jar": {
+    "end": "I (1115978) korvo-j2me: RUN_END rc=0 presents=301 input=10 psram_before=15215836 psram_after=15215836 delta=0",
+    "perf": "PERF elapsed_us=11746251 presents=301 present_us=2192249 present_max_us=35299 poll_us=16701 poll_calls=311 sleep_us=0 native_crc=1cb5f495 lcd_crc=290b4207 updated=69 unchanged=232 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=29",
+    "audio": [
+      "I (1115978) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+      "I (1115984) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+    ],
+    "parallel": "PARALLEL enabled=1 worker_core=1 jobs=0 worker_us=0 wait_us=0 stack_free=7004",
+    "simd": "SIMD enabled=1 core=1 fills=0 blocks128=0",
+    "ppa": "PPA_FILL enabled=1 available=1 fills=192 pixels=12406620",
+    "exceptions": [
+      "thrown: javax/microedition/rms/RecordStoreNotFoundException at javax/microedition/rms/RecordStore.openRecordStore(Ljava/lang/String;Z)Ljavax/microedition/rms/RecordStore; pc=0: (no message)",
+      "thrown: javax/microedition/rms/RecordStoreNotFoundException at javax/microedition/rms/RecordStore.openRecordStore(Ljava/lang/String;Z)Ljavax/microedition/rms/RecordStore; pc=0: (no message)"
+    ]
+  },
+  "settings": "SETTINGS res=240x320 volume=40 fps=on scale=fit jit=off memory=mapped parallel=on simd=on ppafill=on",
+  "storage": "STORAGE root=/flash total=8220672 free=638976 reserve=262144",
+  "display": "DISPLAY buffers=2 rgb_dma=1 burst=64 submitted=624 completed=624 dma_copies=624 cpu_copies=0 timeouts=0 dma2d_copies=624 game_blits=47 ppa_scalings=0 sync_us=1370468",
+  "status": [
+    "STATUS running=0 res=240x320 presents=69 input=7 psram=15215836 internal=255567",
+    "I (1130043) korvo-board: AUDIO writes=40 frames=20352 errors=0 tones=2 volume=40",
+    "I (1130046) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=369422 volume_calls=1 queued=0 underruns=0 silence_frames=3072"
+  ],
+  "smoke": "3 demo cycles; FIRE, numeric 5, pointer; SMOKE_PASS"
+}

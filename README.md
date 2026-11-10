@@ -6,7 +6,7 @@ ESP32-S31（RISC-V）上的 J2ME 模拟器。板级配置来自 `esp32s31-korvo-
 
 未插 SD 卡时，启动日志会出现 SDMMC 超时，随后显示 `Flash FAT storage: /flash (ESP_OK)` 和 `FLASH READY`，继续使用 Flash。
 
-`third_party/nano_j2me` 是 [lucinhu/nano_j2me](https://github.com/lucinhu/nano_j2me) 的 Git 子模块。当前引用核心 `main` 的 `a028d18`（0.5.6，2026-11-10）。最初从 `f835b44` 更新到 `e910b30`，保留并提交本地 `drawRGB` 借用像素、忽略源透明度及源目标重叠保护补丁（`00318b4`）；随后同步远程 0.5.6，并补齐 JBenchmark 所需的 Item 布局、Gauge 和 M3G 兼容修复。所有核心修改均已合入 `main`，临时分支已删除。板级适配仍放在主工程，已补齐新版 PIM、Samsung、UDP 和 x86-64 JIT 源码清单。版本对比、本地补丁、构建与实机验证记录见 [本次更新记录](docs/updates/2026-11-10/result.txt)，跑分见 [JBenchmark 实机记录](docs/JBENCHMARK.md)。
+`third_party/nano_j2me` 是 [lucinhu/nano_j2me](https://github.com/lucinhu/nano_j2me) 的 Git 子模块。当前引用核心 `main` 的 `6a13581`（0.5.6，2026-11-10）。最初从 `f835b44` 更新到 `e910b30`，保留并提交本地 `drawRGB` 借用像素、忽略源透明度及源目标重叠保护补丁（`00318b4`）；随后同步远程 0.5.6，并补齐 JBenchmark 所需的 Item 布局、Gauge 和 M3G 兼容修复。所有核心修改均已合入 `main`，临时分支已删除。板级适配仍放在主工程，已补齐新版 PIM、Samsung、UDP 和 x86-64 JIT 源码清单。版本对比、本地补丁、构建与实机验证记录见 [本次更新记录](docs/updates/2026-11-10/result.txt)，跑分见 [JBenchmark 实机记录](docs/JBENCHMARK.md)，双核、SIMD 和二维 DMA 优化见 [性能更新](docs/DUALCORE.md)。
 
 ## 获取与编译
 
@@ -159,7 +159,7 @@ python tools/serial_console.py --port /dev/ttyUSB1 smoke
 
 上传仅在游戏列表界面可用，目标是 `/flash/j2me/文件名.jar`，有 SD 卡时优先使用 `/sdcard/j2me/文件名.jar`。RMS 和 FileConnection 也优先使用 SD 卡，否则使用 Flash。通过分块 ACK 和 CRC32 校验完成后才将 `.part` 文件重命名；拒绝覆盖已有 JAR。支持 UTF-8 中文文件名；`--fast` 在传输期间切至 2000000，结束后恢复 115200，省略则使用控制台速率。`storage` 查看容量，上传前预留 256 KiB 给存档及文件系统。最大文件大小 8 MiB，实际可运行大小还受剩余存储、VM 堆和资源占用限制。
 
-2026-11-10 已向当前设备的 Flash 追加《仙剑奇侠传完美版》《帝国时代2》《帝国时代III》《远古帝国2》《波斯王子：时之沙》《俄罗斯方块》《贪吃蛇》《魂斗罗4》《3D滚球》，合计约 1.88 MiB；来源及哈希见 [清单](docs/updates/2026-11-10/classic-games.json)。三款原有 `[APP]` 3D 游戏也存储在固件 Flash 中。游戏 JAR 留在用户本机和设备上，GitHub 仅保存清单。
+2026-11-10 已向当前设备的 Flash 追加《仙剑奇侠传完美版》《帝国时代2》《帝国时代III》《远古帝国2》《波斯王子：时之沙》《俄罗斯方块》《贪吃蛇》《魂斗罗4》《3D滚球》，合计约 1.88 MiB；来源及哈希见 [清单](docs/updates/2026-11-10/classic-games.json)。随后按用户指定写入《3D版田园物语》《模拟人生3》《合金弹头4（完美汉化）》《帝国时代3-亚洲王朝》《孢子生命起源》《仙剑奇侠传(2008)》《鲁宾逊漂流记》，合计 4,755,644 字节；为此移除了初始六款旧测试游戏的 JAR，保留 RMS 存档，原有九款经典游戏保留。实际安装、删除文件、大小和哈希见 [新游戏清单](docs/updates/2026-11-10-dualcore/requested-games.json)。三款原有 `[APP]` 3D 游戏也存储在固件 Flash 中。游戏 JAR 留在用户本机和设备上，GitHub 仅保存清单。
 
 串口也可直接输入 `demo 90` / `run 1 300`，运行指定帧数后返回菜单；省略帧数持续运行。`pointer down 100 140`、`pointer move 110 140`、`pointer up 110 140` 可检查指针。`shot` 导出缩小的 LCD 帧缓冲，`shot game` 导出游戏原始 RGB565 缓冲（不含 FPS）；`shot full` 导出含按键和 FPS 的完整 800×480 LCD；这是内存画面采集，不是屏幕实拍。
 
@@ -204,6 +204,8 @@ git add third_party/nano_j2me
 ## 性能与音频
 
 显示端使用坐标表和内部 RAM 行缓冲进行整数倍最近邻缩放，保持 RGB565 像素结果；跳过重复画面，仅同步变化区域。RGB LCD 由 GDMA 持续扫描，使用两个 PSRAM 帧缓冲和 64 字节突发；提交后等待驱动的帧缓冲释放事件，再用 PPA/DMA 把脏矩形同步到释放的缓冲区，避免改写正在扫描的画面。PPA 无法使用时回退到 CPU 复制；不会在等待超时后复用扫描中的缓冲区。`display` 查看提交、完成、DMA/CPU 同步和超时计数，菜单下可用 `displaytest 90` 检查 90 次局部更新后两块完整帧缓冲的一致性。解释器热循环由主工程链接脚本放入 IRAM，子模块无需添加任何属性或补丁。内部 RAM 常用小块预算为 96 KiB，栈尺寸分配可用至 160 KiB，分配前检查驱动余量；失败自动使用 PSRAM。
+
+大块 3D 像素绘制分到两个核心，大块不透明填充可以使用 Core 1 的 128 位 SIMD；Java VM 和 GC 留在 Core 0。屏幕脏区同步优先直接使用二维 DMA，保留 PPA/CPU 回退；PPA 的整数缩放会先做像素等价检查。`parallel on/off`、`simd on/off`、`ppafill on/off` 在菜单下选择加速路径，设置写入 NVS。适用范围和实测对照见 [双核与硬件加速记录](docs/DUALCORE.md)。
 
 音频在第二个 CPU 核心上异步输出，缓存 codec 音量设置；PCM 按实际队列容量完整分包，允许 MIDI 启动时的首批突发数据，后续补充以约 160 毫秒为水位。播放结束排空队列，退出游戏中断输出；空缓冲用静音填充，音调使用带短淡入淡出的正弦波。重采样消除每个声道的 64 位除法，结果与原算法逐样本一致。
 

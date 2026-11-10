@@ -9,6 +9,8 @@
 static nvs_handle_t handle;
 static bool opened, have_saved;
 static korvo_settings saved;
+typedef struct { bool known, value; } flag_setting;
+static flag_setting parallel_setting, simd_setting, ppa_setting;
 
 static bool valid(const korvo_settings *s)
 {
@@ -53,3 +55,34 @@ esp_err_t korvo_settings_save(const korvo_settings *settings)
     if (rc == ESP_OK) { saved = *settings; have_saved = true; }
     return rc;
 }
+
+/* Keep the existing 32-byte preference blob compatible with older firmware.
+ * The independent rendering option has its own NVS key and defaults on. */
+static esp_err_t load_flag(const char *key, flag_setting *saved_flag, bool *enabled)
+{
+    *enabled = true;
+    if (!opened) return ESP_ERR_INVALID_STATE;
+    uint8_t value = 1;
+    esp_err_t rc = nvs_get_u8(handle, key, &value);
+    if (rc != ESP_OK && rc != ESP_ERR_NVS_NOT_FOUND) return rc;
+    if (value > 1) return ESP_ERR_INVALID_ARG;
+    *enabled = saved_flag->value = value != 0;
+    saved_flag->known = true;
+    return ESP_OK;
+}
+
+static esp_err_t save_flag(const char *key, flag_setting *saved_flag, bool enabled)
+{
+    if (!opened) return ESP_ERR_INVALID_STATE;
+    if (saved_flag->known && saved_flag->value == enabled) return ESP_OK;
+    esp_err_t rc = nvs_set_u8(handle, key, enabled);
+    if (rc == ESP_OK) rc = nvs_commit(handle);
+    if (rc == ESP_OK) { saved_flag->value = enabled; saved_flag->known = true; }
+    return rc;
+}
+esp_err_t korvo_settings_load_parallel(bool *enabled) { return load_flag("parallel", &parallel_setting, enabled); }
+esp_err_t korvo_settings_save_parallel(bool enabled) { return save_flag("parallel", &parallel_setting, enabled); }
+esp_err_t korvo_settings_load_simd(bool *enabled) { return load_flag("simd", &simd_setting, enabled); }
+esp_err_t korvo_settings_save_simd(bool enabled) { return save_flag("simd", &simd_setting, enabled); }
+esp_err_t korvo_settings_load_ppa(bool *enabled) { return load_flag("ppafill", &ppa_setting, enabled); }
+esp_err_t korvo_settings_save_ppa(bool enabled) { return save_flag("ppafill", &ppa_setting, enabled); }

@@ -1,4 +1,5 @@
 #pragma once
+#include <stdbool.h>
 #include <stdint.h>
 #include "esp_err.h"
 
@@ -9,3 +10,9 @@ typedef struct {
 
 esp_err_t korvo_settings_load(korvo_settings *settings);
 esp_err_t korvo_settings_save(const korvo_settings *settings);
+esp_err_t korvo_settings_load_parallel(bool *enabled);
+esp_err_t korvo_settings_save_parallel(bool enabled);
+esp_err_t korvo_settings_load_simd(bool *enabled);
+esp_err_t korvo_settings_save_simd(bool enabled);
+esp_err_t korvo_settings_load_ppa(bool *enabled);
+esp_err_t korvo_settings_save_ppa(bool enabled);

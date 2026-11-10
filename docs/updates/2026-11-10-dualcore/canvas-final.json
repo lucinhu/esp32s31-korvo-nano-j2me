@@ -1,0 +1,96 @@
+[
+  {
+    "mode": "serial",
+    "phases": [
+      {
+        "phase": "full",
+        "checksum": "not-read",
+        "elapsed_ms": 4885
+      },
+      {
+        "phase": "clipped",
+        "checksum": "not-read",
+        "elapsed_ms": 4789
+      }
+    ],
+    "perf": {
+      "elapsed_us": "9934451",
+      "presents": "1",
+      "present_us": "28463",
+      "present_max_us": "28463",
+      "poll_us": "778",
+      "poll_calls": "1",
+      "sleep_us": "0",
+      "native_crc": "e430c397",
+      "lcd_crc": "9a83e5df",
+      "updated": "1",
+      "unchanged": "0",
+      "hot_peak": "0",
+      "hot_live": "0",
+      "scale_mismatch": "0",
+      "stack_internal": "0",
+      "stack_psram": "2"
+    },
+    "simd": {
+      "enabled": "0",
+      "core": "1",
+      "fills": "0",
+      "blocks128": "0"
+    },
+    "end": "I (1036368) korvo-j2me: RUN_END rc=0 presents=1 input=0 psram_before=15215968 psram_after=15215968 delta=0",
+    "ppa": {
+      "enabled": "0",
+      "available": "1",
+      "fills": "0",
+      "pixels": "0"
+    },
+    "parallel": "PARALLEL enabled=0 worker_core=1 jobs=0 worker_us=0 wait_us=0 stack_free=7004"
+  },
+  {
+    "mode": "ppa",
+    "phases": [
+      {
+        "phase": "full",
+        "checksum": "not-read",
+        "elapsed_ms": 2080
+      },
+      {
+        "phase": "clipped",
+        "checksum": "not-read",
+        "elapsed_ms": 1878
+      }
+    ],
+    "perf": {
+      "elapsed_us": "4216548",
+      "presents": "1",
+      "present_us": "26544",
+      "present_max_us": "26544",
+      "poll_us": "790",
+      "poll_calls": "1",
+      "sleep_us": "0",
+      "native_crc": "e430c397",
+      "lcd_crc": "9a83e5df",
+      "updated": "1",
+      "unchanged": "0",
+      "hot_peak": "0",
+      "hot_live": "0",
+      "scale_mismatch": "0",
+      "stack_internal": "0",
+      "stack_psram": "2"
+    },
+    "simd": {
+      "enabled": "0",
+      "core": "1",
+      "fills": "0",
+      "blocks128": "0"
+    },
+    "end": "I (1041234) korvo-j2me: RUN_END rc=0 presents=1 input=0 psram_before=15215968 psram_after=15215968 delta=0",
+    "ppa": {
+      "enabled": "1",
+      "available": "1",
+      "fills": "2880",
+      "pixels": "194025600"
+    },
+    "parallel": "PARALLEL enabled=1 worker_core=1 jobs=0 worker_us=0 wait_us=0 stack_free=7004"
+  }
+]

@@ -1,8 +1,12 @@
 #include "korvo_display.h"
 #include "korvo_board.h"
+#include "korvo_ppa.h"
 #include <stdio.h>
 #include <string.h>
 #include "driver/ppa.h"
+#include "esp_async_color_convert.h"
+#include "esp_heap_caps.h"
+#include "esp_timer.h"
 #include "esp_check.h"
 #include "esp_lcd_panel_ops.h"
 #include "esp_lcd_panel_rgb.h"
@@ -14,11 +18,51 @@ static const char *TAG = "korvo-display";
 static uint16_t *frames[2], *draw;
 static esp_lcd_panel_handle_t panel;
 static SemaphoreHandle_t frame_done;
+static SemaphoreHandle_t copy_done;
 static ppa_client_handle_t copy_client;
+static async_color_convert_handle_t dma_client;
 static unsigned front, batch;
 static bool dirty;
 static int x0, y0, x1, y1;
 static unsigned submitted, completed, dma_copies, cpu_copies, timeouts;
+static unsigned direct_copies, scaled_copies;
+static unsigned ppa_scalings;
+static uint64_t sync_us;
+static bool exact_scale2;
+
+static bool IRAM_ATTR copy_complete(async_color_convert_handle_t client,
+                                    async_color_convert_event_data_t *event, void *context)
+{
+    (void)client; (void)event;
+    BaseType_t wake = pdFALSE;
+    xSemaphoreGiveFromISR((SemaphoreHandle_t)context, &wake);
+    return wake == pdTRUE;
+}
+
+static bool copy_rectangle(uint16_t *destination, const uint16_t *source,
+                           int source_width, int source_height, int sx, int sy,
+                           int destination_width, int destination_height, int dx, int dy,
+                           int width, int height)
+{
+    if (!dma_client) return false;
+    async_color_convert_request_t request = {
+        .src_buffer = source, .src_stride = source_width, .src_height = source_height,
+        .src_x = sx, .src_y = sy,
+        .dst_buffer = destination, .dst_stride = destination_width, .dst_height = destination_height,
+        .dst_x = dx, .dst_y = dy, .copy_width = width, .copy_height = height,
+        .src_color_format = ESP_COLOR_FOURCC_RGB16, .dst_color_format = ESP_COLOR_FOURCC_RGB16,
+    };
+    (void)xSemaphoreTake(copy_done, 0);
+    if (esp_async_color_convert(dma_client, &request, copy_complete, copy_done) != ESP_OK)
+        return false;
+    /* An accepted request still owns the destination until completion. Never
+     * fall back to CPU writes while DMA might be writing the same buffer. */
+    if (xSemaphoreTake(copy_done, pdMS_TO_TICKS(250)) != pdTRUE) {
+        ++timeouts;
+        ESP_ERROR_CHECK(ESP_ERR_TIMEOUT);
+    }
+    return true;
+}
 
 uint16_t *korvo_lcd(void) { return draw; }
 
@@ -51,8 +95,11 @@ static void present(void)
     front ^= 1u;
     draw = frames[released];
     int w = x1 - x0, h = y1 - y0;
-    bool copied = false;
-    if (copy_client) {
+    int64_t sync_start = esp_timer_get_time();
+    bool copied = copy_rectangle(draw, ready, LCD_W, LCD_H, x0, y0,
+                                  LCD_W, LCD_H, x0, y0, w, h);
+    if (copied) ++direct_copies;
+    if (!copied && copy_client) {
         ppa_srm_oper_config_t copy = {
             .in = {.buffer = ready, .pic_w = LCD_W, .pic_h = LCD_H,
                    .block_w = w, .block_h = h,
@@ -75,6 +122,7 @@ static void present(void)
             memcpy(draw + row * LCD_W + x0, ready + row * LCD_W + x0, w * 2);
     }
     dirty = false;
+    sync_us += esp_timer_get_time() - sync_start;
 }
 
 void korvo_display_begin(void) { ++batch; }
@@ -103,10 +151,109 @@ void korvo_flush_rect(int x, int y, int w, int h)
 
 void korvo_flush(void) { korvo_flush_rect(0, 0, LCD_W, LCD_H); }
 
+bool korvo_display_blit(const uint16_t *source, int width, int height,
+                        int sx, int sy, int w, int h, int dx, int dy)
+{
+    bool copied = copy_rectangle(draw, source, width, height, sx, sy,
+                                  LCD_W, LCD_H, dx, dy, w, h);
+    if (copied) ++scaled_copies;
+    return copied;
+}
+
+static bool srm_rectangle(uint16_t *destination, int destination_width, int destination_height,
+                              const uint16_t *source, int width, int height,
+                              int sx, int sy, int w, int h, int dx, int dy, int factor)
+{
+    if (!copy_client) return false;
+    ppa_srm_oper_config_t scale = {
+        .in = {.buffer = source, .pic_w = width, .pic_h = height,
+               .block_w = w, .block_h = h, .block_offset_x = sx, .block_offset_y = sy,
+               .srm_cm = PPA_SRM_COLOR_MODE_RGB565},
+        .out = {.buffer = destination, .buffer_size = destination_width * destination_height * 2,
+                .pic_w = destination_width, .pic_h = destination_height,
+                .block_offset_x = dx, .block_offset_y = dy, .srm_cm = PPA_SRM_COLOR_MODE_RGB565},
+        .rotation_angle = PPA_SRM_ROTATION_ANGLE_0, .scale_x = factor, .scale_y = factor,
+        .mode = PPA_TRANS_MODE_BLOCKING,
+    };
+    return ppa_do_scale_rotate_mirror(copy_client, &scale) == ESP_OK;
+}
+
+bool korvo_display_scale2(const uint16_t *source, int width, int height,
+                          int sx, int sy, int w, int h, int dx, int dy)
+{
+    if (!exact_scale2 || !srm_rectangle(draw, LCD_W, LCD_H, source, width, height,
+                                        sx, sy, w, h, dx, dy, 2)) return false;
+    ++ppa_scalings;
+    return true;
+}
+
+/* Qualify the real peripheral before enabling pixel-perfect scaling. The
+ * output must match nearest-neighbour pixels, including odd clipped blocks
+ * and untouched border pixels; an unsupported implementation stays on CPU. */
+void korvo_display_accel_test(void)
+{
+    const int width = 176, height = 208, out_width = 384, out_height = 432;
+    uint16_t *source = heap_caps_aligned_alloc(64, width*height*2, MALLOC_CAP_SPIRAM|MALLOC_CAP_8BIT);
+    uint16_t *output = heap_caps_aligned_alloc(64, out_width*out_height*2, MALLOC_CAP_SPIRAM|MALLOC_CAP_8BIT);
+    unsigned mismatches = 0;
+    bool ok = source && output;
+    int64_t start = esp_timer_get_time();
+    if (ok) {
+        for (int i = 0; i < width*height; ++i) source[i] = (uint16_t)(i*1237u + 0x1357u);
+        for (int test = 0; test < 3; ++test) {
+            int sx = test == 1 ? 3 : 0, sy = test == 1 ? 5 : 0;
+            int w = test == 0 ? width : test == 1 ? 31 : 64;
+            int h = test == 0 ? height : test == 1 ? 17 : 32;
+            int dx = 7, dy = 3;
+            for (int i = 0; i < out_width*out_height; ++i) output[i] = 0xa55a;
+            if (!srm_rectangle(output, out_width, out_height, source, width, height,
+                                sx, sy, w, h, dx, dy, 2)) { ok = false; break; }
+            for (int y = 0; y < out_height; ++y) for (int x = 0; x < out_width; ++x) {
+                uint16_t expected = 0xa55a;
+                if (x >= dx && x < dx+2*w && y >= dy && y < dy+2*h)
+                    expected = source[(sy+(y-dy)/2)*width + sx+(x-dx)/2];
+                mismatches += output[y*out_width+x] != expected;
+            }
+        }
+    }
+    exact_scale2 = ok && mismatches == 0;
+    printf("ACCEL_TEST ppa_scale2=%d mismatches=%u elapsed_us=%llu dma2d=%d\n",
+           exact_scale2, mismatches, (unsigned long long)(esp_timer_get_time()-start), dma_client != NULL);
+    if (source && output) {
+        uint64_t elapsed[3];
+        unsigned errors = 0;
+        for (int method = 0; method < 3; ++method) {
+            for (int i = 0; i < out_width*out_height; ++i) output[i] = 0xa55a;
+            start = esp_timer_get_time();
+            for (int repeat = 0; repeat < 20; ++repeat) {
+                __asm__ volatile("" ::: "memory");
+                if (method == 0) {
+                    for (int row = 0; row < height; ++row)
+                        memcpy(output + row*out_width, source + row*width, width*2);
+                } else if (method == 1) {
+                    errors += !srm_rectangle(output, out_width, out_height, source, width, height,
+                                             0, 0, width, height, 0, 0, 1);
+                } else {
+                    errors += !copy_rectangle(output, source, width, height, 0, 0,
+                                               out_width, out_height, 0, 0, width, height);
+                }
+            }
+            elapsed[method] = esp_timer_get_time()-start;
+            for (int y = 0; y < out_height; ++y) for (int x = 0; x < out_width; ++x)
+                errors += output[y*out_width+x] != (y < height && x < width ? source[y*width+x] : 0xa55a);
+        }
+        printf("ACCEL_COPY pixels=%d rounds=20 cpu_us=%llu ppa_us=%llu dma2d_us=%llu errors=%u\n",
+               width*height, (unsigned long long)elapsed[0], (unsigned long long)elapsed[1],
+               (unsigned long long)elapsed[2], errors);
+    }
+    heap_caps_free(source); heap_caps_free(output);
+}
+
 void korvo_display_stats(void)
 {
-    printf("DISPLAY buffers=2 rgb_dma=1 burst=64 submitted=%u completed=%u dma_copies=%u cpu_copies=%u timeouts=%u\n",
-           submitted, completed, dma_copies, cpu_copies, timeouts);
+    printf("DISPLAY buffers=2 rgb_dma=1 burst=64 submitted=%u completed=%u dma_copies=%u cpu_copies=%u timeouts=%u dma2d_copies=%u game_blits=%u ppa_scalings=%u sync_us=%llu\n",
+           submitted, completed, dma_copies, cpu_copies, timeouts, direct_copies, scaled_copies,
+           ppa_scalings, (unsigned long long)sync_us);
 }
 
 void korvo_display_test(unsigned count)
@@ -139,6 +286,12 @@ esp_err_t korvo_display_init(esp_lcd_panel_handle_t lcd)
         .max_pending_trans_num = 1, .data_burst_length = PPA_DATA_BURST_LENGTH_128};
     if (ppa_register_client(&config, &copy_client) != ESP_OK)
         ESP_LOGW(TAG, "PPA unavailable; using CPU framebuffer sync");
+    copy_done = xSemaphoreCreateBinary();
+    async_color_convert_config_t dma_config = {.backlog = 1, .dma_burst_size = 128};
+    if (!copy_done || esp_async_color_convert_install_dma2d(&dma_config, &dma_client) != ESP_OK)
+        ESP_LOGW(TAG, "DMA2D unavailable; using PPA framebuffer sync");
+    korvo_display_accel_test();
+    korvo_ppa_init();
     ESP_LOGI(TAG, "RGB GDMA burst=64, 2 PSRAM framebuffers, release-synchronized flips, PPA sync=%d", copy_client != NULL);
     return ESP_OK;
 }

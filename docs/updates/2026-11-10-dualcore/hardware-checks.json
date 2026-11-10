@@ -1,0 +1,27 @@
+{
+  "probe": [
+    "ACCEL_TEST ppa_scale2=0 mismatches=158560 elapsed_us=44182 dma2d=1",
+    "ACCEL_COPY pixels=36608 rounds=20 cpu_us=28619 ppa_us=18890 dma2d_us=12622 errors=0"
+  ],
+  "display_test": [
+    "DISPLAY_TEST frames=90 mismatches=0",
+    "DISPLAY buffers=2 rgb_dma=1 burst=64 submitted=231 completed=231 dma_copies=231 cpu_copies=0 timeouts=0 dma2d_copies=231 game_blits=0 ppa_scalings=0 sync_us=596348"
+  ],
+  "pixel_240x320": {
+    "perf": "PERF elapsed_us=3226560 presents=90 present_us=894540 present_max_us=20667 poll_us=3088 poll_calls=90 sleep_us=0 native_crc=c19a600f lcd_crc=c19a600f updated=46 unchanged=44 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=3",
+    "end": "I (1050014) korvo-j2me: RUN_END rc=0 presents=90 input=0 psram_before=15215968 psram_after=15215968 delta=0",
+    "display": "DISPLAY buffers=2 rgb_dma=1 burst=64 submitted=286 completed=286 dma_copies=286 cpu_copies=0 timeouts=0 dma2d_copies=286 game_blits=47 ppa_scalings=0 sync_us=684109"
+  },
+  "pixel_128x160": {
+    "perf": "PERF elapsed_us=2149258 presents=90 present_us=530620 present_max_us=26100 poll_us=14303 poll_calls=90 sleep_us=0 native_crc=64a5700d lcd_crc=2431f8e4 updated=27 unchanged=63 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=3",
+    "end": "I (1053007) korvo-j2me: RUN_END rc=0 presents=90 input=0 psram_before=15215968 psram_after=15215968 delta=0",
+    "display": "DISPLAY buffers=2 rgb_dma=1 burst=64 submitted=316 completed=316 dma_copies=316 cpu_copies=0 timeouts=0 dma2d_copies=316 game_blits=47 ppa_scalings=0 sync_us=725842"
+  },
+  "pixel_176x208": {
+    "perf": "PERF elapsed_us=2478875 presents=90 present_us=662738 present_max_us=19413 poll_us=21455 poll_calls=90 sleep_us=0 native_crc=2d2ed646 lcd_crc=2c025f8c updated=31 unchanged=59 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=3",
+    "end": "I (1056339) korvo-j2me: RUN_END rc=0 presents=90 input=0 psram_before=15215968 psram_after=15215968 delta=0",
+    "display": "DISPLAY buffers=2 rgb_dma=1 burst=64 submitted=350 completed=350 dma_copies=350 cpu_copies=0 timeouts=0 dma2d_copies=350 game_blits=47 ppa_scalings=0 sync_us=793066"
+  },
+  "stress": "PARALLEL_TEST rounds=300 mismatches=0 caller_core=0 worker_core=1",
+  "settings": "SETTINGS res=240x320 volume=40 fps=off scale=fit jit=off memory=mapped parallel=on simd=on ppafill=on"
+}

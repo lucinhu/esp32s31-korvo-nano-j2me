@@ -1,3 +1,6 @@
+#include "korvo_parallel.h"
+#include "korvo_simd.h"
+#include "korvo_ppa.h"
 #define LOG_LOCAL_LEVEL ESP_LOG_INFO
 #include "korvo_board.h"
 #include "korvo_port.h"
@@ -73,9 +76,11 @@ static void save_preferences(void)
 
 static void report_preferences(void)
 {
-    printf("SETTINGS res=%dx%d volume=%d fps=%s scale=%s jit=%s memory=%s\n",
+    printf("SETTINGS res=%dx%d volume=%d fps=%s scale=%s jit=%s memory=%s parallel=%s simd=%s ppafill=%s\n",
            screen_width, screen_height, korvo_get_volume(), fps_enabled ? "on" : "off",
-           pixel_perfect ? "pixel" : "fit", korvo_jit_mode_name(), korvo_jit_memory_name());
+           pixel_perfect ? "pixel" : "fit", korvo_jit_mode_name(), korvo_jit_memory_name(),
+           korvo_parallel_enabled() ? "on" : "off", korvo_simd_enabled() ? "on" : "off",
+           korvo_ppa_enabled() ? "on" : "off");
 }
 
 static bool inside(int x, int y, int bx, int by, int w, int h)
@@ -237,7 +242,11 @@ static void scan_games(void)
 static void list_games(void)
 {
     printf("GAMES_BEGIN %u\n0 BUILT-IN DEMO\n", game_count);
-    for (unsigned i = 1; i < game_count; ++i) printf("%u %s %s\n", i, games[i], game_titles[i]);
+    for (unsigned i = 1; i < game_count; ++i) {
+        struct stat st;
+        long long bytes = stat(games[i], &st) == 0 ? st.st_size : 0;
+        printf("%u %s %s bytes=%lld\n", i, games[i], game_titles[i], bytes);
+    }
     puts("GAMES_END");
 }
 
@@ -461,9 +470,62 @@ static void handle_command(char *line)
     int a = 0, b = 0;
     sscanf(line, "%23s %127s", op, arg);
     if (!strcmp(op, "help")) {
-        puts("COMMANDS list | storage | settings | reboot (menu) | scale pixel/fit | display | displaytest [frames] | demo [frames] | run INDEX [frames] | bench INDEX FRAMES [keys] | stop | res W H | fps [on/off] | jit [on/off/probe] | jit memory [mapped/internal] (menu only) | key NAME down/up | pointer down/move/up X Y | volume N | stats | shot [game/lcd/full] [baud] | put SIZE CRC32 NAME.jar [baud]");
+        puts("COMMANDS list | storage | settings | reboot (menu) | scale pixel/fit | parallel [on/off] | paralleltest [rounds] | simd [on/off] | simdtest (menu) | delete INDEX (menu) | display | displaytest [frames] | acceltest (menu) | demo [frames] | run INDEX [frames] | bench INDEX FRAMES [keys] | stop | res W H | fps [on/off] | jit [on/off/probe] | jit memory [mapped/internal] (menu only) | key NAME down/up | pointer down/move/up X Y | volume N | stats | shot [game/lcd/full] [baud] | put SIZE CRC32 NAME.jar [baud]");
     } else if (!strcmp(op, "list")) { if (!running) scan_games(); list_games(); }
+    else if (!strcmp(op, "delete")) {
+        char *end;
+        unsigned long index = strtoul(arg, &end, 10);
+        if (running || !*arg || *end || index == 0 || index >= game_count ||
+            (strncmp(games[index], "/flash/games/", 13) && strncmp(games[index], "/flash/j2me/", 12))) {
+            puts("DELETE_ERROR requires a Flash JAR index in menu"); return;
+        }
+        if (remove(games[index])) { puts("DELETE_ERROR remove failed"); return; }
+        printf("DELETE_OK %s\n", games[index]);
+        scan_games(); page = 0; draw_menu();
+    }
     else if (!strcmp(op, "settings")) { report_preferences(); }
+    else if (!strcmp(op, "ppafill")) {
+        if (*arg && running) { puts("ERROR ppafill requires menu"); return; }
+        if (*arg) {
+            if (strcmp(arg, "on") && strcmp(arg, "off")) { puts("ERROR ppafill on/off"); return; }
+            bool enabled = !strcmp(arg, "on");
+            korvo_ppa_enable(enabled);
+            esp_err_t rc = korvo_settings_save_ppa(enabled);
+            if (rc != ESP_OK) ESP_LOGW(TAG, "PPA setting save failed: %s", esp_err_to_name(rc));
+        }
+        korvo_ppa_stats();
+    }
+    else if (!strcmp(op, "simdtest")) {
+        if (running) { puts("ERROR simdtest requires menu"); return; }
+        korvo_simd_test();
+    }
+    else if (!strcmp(op, "simd")) {
+        if (*arg && running) { puts("ERROR simd requires menu"); return; }
+        if (*arg) {
+            if (strcmp(arg, "on") && strcmp(arg, "off")) { puts("ERROR simd on/off"); return; }
+            bool enabled = !strcmp(arg, "on");
+            korvo_simd_enable(enabled);
+            esp_err_t rc = korvo_settings_save_simd(enabled);
+            if (rc != ESP_OK) ESP_LOGW(TAG, "SIMD setting save failed: %s", esp_err_to_name(rc));
+        }
+        korvo_simd_stats();
+    }
+    else if (!strcmp(op, "paralleltest")) {
+        if (running) { puts("ERROR paralleltest requires menu"); return; }
+        unsigned rounds = atoi(arg);
+        korvo_parallel_test(!rounds || rounds > 1000 ? 300 : rounds);
+    }
+    else if (!strcmp(op, "parallel")) {
+        if (*arg && running) { puts("ERROR parallel requires menu"); return; }
+        if (*arg) {
+            if (strcmp(arg, "on") && strcmp(arg, "off")) { puts("ERROR parallel on/off"); return; }
+            bool enabled = !strcmp(arg, "on");
+            korvo_parallel_enable(enabled);
+            esp_err_t rc = korvo_settings_save_parallel(enabled);
+            if (rc != ESP_OK) ESP_LOGW(TAG, "Parallel setting save failed: %s", esp_err_to_name(rc));
+        }
+        korvo_parallel_stats();
+    }
     else if (!strcmp(op, "reboot")) {
         if (running) { puts("ERROR stop current game first"); return; }
         esp_restart();
@@ -474,6 +536,10 @@ static void handle_command(char *line)
         else puts("ERROR scale pixel/fit");
     }
     else if (!strcmp(op, "display")) { korvo_display_stats(); }
+    else if (!strcmp(op, "acceltest")) {
+        if (running) { puts("ERROR acceltest requires menu"); return; }
+        korvo_display_accel_test();
+    }
     else if (!strcmp(op, "displaytest")) {
         if (running) { puts("ERROR stop current game first"); return; }
         unsigned frames = atoi(arg);
@@ -667,6 +733,19 @@ static void launcher_task(void *arg)
     else korvo_jit_enable(preferences.jit_mode == 1);
     (void)korvo_jit_memory_set(preferences.jit_internal ? "internal" : "mapped");
     ESP_ERROR_CHECK(korvo_board_init());
+    korvo_parallel_init();
+    bool parallel = true;
+    esp_err_t parallel_rc = korvo_settings_load_parallel(&parallel);
+    if (parallel_rc != ESP_OK) ESP_LOGW(TAG, "Parallel setting unavailable: %s", esp_err_to_name(parallel_rc));
+    korvo_parallel_enable(parallel);
+    bool simd = true;
+    esp_err_t simd_rc = korvo_settings_load_simd(&simd);
+    if (simd_rc != ESP_OK) ESP_LOGW(TAG, "SIMD setting unavailable: %s", esp_err_to_name(simd_rc));
+    korvo_simd_enable(simd);
+    bool ppa = true;
+    esp_err_t ppa_rc = korvo_settings_load_ppa(&ppa);
+    if (ppa_rc != ESP_OK) ESP_LOGW(TAG, "PPA setting unavailable: %s", esp_err_to_name(ppa_rc));
+    korvo_ppa_enable(ppa);
     ESP_ERROR_CHECK(uart_driver_install(UART_NUM_0, 4096, 0, 0, NULL, 0));
     events = xQueueCreate(128, sizeof(nj_event));
     configASSERT(events);

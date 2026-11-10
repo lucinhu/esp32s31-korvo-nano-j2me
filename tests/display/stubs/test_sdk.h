@@ -25,12 +25,16 @@ typedef void *ppa_client_handle_t;
 typedef struct { int unused; } esp_lcd_rgb_panel_event_data_t;
 typedef struct { bool (*on_frame_buf_complete)(esp_lcd_panel_handle_t,const esp_lcd_rgb_panel_event_data_t *,void *); } esp_lcd_rgb_panel_event_callbacks_t;
 typedef struct { int oper_type,max_pending_trans_num,data_burst_length; } ppa_client_config_t;
-typedef struct { void *buffer; size_t buffer_size; int pic_w,pic_h,block_w,block_h,block_offset_x,block_offset_y,srm_cm; } test_ppa_block;
+typedef struct { const void *buffer; size_t buffer_size; int pic_w,pic_h,block_w,block_h,block_offset_x,block_offset_y,srm_cm,fill_cm; } test_ppa_block;
 typedef struct { test_ppa_block in,out; int rotation_angle; float scale_x,scale_y; int mode; } ppa_srm_oper_config_t;
 #define PPA_SRM_COLOR_MODE_RGB565 0
 #define PPA_SRM_ROTATION_ANGLE_0 0
 #define PPA_TRANS_MODE_BLOCKING 0
 #define PPA_OPERATION_SRM 0
+#define PPA_OPERATION_FILL 1
+#define PPA_FILL_COLOR_MODE_RGB565 0
+#define PPA_FILL_COLOR_MODE_ARGB8888 1
+typedef struct { test_ppa_block out; unsigned fill_block_w,fill_block_h,fill_color_val; int mode; } ppa_fill_oper_config_t;
 #define PPA_DATA_BURST_LENGTH_128 128
 SemaphoreHandle_t xSemaphoreCreateBinary(void);
 BaseType_t xSemaphoreTake(SemaphoreHandle_t,unsigned);
@@ -40,3 +44,4 @@ esp_err_t esp_lcd_rgb_panel_register_event_callbacks(esp_lcd_panel_handle_t,cons
 esp_err_t esp_lcd_panel_draw_bitmap(esp_lcd_panel_handle_t,int,int,int,int,const void *);
 esp_err_t ppa_register_client(const ppa_client_config_t *,ppa_client_handle_t *);
 esp_err_t ppa_do_scale_rotate_mirror(ppa_client_handle_t,const ppa_srm_oper_config_t *);
+esp_err_t ppa_do_fill(ppa_client_handle_t,const ppa_fill_oper_config_t *);

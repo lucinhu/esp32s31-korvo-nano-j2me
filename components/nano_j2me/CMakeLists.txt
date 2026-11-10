@@ -1,4 +1,4 @@
-# Platform integration stays here; JIT development uses a separate core branch.
+# Platform integration stays here; the core submodule follows main.
 set(NJ_ROOT "${CMAKE_CURRENT_LIST_DIR}/../../third_party/nano_j2me")
 if(NOT EXISTS "${NJ_ROOT}/include/nj2me/nj.h")
     message(FATAL_ERROR "Run git submodule update --init --recursive first")
