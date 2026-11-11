@@ -1,0 +1,19 @@
+{
+  "old_codepoints": 7619,
+  "new_codepoints": 9833,
+  "added_codepoints": 2214,
+  "old_codepoints_removed": 0,
+  "old_character_advance_changes": 0,
+  "hhea_metrics_preserved": {
+    "ascent": true,
+    "descent": true,
+    "lineGap": true
+  },
+  "game_class_count": 3,
+  "game_unique_hanzi": 257,
+  "game_hanzi_missing_before": 102,
+  "game_hanzi_missing_after": 0,
+  "font_bytes": 2159008,
+  "font_sha256": "7453416de729fca984ae4972cb5dd03bb58ed69b1f14454e12e443dcbbed45d6",
+  "jar_sha256": "a9943ed281fa1d6133ed432a2cde6851fd6e3eef199a06c19353fc264dde07e3"
+}

@@ -111,7 +111,7 @@ MIDI 使用独立播放任务进行流式合成，无需预先展开为完整 PC
 
 2026-10-23 的组件烧录、媒体回归及 MIDI 静音修复见 [实机验证记录](docs/ESPRESSIF_MEDIA.md)。
 
-FreeType 字体占约 1.8 MiB Flash，内存分配和有界字形缓存使用 PSRAM。保持核心字体的行高、基线和字号，字符宽度由 FreeType 的 advance 决定。默认字体来自 Noto Sans CJK SC，子集及许可见 [assets/fonts](assets/fonts/README.md)，正常构建无需 fontTools。需要其他字体时用 `bash tools/idf.sh -B build-media -D KORVO_FONT_FILE=/absolute/path/to/font.ttf build` 指定。
+FreeType 字体占约 2.1 MiB Flash，覆盖 GB2312 简体字、Big5 常用繁体字及符号，共 9,833 个字符；内存分配和有界字形缓存使用 PSRAM。保持核心字体的行高、基线和字号，字符宽度由 FreeType 的 advance 决定。默认字体来自 Noto Sans CJK SC，子集及许可见 [assets/fonts](assets/fonts/README.md)，正常构建无需 fontTools。[仙剑 2008 提示页修复](docs/PAL2008.md) 说明繁体字缺失和软键操作。需要其他字体时用 `bash tools/idf.sh -B build-media -D KORVO_FONT_FILE=/absolute/path/to/font.ttf build` 指定。
 
 VM 在 Core 0 上调用音频解码，默认关闭 `CONFIG_ESP_AUDIO_CODEC_S31_USE_ASM`，使用官方 S31 C 库；启用 PIE 汇编库须将解码工作移至 Core 1，当前代码会在编译时阻止错误配置。
 

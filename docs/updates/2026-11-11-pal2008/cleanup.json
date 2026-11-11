@@ -1,0 +1,36 @@
+{
+  "removed": [
+    {
+      "path": "build/pal2008",
+      "bytes": 11245010,
+      "files": 6
+    },
+    {
+      "path": "tools/__pycache__",
+      "bytes": 17404,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-11-pal2008/before-5.png",
+      "bytes": 903,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-11-pal2008/before-fire.png",
+      "bytes": 903,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-11-pal2008/before-softl.png",
+      "bytes": 903,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-11-pal2008/fresh-before.png",
+      "bytes": 903,
+      "files": 1
+    }
+  ],
+  "total_bytes": 11266026,
+  "kept": "Current IDF firmware build, font, Flash games/RMS, and selected test evidence"
+}

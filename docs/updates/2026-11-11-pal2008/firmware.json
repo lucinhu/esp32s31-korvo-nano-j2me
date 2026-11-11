@@ -1,0 +1,7 @@
+{
+  "firmware_bytes": 8273680,
+  "firmware_sha256": "3da1a1f876b8eaccab97401ccb9476d933915892ebf6087d60383fbcae271d1d",
+  "app_partition_bytes": 8388608,
+  "app_partition_free_bytes": 114928,
+  "core_commit": "a2e5ba84a43f1178b8333a1cd89d52a41aac8ed0"
+}

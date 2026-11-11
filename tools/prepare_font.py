@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the bundled GB2312/Latin font from Noto Sans CJK SC (SIL OFL 1.1).
+"""Build the bundled simplified/traditional Chinese font (SIL OFL 1.1).
 
 Only regeneration needs fontTools. Normal firmware builds use the saved OTF.
 """
@@ -23,6 +23,17 @@ def main():
                 points.add(ord(bytes((lead, trail)).decode("gb2312")))
             except UnicodeDecodeError:
                 pass
+    # Big5 symbols and level-one (common) Hanzi. GB2312 alone omits even
+    # basic Traditional Chinese UI words such as 開關 and 確認. Stop at
+    # C67E: level-two rare Hanzi would exceed the 8 MiB application partition.
+    for lead in range(0xA1, 0xC7):
+        for trail in range(0x40, 0xFF):
+            if lead == 0xC6 and trail > 0x7E:
+                continue
+            try:
+                points.add(ord(bytes((lead, trail)).decode("big5")))
+            except UnicodeDecodeError:
+                pass
     font = TTFont(args.source, fontNumber=args.face)
     opts = subset.Options()
     opts.name_IDs = [0, 1, 2, 3, 4, 5, 6, 13, 14]
@@ -32,6 +43,9 @@ def main():
     # substitutions or the extra glyphs reachable only through those tables.
     opts.layout_features = []
     opts.layout_closure = False
+    # Retain outlines/metrics, omit CFF hints to fit both character sets in
+    # Flash. FreeType still rasterises the outlines with grayscale coverage.
+    opts.hinting = False
     worker = subset.Subsetter(options=opts)
     worker.populate(unicodes=points)
     worker.subset(font)

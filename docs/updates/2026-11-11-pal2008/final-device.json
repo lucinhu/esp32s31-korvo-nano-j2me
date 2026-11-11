@@ -1,0 +1,12 @@
+{
+  "mode": "normal RMS",
+  "run_begin": "I (179668) korvo-j2me: RUN_BEGIN index=20 /flash/j2me/仙剑奇侠传(2008)_12406.jar res=240x320 heap=10240KiB rms=/flash/j2me/rms/8111e633",
+  "settings": "SETTINGS res=240x320 volume=40 fps=off scale=fit jit=off memory=mapped parallel=on simd=on ppafill=on",
+  "status": "STATUS running=1 res=240x320 presents=1739 input=4 psram=2215388 internal=255567",
+  "game_left_running": "PAL 2008 main menu",
+  "captures": [
+    "normal-prompt.png",
+    "final-menu.png",
+    "final-lcd.png"
+  ]
+}

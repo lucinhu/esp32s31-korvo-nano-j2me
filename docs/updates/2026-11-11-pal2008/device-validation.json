@@ -1,0 +1,37 @@
+{
+  "runs": [
+    {
+      "rc": 0,
+      "presents": 4064,
+      "input": 9,
+      "psram_before": 15216500,
+      "psram_after": 15215968,
+      "delta": -532
+    },
+    {
+      "rc": 0,
+      "presents": 1807,
+      "input": 7,
+      "psram_before": 15215968,
+      "psram_after": 15215968,
+      "delta": 0
+    }
+  ],
+  "display_test": {
+    "frames": 90,
+    "mismatches": 0,
+    "detail": "DISPLAY buffers=2 rgb_dma=1 burst=64 submitted=227 completed=227 dma_copies=227 cpu_copies=0 timeouts=0 dma2d_copies=227 game_blits=0 ppa_scalings=0 sync_us=184218"
+  },
+  "settings_preserved": "SETTINGS res=240x320 volume=40 fps=off scale=fit jit=off memory=mapped parallel=on simd=on ppafill=on",
+  "storage": "STORAGE root=/flash total=8220672 free=573440 reserve=262144",
+  "audio_note": "The enabled path still logs an existing MediaException for this game music resource; the game catches it and proceeds to title/menu. This change fixes font coverage and the prompt flow, not music decoding.",
+  "captures": {
+    "prompt-default": "390ec3dfef195e95f296f40ec6fb9af7bd0956b40423621ccb4e4319e071656a",
+    "prompt-toggled": "dd3b2b586a0f61d8657e72ff1968d26b82f00719fd34adcbb9c2f81a4a640147",
+    "prompt-restored": "390ec3dfef195e95f296f40ec6fb9af7bd0956b40423621ccb4e4319e071656a",
+    "after-confirm": "44a4de5959f754a438cc3cb0db0990e209737c6acf08d6afa1f9704c5697bbe6",
+    "menu": "1e738af78cecd4e481656de6358e85a1690b8cb0831d7573bff4d01b5caafaed",
+    "off-before-confirm": "dd3b2b586a0f61d8657e72ff1968d26b82f00719fd34adcbb9c2f81a4a640147",
+    "off-menu": "1e738af78cecd4e481656de6358e85a1690b8cb0831d7573bff4d01b5caafaed"
+  }
+}
