@@ -1,0 +1,5 @@
+{
+  "settings": "SETTINGS res=176x208 volume=40 fps=off scale=fit jit=off memory=mapped parallel=on simd=on ppafill=on",
+  "status": "STATUS running=0 res=176x208 presents=156 input=15 psram=15215968 internal=255567",
+  "running": false
+}

@@ -1,0 +1,23 @@
+{
+  "before": {
+    "file": "docs/updates/2026-11-11-pal2008/prompt-default.png",
+    "ink_bbox": [
+      38,
+      171,
+      89,
+      178
+    ],
+    "ink_height": 8
+  },
+  "after": {
+    "file": "docs/updates/2026-11-11-font-size/pal-240-prompt.png",
+    "ink_bbox": [
+      38,
+      171,
+      115,
+      181
+    ],
+    "ink_height": 11
+  },
+  "increase_percent": 37.5
+}

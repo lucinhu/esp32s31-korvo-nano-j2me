@@ -1,0 +1,16 @@
+{
+  "removed": [
+    {
+      "path": "build/font-size",
+      "bytes": 100682770,
+      "files": 156
+    },
+    {
+      "path": "tools/__pycache__",
+      "bytes": 17404,
+      "files": 1
+    }
+  ],
+  "total_bytes": 100700174,
+  "kept": "current IDF firmware build, source regression tests, font, Flash games/RMS and test evidence"
+}

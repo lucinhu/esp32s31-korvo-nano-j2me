@@ -1,0 +1,35 @@
+{
+  "runs": [
+    {
+      "rc": 0,
+      "presents": 1681,
+      "input": 7,
+      "psram_before": 15216500,
+      "psram_after": 15215968,
+      "delta": -532
+    },
+    {
+      "rc": 0,
+      "presents": 3381,
+      "input": 5,
+      "psram_before": 15215968,
+      "psram_after": 15215968,
+      "delta": 0
+    },
+    {
+      "rc": 0,
+      "presents": 156,
+      "input": 15,
+      "psram_before": 15215968,
+      "psram_after": 15215968,
+      "delta": 0
+    }
+  ],
+  "display_test": "DISPLAY_TEST frames=90 mismatches=0",
+  "display": "DISPLAY buffers=2 rgb_dma=1 burst=64 submitted=349 completed=349 dma_copies=349 cpu_copies=0 timeouts=0 dma2d_copies=349 game_blits=0 ppa_scalings=0 sync_us=402045",
+  "final_settings": "SETTINGS res=176x208 volume=40 fps=off scale=fit jit=off memory=mapped parallel=on simd=on ppafill=on",
+  "settings_preserved": true,
+  "final_storage": "STORAGE root=/flash total=8220672 free=335872 reserve=262144",
+  "pal_fixed_resolution": "JAR a constructor hardcodes 240x320; 176x208 capture is a negative control and intentionally shows clipping.",
+  "final_mode": "launcher menu, no VM running"
+}

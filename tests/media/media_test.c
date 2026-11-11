@@ -9,6 +9,9 @@
 #include "esp_audio_simple_dec_default.h"
 #include "esp_audio_simple_dec.h"
 #include "png.h"
+#include <ft2build.h>
+#include FT_FREETYPE_H
+#include FT_SYNTHESIS_H
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -349,9 +352,61 @@ static void test_font(void)
     nj_run_opts opts = {0};
     korvo_font_use(font, &opts);
     assert(opts.primary_count == NJ_FONTSET_SLOTS && opts.fallback_count == NJ_FONTSET_SLOTS);
+    FT_Library library;
+    FT_Face reference;
+    assert(!FT_Init_FreeType(&library));
+    assert(!FT_New_Memory_Face(library, data, length, 0, &reference));
+    const unsigned em_sizes[] = {12, 15, 19};
     for (int i = 0; i < NJ_FONTSET_SLOTS; ++i) {
         const nj_font *face = opts.primary_fonts[i];
-        assert(face && face->coverage == 1 && face->height == opts.fallback_fonts[i]->height);
+        assert(face && face->coverage == 1 && face->proportional);
+        assert(face->height > opts.fallback_fonts[i]->height);
+        assert(face->height == face->ascent + face->descent);
+        assert(!FT_Set_Pixel_Sizes(reference, 0, em_sizes[i / NJ_FONT_SLOT_STYLES]));
+        /* Compare every supported glyph with FreeType's original bitmap,
+         * including accents, descenders, negative bearings and bold growth.
+         * A larger glyph must not lose pixels to the old Latin line box. */
+        FT_UInt index;
+        unsigned checked = 0;
+        for (FT_ULong ch = FT_Get_First_Char(reference, &index); index;
+             ch = FT_Get_Next_Char(reference, ch, &index)) {
+            assert(ch <= 0xffff && !FT_Load_Glyph(reference, index, FT_LOAD_DEFAULT));
+            if (face->style & NJ_FONT_STYLE_BOLD) FT_GlyphSlot_Embolden(reference->glyph);
+            assert(!FT_Render_Glyph(reference->glyph, FT_RENDER_MODE_NORMAL));
+            FT_GlyphSlot slot = reference->glyph;
+            FT_Bitmap *bitmap = &slot->bitmap;
+            int w, h;
+            const nj_u1 *pixels = face->glyph_lookup(face->glyph_ud, (nj_u2)ch, &w, &h);
+            assert(pixels && w > 0 && h == face->height);
+            int advance = face->glyph_advance(face->glyph_ud, (nj_u2)ch);
+            assert(nj_font_char_width(face, (nj_u2)ch) == advance);
+            unsigned raw_ink = 0, cached_ink = 0;
+            for (unsigned row = 0; row < bitmap->rows; ++row) {
+                int y = face->glyph_ascent - slot->bitmap_top + (int)row;
+                assert(y >= 0 && y < h);
+                for (unsigned col = 0; col < bitmap->width; ++col) {
+                    int x = (slot->bitmap_left > 0 ? slot->bitmap_left : 0) + (int)col;
+                    assert(x >= 0 && x < w);
+                    unsigned alpha = bitmap->buffer[row * bitmap->pitch + col];
+                    assert(pixels[y * w + x] == alpha);
+                    raw_ink += alpha;
+                }
+            }
+            for (int p = 0; p < w * h; ++p) cached_ink += pixels[p];
+            assert(raw_ink == cached_ink);
+            if (ch == 0x4e2d) {
+                assert(bitmap->rows >= em_sizes[i / NJ_FONT_SLOT_STYLES] - 1);
+                printf("FONT_SIZE slot=%d em=%u line=%d hanzi_rows=%u advance=%d\n",
+                       i, em_sizes[i / NJ_FONT_SLOT_STYLES], face->height, bitmap->rows, advance);
+            }
+            ++checked;
+        }
+        assert(checked >= 9833);
+        const nj_u2 mixed[] = {'A', 'g', ' ', 0x4e2d, 0x78ba, 0x8a8d};
+        int measured = 0;
+        for (unsigned c = 0; c < sizeof mixed / sizeof mixed[0]; ++c)
+            measured += face->glyph_advance(face->glyph_ud, mixed[c]);
+        assert(nj_font_string_width(face, mixed, sizeof mixed / sizeof mixed[0]) == measured);
         const nj_u2 characters[] = {'A', 'g', ' ', 0x4e2d, 0x6587};
         for (int c = 0; c < 5; ++c) {
             int w, h;
@@ -368,11 +423,13 @@ static void test_font(void)
         int w, h;
         assert(!face->glyph_lookup(face->glyph_ud, 0xffff, &w, &h));
     }
+    FT_Done_Face(reference);
+    FT_Done_FreeType(library);
     korvo_font_close(font);
     assert(!korvo_font_open(data, 4));
     assert(sdk_allocations == 0);
     free(data);
-    puts("FreeType: embedded Chinese/Latin font, six slots, metrics, spaces, cache eviction, malformed font, cleanup");
+    puts("FreeType: enlarged Chinese/Latin, six slots, full-cmap pixel preservation, width/layout metrics, spaces, cache eviction, malformed font, cleanup");
 }
 
 static void test_jar(nj_port *port)

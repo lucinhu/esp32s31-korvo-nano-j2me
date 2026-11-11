@@ -57,8 +57,10 @@ static cached_glyph *find_glyph(font_face *face, nj_u2 code)
     FT_GlyphSlot slot = face->face->glyph;
     FT_Bitmap *bitmap = &slot->bitmap;
     int advance = (int)((slot->advance.x + 32) / 64);
-    int width = (int)bitmap->width + (slot->bitmap_left > 0 ? slot->bitmap_left : 0);
+    int left = slot->bitmap_left > 0 ? slot->bitmap_left : 0;
+    int width = (int)bitmap->width + left;
     if (width < advance) width = advance;
+    if (advance < width) advance = width;
     if (width < 1) width = 1;
     if (width > GLYPH_MAX_SIDE || bitmap->rows > GLYPH_MAX_SIDE ||
         (bitmap->pixel_mode != FT_PIXEL_MODE_GRAY && bitmap->pixel_mode != FT_PIXEL_MODE_MONO)) return NULL;
@@ -75,7 +77,7 @@ static cached_glyph *find_glyph(font_face *face, nj_u2 code)
         const uint8_t *row = bitmap->buffer + (bitmap->pitch >= 0 ? (int)y : (int)bitmap->rows - 1 - (int)y) *
             (bitmap->pitch >= 0 ? bitmap->pitch : -bitmap->pitch);
         for (unsigned x = 0; x < bitmap->width; ++x) {
-            int dx = slot->bitmap_left + (int)x;
+            int dx = left + (int)x;
             if (dx < 0 || dx >= width) continue;
             pixels[dy * width + dx] = bitmap->pixel_mode == FT_PIXEL_MODE_GRAY ? row[x] :
                 (row[x / 8] & (0x80u >> (x % 8)) ? 255 : 0);
@@ -115,13 +117,27 @@ korvo_font *korvo_font_open(const void *data, nj_u4 size)
         if (FT_Select_Charmap(face->face, FT_ENCODING_UNICODE)) goto failed;
         FT_Face ft = face->face;
         if (ft->ascender <= ft->descender) goto failed;
-        unsigned em = (unsigned)((long)builtin->height * ft->units_per_EM / (ft->ascender - ft->descender));
+        /* CJK fonts reserve generous typographic line spacing. Scaling their
+         * ascender/descender into the old Latin line box made SMALL Hanzi
+         * only eight pixels tall. Size the em itself, then report a line box
+         * that contains the font's actual outlines, including bold growth. */
+        unsigned em = (unsigned)(builtin->height > 1 ? builtin->height - 1 : 1);
         if (FT_Set_Pixel_Sizes(ft, 0, em ? em : 1)) goto failed;
-        face->height = builtin->glyph_h > builtin->height ? builtin->glyph_h : builtin->height;
-        face->ascent = builtin->ascent;
+        FT_Pos top = FT_MulFix(ft->bbox.yMax, ft->size->metrics.y_scale);
+        FT_Pos bottom = FT_MulFix(-ft->bbox.yMin, ft->size->metrics.y_scale);
+        face->ascent = (int)((top > 0 ? top + 63 : 0) / 64) + 1;
+        int descent = (int)((bottom > 0 ? bottom + 63 : 0) / 64);
+        face->height = face->ascent + descent;
         if (face->height <= 0 || face->height > GLYPH_MAX_SIDE) goto failed;
         face->font = *builtin;
         face->font.name = "Espressif FreeType";
+        face->font.height = face->height;
+        face->font.ascent = face->ascent;
+        face->font.descent = descent;
+        face->font.leading = 0;
+        face->font.glyph_h = face->height;
+        face->font.glyph_w = (int)((em + 1) / 2);
+        face->font.proportional = 1;
         face->font.bitmap = NULL;
         face->font.glyph_lookup = glyph_lookup;
         face->font.glyph_advance = glyph_advance;

@@ -1,0 +1,52 @@
+{
+  "firmware_bytes": 8273856,
+  "firmware_sha256": "648e4e654106b46306ad5b162c78175e5f92de1cdb4702253a48aa08ed3b9963",
+  "core_commit": "a2e5ba84a43f1178b8333a1cd89d52a41aac8ed0",
+  "font_file_changed": false,
+  "glyph_checks": 58998,
+  "host_test": "ASan/UBSan korvo_media passed, 6.77 seconds",
+  "faces": [
+    {
+      "slot": 0,
+      "em": 12,
+      "line": 17,
+      "hanzi_rows": 12,
+      "advance": 12
+    },
+    {
+      "slot": 1,
+      "em": 12,
+      "line": 17,
+      "hanzi_rows": 12,
+      "advance": 12
+    },
+    {
+      "slot": 2,
+      "em": 15,
+      "line": 21,
+      "hanzi_rows": 15,
+      "advance": 15
+    },
+    {
+      "slot": 3,
+      "em": 15,
+      "line": 21,
+      "hanzi_rows": 16,
+      "advance": 16
+    },
+    {
+      "slot": 4,
+      "em": 19,
+      "line": 26,
+      "hanzi_rows": 18,
+      "advance": 19
+    },
+    {
+      "slot": 5,
+      "em": 19,
+      "line": 26,
+      "hanzi_rows": 19,
+      "advance": 20
+    }
+  ]
+}

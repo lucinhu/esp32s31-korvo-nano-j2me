@@ -1,0 +1,8 @@
+FONT_SIZE slot=0 em=12 line=17 hanzi_rows=12 advance=12
+FONT_SIZE slot=1 em=12 line=17 hanzi_rows=12 advance=12
+FONT_SIZE slot=2 em=15 line=21 hanzi_rows=15 advance=15
+FONT_SIZE slot=3 em=15 line=21 hanzi_rows=16 advance=16
+FONT_SIZE slot=4 em=19 line=26 hanzi_rows=18 advance=19
+FONT_SIZE slot=5 em=19 line=26 hanzi_rows=19 advance=20
+FreeType: enlarged Chinese/Latin, six slots, full-cmap pixel preservation, width/layout metrics, spaces, cache eviction, malformed font, cleanup
+Test Passed.
