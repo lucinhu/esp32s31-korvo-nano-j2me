@@ -51,7 +51,8 @@ if(NOT CMAKE_SCRIPT_MODE_FILE)
     if(KORVO_JIT)
         # Observe/configure each VM through public APIs without patching the runner.
         target_link_options(${COMPONENT_LIB} INTERFACE
-            "-Wl,--wrap=nj_vm_create" "-Wl,--wrap=nj_vm_destroy")
+            "-Wl,--wrap=nj_vm_create" "-Wl,--wrap=nj_vm_create_with_heap_limit"
+            "-Wl,--wrap=nj_vm_destroy")
     endif()
     target_include_directories(${COMPONENT_LIB} PRIVATE
         "../managed_components/espressif__esp_board_manager/devices/dev_display_lcd"

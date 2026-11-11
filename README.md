@@ -6,7 +6,7 @@ ESP32-S31（RISC-V）上的 J2ME 模拟器。板级配置来自 `esp32s31-korvo-
 
 未插 SD 卡时，启动日志会出现 SDMMC 超时，随后显示 `Flash FAT storage: /flash (ESP_OK)` 和 `FLASH READY`，继续使用 Flash。
 
-`third_party/nano_j2me` 是 [lucinhu/nano_j2me](https://github.com/lucinhu/nano_j2me) 的 Git 子模块。当前引用核心 `main` 的 `fca2cd8`（0.5.6，2026-11-11）。最初从 `f835b44` 更新到 `e910b30`，保留并提交本地 `drawRGB` 借用像素、忽略源透明度及源目标重叠保护补丁（`00318b4`）；随后同步远程 0.5.6，并补齐 JBenchmark 所需的 Item 布局、Gauge 和 M3G 兼容修复。所有核心修改均已合入 `main`，临时分支已删除。板级适配仍放在主工程，已补齐新版 PIM、Samsung、UDP 和 x86-64 JIT 源码清单。版本对比、本地补丁、构建与实机验证记录见 [本次更新记录](docs/updates/2026-11-10/result.txt)，跑分见 [JBenchmark 实机记录](docs/JBENCHMARK.md)，双核、SIMD 和二维 DMA 优化见 [性能更新](docs/DUALCORE.md)。最新的 [继续优化记录](docs/REFINEMENT.md) 包含 Form 长列表滚动、控件硬件填充和 PPA 边缘填充优化；同一矩形填充测试较上一版耗时减少约 30%。2026-11-11 同步 Display 回调和蒙皮加载修复，并进一步优化 LCD 等待与重复帧提交，见 [显示优化记录](docs/FRAME_PIPELINE.md)。
+`third_party/nano_j2me` 是 [lucinhu/nano_j2me](https://github.com/lucinhu/nano_j2me) 的 Git 子模块。当前引用核心 `main` 的 `a2e5ba8`（0.5.6，2026-11-11）。最初从 `f835b44` 更新到 `e910b30`，保留并提交本地 `drawRGB` 借用像素、忽略源透明度及源目标重叠保护补丁（`00318b4`）；随后同步远程 0.5.6，并补齐 JBenchmark 所需的 Item 布局、Gauge 和 M3G 兼容修复。所有核心修改均已合入 `main`，临时分支已删除。板级适配仍放在主工程，已补齐新版 PIM、Samsung、UDP 和 x86-64 JIT 源码清单。版本对比、本地补丁、构建与实机验证记录见 [本次更新记录](docs/updates/2026-11-10/result.txt)，跑分见 [JBenchmark 实机记录](docs/JBENCHMARK.md)，双核、SIMD 和二维 DMA 优化见 [性能更新](docs/DUALCORE.md)。最新的 [继续优化记录](docs/REFINEMENT.md) 包含 Form 长列表滚动、控件硬件填充和 PPA 边缘填充优化；同一矩形填充测试较上一版耗时减少约 30%。2026-11-11 同步 Display 回调和蒙皮加载修复，并进一步优化 LCD 等待与重复帧提交，见 [显示优化记录](docs/FRAME_PIPELINE.md)。 同日修复慢速 GameCanvas 绘制与输入触发的地图闪烁，见 [鲁宾逊修复记录](docs/ROBINSON.md)。
 
 ## 获取与编译
 

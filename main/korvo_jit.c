@@ -227,11 +227,11 @@ void korvo_jit_shutdown(korvo_port_state *s)
 }
 
 nj_vm *__real_nj_vm_create(const nj_port *port, nj_size heap_bytes);
+nj_vm *__real_nj_vm_create_with_heap_limit(const nj_port *port, nj_size heap_bytes, nj_size heap_limit);
 nj_u4 __real_nj_vm_destroy(nj_vm *vm);
 
-nj_vm *__wrap_nj_vm_create(const nj_port *port, nj_size heap_bytes)
+static nj_vm *configure_vm(nj_vm *vm)
 {
-    nj_vm *vm = __real_nj_vm_create(port, heap_bytes);
     if (vm && !enabled) nj_jit_disable(vm);
     if (vm && enabled && probe_only) (void)nj_jit_set_mode(vm,NJ_JIT_MODE_PROBE_ONLY);
     nj_jit_stats stats;
@@ -244,6 +244,17 @@ nj_vm *__wrap_nj_vm_create(const nj_port *port, nj_size heap_bytes)
            korvo_jit_memory_name(), mapped_memory ? POOL_BYTES : CODE_BUDGET,
            NJ_JIT_CACHE_ENTRIES, NJ_JIT_METHOD_ENTRIES, NJ_JIT_METHOD_ARENA_BYTES);
     return vm;
+}
+
+nj_vm *__wrap_nj_vm_create(const nj_port *port, nj_size heap_bytes)
+{
+    return configure_vm(__real_nj_vm_create(port, heap_bytes));
+}
+
+nj_vm *__wrap_nj_vm_create_with_heap_limit(const nj_port *port, nj_size heap_bytes,
+                                          nj_size heap_limit)
+{
+    return configure_vm(__real_nj_vm_create_with_heap_limit(port, heap_bytes, heap_limit));
 }
 
 nj_u4 __wrap_nj_vm_destroy(nj_vm *vm)

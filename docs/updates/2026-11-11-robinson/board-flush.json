@@ -1,0 +1,50 @@
+{
+  "samples": [
+    {
+      "sample": 0,
+      "red_pixels": 76800,
+      "blue_pixels": 0
+    },
+    {
+      "sample": 1,
+      "red_pixels": 76800,
+      "blue_pixels": 0
+    },
+    {
+      "sample": 2,
+      "red_pixels": 76800,
+      "blue_pixels": 0
+    },
+    {
+      "sample": 3,
+      "red_pixels": 0,
+      "blue_pixels": 76800
+    },
+    {
+      "sample": 4,
+      "red_pixels": 0,
+      "blue_pixels": 76800
+    },
+    {
+      "sample": 5,
+      "red_pixels": 76800,
+      "blue_pixels": 0
+    },
+    {
+      "sample": 6,
+      "red_pixels": 76800,
+      "blue_pixels": 0
+    },
+    {
+      "sample": 7,
+      "red_pixels": 0,
+      "blue_pixels": 76800
+    }
+  ],
+  "last_flush": 13,
+  "end": "I (35779) korvo-j2me: RUN_END rc=0 presents=324 input=6 psram_before=15215968 psram_after=15215968 delta=0",
+  "perf": "PERF elapsed_us=30401232 presents=324 present_us=1110730 present_max_us=15769 poll_us=11817 poll_calls=331 sleep_us=0 native_crc=c63ee68f lcd_crc=6451e83d updated=24 unchanged=300 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=3",
+  "display_test": "DISPLAY_TEST frames=90 mismatches=0",
+  "display": "DISPLAY buffers=2 rgb_dma=1 burst=64 submitted=124 completed=124 dma_copies=124 cpu_copies=0 timeouts=0 dma2d_copies=124 game_blits=0 ppa_scalings=0 sync_us=91266",
+  "settings": "SETTINGS res=240x320 volume=40 fps=off scale=fit jit=off memory=mapped parallel=on simd=on ppafill=on"
+}

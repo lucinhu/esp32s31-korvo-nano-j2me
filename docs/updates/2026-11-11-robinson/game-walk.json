@@ -1,0 +1,43 @@
+{
+  "samples": [
+    {
+      "key": "6",
+      "image": "map-walk-0.png"
+    },
+    {
+      "key": "8",
+      "image": "map-walk-1.png"
+    },
+    {
+      "key": "4",
+      "image": "map-walk-2.png"
+    },
+    {
+      "key": "2",
+      "image": "map-walk-3.png"
+    },
+    {
+      "key": "6",
+      "image": "map-walk-4.png"
+    },
+    {
+      "key": "8",
+      "image": "map-walk-5.png"
+    },
+    {
+      "key": "4",
+      "image": "map-walk-6.png"
+    },
+    {
+      "key": "2",
+      "image": "map-walk-7.png"
+    }
+  ],
+  "end": "I (964931) korvo-j2me: RUN_END rc=0 presents=9963 input=31 psram_before=15215968 psram_after=15215968 delta=0",
+  "perf": "PERF elapsed_us=117109663 presents=9963 present_us=31684134 present_max_us=15690 poll_us=10185746 poll_calls=9995 sleep_us=0 native_crc=1c6068a1 lcd_crc=693784ec updated=146 unchanged=9817 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=19",
+  "audio": [
+    "I (964931) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+    "I (964937) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+  ],
+  "rms": "fresh benchmark directory; normal user saves untouched"
+}

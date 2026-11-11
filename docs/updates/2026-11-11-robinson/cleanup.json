@@ -1,0 +1,83 @@
+{
+  "removed": [
+    {
+      "path": "build/robinson",
+      "bytes": 285239219,
+      "files": 132
+    },
+    {
+      "path": "build/log",
+      "bytes": 117053,
+      "files": 10
+    },
+    {
+      "path": "tools/__pycache__",
+      "bytes": 17404,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-11-robinson/start-after.png",
+      "bytes": 6131,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-11-robinson/menu-after.png",
+      "bytes": 76628,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-11-robinson/walk-after.json",
+      "bytes": 1311,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-11-robinson/walk-before-0.png",
+      "bytes": 76628,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-11-robinson/walk-before-1.png",
+      "bytes": 76629,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-11-robinson/walk-before-2.png",
+      "bytes": 76629,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-11-robinson/walk-before-3.png",
+      "bytes": 76628,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-11-robinson/walk-after-0.png",
+      "bytes": 50844,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-11-robinson/walk-after-1.png",
+      "bytes": 11108,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-11-robinson/walk-after-2.png",
+      "bytes": 11108,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-11-robinson/walk-after-3.png",
+      "bytes": 11108,
+      "files": 1
+    }
+  ],
+  "bytes": 285848428,
+  "files": 154,
+  "retained": [
+    "current ESP-IDF build and flashed .bin/.elf",
+    "build/latest-3d/jars active CMake inputs",
+    "build/dualcore reusable fixtures",
+    "managed dependencies, fonts and original FAT recovery file",
+    "selected evidence and final local raw logs"
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "firmware_bytes": 7946304,
+  "firmware_sha256": "7d39c8a7585aed189649f870486a79b113712267d472cc8367359d639bffc2de",
+  "game_bytes": 376293,
+  "game_sha256": "c1bb54615a469b27cfa45fbca0a83408c5ca53633d8ffc92de9f857f6a40d7b7",
+  "core_baseline": "fca2cd857a91d38e6cd26538871a92e00888ecb1",
+  "core_sync": "bff2ac13d97d6db3ce0f3360e6fe33f0d0d943e4",
+  "settings": "res=240x320 volume=40 fps=off scale=fit jit=off memory=mapped parallel=on simd=on ppafill=on",
+  "regression_before": {
+    "failures": 6,
+    "exit": 1
+  },
+  "regression_after": {
+    "checks": 9651,
+    "failures": 0
+  },
+  "flushdemo_after": {
+    "presented": 120,
+    "flushes": 65,
+    "torn": 0,
+    "worst_other_color_pixels": 0
+  },
+  "host_tests_passed": [
+    "test_heap_growth",
+    "test_save_form_scroll",
+    "test_lcdui",
+    "test_imageitem_alttext",
+    "test_display_serially",
+    "test_gamecanvas_flush",
+    "test_game",
+    "test_vm"
+  ],
+  "input_regression_before": {
+    "failures": 21,
+    "exit": 1
+  },
+  "jit_entrypoint_compatibility": "nj_vm_create and nj_vm_create_with_heap_limit share the same saved JIT mode",
+  "board_flush": {
+    "samples": [
+      {
+        "sample": 0,
+        "red_pixels": 76800,
+        "blue_pixels": 0
+      },
+      {
+        "sample": 1,
+        "red_pixels": 76800,
+        "blue_pixels": 0
+      },
+      {
+        "sample": 2,
+        "red_pixels": 76800,
+        "blue_pixels": 0
+      },
+      {
+        "sample": 3,
+        "red_pixels": 0,
+        "blue_pixels": 76800
+      },
+      {
+        "sample": 4,
+        "red_pixels": 0,
+        "blue_pixels": 76800
+      },
+      {
+        "sample": 5,
+        "red_pixels": 76800,
+        "blue_pixels": 0
+      },
+      {
+        "sample": 6,
+        "red_pixels": 76800,
+        "blue_pixels": 0
+      },
+      {
+        "sample": 7,
+        "red_pixels": 0,
+        "blue_pixels": 76800
+      }
+    ],
+    "last_flush": 13,
+    "end": "I (35779) korvo-j2me: RUN_END rc=0 presents=324 input=6 psram_before=15215968 psram_after=15215968 delta=0",
+    "perf": "PERF elapsed_us=30401232 presents=324 present_us=1110730 present_max_us=15769 poll_us=11817 poll_calls=331 sleep_us=0 native_crc=c63ee68f lcd_crc=6451e83d updated=24 unchanged=300 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=3",
+    "display_test": "DISPLAY_TEST frames=90 mismatches=0",
+    "display": "DISPLAY buffers=2 rgb_dma=1 burst=64 submitted=124 completed=124 dma_copies=124 cpu_copies=0 timeouts=0 dma2d_copies=124 game_blits=0 ppa_scalings=0 sync_us=91266",
+    "settings": "SETTINGS res=240x320 volume=40 fps=off scale=fit jit=off memory=mapped parallel=on simd=on ppafill=on"
+  },
+  "jit_off_verified": true,
+  "jit_on_verified": true,
+  "core_fix": "a2e5ba84a43f1178b8333a1cd89d52a41aac8ed0",
+  "game_walk": "game-walk.json",
+  "original_game_unchanged": true,
+  "device_final": "device-final.json",
+  "firmware_sha256_verified": true,
+  "all_required_checks_passed": true,
+  "cleanup": "cleanup.json",
+  "cleanup_bytes": 285848428,
+  "game_walk_firmware_sha256": "092eb325911eec3a01093e847688147d549d24ff9187a23de7b33718ec7af8a3",
+  "game_walk_firmware_note": "Same GameCanvas fix and JIT integration; published firmware also includes bff2ac1 System/M3G property fixes."
+}

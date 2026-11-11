@@ -1,0 +1,16 @@
+{
+  "settings": "SETTINGS res=240x320 volume=40 fps=off scale=fit jit=off memory=mapped parallel=on simd=on ppafill=on",
+  "storage": "STORAGE root=/flash total=8220672 free=573440 reserve=262144",
+  "status": [
+    "STATUS running=1 res=240x320 presents=307 input=0 psram=2231548 internal=255567",
+    "I (151334) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+    "I (151337) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+  ],
+  "game": "/flash/j2me/鲁宾逊漂流记汉化版_702.jar",
+  "start": [
+    "I (149056) korvo-j2me: RUN_BEGIN index=21 /flash/j2me/鲁宾逊漂流记汉化版_702.jar res=240x320 heap=10240KiB rms=/flash/j2me/rms/1d4bfa76",
+    "JIT_BEGIN requested=0 active=0 isa=M1A1F1D0C1 budget=262144 mode=off min_block=8 ways=4 reg_cache=1",
+    "JIT_STORAGE memory=mapped budget=262144 blocks=1024 methods=1024 map_bytes=262144"
+  ],
+  "temporary_fixture_removed": true
+}
