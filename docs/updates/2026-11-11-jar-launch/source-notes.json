@@ -1,0 +1,9 @@
+[
+  {
+    "file": "jbenchmark2.jar",
+    "bytes": 63996,
+    "sha256": "43a3ee725dd15c47c10a0d62aeffb7bd96fb93075f8241708281c051f1d433d9",
+    "all_members_crc_valid": true,
+    "source_difference": "Only META-INF/MANIFEST.MF differs; executable classes/resources equal user JAR"
+  }
+]

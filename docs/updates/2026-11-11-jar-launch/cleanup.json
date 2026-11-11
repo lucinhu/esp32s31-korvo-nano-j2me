@@ -1,0 +1,52 @@
+{
+  "removed": [
+    {
+      "path": "build/jar-launch",
+      "bytes": 24837633,
+      "files": 9
+    },
+    {
+      "path": "build/recovery/j2me-before.bin",
+      "bytes": 8323072,
+      "files": 1
+    },
+    {
+      "path": "tools/__pycache__",
+      "bytes": 33858,
+      "files": 2
+    },
+    {
+      "path": "tests/__pycache__",
+      "bytes": 19882,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-11-jar-launch/robinson-normal.png",
+      "bytes": 6838,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-11-jar-launch/tetris-after-5.png",
+      "bytes": 8518,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-11-jar-launch/tetris-after-fire.png",
+      "bytes": 8518,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-11-jar-launch/tetris-play.png",
+      "bytes": 8518,
+      "files": 1
+    },
+    {
+      "path": "docs/updates/2026-11-11-jar-launch/tetris-confirmed.png",
+      "bytes": 1735,
+      "files": 1
+    }
+  ],
+  "total_bytes": 33248572,
+  "kept": "current firmware; verified before/after FAT snapshots and small installed JBenchmark 2 reference in build/recovery; source recovery tool/tests and evidence",
+  "old_recovery_note": "Old ROM-mode backup failed FAT/ZIP structure checks and was not used; current stub-v2 snapshot passed device digest verification."
+}

@@ -115,6 +115,8 @@ FreeType 字体占约 2.1 MiB Flash，覆盖 GB2312 简体字、Big5 常用繁�
 
 VM 在 Core 0 上调用音频解码，默认关闭 `CONFIG_ESP_AUDIO_CODEC_S31_USE_ASM`，使用官方 S31 C 库；启用 PIE 汇编库须将解码工作移至 Core 1，当前代码会在编译时阻止错误配置。
 
+遇到 JAR 打开后立即退回菜单，可从串口检查是否出现 `cannot read the JAR`。2026-11-11 恢复了 13 份旧 JAR 和一份缓存的 FAT 簇链，25 份文件 JAR 均通过启动检查；原始数据和大字体固件保留，过程、验证边界及另行发现的俄罗斯方块中断栈重启问题见 [存储恢复记录](docs/JAR_RECOVERY.md)。
+
 [`gmf_core`](https://components.espressif.com/components/espressif/gmf_core/versions/1.1.0/readme) 提供流水线基础设施；后续需要统一音频流水线、音效或重采样时，可接入 [`gmf_audio`](https://components.espressif.com/components/espressif/gmf_audio/versions/1.1.0/readme)。[`gmf_ai_audio`](https://components.espressif.com/components/espressif/gmf_ai_audio/versions/1.1.1/readme) 面向语音唤醒、命令识别、AEC 等麦克风处理，当前游戏播放链路不引入这些依赖。
 
 宿主适配测试使用真实 libpng、组件中同版本的 FreeType 源码、zlib 和 VM 注册表；ESP 专用 JPEG、音频、MIDI/SF2 二进制库使用 SDK 接口替身，以宿主线程模拟播放任务，验证缓冲区、生命周期及错误处理，不代表实机解码或音质验证。需先执行一次 IDF 构建下载组件，并安装宿主 libpng 开发文件：

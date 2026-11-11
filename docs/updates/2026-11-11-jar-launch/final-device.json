@@ -1,0 +1,6 @@
+{
+  "settings": "SETTINGS res=240x320 volume=40 fps=off scale=fit jit=off memory=mapped parallel=on simd=on ppafill=on",
+  "status": "STATUS running=0 res=240x320 presents=0 input=0 psram=15216500 internal=255743",
+  "storage": "STORAGE root=/flash total=8220672 free=253952 reserve=262144",
+  "running": false
+}

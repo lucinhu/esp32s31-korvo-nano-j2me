@@ -1,0 +1,141 @@
+{
+  "all_jars_crc_valid": 25,
+  "recovered_jars": 13,
+  "modified_partition_offsets": [
+    4096,
+    12288
+  ],
+  "changed_bytes": 1814,
+  "all_data_and_directory_bytes_preserved": true,
+  "raw_before_sha256": "1d43bd5907aa418400fcb7ee99eeb9643504a2a9a99b26584f591a446094c94f",
+  "raw_after_sha256": "e00de2a79e519b644e281e19c97b974362889e7b5245b049b8cb012edeb7cd21",
+  "physical_flash_write_offset": "0x811000",
+  "jars": [
+    {
+      "path": "/J2ME/仙剑奇侠传完美版_11857.jar",
+      "bytes": 368680,
+      "sha256": "75aaf194cbd01715d4eaa99720e6876ff2355e494d3ed5f09c33d85cae81b100"
+    },
+    {
+      "path": "/J2ME/帝国时代2汉化版_7864.jar",
+      "bytes": 63761,
+      "sha256": "74f36cd1e81bb8ec6c256f5525e1dfee9701e51abd7d8f7c4166c4b0f3e0f6b0"
+    },
+    {
+      "path": "/J2ME/远古帝国2汉化版_10357.jar",
+      "bytes": 172168,
+      "sha256": "778b6e881b556e224de19d898cb65bc38c8bb2c910ec0deb04bc2d7713d66393"
+    },
+    {
+      "path": "/J2ME/帝国时代Ⅲ汉化版_10379.jar",
+      "bytes": 436383,
+      "sha256": "26f3d74fc06e881d14b0f8d5b62b1795e12ea28630e7f40cb900e6bccfb2d1bb"
+    },
+    {
+      "path": "/J2ME/波斯王子之时之沙中文版_11315.jar",
+      "bytes": 61575,
+      "sha256": "aef45604cedbfff6d2425dd43d7a0b6c7eab206a50be348ece9d86c441cf5c42"
+    },
+    {
+      "path": "/J2ME/俄罗斯方块中文版_2832.jar",
+      "bytes": 124753,
+      "sha256": "dac44f004fd3125de7f1881ba7784aa7ff882d70d11321cb31d21ed804ddbd58"
+    },
+    {
+      "path": "/J2ME/贪吃蛇经典版_4515.jar",
+      "bytes": 127139,
+      "sha256": "19db3c582fa4ef7d5d3dbd65c94b4445021c4199fe93a2a2f48839cfbfd79c07"
+    },
+    {
+      "path": "/J2ME/魂斗罗4中文版_2226.jar",
+      "bytes": 543415,
+      "sha256": "97598405a4b6090f7be6bef160b82d215e165e511cd33b59da40d5490f12b2ea"
+    },
+    {
+      "path": "/J2ME/3D滚球_11586.jar",
+      "bytes": 71064,
+      "sha256": "a814e21c891ad49bbb19f85c86326e1da022640eb25d0bbf8aadcee68ff1bd0b"
+    },
+    {
+      "path": "/J2ME/jbenchmark1.jar",
+      "bytes": 26236,
+      "sha256": "d96f92052f68afe09f48841d4c232fe1396d64da01445bf44653b9440a583f03"
+    },
+    {
+      "path": "/J2ME/jbenchmark2.jar",
+      "bytes": 63996,
+      "sha256": "43a3ee725dd15c47c10a0d62aeffb7bd96fb93075f8241708281c051f1d433d9"
+    },
+    {
+      "path": "/J2ME/jbenchmark3d.jar",
+      "bytes": 82637,
+      "sha256": "147b28fad9680856ce124f786000e6e4437accbe93846bccb226a5beb36de074"
+    },
+    {
+      "path": "/J2ME/jbenchmarkhd.jar",
+      "bytes": 351431,
+      "sha256": "58cd27a6fe6fc539fabb3bb0f593cd45ce236e3e242e5d64e7f01b1db07f4890"
+    },
+    {
+      "path": "/J2ME/perf-parallel.jar",
+      "bytes": 3457,
+      "sha256": "66102848eb1f767e9bb53b89b174e677ed2323e68219ff7b1dc86a3b0f9c3a56"
+    },
+    {
+      "path": "/J2ME/3D版田园物语_6744.jar",
+      "bytes": 992288,
+      "sha256": "8ad0920c1ebf685a1272bfa5f7fc1e0c4415189bcb82d0e28bd82917fca54e63"
+    },
+    {
+      "path": "/J2ME/模拟人生3_7562.jar",
+      "bytes": 572830,
+      "sha256": "777fffbae7441c4d3e481218afe8b8af8dea7f9397895aa6b185c176ec0a4860"
+    },
+    {
+      "path": "/J2ME/合金弹头4(完美汉化版)_4053.jar",
+      "bytes": 817704,
+      "sha256": "e441fda98bdb0c5a78f02e024028ff614815d98b735b53b97125cf10f01ff559"
+    },
+    {
+      "path": "/J2ME/帝国时代3-亚洲王朝_6288.jar",
+      "bytes": 609880,
+      "sha256": "5418027d2b37e29112c09ba2f1e7fac03d39c92b3009f6eebafc5af740ce266c"
+    },
+    {
+      "path": "/J2ME/孢子生命起源_6515.jar",
+      "bytes": 674654,
+      "sha256": "d96b4cbc96a74cd6494eaaedcfe6deadc4fe24525e24e6b0837a4a70a91e3035"
+    },
+    {
+      "path": "/J2ME/仙剑奇侠传(2008)_12406.jar",
+      "bytes": 711995,
+      "sha256": "a9943ed281fa1d6133ed432a2cde6851fd6e3eef199a06c19353fc264dde07e3"
+    },
+    {
+      "path": "/J2ME/鲁宾逊漂流记汉化版_702.jar",
+      "bytes": 376293,
+      "sha256": "c1bb54615a469b27cfa45fbca0a83408c5ca53633d8ffc92de9f857f6a40d7b7"
+    },
+    {
+      "path": "/J2ME/perf-simd.jar",
+      "bytes": 2096,
+      "sha256": "5703904ae2a03610316b9ee404b7bdc149e460ef57a304b4346965ced30dbeac"
+    },
+    {
+      "path": "/J2ME/perf-fill565.jar",
+      "bytes": 1782,
+      "sha256": "33a53dee7cc6054e425c616dfc27b7e9ef2ca312922d01f0cafc7e64ae2adc76"
+    },
+    {
+      "path": "/J2ME/ui-form-scroll.jar",
+      "bytes": 1259,
+      "sha256": "8e633a52bd7e7ac9f49f069f8ee71995f436042734aede816eae32e8fc8f186a"
+    },
+    {
+      "path": "/J2ME/perf-pipeline.jar",
+      "bytes": 2217,
+      "sha256": "ab93760e1893f1a0c3fa3c5c520df278f4c6da53a620ea42a89da00c88109f1e"
+    }
+  ],
+  "recovered_rms_caches": 1
+}

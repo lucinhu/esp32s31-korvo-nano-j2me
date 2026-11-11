@@ -1,0 +1,50 @@
+{
+  "path": "/J2ME/RMS/B1FB304C/DOWN.RMS",
+  "size": 15176,
+  "old_clusters": [
+    1934
+  ],
+  "recovered_clusters": [
+    1934,
+    1935,
+    1936,
+    1937
+  ],
+  "next_id": 7,
+  "count": 6,
+  "trailer_valid": true,
+  "records": [
+    {
+      "id": 1,
+      "bytes": 1568,
+      "sha256": "aa682a7013aa7ab203647050e54f9dbc046f4380c3fab9dfbddac1aa03b997ec"
+    },
+    {
+      "id": 2,
+      "bytes": 3514,
+      "sha256": "6b55800ca0948cdf0fda7349cdd52dced11e2c6f196541be9449cbd52aa0bc79"
+    },
+    {
+      "id": 3,
+      "bytes": 1087,
+      "sha256": "7b63f3638b95fbdd4049342f6e50ddf43431e34ebc9a552e85b276a7720fd912"
+    },
+    {
+      "id": 4,
+      "bytes": 5227,
+      "sha256": "d66f53305e33b4f99bc30ca6fba431ba14b45c072002ec7483ce0261e7f06c84"
+    },
+    {
+      "id": 5,
+      "bytes": 3727,
+      "sha256": "5a0731407471db319bb5ef474193f82867d9c385ee80d39da6ae2abce82a6a76"
+    },
+    {
+      "id": 6,
+      "bytes": 1,
+      "sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a"
+    }
+  ],
+  "whole_file_sha256": "8696122eb216ed1b445e1046ae0653b07a35b1b59bd7a137659d84cc8b58af6d",
+  "data_bytes_modified": 0
+}

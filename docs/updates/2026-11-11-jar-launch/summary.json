@@ -1,0 +1,18 @@
+{
+  "file_jars_tested": 25,
+  "read_errors_after_repair": 0,
+  "smoke_test": "Each file JAR ran with a 30-frame budget using its normal RMS directory; this checks loading/startup, not full gameplay.",
+  "all_exit_codes": 0,
+  "font_firmware_unchanged": "a8aea21",
+  "recovered_jars": 13,
+  "recovered_rms_caches": 1,
+  "recovery_unit_tests": 6,
+  "raw_backup": "build/recovery/j2me-20261111-launch-before.bin",
+  "raw_repaired_image": "build/recovery/j2me-20261111-launch-repaired.bin",
+  "additional_unresolved_issue": {
+    "game": "俄罗斯方块中文版_2832.jar",
+    "trigger": "after confirming the sound option, both enabled and disabled paths",
+    "fault": "SDK interrupt handler Stack protection fault, ISR stack pointer at upper bound",
+    "fixed": false
+  }
+}
