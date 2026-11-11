@@ -607,9 +607,10 @@ static void handle_command(char *line)
             pointer_event(type, a, b); puts("POINTER_OK");
         } else puts("ERROR pointer");
     } else if (!strcmp(op, "stats")) {
-        printf("STATUS running=%d res=%dx%d presents=%u input=%u psram=%u internal=%u\n", running,
+        printf("STATUS running=%d res=%dx%d presents=%u input=%u psram=%u internal=%u updated=%u unchanged=%u idle=%u\n", running,
                screen_width, screen_height, port_state.presents, port_state.input_events,
-               (unsigned)heap_caps_get_free_size(MALLOC_CAP_SPIRAM), (unsigned)heap_caps_get_free_size(MALLOC_CAP_INTERNAL));
+               (unsigned)heap_caps_get_free_size(MALLOC_CAP_SPIRAM), (unsigned)heap_caps_get_free_size(MALLOC_CAP_INTERNAL),
+               port_state.updated_frames, port_state.unchanged_frames, port_state.idle_presents);
         korvo_audio_stats();
     } else if (!strcmp(op, "shot")) {
         int baud = 115200;

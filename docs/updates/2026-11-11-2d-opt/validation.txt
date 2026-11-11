@@ -1,0 +1,59 @@
+final-host-tests.log
+Test project /home/lucinhu/Documents/workspace/esp32/esp32s31-korvo-nano-j2me/build/optimization-2d/host
+      Start  57: check_flushdemo
+ 1/14 Test  #57: check_flushdemo ..................   Passed    5.95 sec
+      Start  81: test_clip
+ 2/14 Test  #81: test_clip ........................   Passed    0.04 sec
+      Start 103: test_timer
+ 3/14 Test #103: test_timer .......................   Passed    0.05 sec
+      Start 104: test_timer_fairness
+ 4/14 Test #104: test_timer_fairness ..............   Passed    0.05 sec
+      Start 105: test_thread_lifecycle
+ 5/14 Test #105: test_thread_lifecycle ............   Passed    0.10 sec
+      Start 116: test_lcdui
+ 6/14 Test #116: test_lcdui .......................   Passed    0.21 sec
+      Start 119: test_display_serially
+ 7/14 Test #119: test_display_serially ............   Passed    0.13 sec
+      Start 120: test_gamecanvas_flush
+ 8/14 Test #120: test_gamecanvas_flush ............   Passed    2.43 sec
+      Start 121: test_game
+ 9/14 Test #121: test_game ........................   Passed    0.09 sec
+      Start 122: test_lib
+10/14 Test #122: test_lib .........................   Passed    0.86 sec
+      Start 139: test_h263
+11/14 Test #139: test_h263 ........................   Passed    0.05 sec
+      Start 142: test_m4v
+12/14 Test #142: test_m4v .........................   Passed    0.03 sec
+      Start 143: test_gfx
+13/14 Test #143: test_gfx .........................   Passed    0.01 sec
+      Start 144: test_gfx_fill
+14/14 Test #144: test_gfx_fill ....................   Passed    0.00 sec
+
+100% tests passed out of 14
+
+Total Test time (real) =  10.03 sec
+
+adapter-tests.log
+Test project /home/lucinhu/Documents/workspace/esp32/esp32s31-korvo-nano-j2me/build/optimization-2d/adapter
+    Start 1: jit_code_pool
+1/4 Test #1: jit_code_pool ....................   Passed    0.94 sec
+    Start 2: audio_resampler
+2/4 Test #2: audio_resampler ..................   Passed    0.46 sec
+    Start 3: display_buffers
+3/4 Test #3: display_buffers ..................   Passed    0.23 sec
+    Start 4: display_buffers_sync
+4/4 Test #4: display_buffers_sync .............   Passed    0.22 sec
+
+100% tests passed out of 4
+
+Total Test time (real) =   1.85 sec
+
+fullscreen-tests.log
+GameCanvas flush ownership: 16269 checks, 0 failures
+
+Final hardware checks
+I (57026) korvo-j2me: RUN_END rc=0 presents=1 input=0 psram_before=15215968 psram_after=15215968 delta=0
+I (85196) korvo-j2me: RUN_END rc=0 presents=19 input=41 psram_before=15215968 psram_after=15215968 delta=0
+DISPLAY_TEST frames=90 mismatches=0
+GAMECANVAS_COMMIT_PASS
+DISPLAY buffers=2 rgb_dma=1 burst=64 submitted=168 completed=168 dma_copies=168 cpu_copies=0 timeouts=0 dma2d_copies=168 game_blits=0 ppa_scalings=0 sync_us=133529

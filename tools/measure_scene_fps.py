@@ -13,6 +13,7 @@ from serial_console import Console, screenshot as console_screenshot
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("output", type=Path)
 parser.add_argument("--game", required=True, help="JAR basename or embedded alias")
+parser.add_argument("--attach", action="store_true", help="Sample the already running game after manual navigation; keep its RMS and execution settings")
 parser.add_argument("--jit", choices=["on", "off"], required=True)
 parser.add_argument("--jit-memory", choices=["keep", "internal", "mapped"], default="keep",
                     help="Select executable storage when the firmware supports it")
@@ -28,6 +29,7 @@ parser.add_argument("--settle", type=float, default=0, help="Wait after navigati
 parser.add_argument("--samples", type=int, default=20)
 parser.add_argument("--sample-interval", type=float, default=1, help="Seconds between FPS queries")
 parser.add_argument("--warmup", type=float, default=5)
+parser.add_argument("--counter-fps", action="store_true", help="Measure updated frame deltas with the FPS overlay disabled (requires updated STATUS telemetry)")
 parser.add_argument("--game-shots", action="store_true", help="Capture the raw game image before/after sampling")
 parser.add_argument("--strict-shots", action="store_true", help="Reject a run if screenshot transfer needed a retry")
 parser.add_argument("--port", default="/dev/ttyUSB0")
@@ -43,6 +45,8 @@ result = {"game":args.game,"jit":args.jit,"resolution":[240,320],
           "repeated_keys":args.repeat_keys,"repeat_period_seconds":args.repeat_period,
           "screenshot_source":"game" if args.game_shots else "lcd",
           "no_screenshots_during_sampling":True}
+result["measurement"] = "updated counter / wall time" if args.counter_fps else "FPS overlay telemetry"
+result["attached_to_running_game"] = args.attach
 result["skip_before_screenshot"] = args.skip_before_shot
 result["navigation_key_hold_seconds"] = args.key_hold
 repeat_keys = list(filter(None, args.repeat_keys.split(",")))
@@ -92,18 +96,29 @@ def key(name,edge):
 try:
     c.drain(.3)
     c.send("stats");state=c.until("STATUS ",10)[-1];c.until("AUDIO_DETAIL",10)
-    if "running=1" in state:
+    if args.attach:
+        if "running=1" not in state:
+            raise RuntimeError("--attach requires a running game")
+        c.send("settings");settings=c.until("SETTINGS",10)[-1]
+        if "res=240x320" not in settings or f"jit={args.jit} " not in settings:
+            raise RuntimeError("Running game settings do not match the requested resolution/JIT")
+        if args.jit_memory != "keep" and f"memory={args.jit_memory} " not in settings:
+            raise RuntimeError("Running game code memory does not match --jit-memory")
+    elif "running=1" in state:
         c.send("stop");c.until("RUN_END",120);c.until("AUDIO_DETAIL",10)
-    if args.jit_memory != "keep":
+    if not args.attach and args.jit_memory != "keep":
         c.send(f"jit memory {args.jit_memory}");c.until(f"JIT_MEMORY_STATE {args.jit_memory}",10)
-    for command,marker in [("fps off","FPS_STATE off"),(f"jit {args.jit}",f"JIT_STATE {args.jit}"),
-                           ("res 240 320","RES_OK"),("volume 40","VOLUME 40")]:
+    commands=[("fps off","FPS_STATE off")]
+    if not args.attach:
+        commands += [(f"jit {args.jit}",f"JIT_STATE {args.jit}"),("res 240 320","RES_OK"),("volume 40","VOLUME 40")]
+    for command,marker in commands:
         c.send(command);c.until(marker,10)
     c.send("list");listing=c.until("GAMES_END",10)
     entries=[(int(m[1]),Path(m[2]).name) for line in listing
              if (m:=re.match(r"(\d+) (\S+\.jar)(?: |$)",line))]
     index=next(index for index,name in entries if name==args.game)
-    c.send(f"bench {index} 0");c.until("RUN_BEGIN",10)
+    if not args.attach:
+        c.send(f"bench {index} 0");c.until("RUN_BEGIN",10)
     wait(args.startup_wait)
     for name in filter(None,args.keys.split(",")):
         if name.startswith("wait:"):
@@ -118,17 +133,42 @@ try:
         screenshot(c,args.output.with_name(args.output.stem+"-before.png"),args.game_shots,2000000)
     if args.hold:key(args.hold,"down")
     repeating = bool(repeat_keys)
-    c.send("fps on");c.until("FPS_STATE on",10)
+    if not args.counter_fps:
+        c.send("fps on");c.until("FPS_STATE on",10)
     wait(args.warmup)
-    c.send("stats");c.until("STATUS ",10)
+    c.send("stats");initial_status=c.until("STATUS ",10)[-1]
+    previous_when=time.monotonic()
+    if args.counter_fps:
+        fields=dict(re.findall(r"(\w+)=(\d+)",initial_status))
+        if "updated" not in fields:
+            raise RuntimeError("Firmware does not expose updated STATUS telemetry")
+        previous_updated=int(fields["updated"])
     result["sample_audio_before"]=c.until("AUDIO_DETAIL",10)
     start=time.monotonic()
     for i in range(args.samples):
+        if args.counter_fps:
+            wait(args.sample_interval)
         when=time.monotonic()
-        c.send("fps");line=c.until("FPS_STATE on rate=",10)[-1]
-        value=float(re.search(r"rate=([0-9.]+)",line)[1])
-        result["samples"].append({"sample":i,"time_seconds":when-start,"fps":value})
-        wait(max(0,args.sample_interval-(time.monotonic()-when)))
+        sample={"sample":i,"time_seconds":when-start}
+        if args.counter_fps:
+            c.send("stats");line=c.until("STATUS ",10)[-1]
+            now=time.monotonic()
+            fields=dict(re.findall(r"(\w+)=(\d+)",line))
+            if fields.get("running") != "1":
+                raise RuntimeError("Game exited during sampling")
+            updated=int(fields["updated"])
+            delta=(updated-previous_updated) & 0xffffffff
+            value=delta/(now-previous_when)
+            sample.update(updated=updated,delta=delta,interval_seconds=now-previous_when)
+            previous_updated,previous_when=updated,now
+            c.until("AUDIO_DETAIL",10)
+        else:
+            c.send("fps");line=c.until("FPS_STATE on rate=",10)[-1]
+            value=float(re.search(r"rate=([0-9.]+)",line)[1])
+        sample["fps"]=value
+        result["samples"].append(sample)
+        if not args.counter_fps:
+            wait(max(0,args.sample_interval-(time.monotonic()-when)))
     result["sampling_seconds"]=time.monotonic()-start
     repeating = False
     if repeat_down:
@@ -152,7 +192,8 @@ try:
     c.send("stop");lines=c.until("RUN_END",120);result["audio"]=c.until("AUDIO_DETAIL",10)
     result["end"]=lines[-1]
     for prefix,name in [("stats:","vm"),("PERF ","perf"),("JIT_STATS ","jit_stats"),
-                        ("JIT_DETAIL ","jit_detail"),("JIT_MEMORY ","jit_memory"),("JIT_POOL ","jit_pool")]:
+                        ("JIT_DETAIL ","jit_detail"),("JIT_MEMORY ","jit_memory"),("JIT_POOL ","jit_pool"),
+                        ("DISPLAY_IDLE ","display_idle")]:
         result[name]=next((line for line in lines if line.startswith(prefix)),"")
     args.output.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n")
     if "rc=0" not in result["end"] or "delta=0" not in result["end"]:

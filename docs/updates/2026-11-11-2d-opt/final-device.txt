@@ -1,0 +1,6 @@
+SETTINGS res=240x320 volume=40 fps=off scale=fit jit=off memory=mapped parallel=on simd=on ppafill=on
+STATUS running=0 res=240x320 presents=160 input=1 psram=15215968 internal=255551 updated=100 unchanged=60 idle=0
+I (140449) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40
+I (140454) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0
+DISPLAY buffers=2 rgb_dma=1 burst=64 submitted=276 completed=276 dma_copies=276 cpu_copies=0 timeouts=0 dma2d_copies=276 game_blits=0 ppa_scalings=0 sync_us=425638
+STORAGE root=/flash total=8220672 free=253952 reserve=262144

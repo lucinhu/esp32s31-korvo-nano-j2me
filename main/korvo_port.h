@@ -10,7 +10,7 @@ typedef struct korvo_port_state {
     int64_t last_yield;
     uint64_t present_us, poll_us, sleep_us;
     uint32_t present_max_us, poll_calls;
-    unsigned updated_frames, unchanged_frames;
+    unsigned updated_frames, unchanged_frames, idle_presents;
     size_t hot_used, hot_peak;
     void *hot_pool, *hot_heap;
     unsigned stack_internal, stack_psram;

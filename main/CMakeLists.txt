@@ -40,11 +40,13 @@ if(NOT CMAKE_SCRIPT_MODE_FILE)
     endif()
     option(KORVO_FAST_RENDER "Exact nearest-neighbour lookup scaling and unchanged-frame detection" ON)
     option(KORVO_DISPLAY_PIPELINE "Wait for queued LCD frames on the next buffer access" ON)
+    option(KORVO_GAMECANVAS_IDLE "Avoid framebuffer scans between GameCanvas commits" ON)
     option(KORVO_INTERNAL_HOT_DATA "Use a bounded internal RAM budget for VM host data" ON)
     option(KORVO_AUDIO_IMPROVED "Complete PCM writes and smooth buffered output" ON)
     target_compile_definitions(${COMPONENT_LIB} PRIVATE
         KORVO_FAST_RENDER=$<BOOL:${KORVO_FAST_RENDER}>
         KORVO_DISPLAY_PIPELINE=$<BOOL:${KORVO_DISPLAY_PIPELINE}>
+        KORVO_GAMECANVAS_IDLE=$<BOOL:${KORVO_GAMECANVAS_IDLE}>
         KORVO_INTERNAL_HOT_DATA=$<BOOL:${KORVO_INTERNAL_HOT_DATA}>
         KORVO_AUDIO_IMPROVED=$<BOOL:${KORVO_AUDIO_IMPROVED}>)
     target_compile_options(${COMPONENT_LIB} PRIVATE -O2)

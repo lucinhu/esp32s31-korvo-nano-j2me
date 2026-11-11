@@ -26,7 +26,7 @@ static const korvo_test_game games[] = {
     { "@test-kernels.jar", "JIT FIXED KERNELS [APP]", kernels_start, kernels_end },
 #endif
 #if KORVO_DIAGNOSTIC
-    { "@diagnostic.jar", "Media replay test [APP]", diagnostic_start, diagnostic_end },
+    { "@diagnostic.jar", "Diagnostic MIDlet [APP]", diagnostic_start, diagnostic_end },
 #endif
 #if KORVO_DIAGNOSTIC_SET
     { "@diag-rgb.jar", "RGB blit timing [APP]", diag_rgb_start, diag_rgb_end },

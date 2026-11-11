@@ -1,0 +1,122 @@
+{
+  "samples": [
+    {
+      "sample": 0,
+      "pixels": 76800,
+      "colors": [
+        [
+          76800,
+          [
+            0,
+            0,
+            255
+          ]
+        ]
+      ]
+    },
+    {
+      "sample": 1,
+      "pixels": 76800,
+      "colors": [
+        [
+          76800,
+          [
+            0,
+            0,
+            255
+          ]
+        ]
+      ]
+    },
+    {
+      "sample": 2,
+      "pixels": 76800,
+      "colors": [
+        [
+          76800,
+          [
+            255,
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "sample": 3,
+      "pixels": 76800,
+      "colors": [
+        [
+          76800,
+          [
+            255,
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "sample": 4,
+      "pixels": 76800,
+      "colors": [
+        [
+          76800,
+          [
+            0,
+            0,
+            255
+          ]
+        ]
+      ]
+    },
+    {
+      "sample": 5,
+      "pixels": 76800,
+      "colors": [
+        [
+          76800,
+          [
+            0,
+            0,
+            255
+          ]
+        ]
+      ]
+    },
+    {
+      "sample": 6,
+      "pixels": 76800,
+      "colors": [
+        [
+          76800,
+          [
+            255,
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "sample": 7,
+      "pixels": 76800,
+      "colors": [
+        [
+          76800,
+          [
+            255,
+            0,
+            0
+          ]
+        ]
+      ]
+    }
+  ],
+  "embedded": true,
+  "end": "I (85196) korvo-j2me: RUN_END rc=0 presents=19 input=41 psram_before=15215968 psram_after=15215968 delta=0",
+  "perf": "PERF elapsed_us=27409929 presents=19 present_us=113965 present_max_us=15764 poll_us=3216558 poll_calls=560 sleep_us=0 native_crc=c63ee68f lcd_crc=6451e83d updated=16 unchanged=3 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=3",
+  "idle": "DISPLAY_IDLE skipped=499",
+  "display_test": "DISPLAY_TEST frames=90 mismatches=0",
+  "passed": true
+}

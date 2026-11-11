@@ -1,0 +1,154 @@
+{
+  "game": "鲁宾逊漂流记汉化版_702.jar",
+  "jit": "off",
+  "resolution": [
+    240,
+    320
+  ],
+  "jit_memory_mode": "keep",
+  "warmup_seconds": 3.0,
+  "sample_interval_seconds": 1,
+  "keys": "5,wait:12,6,5,wait:3",
+  "held_key": "",
+  "samples": [
+    {
+      "sample": 0,
+      "time_seconds": 8.395989425480366e-06,
+      "fps": 0.0
+    },
+    {
+      "sample": 1,
+      "time_seconds": 1.031937771011144,
+      "fps": 0.0
+    },
+    {
+      "sample": 2,
+      "time_seconds": 2.0708304960280657,
+      "fps": 0.0
+    },
+    {
+      "sample": 3,
+      "time_seconds": 3.0964955620002,
+      "fps": 0.0
+    },
+    {
+      "sample": 4,
+      "time_seconds": 4.127497587003745,
+      "fps": 0.0
+    },
+    {
+      "sample": 5,
+      "time_seconds": 5.173169924062677,
+      "fps": 0.0
+    },
+    {
+      "sample": 6,
+      "time_seconds": 6.224643197027035,
+      "fps": 0.0
+    },
+    {
+      "sample": 7,
+      "time_seconds": 7.247185837011784,
+      "fps": 0.0
+    },
+    {
+      "sample": 8,
+      "time_seconds": 8.297219519969076,
+      "fps": 0.0
+    },
+    {
+      "sample": 9,
+      "time_seconds": 9.342573186033405,
+      "fps": 0.0
+    },
+    {
+      "sample": 10,
+      "time_seconds": 10.373635163996369,
+      "fps": 0.0
+    },
+    {
+      "sample": 11,
+      "time_seconds": 11.417404388077557,
+      "fps": 0.0
+    },
+    {
+      "sample": 12,
+      "time_seconds": 12.46416448999662,
+      "fps": 0.0
+    },
+    {
+      "sample": 13,
+      "time_seconds": 13.504939600010403,
+      "fps": 0.0
+    },
+    {
+      "sample": 14,
+      "time_seconds": 14.546360810054466,
+      "fps": 0.0
+    },
+    {
+      "sample": 15,
+      "time_seconds": 15.589363145991229,
+      "fps": 0.0
+    }
+  ],
+  "repeated_keys": "6,8,4,2",
+  "repeat_period_seconds": 1.2,
+  "screenshot_source": "game",
+  "no_screenshots_during_sampling": true,
+  "skip_before_screenshot": false,
+  "navigation_key_hold_seconds": 0.4,
+  "screenshots": [
+    {
+      "seconds": 3.2981607289984822,
+      "retried": false
+    },
+    {
+      "seconds": 3.224132262985222,
+      "retried": false
+    }
+  ],
+  "sample_audio_before": [
+    "I (1479570) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+    "I (1479572) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+  ],
+  "sampling_seconds": 16.618952412041835,
+  "repeated_pulses_including_warmup": 16,
+  "mean": 0.0,
+  "median": 0.0,
+  "minimum": 0.0,
+  "maximum": 0.0,
+  "active_status": "STATUS running=1 res=240x320 presents=8226 input=38 psram=1874612 internal=255567",
+  "sample_audio_after": [
+    "I (1496241) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+    "I (1496244) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+  ],
+  "sample_audio_detail_delta": {
+    "offered": 0,
+    "accepted": 0,
+    "short": 0,
+    "io_us": 0,
+    "volume_calls": 0,
+    "queued": 0,
+    "underruns": 0,
+    "silence_frames": 0
+  },
+  "sample_audio_output_delta": {
+    "writes": 0,
+    "frames": 0,
+    "errors": 0,
+    "tones": 0,
+    "volume": 0
+  },
+  "audio": [
+    "I (1499840) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+    "I (1499846) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+  ],
+  "end": "I (1499840) korvo-j2me: RUN_END rc=0 presents=8229 input=39 psram_before=15215968 psram_after=15215968 delta=0",
+  "vm": "stats: frames=8229 paints=1 gfx=5489 tris=0 m3g=0 time=57.034s fps=144.3 bytecodes=53320675 (0.93 M/s) natives=678409 heap=1833920/1004864 bytes cpcache=16565522/1457 findcache=259170/2193",
+  "perf": "PERF elapsed_us=57121196 presents=8229 present_us=25562934 present_max_us=15814 poll_us=532235 poll_calls=8269 sleep_us=0 native_crc=5c757127 lcd_crc=6b0c9b1b updated=84 unchanged=8145 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=19",
+  "jit_stats": "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+  "jit_detail": "JIT_DETAIL evictions=0 method_map_evictions=0 recompiled=0 unsupported=0 short=0 faults=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+  "jit_memory": "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+  "jit_pool": "JIT_POOL memory=mapped reserved=0 live=0 map_failures=0 commit_us=0 code_hash=811c9dc5 released=1"
+}

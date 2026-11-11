@@ -1,0 +1,51 @@
+{
+  "firmware_sha256": "3d06aa9e4fee22f1b18390e7c26a4301f9378c684c0f3d6ded9000e11926d2a1",
+  "firmware_bytes": 8276608,
+  "root_head": "2dd3ba235503840fc0639c512149d39a48f56d29",
+  "core_head": "7db304ffb47b3c45a27403ff288e4b9768ae7886",
+  "local_source_changes": true,
+  "normal_rms_preserved": true,
+  "fat_image_not_flashed": true,
+  "robinson": {
+    "before_mean": 3.63125,
+    "after_mean": 4.7375,
+    "percent_change": 30.46471600688467,
+    "rounds_per_mode": 1,
+    "note": "FPS overlay readings; identical navigation and pulse policy; not deterministic replay"
+  },
+  "metal": {
+    "mean": 6.9375,
+    "median": 5.5,
+    "range": [
+      3.6,
+      14.6
+    ],
+    "note": "Level 1 gameplay, no valid before pair; idle hook not activated"
+  },
+  "excluded_scene_trials": [
+    "robinson-before",
+    "robinson-baseline",
+    "robinson-map-before",
+    "metal-level-before",
+    "metal-play-before"
+  ],
+  "host_commit_checks": 16269,
+  "host_tests_passed": 14,
+  "adapter_tests_passed": 4,
+  "jit_game_pairs_available": false,
+  "board_commit_check": {
+    "passed": true,
+    "samples": 8,
+    "all_pixels_each_sample": 76800,
+    "end": "I (85196) korvo-j2me: RUN_END rc=0 presents=19 input=41 psram_before=15215968 psram_after=15215968 delta=0",
+    "display_test": "DISPLAY_TEST frames=90 mismatches=0"
+  },
+  "telemetry_counter_check": {
+    "passed": true,
+    "samples": 3,
+    "mean": 17.6802872424815
+  },
+  "final_settings": "SETTINGS res=240x320 volume=40 fps=off scale=fit jit=off memory=mapped parallel=on simd=on ppafill=on",
+  "published_core_commit": "c6c618ed3103df94dae8471abec3b1bd9eff7a47",
+  "source_state_at_measurement": "root_head and core_head identify the base commits at build time; measured binaries included the local changes subsequently committed with this report."
+}

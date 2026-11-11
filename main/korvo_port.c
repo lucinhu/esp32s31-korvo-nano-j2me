@@ -264,6 +264,17 @@ static int input_poll(void *ud, nj_event *ev)
     ++s->poll_calls;
     return rc;
 }
+
+#if KORVO_GAMECANVAS_IDLE
+static void display_idle(void *ud)
+{
+    korvo_port_state *s = ud;
+    ++s->idle_presents;
+    /* The FPS overlay needs a clock even while the game screen is unchanged.
+     * Its own drawing acquires the pending LCD buffer before writing. */
+    launcher_fps_present(false);
+}
+#endif
 static int input_push(void *ud, const nj_event *ev) { (void)ud; return launcher_push(ev); }
 
 void korvo_port_report(korvo_port_state *s, int64_t elapsed_us)
@@ -290,6 +301,7 @@ void korvo_port_report(korvo_port_state *s, int64_t elapsed_us)
            (unsigned long long)s->poll_us, (unsigned)s->poll_calls, (unsigned long long)s->sleep_us,
            (unsigned long)hash, (unsigned long)lcd_hash,s->updated_frames,s->unchanged_frames,(unsigned)s->hot_peak,(unsigned)s->hot_used,(unsigned)mismatches,s->stack_internal,s->stack_psram);
     korvo_parallel_stats();
+    printf("DISPLAY_IDLE skipped=%u\n", s->idle_presents);
     korvo_simd_stats();
     korvo_ppa_stats();
     printf("JIT_MEMORY allocations=%u commits=%u refused=%u peak=%u live=%u\n",
@@ -417,6 +429,9 @@ void korvo_port_init(nj_port *p, korvo_port_state *s, int width, int height)
         .pcm_open = pcm_open, .pcm_write = pcm_write, .pcm_close = pcm_close, .pcm_free = pcm_free,
         .device_property = property, .shutdown = shutdown_port,
         .width = width, .height = height };
+#if KORVO_GAMECANVAS_IDLE
+    p->display_idle = display_idle;
+#endif
     korvo_parallel_reset();
     korvo_simd_reset();
     korvo_ppa_reset();

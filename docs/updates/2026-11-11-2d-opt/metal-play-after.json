@@ -1,0 +1,153 @@
+{
+  "game": "合金弹头4(完美汉化版)_4053.jar",
+  "jit": "off",
+  "resolution": [
+    240,
+    320
+  ],
+  "jit_memory_mode": "keep",
+  "warmup_seconds": 3.0,
+  "sample_interval_seconds": 1,
+  "keys": "5,wait:2,5,wait:8,5,wait:8,5,wait:8,5,wait:50,5,wait:5,5",
+  "held_key": "5",
+  "samples": [
+    {
+      "sample": 0,
+      "time_seconds": 6.021000444889069e-06,
+      "fps": 14.6
+    },
+    {
+      "sample": 1,
+      "time_seconds": 1.0618669299874455,
+      "fps": 13.3
+    },
+    {
+      "sample": 2,
+      "time_seconds": 2.0795996059896424,
+      "fps": 13.9
+    },
+    {
+      "sample": 3,
+      "time_seconds": 3.21859796193894,
+      "fps": 7.2
+    },
+    {
+      "sample": 4,
+      "time_seconds": 4.232376009924337,
+      "fps": 5.5
+    },
+    {
+      "sample": 5,
+      "time_seconds": 5.258424840983935,
+      "fps": 3.6
+    },
+    {
+      "sample": 6,
+      "time_seconds": 6.2753082239069045,
+      "fps": 5.5
+    },
+    {
+      "sample": 7,
+      "time_seconds": 7.291166670969687,
+      "fps": 3.6
+    },
+    {
+      "sample": 8,
+      "time_seconds": 8.456121342955157,
+      "fps": 5.5
+    },
+    {
+      "sample": 9,
+      "time_seconds": 9.46766701596789,
+      "fps": 9.0
+    },
+    {
+      "sample": 10,
+      "time_seconds": 10.499511000001803,
+      "fps": 3.7
+    },
+    {
+      "sample": 11,
+      "time_seconds": 11.521613126969896,
+      "fps": 5.5
+    },
+    {
+      "sample": 12,
+      "time_seconds": 12.540463483892381,
+      "fps": 5.5
+    },
+    {
+      "sample": 13,
+      "time_seconds": 13.703395726974122,
+      "fps": 3.6
+    },
+    {
+      "sample": 14,
+      "time_seconds": 14.717688626958989,
+      "fps": 5.5
+    },
+    {
+      "sample": 15,
+      "time_seconds": 15.736129410914145,
+      "fps": 5.5
+    }
+  ],
+  "repeated_keys": "",
+  "repeat_period_seconds": 0.5,
+  "screenshot_source": "game",
+  "no_screenshots_during_sampling": true,
+  "measurement": "FPS overlay telemetry",
+  "attached_to_running_game": false,
+  "skip_before_screenshot": true,
+  "navigation_key_hold_seconds": 0.15,
+  "sample_audio_before": [
+    "I (308797) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+    "I (308802) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+  ],
+  "sampling_seconds": 16.75669399497565,
+  "repeated_pulses_including_warmup": 0,
+  "mean": 6.9375,
+  "median": 5.5,
+  "minimum": 3.6,
+  "maximum": 14.6,
+  "active_status": "STATUS running=1 res=240x320 presents=12195 input=16 psram=1601564 internal=255367 updated=325 unchanged=11870 idle=0",
+  "sample_audio_after": [
+    "I (325696) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+    "I (325702) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+  ],
+  "sample_audio_detail_delta": {
+    "offered": 0,
+    "accepted": 0,
+    "short": 0,
+    "io_us": 0,
+    "volume_calls": 0,
+    "queued": 0,
+    "underruns": 0,
+    "silence_frames": 0
+  },
+  "sample_audio_output_delta": {
+    "writes": 0,
+    "frames": 0,
+    "errors": 0,
+    "tones": 0,
+    "volume": 0
+  },
+  "screenshots": [
+    {
+      "seconds": 3.3120672500226647,
+      "retried": false
+    }
+  ],
+  "audio": [
+    "I (329722) korvo-board: AUDIO writes=0 frames=0 errors=0 tones=0 volume=40",
+    "I (329728) korvo-board: AUDIO_DETAIL offered=0 accepted=0 short=0 io_us=0 volume_calls=0 queued=0 underruns=0 silence_frames=0"
+  ],
+  "end": "I (329722) korvo-j2me: RUN_END rc=0 presents=12198 input=17 psram_before=15215968 psram_after=15215968 delta=0",
+  "vm": "stats: frames=12198 paints=2990 gfx=230600 tris=0 m3g=0 time=138.936s fps=87.8 bytecodes=55193361 (0.40 M/s) natives=575267 heap=8551328/451584 bytes cpcache=3956948/1107 findcache=1482017/13672",
+  "perf": "PERF elapsed_us=138997566 presents=12198 present_us=37023853 present_max_us=15609 poll_us=237062 poll_calls=12216 sleep_us=0 native_crc=1ada5b26 lcd_crc=525fbf27 updated=326 unchanged=11872 hot_peak=0 hot_live=0 scale_mismatch=0 stack_internal=0 stack_psram=57",
+  "jit_stats": "JIT_STATS active=0 compiled=0 executed=0 bytecodes=0 declined=0 code_bytes=0",
+  "jit_detail": "JIT_DETAIL evictions=0 method_map_evictions=0 recompiled=0 unsupported=0 short=0 faults=0 memory_failures=0 commit_failures=0 peak_code=0 metadata=0 stats=0 detailed=0",
+  "jit_memory": "JIT_MEMORY allocations=0 commits=0 refused=0 peak=0 live=0",
+  "jit_pool": "JIT_POOL memory=mapped reserved=0 live=0 map_failures=0 commit_us=0 code_hash=811c9dc5 released=1",
+  "display_idle": "DISPLAY_IDLE skipped=0"
+}
